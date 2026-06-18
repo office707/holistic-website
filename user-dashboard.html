@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard | Aurea</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body class="home-page platform-page portal-dashboard-page" data-portal-role="user">
+  <div class="page">
+    <header class="topbar">
+      <a class="brand brand-link" href="index.html">
+        <div class="brand-mark"></div>
+        <span>Aurea</span>
+      </a>
+
+      <div class="shell" id="site-shell">
+        <nav class="nav" id="site-nav">
+          <a class="active" href="#dashboard-overview">Overview</a>
+          <a href="#dashboard-journal">Journal</a>
+          <a href="#dashboard-appointments">Appointments</a>
+          <a href="#dashboard-profile">Personal Details</a>
+          <a href="#dashboard-resources">Resources</a>
+          <a href="#dashboard-progress">Reflection</a>
+        </nav>
+        <div class="icon-circle search-icon">⌕</div>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <a class="login-box is-active" href="user-dashboard.html" data-role-login-trigger>
+        <div class="icon-circle login-icon" aria-hidden="true"></div>
+        <div class="login-copy">
+          <strong>User</strong>
+          <span>Role menu</span>
+        </div>
+      </a>
+
+      <a class="book-btn" href="index.html">Back to homepage</a>
+    </header>
+
+    <main class="platform-main dashboard-main" data-portal-dashboard>
+      <section class="dashboard-hero card" id="dashboard-overview">
+        <div class="dashboard-hero-grid">
+          <div class="dashboard-hero-copy">
+            <div class="subpage-breadcrumbs">
+              <a href="index.html">Home</a>
+              <span>/</span>
+              <a href="platform.html" data-role-login-trigger>Login</a>
+              <span>/</span>
+              <span>User Dashboard</span>
+            </div>
+
+            <span class="portal-kicker">Personal space</span>
+            <h1>Glad you are here.</h1>
+            <p>Take a quiet moment for yourself. This is where you manage your journal, appointments, personal details, and guided resources in one calm protected space.</p>
+
+            <div class="dashboard-hero-actions">
+              <a class="btn btn-primary" href="#dashboard-journal">Open journal</a>
+              <a class="btn btn-secondary" href="#dashboard-appointments">View appointments</a>
+            </div>
+
+            <div class="dashboard-quick-links">
+              <a href="#dashboard-journal">New journal entry</a>
+              <a href="#dashboard-appointments">Upcoming appointments</a>
+              <a href="#dashboard-profile">Personal details</a>
+            </div>
+          </div>
+
+          <div class="dashboard-hero-panels">
+            <article class="dashboard-metric-card">
+              <span>Journal entries</span>
+              <strong id="dashboard-journal-total">0</strong>
+              <p>Private reflections stay inside your personal account.</p>
+            </article>
+
+            <article class="dashboard-metric-card">
+              <span>Next appointment</span>
+              <strong id="dashboard-next-appointment">Not scheduled yet</strong>
+              <p id="dashboard-next-appointment-copy">See your upcoming support sessions at a glance.</p>
+            </article>
+
+            <article class="dashboard-metric-card">
+              <span>Latest mood</span>
+              <strong id="dashboard-latest-mood">No entry yet</strong>
+              <p>A softer view of your progress instead of clinical reporting.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-overview-grid">
+        <article class="dashboard-panel">
+          <span class="dashboard-panel-kicker">Overview</span>
+          <h2>Your protected area keeps everything together in one calm place.</h2>
+          <p>From daily thoughts to guided exercises, everything stays personal, structured, and ready to connect to a real account later on.</p>
+        </article>
+
+        <article class="dashboard-panel dashboard-panel--soft">
+          <span class="dashboard-panel-kicker">Daily prompt</span>
+          <h2>What would genuinely support you today?</h2>
+          <p>Use this space for a note, an observation, or one small step toward more stability, healing, and self-connection.</p>
+        </article>
+      </section>
+
+      <section class="dashboard-layout">
+        <div class="dashboard-primary-column">
+          <article class="dashboard-card" id="dashboard-journal">
+            <div class="dashboard-section-head">
+              <div>
+                <span class="dashboard-panel-kicker">Personal journal</span>
+                <h2>Capture thoughts, moods, and small moments of progress.</h2>
+              </div>
+              <div class="dashboard-head-meta" id="journal-entry-count">0 entries</div>
+            </div>
+
+            <form class="journal-form" id="journal-form">
+              <div class="journal-form-grid">
+                <label>
+                  <span>Title</span>
+                  <input id="journal-title" name="title" type="text" placeholder="What is on your mind today?" required>
+                </label>
+
+                <label>
+                  <span>Date</span>
+                  <input id="journal-date" name="date" type="date" required>
+                </label>
+
+                <label>
+                  <span>Mood</span>
+                  <select id="journal-mood" name="mood">
+                    <option value="Calm">Calm</option>
+                    <option value="Grateful">Grateful</option>
+                    <option value="Tired">Tired</option>
+                    <option value="Hopeful">Hopeful</option>
+                    <option value="Tense">Tense</option>
+                    <option value="Clear">Clear</option>
+                  </select>
+                </label>
+
+                <label>
+                  <span>Daily prompt</span>
+                  <select id="journal-prompt" name="prompt">
+                    <option value="">Free writing</option>
+                    <option value="What helped me feel grounded today?">What helped me feel grounded today?</option>
+                    <option value="What am I grateful for today?">What am I grateful for today?</option>
+                    <option value="What does my body need today?">What does my body need today?</option>
+                    <option value="What thought needs attention today?">What thought needs attention today?</option>
+                  </select>
+                </label>
+              </div>
+
+              <fieldset class="journal-tag-group">
+                <legend>Tags</legend>
+                <label><input type="checkbox" name="tags" value="Stress">Stress</label>
+                <label><input type="checkbox" name="tags" value="Gratitude">Gratitude</label>
+                <label><input type="checkbox" name="tags" value="Healing">Healing</label>
+                <label><input type="checkbox" name="tags" value="Reflection">Reflection</label>
+                <label><input type="checkbox" name="tags" value="Goals">Goals</label>
+              </fieldset>
+
+              <label class="journal-textarea">
+                <span>Entry</span>
+                <textarea id="journal-text" name="text" rows="6" placeholder="Write at your own pace. This space is just for you." required></textarea>
+              </label>
+
+              <div class="journal-form-actions">
+                <button class="btn btn-primary" id="journal-submit" type="submit">Create journal entry</button>
+                <button class="btn btn-secondary" id="journal-cancel-edit" type="button" hidden>Cancel edit</button>
+              </div>
+            </form>
+
+            <div class="journal-list-wrap">
+              <div class="dashboard-subhead">
+                <h3>Recent entries</h3>
+                <span>Create, edit, and remove entries</span>
+              </div>
+              <div class="journal-list" id="journal-list"></div>
+            </div>
+          </article>
+
+          <article class="dashboard-card" id="dashboard-appointments">
+            <div class="dashboard-section-head">
+              <div>
+                <span class="dashboard-panel-kicker">Appointments</span>
+                <h2>Upcoming support sessions with clear next steps.</h2>
+              </div>
+              <button class="btn btn-secondary" id="appointment-request" type="button">Request new appointment</button>
+            </div>
+
+            <form class="appointment-reschedule-form" id="appointment-reschedule-form" hidden>
+              <div class="dashboard-subhead">
+                <h3>Reschedule appointment</h3>
+                <span>Choose a new time for your request</span>
+              </div>
+
+              <div class="appointment-reschedule-grid">
+                <label>
+                  <span>New date</span>
+                  <input id="appointment-date" name="date" type="date" required>
+                </label>
+
+                <label>
+                  <span>New time</span>
+                  <input id="appointment-time" name="time" type="time" required>
+                </label>
+              </div>
+
+              <div class="journal-form-actions">
+                <button class="btn btn-primary" type="submit">Save reschedule</button>
+                <button class="btn btn-secondary" id="appointment-cancel-reschedule" type="button">Cancel</button>
+              </div>
+            </form>
+
+            <div class="appointment-grid">
+              <div class="appointment-list" id="appointment-list"></div>
+
+              <aside class="appointment-detail" id="appointment-detail">
+                <div class="dashboard-subhead">
+                  <h3>Appointment view</h3>
+                  <span>Details, notes, and status</span>
+                </div>
+                <div id="appointment-detail-content"></div>
+              </aside>
+            </div>
+          </article>
+        </div>
+
+        <aside class="dashboard-secondary-column">
+          <article class="dashboard-card" id="dashboard-profile">
+            <div class="dashboard-section-head">
+              <div>
+                <span class="dashboard-panel-kicker">Personal details</span>
+                <h2>Your key information at a glance.</h2>
+              </div>
+              <button class="btn btn-secondary" id="profile-edit-toggle" type="button">Edit</button>
+            </div>
+
+            <div class="profile-summary">
+              <div><span>Name</span><strong id="profile-name"></strong></div>
+              <div><span>Email</span><strong id="profile-email"></strong></div>
+              <div><span>Phone</span><strong id="profile-phone"></strong></div>
+              <div><span>Emergency contact</span><strong id="profile-emergency"></strong></div>
+            </div>
+
+            <form class="profile-form" id="profile-form" hidden>
+              <label>
+                <span>Name</span>
+                <input id="profile-input-name" name="name" type="text" required>
+              </label>
+              <label>
+                <span>Email</span>
+                <input id="profile-input-email" name="email" type="email" required>
+              </label>
+              <label>
+                <span>Phone</span>
+                <input id="profile-input-phone" name="phone" type="tel" required>
+              </label>
+              <label>
+                <span>Emergency contact</span>
+                <input id="profile-input-emergency" name="emergency" type="text" placeholder="Optional">
+              </label>
+              <div class="journal-form-actions">
+                <button class="btn btn-primary" type="submit">Save details</button>
+                <button class="btn btn-secondary" id="profile-cancel-edit" type="button">Cancel</button>
+              </div>
+            </form>
+          </article>
+
+          <article class="dashboard-card" id="dashboard-resources">
+            <div class="dashboard-section-head">
+              <div>
+                <span class="dashboard-panel-kicker">Resources</span>
+                <h2>Supportive materials for everyday life.</h2>
+              </div>
+            </div>
+
+            <div class="resource-list">
+              <article class="resource-item">
+                <span>Personal practice</span>
+                <strong>3-minute breathing anchor for the middle of the day</strong>
+                <p>A short sequence to gently regulate your nervous system and attention.</p>
+              </article>
+              <article class="resource-item">
+                <span>Meditation</span>
+                <strong>Evening grounding before sleep</strong>
+                <p>A soft audio recommendation for more ease and a calmer end to the day.</p>
+              </article>
+              <article class="resource-item">
+                <span>Worksheet</span>
+                <strong>Triggers, needs, and self-connection</strong>
+                <p>A reflection sheet for pattern awareness, integration, and practical next steps.</p>
+              </article>
+              <article class="resource-item">
+                <span>Note</span>
+                <strong>A message from your therapist</strong>
+                <p>Notice the moments this week when you feel safe, soft, or clear, and write them down.</p>
+              </article>
+            </div>
+          </article>
+
+          <article class="dashboard-card" id="dashboard-progress">
+            <div class="dashboard-section-head">
+              <div>
+                <span class="dashboard-panel-kicker">Progress and reflection</span>
+                <h2>Gentle orientation instead of pressure.</h2>
+              </div>
+            </div>
+
+            <div class="progress-stats">
+              <div>
+                <span>Entries this month</span>
+                <strong id="progress-month-count">0</strong>
+              </div>
+              <div>
+                <span>Top tag</span>
+                <strong id="progress-top-tag">Not set yet</strong>
+              </div>
+              <div>
+                <span>Active appointments</span>
+                <strong id="progress-appointment-count">0</strong>
+              </div>
+            </div>
+
+            <div class="dashboard-subhead">
+              <h3>Recent mood entries</h3>
+              <span>A small timeline of your latest notes</span>
+            </div>
+            <div class="progress-timeline" id="progress-timeline"></div>
+          </article>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer site-footer--platform">
+      <div class="site-footer-grid">
+        <div>
+          <a class="brand brand-link site-footer-brand" href="index.html">
+            <div class="brand-mark"></div>
+            <span>Aurea</span>
+          </a>
+          <p>A personal user dashboard demo for journaling, appointments, resources, and protected progress history.</p>
+        </div>
+        <div>
+          <strong>Inside the user area</strong>
+          <p>Write in your journal<br>Manage appointments<br>Update your details<br>Open guided resources</p>
+        </div>
+        <div>
+          <strong>Navigation</strong>
+          <p><a href="platform.html" data-role-login-trigger>Switch role</a><br><a href="#dashboard-journal">Journal</a><br><a href="#dashboard-appointments">Appointments</a><br><a href="#dashboard-progress">Reflection</a></p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>

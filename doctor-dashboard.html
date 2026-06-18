@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Dashboard | Aurea</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body class="home-page platform-page portal-dashboard-page" data-portal-role="doctor">
+  <div class="page">
+    <header class="topbar">
+      <a class="brand brand-link" href="index.html">
+        <div class="brand-mark"></div>
+        <span>Aurea</span>
+      </a>
+
+      <div class="shell" id="site-shell">
+        <nav class="nav" id="site-nav">
+          <a class="active" href="#doctor-overview">Overview</a>
+          <a href="#doctor-today">Today</a>
+          <a href="#doctor-patients">Patients</a>
+          <a href="#doctor-notes">Notes</a>
+          <a href="#doctor-follow-up">Follow-up</a>
+        </nav>
+        <div class="icon-circle search-icon">⌕</div>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <a class="login-box is-active" href="doctor-dashboard.html" data-role-login-trigger>
+        <div class="icon-circle login-icon" aria-hidden="true"></div>
+        <div class="login-copy">
+          <strong>Doctor</strong>
+          <span>Role menu</span>
+        </div>
+      </a>
+
+      <a class="book-btn" href="index.html">Back to homepage</a>
+    </header>
+
+    <main class="platform-main dashboard-main">
+      <section class="dashboard-hero card dashboard-hero--doctor" id="doctor-overview">
+        <div class="dashboard-hero-grid">
+          <div class="dashboard-hero-copy">
+            <div class="subpage-breadcrumbs">
+              <a href="index.html">Home</a>
+              <span>/</span>
+              <span>Doctor Dashboard</span>
+            </div>
+
+            <span class="portal-kicker">Clinical area</span>
+            <h1>Your day board for care, notes, and appointments.</h1>
+            <p>The doctor area focuses on what matters most in the moment: who is coming in today, what needs documentation, and which follow-ups are still open.</p>
+
+            <div class="dashboard-hero-actions">
+              <a class="btn btn-primary" href="#doctor-today">View today</a>
+              <a class="btn btn-secondary" href="#doctor-notes">Review notes</a>
+            </div>
+
+            <div class="dashboard-quick-links">
+              <a href="#doctor-patients">Active cases</a>
+              <a href="#doctor-follow-up">Follow-ups</a>
+              <a href="#doctor-notes">Documentation</a>
+            </div>
+          </div>
+
+          <div class="dashboard-hero-panels">
+            <article class="dashboard-metric-card">
+              <span>Sessions today</span>
+              <strong>5</strong>
+              <p>Spread clearly across the day, from first intake to short follow-up check-ins.</p>
+            </article>
+
+            <article class="dashboard-metric-card">
+              <span>Open follow-ups</span>
+              <strong>3</strong>
+              <p>Messages, resources, or care questions are waiting for your reply.</p>
+            </article>
+
+            <article class="dashboard-metric-card">
+              <span>New updates</span>
+              <strong>2</strong>
+              <p>Two patients submitted fresh observations ahead of their next appointment.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-overview-grid">
+        <article class="dashboard-panel">
+          <span class="dashboard-panel-kicker">Focus today</span>
+          <h2>Calm operations come from keeping appointments, notes, and next steps in one place.</h2>
+          <p>The dashboard prioritizes orientation: first the day, then the case history, then the supporting materials.</p>
+        </article>
+
+        <article class="dashboard-panel dashboard-panel--doctor">
+          <span class="dashboard-panel-kicker">Care flow</span>
+          <h2>Before every session, the most relevant context is already visible.</h2>
+          <p>That keeps conversations connected and makes the handoff between digital preparation and in-person care feel intentional.</p>
+        </article>
+      </section>
+
+      <section class="dashboard-layout">
+        <div class="dashboard-primary-column">
+          <article class="dashboard-card" id="doctor-today">
+            <div class="dashboard-section-head">
+              <div>
+                <span class="dashboard-panel-kicker">Today</span>
+                <h2>Your schedule with the next sessions in view.</h2>
+              </div>
+            </div>
+
+            <div class="appointment-list">
+              <article class="appointment-item is-selected">
+                <div class="appointment-item-head">
+                  <div>
+                    <span class="appointment-status">09:00</span>
+                    <h3>Lena Berger</h3>
+                  </div>
+                  <strong>Follow-up</strong>
+                </div>
+                <p>Regulation support · Practice room 2</p>
+              </article>
+              <article class="appointment-item">
+                <div class="appointment-item-head">
+                  <div>
+                    <span class="appointment-status">11:30</span>
+                    <h3>Jonas Reiter</h3>
+                  </div>
+                  <strong>First consultation</strong>
+                </div>
+                <p>Integrative intake · Video session</p>
+              </article>
+              <article class="appointment-item">
+                <div class="appointment-item-head">
+                  <div>
+                    <span class="appointment-status">14:15</span>
+                    <h3>Clara Hoffmann</h3>
+                  </div>
+                  <strong>Check-in</strong>
+                </div>
+                <p>Breathwork support · Practice room 1</p>
+              </article>
+            </div>
+          </article>
+
+          <article class="dashboard-card" id="doctor-notes">
+            <div class="dashboard-section-head">
+              <div>
+                <span class="dashboard-panel-kicker">Documentation</span>
+                <h2>Clinical notes and observations at a glance.</h2>
+              </div>
+            </div>
+
+            <div class="resource-list">
+              <article class="resource-item">
+                <span>Preparation</span>
+                <strong>Lena Berger reports more calm in the morning.</strong>
+                <p>Her journal shows fewer stress spikes, but sleep still breaks in the second half of the night.</p>
+              </article>
+              <article class="resource-item">
+                <span>Note</span>
+                <strong>Jonas Reiter needs a gentle entry point without overload.</strong>
+                <p>The first consultation should focus on pace, orientation, and physical safety before going deeper into symptoms.</p>
+              </article>
+              <article class="resource-item">
+                <span>Aftercare</span>
+                <strong>Clara Hoffmann needs a short grounding resource sheet.</strong>
+                <p>After the session, a short breath and grounding sequence should be shared automatically.</p>
+              </article>
+            </div>
+          </article>
+        </div>
+
+        <aside class="dashboard-secondary-column">
+          <article class="dashboard-card" id="doctor-patients">
+            <div class="dashboard-section-head">
+              <div>
+                <span class="dashboard-panel-kicker">Patients</span>
+                <h2>Active cases today.</h2>
+              </div>
+            </div>
+
+            <div class="profile-summary">
+              <div><span>New</span><strong>1 first intake scheduled today</strong></div>
+              <div><span>Ongoing</span><strong>7 active care paths this week</strong></div>
+              <div><span>Urgent</span><strong>2 cases need a timely reply</strong></div>
+              <div><span>Resources</span><strong>4 tailored practices already prepared</strong></div>
+            </div>
+          </article>
+
+          <article class="dashboard-card" id="doctor-follow-up">
+            <div class="dashboard-section-head">
+              <div>
+                <span class="dashboard-panel-kicker">Follow-up</span>
+                <h2>Next steps after the sessions.</h2>
+              </div>
+            </div>
+
+            <div class="progress-timeline">
+              <article class="timeline-item">
+                <div class="timeline-item-head">
+                  <strong>Today</strong>
+                  <span>14:45</span>
+                </div>
+                <p>Send Clara Hoffmann the grounding resource sheet.</p>
+              </article>
+              <article class="timeline-item">
+                <div class="timeline-item-head">
+                  <strong>Tomorrow</strong>
+                  <span>09:00</span>
+                </div>
+                <p>Send Lena Berger a short check-in about sleep quality.</p>
+              </article>
+              <article class="timeline-item">
+                <div class="timeline-item-head">
+                  <strong>This week</strong>
+                  <span>Open</span>
+                </div>
+                <p>Approve the shared progress note for the care team.</p>
+              </article>
+            </div>
+          </article>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer site-footer--platform">
+      <div class="site-footer-grid">
+        <div>
+          <a class="brand brand-link site-footer-brand" href="index.html">
+            <div class="brand-mark"></div>
+            <span>Aurea</span>
+          </a>
+          <p>Doctor-facing workspace for care flow, appointment visibility, documentation, and follow-up in a calm operational structure.</p>
+        </div>
+        <div>
+          <strong>Inside the doctor dashboard</strong>
+          <p>Review the day plan<br>Check notes<br>Guide active cases<br>Manage follow-ups</p>
+        </div>
+        <div>
+          <strong>Quick access</strong>
+          <p><a href="platform.html">Admin</a><br><a href="user-dashboard.html">User</a><br><a href="doctor-dashboard.html" data-role-login-trigger>Switch role</a><br><a href="index.html">Homepage</a></p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>

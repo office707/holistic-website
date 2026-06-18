@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurea</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body class="home-page">
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <span>Aurea</span>
+      </div>
+
+      <div class="shell" id="site-shell">
+        <nav class="nav" id="site-nav">
+          <a class="active" href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="#">Therapies</a>
+          <a href="practitioners.html">Practitioners</a>
+          <a href="#">Journal</a>
+          <a href="faq.html">FAQ</a>
+          <a href="#">Contact</a>
+        </nav>
+        <div class="icon-circle search-icon">⌕</div>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <a class="login-box" href="platform.html" data-role-login-trigger>
+        <div class="icon-circle login-icon" aria-hidden="true"></div>
+        <div class="login-copy">
+          <strong>Login</strong>
+          <span>Open the secure portal</span>
+        </div>
+      </a>
+
+      <button class="book-btn">Book a Visit</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <article class="card hero-copy">
+          <div class="hero-toolbar">
+            <div class="pill">✦ Natural healing for modern life</div>
+
+            <div class="hero-theme-switch" aria-label="Color theme switcher">
+              <span>Palette</span>
+              <div class="hero-theme-options" role="group" aria-label="Hero color variants">
+                <button class="hero-theme-dot is-active" type="button" data-theme-choice="dusk" aria-pressed="true" aria-label="Use dusk theme"></button>
+                <button class="hero-theme-dot" type="button" data-theme-choice="sage" aria-pressed="false" aria-label="Use sage theme"></button>
+                <button class="hero-theme-dot" type="button" data-theme-choice="terracotta" aria-pressed="false" aria-label="Use terracotta theme"></button>
+              </div>
+            </div>
+          </div>
+
+          <h1>
+            Alternative medicine
+            for <span class="highlight">balance</span>
+            and everyday vitality
+          </h1>
+
+          <p>
+            Discover a calmer approach to wellbeing through herbal care,
+            acupuncture, breathwork, nutrition, and restorative therapies
+            tailored to your body, energy, and long-term routine.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#">Book a Session</a>
+            <a class="btn btn-secondary" href="#">Explore Therapies ›</a>
+          </div>
+
+          <div class="experts">
+            <div class="faces">
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=180&q=80" alt="Holistic practitioner portrait">
+              <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=180&q=80" alt="Wellness expert portrait">
+              <img src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&w=180&q=80" alt="Natural therapy specialist portrait">
+              <div class="doctor-badge">32+</div>
+            </div>
+            <div>
+              <strong>certified wellness practitioners</strong>
+              <span>Across 12 complementary disciplines</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="hero-visual">
+          <img class="hero-media" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1400&q=80" alt="Holistic consultation with tea and natural remedies">
+
+          <div class="rating">
+            <div class="rating-mark">⌖</div>
+            <div>
+              <strong>4.8 <span class="stars">★★★★★</span></strong>
+              <span>Community wellness rating</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-grid" id="about">
+        <article class="card small-card support-card">
+          <div class="support-copy">
+            <h2>Personal guidance with trust, attention, and calm support</h2>
+            <p>Practical follow-up after each visit to help new habits actually stick</p>
+          </div>
+          <div class="support-visual">
+            <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=900&q=80" alt="Two holistic practitioners smiling">
+          </div>
+        </article>
+
+        <article class="card small-card checklist-card">
+          <h2>Popular wellness paths:</h2>
+          <div class="chips">
+            <div class="chip">+ Herbal medicine</div>
+            <div class="chip">+ Acupuncture</div>
+            <div class="chip">+ Functional nutrition</div>
+            <div class="chip">+ Breath therapy</div>
+            <div class="chip">+ Stress recovery</div>
+            <div class="chip">+ Sleep support</div>
+            <div class="chip">+ Mind-body balance</div>
+          </div>
+          <a class="more-link" href="about.html">Learn more ›</a>
+        </article>
+
+        <article class="card small-card quality-card">
+          <h2>Thoughtful alternative care with clear professional standards</h2>
+          <p>Ongoing training, careful intake, and personalized plans rooted in whole-body wellbeing</p>
+        </article>
+      </section>
+
+      <section class="services-section">
+        <article class="card services-hero">
+          <div class="services-intro">
+            <div class="pill">✦ Services</div>
+            <h2>A wide spectrum of integrative wellness services</h2>
+
+            <div class="services-grid">
+              <article class="service-tile">
+                <div class="service-top">
+                  <span>☯</span>
+                  <span class="service-arrow">↗</span>
+                </div>
+                <h3>Adult wellness care</h3>
+              </article>
+
+              <article class="service-tile">
+                <div class="service-top">
+                  <span>◎</span>
+                  <span class="service-arrow">↗</span>
+                </div>
+                <h3>Family and child support</h3>
+              </article>
+
+              <article class="service-tile is-active">
+                <div class="service-top">
+                  <span>◫</span>
+                  <span class="service-arrow">↗</span>
+                </div>
+                <h3>Day retreat programs</h3>
+              </article>
+
+              <article class="service-tile">
+                <div class="service-top">
+                  <span>◌</span>
+                  <span class="service-arrow">↗</span>
+                </div>
+                <h3>Guided treatment rooms</h3>
+              </article>
+
+              <article class="service-tile">
+                <div class="service-top">
+                  <span>▣</span>
+                  <span class="service-arrow">↗</span>
+                </div>
+                <h3>Body scan and energy assessment</h3>
+              </article>
+
+              <article class="service-tile">
+                <div class="service-top">
+                  <span>◍</span>
+                  <span class="service-arrow">↗</span>
+                </div>
+                <h3>Functional imaging review</h3>
+              </article>
+
+              <article class="service-tile">
+                <div class="service-top">
+                  <span>✚</span>
+                  <span class="service-arrow">↗</span>
+                </div>
+                <h3>Vitality diagnostics</h3>
+              </article>
+
+              <article class="service-tile">
+                <div class="service-top">
+                  <span>⌂</span>
+                  <span class="service-arrow">↗</span>
+                </div>
+                <h3>In-home wellness visits</h3>
+              </article>
+            </div>
+          </div>
+
+          <div class="services-side">
+            <img class="service-portrait" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80" alt="Smiling practitioner portrait">
+          </div>
+        </article>
+
+        <div class="services-bottom">
+          <article class="card lab-image-card">
+            <img src="https://images.unsplash.com/photo-1579165466741-7f35e4755660?auto=format&fit=crop&w=1200&q=80" alt="Blood draw and laboratory sample collection">
+          </article>
+
+          <article class="card lab-copy-card">
+            <h3>Express assessments</h3>
+            <p>
+              We offer a focused range of wellness screening services designed to help spot imbalances early, track recovery, and give practitioners faster insight into stress, energy, and nutritional needs.
+            </p>
+            <div class="lab-actions">
+              <a class="btn btn-primary" href="#">Book Now</a>
+              <a class="btn btn-secondary" href="#">Learn More ›</a>
+            </div>
+          </article>
+
+          <article class="card service-tags-card">
+            <div class="service-chip">+ Blood wellness panel</div>
+            <div class="service-chip">+ Vitamins</div>
+            <div class="service-chip">+ Enzymes</div>
+            <div class="service-chip">+ Specific proteins</div>
+            <div class="service-chip">+ Hormonal insights</div>
+            <div class="service-chip">+ Immune balance</div>
+            <div class="service-chip service-more">More ↗</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="practitioners-section practitioners-section--landing">
+        <div class="practitioners-head">
+          <div class="pill">✦ Practitioners</div>
+          <h2>Meet the clinic practitioners</h2>
+          <p>Start with a few core specialists here, then open the full directory to compare locations, focus areas, and availability.</p>
+        </div>
+
+        <div class="practitioners-layout practitioners-layout--landing">
+          <div class="practitioners-track practitioners-track--landing">
+            <article class="practitioner-card">
+              <div class="practitioner-photo">
+                <img class="photo-left" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1000&q=80" alt="Dr. Elena Markova portrait">
+              </div>
+              <div class="practitioner-badge">Functional Medicine</div>
+              <h3>Dr. Elena Markova</h3>
+              <p class="practitioner-location">Metabolic health and recovery planning</p>
+            </article>
+
+            <article class="practitioner-card">
+              <div class="practitioner-photo">
+                <img class="photo-center" src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1000&q=80" alt="Dr. Julia Soren portrait">
+              </div>
+              <div class="practitioner-badge">Herbal Therapy</div>
+              <h3>Dr. Julia Soren</h3>
+              <p class="practitioner-location">Plant-based protocols and digestive support</p>
+            </article>
+
+            <article class="practitioner-card is-featured">
+              <div class="practitioner-arrow">↗</div>
+              <div class="practitioner-photo">
+                <img class="photo-right" src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&w=1000&q=80" alt="Dr. Tatiana Lee portrait">
+              </div>
+              <div class="practitioner-badge">Pediatrics</div>
+              <h3>Dr. Tatiana Lee</h3>
+              <p class="practitioner-location">Child development, sleep, and family routines</p>
+            </article>
+
+            <article class="practitioner-card">
+              <div class="practitioner-photo">
+                <img class="photo-center" src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=1000&q=80" alt="Dr. Liana Morel portrait">
+              </div>
+              <div class="practitioner-badge">Ultrasound</div>
+              <h3>Dr. Liana Morel</h3>
+              <p class="practitioner-location">Imaging reviews and structured follow-up</p>
+            </article>
+          </div>
+
+          <aside class="card practitioners-directory-teaser">
+            <div>
+              <span class="practitioner-map-kicker">Full Directory</span>
+              <h3>Browse all practitioners on a dedicated page</h3>
+              <p>See more doctors, filter by specialty or location, and switch the Google Maps view based on the profile you choose.</p>
+            </div>
+
+            <div class="directory-teaser-stats">
+              <div>
+                <strong>18</strong>
+                <span>practitioners</span>
+              </div>
+              <div>
+                <strong>6</strong>
+                <span>specialties</span>
+              </div>
+              <div>
+                <strong>3</strong>
+                <span>clinic areas</span>
+              </div>
+            </div>
+
+            <a class="btn btn-primary" href="practitioners.html">Open Practitioner Directory</a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="testimonials-section">
+        <div class="testimonials-layout">
+          <div class="testimonials-intro">
+            <div class="pill">✦ Reviews</div>
+            <h2>Honest opinions about our clinic</h2>
+            <p>Share your experience with the clinic and help others choose the right kind of care.</p>
+            <a class="btn btn-primary" href="#">Leave Feedback</a>
+          </div>
+
+          <div>
+            <div class="testimonials-list">
+              <article class="testimonial-card">
+                <div class="testimonial-head">
+                  <div class="testimonial-person">
+                    <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Reviewer portrait">
+                    <div>
+                      <strong>Elena Losenko</strong>
+                      <div class="testimonial-stars">★★★★★</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-date">September 26, 2023</div>
+                </div>
+                <p>We have been visiting this clinic as a family for quite a long time. What stands out most is the wide range of services, from lab work and diagnostics to specialist consultations. The practitioners are attentive, clear, and genuinely helpful.</p>
+                <a class="testimonial-link" href="#">Read full review</a>
+              </article>
+
+              <article class="testimonial-card">
+                <div class="testimonial-head">
+                  <div class="testimonial-person">
+                    <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Reviewer portrait">
+                    <div>
+                      <strong>Angelina Aks</strong>
+                      <div class="testimonial-stars">★★★★★</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-date">April 15</div>
+                </div>
+                <p>This is the most grounded and professional wellness clinic I have visited. Everything runs on time, the space is calm and clean, and the staff explain every step without pressure. I felt listened to instead of rushed.</p>
+                <a class="testimonial-link" href="#">Read full review</a>
+              </article>
+
+              <article class="testimonial-card">
+                <div class="testimonial-head">
+                  <div class="testimonial-person">
+                    <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="Reviewer portrait">
+                    <div>
+                      <strong>Zhanna Sokratova</strong>
+                      <div class="testimonial-stars">★★★★★</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-date">October 23, 2023</div>
+                </div>
+                <p>I started coming here recently and have been impressed by the atmosphere, the thoughtful specialists, and the overall level of care. Appointments are well organized and the recommendations feel personalized rather than generic.</p>
+                <a class="testimonial-link" href="#">Read full review</a>
+              </article>
+            </div>
+
+            <div class="testimonials-more">
+              <a class="btn btn-secondary" href="#">Show More</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="updates-section">
+        <div class="promo-strip">
+          <article class="promo-image-card">
+            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1200&q=80" alt="Ultrasound consultation">
+          </article>
+
+          <article class="promo-copy-card">
+            <h2>Ultrasound screening</h2>
+            <p>We use modern equipment and careful diagnostic protocols to support accurate screening, earlier intervention, and more confident treatment decisions for every patient.</p>
+            <div class="promo-actions">
+              <a class="btn btn-primary" href="#">Book Now</a>
+              <a class="btn btn-secondary" href="#">Learn More ›</a>
+            </div>
+          </article>
+        </div>
+
+        <section class="news-section">
+          <div class="news-head">
+            <div class="pill">✦ News</div>
+            <h2>Latest publications</h2>
+            <div class="news-nav">
+              <a class="news-nav-btn" href="#">←</a>
+              <a class="news-nav-btn" href="#">→</a>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <article class="news-card">
+              <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=1200&q=80" alt="Child consultation article">
+              <div class="news-card-body">
+                <h3>Pediatric care at Aurea Clinic</h3>
+                <p>We are proud to bring together an attentive team of child-focused practitioners ready to support early development, calm routines, and family wellbeing.</p>
+                <div class="news-meta">
+                  <a class="news-read" href="#">Read more ›</a>
+                  <div class="news-stats"><span>30.07.2025</span><span>◉ 168</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="news-card">
+              <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80" alt="Specialist appointment article">
+              <div class="news-card-body">
+                <h3>New specialist booking window now open</h3>
+                <p>Appointments are now available for a focused integrative consultation led by our visiting practitioner team, with expanded intake options this month.</p>
+                <div class="news-meta">
+                  <a class="news-read" href="#">Read more ›</a>
+                  <div class="news-stats"><span>24.07.2025</span><span>◉ 18</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="news-card">
+              <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=80" alt="Massage therapy article">
+              <div class="news-card-body">
+                <h3>Massage therapy joins our wellness program</h3>
+                <p>A new bodywork offering is now available in the clinic, combining recovery massage, stress relief, and supportive treatment for physical tension.</p>
+                <div class="news-meta">
+                  <a class="news-read" href="#">Read more ›</a>
+                  <div class="news-stats"><span>10.07.2025</span><span>◉ 8</span></div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer site-footer--home">
+      <div class="site-footer-grid">
+        <div>
+          <a class="brand brand-link site-footer-brand" href="index.html">
+            <div class="brand-mark"></div>
+            <span>Aurea</span>
+          </a>
+          <p>A calm alternative medicine clinic for recovery, diagnostics, and long-view care.</p>
+        </div>
+        <div>
+          <strong>Visit</strong>
+          <p>214 Cedar Grove, Suite 5<br>San Francisco, CA</p>
+        </div>
+        <div>
+          <strong>Contact</strong>
+          <p>+1 (415) 555-2184<br>hello@holistic-care.com</p>
+        </div>
+        <div>
+          <strong>Explore</strong>
+          <p><a href="about.html">About</a><br><a href="practitioners.html">Practitioners</a><br><a href="faq.html">FAQ</a><br><a href="platform.html">Platform</a></p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>

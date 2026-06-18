@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Aurea</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body class="home-page platform-page" data-portal-role="admin">
+  <div class="page">
+    <header class="topbar">
+      <a class="brand brand-link" href="index.html">
+        <div class="brand-mark"></div>
+        <span>Aurea</span>
+      </a>
+
+      <div class="shell" id="site-shell">
+        <nav class="nav" id="site-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="index.html">Therapies</a>
+          <a href="practitioners.html">Practitioners</a>
+          <a href="index.html">Journal</a>
+          <a href="faq.html">FAQ</a>
+          <a href="index.html">Contact</a>
+        </nav>
+        <div class="icon-circle search-icon">⌕</div>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <a class="login-box is-active" href="platform.html" data-role-login-trigger>
+        <div class="icon-circle login-icon" aria-hidden="true"></div>
+        <div class="login-copy">
+          <strong>Admin</strong>
+          <span>Role menu</span>
+        </div>
+      </a>
+
+      <a class="book-btn" href="index.html">Back to homepage</a>
+    </header>
+
+    <main class="platform-main">
+      <section class="subpage-hero subpage-hero--platform card" id="admin-overview">
+        <div class="subpage-hero-grid">
+          <div class="subpage-hero-copy">
+            <div class="subpage-breadcrumbs">
+              <a href="index.html">Home</a>
+              <span>/</span>
+              <span>Admin Dashboard</span>
+            </div>
+            <span class="subpage-hero-kicker">Admin workspace</span>
+            <h1>A calmer clinic backend for practitioners, bookings, and incoming requests.</h1>
+            <p>This is the admin-facing area for overseeing doctors, content, appointments, and platform flow inside one shared operational system.</p>
+
+            <nav class="subpage-hero-links" aria-label="Admin dashboard sections">
+              <a href="#admin-modules">Main modules</a>
+              <a href="#admin-roles">Roles</a>
+              <a href="#admin-next-step">Next step</a>
+            </nav>
+          </div>
+
+          <div class="subpage-hero-visual subpage-hero-visual--ui">
+            <article class="subpage-hero-ui-card subpage-hero-ui-card--wide">
+              <span class="subpage-hero-ui-kicker">Unified dashboard</span>
+              <strong>One view for doctors, content, bookings, and requests</strong>
+              <div class="subpage-hero-ui-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </article>
+
+            <div class="subpage-hero-ui-grid">
+              <article class="subpage-hero-ui-card">
+                <span class="subpage-hero-ui-kicker">Practitioners</span>
+                <strong>18 profiles</strong>
+                <p>Availability, bios, and specialties in one place.</p>
+              </article>
+              <article class="subpage-hero-ui-card">
+                <span class="subpage-hero-ui-kicker">Inquiries</span>
+                <strong>26 this week</strong>
+                <p>Triage requests before they hit the calendar.</p>
+              </article>
+            </div>
+
+            <div class="subpage-hero-badge">
+              <strong>4</strong>
+              <span>Core roles inside the platform</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="subpage-hero-metrics">
+          <div class="subpage-hero-metric">
+            <strong>1 shared system</strong>
+            <span>Doctors, content, inquiries, and scheduling inside one structure.</span>
+          </div>
+          <div class="subpage-hero-metric">
+            <strong>4 core roles</strong>
+            <span>Owner or admin, practitioner, content editor, and front desk.</span>
+          </div>
+          <div class="subpage-hero-metric">
+            <strong>Built for growth</strong>
+            <span>Clean enough for internal use now, expandable later if needed.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="platform-boards" id="admin-modules">
+        <div class="platform-section-head">
+          <div class="pill">✦ Main Modules</div>
+          <h2>The main areas a clinic owner would actually open every day.</h2>
+          <p>Each module is designed around daily admin work: practitioner data, booking flow, incoming requests, and editorial content.</p>
+        </div>
+
+        <div class="platform-board-grid">
+          <article class="platform-board-card">
+            <div class="platform-board-head">
+              <span class="platform-board-icon">✦</span>
+              <strong>Practitioner Management</strong>
+            </div>
+            <div class="platform-board-search">Search doctor, specialty, or clinic area</div>
+            <div class="platform-chip-row">
+              <span>Functional Medicine</span>
+              <span>Acupuncture</span>
+              <span>Herbal Therapy</span>
+            </div>
+            <div class="platform-person-list">
+              <div class="platform-person-item">
+                <strong>Dr. Elena Markova</strong>
+                <span>Profile complete · Downtown · 98%</span>
+              </div>
+              <div class="platform-person-item">
+                <strong>Dr. Julia Soren</strong>
+                <span>Needs journal bio update · Northside</span>
+              </div>
+              <div class="platform-person-item">
+                <strong>Dr. Tatiana Lee</strong>
+                <span>Accepting new patients · Pediatrics</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="platform-board-card">
+            <div class="platform-board-head">
+              <span class="platform-board-icon">◫</span>
+              <strong>Bookings & Calendar</strong>
+            </div>
+            <div class="platform-calendar">
+              <span></span><span></span><span class="is-filled"></span><span></span><span></span>
+              <span></span><span class="is-selected"></span><span class="is-filled"></span><span></span><span></span>
+              <span></span><span></span><span></span><span class="is-filled"></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="platform-slot-list">
+              <div><strong>09:00</strong><span>First consult available</span></div>
+              <div><strong>10:30</strong><span>Booked with Dr. Lee</span></div>
+              <div><strong>14:00</strong><span>Follow-up available</span></div>
+            </div>
+          </article>
+
+          <article class="platform-board-card">
+            <div class="platform-board-head">
+              <span class="platform-board-icon">◎</span>
+              <strong>Patient Requests</strong>
+            </div>
+            <div class="platform-score-card">
+              <strong>26</strong>
+              <span>new inquiries this week</span>
+            </div>
+            <div class="platform-request-list">
+              <div>
+                <strong>Fatigue + hormone support</strong>
+                <span>Needs triage before booking</span>
+              </div>
+              <div>
+                <strong>Digestive care for child</strong>
+                <span>Suggested route: Pediatrics</span>
+              </div>
+              <div>
+                <strong>Stress, insomnia, migraines</strong>
+                <span>Suggested route: Acupuncture</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="platform-board-card">
+            <div class="platform-board-head">
+              <span class="platform-board-icon">▣</span>
+              <strong>Journal & Knowledge Base</strong>
+            </div>
+            <div class="platform-article-list">
+              <article>
+                <strong>What an integrative intake looks like</strong>
+                <span>Draft · assigned to editor</span>
+              </article>
+              <article>
+                <strong>When herbal medicine fits inside a care plan</strong>
+                <span>Ready to publish</span>
+              </article>
+              <article>
+                <strong>Acupuncture for pain and stress recovery</strong>
+                <span>Needs doctor review</span>
+              </article>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="platform-workspace">
+        <article class="platform-workspace-card platform-workspace-card--wide">
+          <div class="platform-workspace-head">
+            <div>
+              <span class="platform-panel-kicker">Admin Overview</span>
+              <h2>One dashboard to oversee clinic operations without losing the calm clinic feel.</h2>
+            </div>
+            <a class="platform-inline-link" href="practitioners.html">Use practitioner data from directory ›</a>
+          </div>
+
+          <div class="platform-stat-grid">
+            <div class="platform-stat-card">
+              <span>Pending doctor edits</span>
+              <strong>4</strong>
+              <p>Profile image, bio, services, and map details waiting for approval.</p>
+            </div>
+            <div class="platform-stat-card">
+              <span>Content pipeline</span>
+              <strong>7</strong>
+              <p>Drafts across journal, FAQ, and homepage updates.</p>
+            </div>
+            <div class="platform-stat-card">
+              <span>Unread inquiries</span>
+              <strong>11</strong>
+              <p>Contact forms and intake requests not yet assigned.</p>
+            </div>
+            <div class="platform-stat-card">
+              <span>Bookings to confirm</span>
+              <strong>8</strong>
+              <p>New appointments that need practitioner confirmation.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="platform-workspace-card">
+          <span class="platform-panel-kicker">Content CMS</span>
+          <h3>What could be edited inside the system</h3>
+          <div class="platform-check-list">
+            <div>Journal posts and article scheduling</div>
+            <div>Practitioner bios, specialties, and profile photos</div>
+            <div>Clinic FAQ answers and homepage sections</div>
+            <div>Inquiries, tags, status, and internal notes</div>
+            <div>Location details, booking links, and availability labels</div>
+          </div>
+        </article>
+      </section>
+
+      <section class="platform-roles" id="admin-roles">
+        <div class="platform-section-head platform-section-head--compact">
+          <div class="pill">✦ Roles & Permissions</div>
+          <h2>A simple role-based structure before a full patient portal even exists.</h2>
+          <p>The internal system can stay lightweight now, while still separating ownership, responsibilities, and access levels.</p>
+        </div>
+
+        <div class="platform-role-grid">
+          <article class="platform-role-card">
+            <span class="platform-panel-kicker">Owner / Admin</span>
+            <strong>Everything from settings to approvals.</strong>
+            <p>Oversees platform structure, access, scheduling rules, and overall clinic operations.</p>
+          </article>
+          <article class="platform-role-card">
+            <span class="platform-panel-kicker">Practitioner</span>
+            <strong>Focused patient and schedule visibility.</strong>
+            <p>Sees appointments, selected notes, and resources relevant to their own practice area.</p>
+          </article>
+          <article class="platform-role-card">
+            <span class="platform-panel-kicker">Content Editor</span>
+            <strong>Journal, FAQ, and homepage updates.</strong>
+            <p>Manages editorial sections without touching sensitive operational data.</p>
+          </article>
+          <article class="platform-role-card">
+            <span class="platform-panel-kicker">Front Desk</span>
+            <strong>Requests, messages, and booking flow.</strong>
+            <p>Handles incoming inquiries, scheduling coordination, and status updates throughout the day.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="platform-roadmap">
+        <article class="platform-roadmap-card">
+          <span class="platform-panel-kicker">Phase 1</span>
+          <h3>Internal CRM</h3>
+          <p>Doctors, content, room bookings, and contact form requests all in one place.</p>
+        </article>
+        <article class="platform-roadmap-card">
+          <span class="platform-panel-kicker">Phase 2</span>
+          <h3>Secure practitioner login</h3>
+          <p>Role-aware access for doctor-specific scheduling, notes, and workflow updates.</p>
+        </article>
+        <article class="platform-roadmap-card">
+          <span class="platform-panel-kicker">Phase 3</span>
+          <h3>Patient portal</h3>
+          <p>Only if the clinic truly needs private user messaging, saved recommendations, or account-based progress tracking.</p>
+        </article>
+      </section>
+
+      <section class="platform-contact" id="admin-next-step">
+        <div>
+          <div class="pill">✦ Next Step</div>
+          <h2>If this direction feels right, the next move would be to define the exact modules and permissions.</h2>
+          <p>A future-facing admin area for practitioners, content, bookings, and incoming requests that still feels aligned with the main Aurea language.</p>
+        </div>
+
+        <div class="platform-contact-actions">
+          <a class="btn btn-primary" href="platform.html" data-role-login-trigger>Back to role login</a>
+          <a class="btn btn-secondary" href="about.html">About the clinic</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer site-footer--platform">
+      <div class="site-footer-grid">
+        <div>
+          <a class="brand brand-link site-footer-brand" href="index.html">
+            <div class="brand-mark"></div>
+            <span>Aurea</span>
+          </a>
+          <p>An admin dashboard concept for practitioners, content, bookings, and protected operational flow.</p>
+        </div>
+        <div>
+          <strong>Preview Includes</strong>
+          <p>Clinic operations<br>Doctor management<br>Role logic<br>Content system</p>
+        </div>
+        <div>
+          <strong>Continue</strong>
+          <p><a href="user-dashboard.html">User dashboard</a><br><a href="doctor-dashboard.html">Doctor dashboard</a><br><a href="platform.html" data-role-login-trigger>Switch role</a><br><a href="faq.html">FAQ</a></p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>
