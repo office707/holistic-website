@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #f4f3ee;
   --surface: #eee8de;
   --surface-alt: #f8f8f4;
@@ -1719,7 +1719,7 @@ body {
     }
 
     .brand-mark::before {
-      content: "A";
+      content: "N";
       position: relative;
       width: auto;
       height: auto;
@@ -13729,4 +13729,66 @@ body.has-role-login-open {
   .dashboard-subhead span {
     white-space: normal;
   }
+}
+
+/* About page: compact, consistent mobile rhythm. */
+@media (max-width: 760px) {
+  .about-page .about-main { gap: 32px; }
+  .about-page .about-page-intro,
+  .about-page .about-section,
+  .about-page .about-contact { margin-inline: 12px; }
+  .about-page .about-page-intro { gap: 14px; padding: 18px; border-radius: 26px; }
+  .about-page .about-page-intro-layout,
+  .about-page .about-story-layout,
+  .about-page .about-model-layout,
+  .about-page .about-team-layout,
+  .about-page .about-contact-grid { grid-template-columns: minmax(0, 1fr); }
+  .about-page .about-page-intro-copy h1 { max-width: none; margin: 14px 0 12px; font-size: clamp(38px, 12vw, 48px); line-height: 1.02; }
+  .about-page .about-page-intro-copy p,
+  .about-page .about-section-head p,
+  .about-page .about-values-copy p,
+  .about-page .about-story-prose p,
+  .about-page .about-contact-card p { font-size: 16px; line-height: 1.6; }
+  .about-page .about-page-intro-meta,
+  .about-page .about-anchor-grid,
+  .about-page .about-values-grid,
+  .about-page .about-mini-grid,
+  .about-page .about-story-stats,
+  .about-page .about-team-facts,
+  .about-page .about-contact-points { grid-template-columns: minmax(0, 1fr); }
+  .about-page .about-page-intro-visual { min-height: 390px; border-radius: 24px; }
+  .about-page .about-page-intro-note { left: 14px; right: 14px; bottom: 14px; max-width: none; padding: 18px; border-radius: 20px; }
+  .about-page .about-page-intro-links { grid-template-columns: minmax(0, 1fr); }
+  .about-page .about-page-intro-links a,
+  .about-page .about-contact-actions .btn { width: 100%; justify-content: center; text-align: center; }
+  .about-page .about-anchor-card,
+  .about-page .about-story-prose,
+  .about-page .about-story-rail,
+  .about-page .about-value-card,
+  .about-page .about-team-standard-card,
+  .about-page .about-mini-practitioner,
+  .about-page .about-mini-directory,
+  .about-page .about-pullquote,
+  .about-page .about-experience-item,
+  .about-page .about-contact-card { padding: 22px; border-radius: 24px; }
+  .about-page .about-section-head h2,
+  .about-page .about-values-copy h2,
+  .about-page .about-team-standard-card h2,
+  .about-page .about-contact-card h2 { font-size: clamp(30px, 9vw, 38px); line-height: 1.08; }
+}
+@media (max-width: 420px) {
+  .about-page .about-page-intro,
+  .about-page .about-section,
+  .about-page .about-contact { margin-inline: 8px; }
+  .about-page .about-page-intro-visual { min-height: 360px; }
+  .about-page .about-anchor-card,
+  .about-page .about-story-prose,
+  .about-page .about-story-rail,
+  .about-page .about-value-card,
+  .about-page .about-team-standard-card,
+  .about-page .about-mini-practitioner,
+  .about-page .about-mini-directory,
+  .about-page .about-pullquote,
+  .about-page .about-experience-item,
+  .about-page .about-contact-card { padding: 20px; }
 }

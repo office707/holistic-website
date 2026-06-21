@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="aurea-gold" x1="12" y1="10" x2="52" y2="54" gradientUnits="userSpaceOnUse">
+    <linearGradient id="norbu-gold" x1="12" y1="10" x2="52" y2="54" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#b78322"/>
       <stop offset="0.55" stop-color="#ddb75a"/>
       <stop offset="1" stop-color="#f6e29d"/>
     </linearGradient>
-    <radialGradient id="aurea-shine" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(46 18) rotate(90) scale(8)">
+    <radialGradient id="norbu-shine" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(46 18) rotate(90) scale(8)">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
       <stop offset="0.45" stop-color="#ffffff" stop-opacity="0.45"/>
       <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
     </radialGradient>
   </defs>
-  <rect x="4" y="4" width="56" height="56" rx="18" fill="url(#aurea-gold)"/>
+  <rect x="4" y="4" width="56" height="56" rx="18" fill="url(#norbu-gold)"/>
   <rect x="4.5" y="4.5" width="55" height="55" rx="17.5" fill="none" stroke="#8c6620" stroke-opacity="0.18"/>
-  <path d="M23 46 32 18 41 46M26 37h12" fill="none" stroke="#ffffff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="46" cy="18" r="8" fill="url(#aurea-shine)"/>
+  <path d="M22 46V18L42 46V18" fill="none" stroke="#ffffff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="46" cy="18" r="8" fill="url(#norbu-shine)"/>
 </svg>
