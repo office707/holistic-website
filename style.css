@@ -19,6 +19,197 @@
   --brand-gold-shadow: rgba(139, 101, 22, 0.24);
 }
 
+/* Review flow and clinical journal additions */
+.review-modal[hidden] {
+  display: none;
+}
+
+.review-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.review-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(21, 25, 23, 0.68);
+  backdrop-filter: blur(6px);
+}
+
+.review-modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(680px, 100%);
+  max-height: min(820px, calc(100vh - 48px));
+  overflow-y: auto;
+  border-radius: 28px;
+  padding: clamp(28px, 5vw, 48px);
+  background: #f8f5ef;
+  box-shadow: 0 28px 80px rgba(21, 25, 23, 0.28);
+}
+
+.review-modal__dialog h2 {
+  margin: 10px 0 12px;
+}
+
+.review-modal__dialog > p {
+  margin: 0 0 24px;
+  color: #5f645f;
+}
+
+.review-modal__close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(58, 73, 63, 0.1);
+  color: #26332b;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.has-review-modal-open {
+  overflow: hidden;
+}
+
+.review-form {
+  display: grid;
+  gap: 18px;
+}
+
+.review-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.review-form label {
+  display: grid;
+  gap: 8px;
+  color: #344139;
+  font-weight: 700;
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea {
+  width: 100%;
+  border: 1px solid rgba(52, 65, 57, 0.2);
+  border-radius: 14px;
+  padding: 13px 14px;
+  background: #fff;
+  color: #26332b;
+  font: inherit;
+}
+
+.review-form textarea {
+  resize: vertical;
+}
+
+.review-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.review-form__status {
+  min-height: 1.5em;
+  margin: 0;
+  color: #3e6551;
+  font-weight: 700;
+}
+
+.testimonial-avatar--initial {
+  display: grid;
+  place-items: center;
+  background: #dce7df;
+  color: #365344;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.testimonial-practitioner {
+  display: block;
+  margin-top: 4px;
+  color: #6c756f;
+  font-size: 13px;
+}
+
+.directory-card-rating {
+  margin-top: 14px;
+  color: #4c6b59;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.directory-review-summary {
+  display: grid;
+  gap: 4px;
+  margin: 20px 0;
+  border: 1px solid rgba(70, 91, 78, 0.14);
+  border-radius: 16px;
+  padding: 14px 16px;
+  background: rgba(226, 235, 228, 0.5);
+}
+
+.directory-review-summary span {
+  color: #657068;
+  font-size: 13px;
+}
+
+.doctor-journal-patient {
+  display: grid;
+  gap: 5px;
+  margin-bottom: 18px;
+  border-radius: 18px;
+  padding: 18px;
+  background: rgba(226, 235, 228, 0.52);
+}
+
+.doctor-journal-patient span {
+  color: #6b756e;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.doctor-journal-patient strong {
+  font-size: 20px;
+}
+
+.doctor-journal-patient p {
+  margin: 0;
+  color: #657068;
+}
+
+.journal-entry--clinical .journal-entry-footer {
+  justify-content: flex-start;
+}
+
+@media (max-width: 640px) {
+  .review-modal {
+    padding: 12px;
+  }
+
+  .review-modal__dialog {
+    max-height: calc(100vh - 24px);
+    border-radius: 22px;
+    padding: 28px 20px;
+  }
+
+  .review-form__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .home-page,
 .directory-page {
   --bg: #d8d1c8;

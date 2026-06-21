@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Doctor Dashboard | Aurea</title>
+  <title>Doctor Dashboard | Norbu</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
@@ -12,7 +12,7 @@
     <header class="topbar">
       <a class="brand brand-link" href="index.html">
         <div class="brand-mark"></div>
-        <span>Aurea</span>
+        <span>Norbu</span>
       </a>
 
       <div class="shell" id="site-shell">
@@ -20,6 +20,7 @@
           <a class="active" href="#doctor-overview">Overview</a>
           <a href="#doctor-today">Today</a>
           <a href="#doctor-patients">Patients</a>
+          <a href="#doctor-journal">Journal</a>
           <a href="#doctor-notes">Notes</a>
           <a href="#doctor-follow-up">Follow-up</a>
         </nav>
@@ -174,6 +175,23 @@
               </article>
             </div>
           </article>
+
+          <article class="dashboard-card" id="doctor-journal" data-doctor-journal>
+            <div class="dashboard-section-head">
+              <div>
+                <span class="dashboard-panel-kicker">Patient journal</span>
+                <h2>Patient observations for clinical review.</h2>
+              </div>
+              <div class="dashboard-head-meta" id="doctor-journal-count">0 entries</div>
+            </div>
+
+            <div class="doctor-journal-patient">
+              <span>Current patient</span>
+              <strong id="doctor-journal-patient-name">Lena Berger</strong>
+              <p>Entries are read-only here and remain editable only inside the patient's personal area.</p>
+            </div>
+            <div class="journal-list doctor-journal-list" id="doctor-journal-list"></div>
+          </article>
         </div>
 
         <aside class="dashboard-secondary-column">
@@ -234,7 +252,7 @@
         <div>
           <a class="brand brand-link site-footer-brand" href="index.html">
             <div class="brand-mark"></div>
-            <span>Aurea</span>
+            <span>Norbu</span>
           </a>
           <p>Doctor-facing workspace for care flow, appointment visibility, documentation, and follow-up in a calm operational structure.</p>
         </div>

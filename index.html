@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aurea</title>
+  <title>Norbu</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
@@ -12,7 +12,7 @@
     <header class="topbar">
       <div class="brand">
         <div class="brand-mark"></div>
-        <span>Aurea</span>
+        <span>Norbu</span>
       </div>
 
       <div class="shell" id="site-shell">
@@ -21,9 +21,7 @@
           <a href="about.html">About</a>
           <a href="#">Therapies</a>
           <a href="practitioners.html">Practitioners</a>
-          <a href="#">Journal</a>
           <a href="faq.html">FAQ</a>
-          <a href="#">Contact</a>
         </nav>
         <div class="icon-circle search-icon">⌕</div>
         <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
@@ -321,11 +319,11 @@
             <div class="pill">✦ Reviews</div>
             <h2>Honest opinions about our clinic</h2>
             <p>Share your experience with the clinic and help others choose the right kind of care.</p>
-            <a class="btn btn-primary" href="#">Leave Feedback</a>
+            <button class="btn btn-primary" type="button" data-review-open>Leave Feedback</button>
           </div>
 
           <div>
-            <div class="testimonials-list">
+            <div class="testimonials-list" id="testimonials-list">
               <article class="testimonial-card">
                 <div class="testimonial-head">
                   <div class="testimonial-person">
@@ -379,6 +377,58 @@
         </div>
       </section>
 
+      <div class="review-modal" id="review-modal" hidden>
+        <div class="review-modal__backdrop" data-review-close></div>
+        <div class="review-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="review-title">
+          <button class="review-modal__close" type="button" aria-label="Close review form" data-review-close>&times;</button>
+          <span class="dashboard-panel-kicker">Share your experience</span>
+          <h2 id="review-title">Leave feedback for Norbu</h2>
+          <p>Your review supports the clinic overall. You can also connect it to the practitioner who treated you.</p>
+
+          <form class="review-form" id="review-form">
+            <div class="review-form__grid">
+              <label>
+                <span>Your name</span>
+                <input id="review-name" name="name" type="text" autocomplete="name" required>
+              </label>
+              <label>
+                <span>Rating</span>
+                <select id="review-rating" name="rating" required>
+                  <option value="5">5 - Excellent</option>
+                  <option value="4">4 - Very good</option>
+                  <option value="3">3 - Good</option>
+                  <option value="2">2 - Fair</option>
+                  <option value="1">1 - Poor</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              <span>Practitioner (optional)</span>
+              <select id="review-practitioner" name="practitioner">
+                <option value="">Clinic review only</option>
+                <option>Dr. Elena Markova</option>
+                <option>Dr. Julia Soren</option>
+                <option>Dr. Tatiana Lee</option>
+                <option>Dr. Liana Morel</option>
+                <option>Dr. Noor Patel</option>
+                <option>Dr. Miriam Kline</option>
+                <option>Dr. Adrian Sol</option>
+                <option>Dr. Sophie Marin</option>
+              </select>
+            </label>
+            <label>
+              <span>Your review</span>
+              <textarea id="review-message" name="message" rows="5" required></textarea>
+            </label>
+            <div class="review-form__actions">
+              <button class="btn btn-primary" type="submit">Submit review</button>
+              <button class="btn btn-secondary" type="button" data-review-close>Cancel</button>
+            </div>
+            <p class="review-form__status" id="review-form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+
       <section class="updates-section">
         <div class="promo-strip">
           <article class="promo-image-card">
@@ -409,7 +459,7 @@
             <article class="news-card">
               <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=1200&q=80" alt="Child consultation article">
               <div class="news-card-body">
-                <h3>Pediatric care at Aurea Clinic</h3>
+                <h3>Pediatric care at Norbu Clinic</h3>
                 <p>We are proud to bring together an attentive team of child-focused practitioners ready to support early development, calm routines, and family wellbeing.</p>
                 <div class="news-meta">
                   <a class="news-read" href="#">Read more ›</a>
@@ -451,7 +501,7 @@
         <div>
           <a class="brand brand-link site-footer-brand" href="index.html">
             <div class="brand-mark"></div>
-            <span>Aurea</span>
+            <span>Norbu</span>
           </a>
           <p>A calm alternative medicine clinic for recovery, diagnostics, and long-view care.</p>
         </div>
