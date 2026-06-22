@@ -1219,3 +1219,73 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
     `).join('');
   }
 }
+
+// Therapy and blog directory filters.
+(() => {
+  const setupCatalog = ({ searchId, gridId, countId, emptyId, resetId, itemSelector, label, singular }) => {
+    const search = document.getElementById(searchId);
+    const grid = document.getElementById(gridId);
+    if (!search || !grid) return;
+
+    const scope = grid.previousElementSibling;
+    const items = [...grid.querySelectorAll(itemSelector)];
+    const count = document.getElementById(countId);
+    const empty = document.getElementById(emptyId);
+    const reset = document.getElementById(resetId);
+    const groups = scope ? [...scope.querySelectorAll('[data-filter-group]')] : [];
+    const activeFilters = Object.fromEntries(groups.map((group) => [group.dataset.filterGroup, 'all']));
+
+    const render = () => {
+      const query = search.value.trim().toLowerCase();
+      let visible = 0;
+
+      items.forEach((item) => {
+        const terms = (item.dataset.search || item.textContent).toLowerCase();
+        const matchesSearch = !query || terms.includes(query);
+        const matchesGroups = Object.entries(activeFilters).every(([name, value]) => {
+          if (value === 'all') return true;
+          return (item.dataset[name] || '').split(' ').includes(value);
+        });
+        item.hidden = !(matchesSearch && matchesGroups);
+        if (!item.hidden) visible += 1;
+      });
+
+      if (count) count.textContent = `${visible} ${visible === 1 ? singular : label}`;
+      if (empty) empty.hidden = visible !== 0;
+    };
+
+    groups.forEach((group) => {
+      const buttons = [...group.querySelectorAll('.catalog-filter')];
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          activeFilters[group.dataset.filterGroup] = button.dataset.value || 'all';
+          buttons.forEach((filter) => filter.classList.toggle('is-active', filter === button));
+          render();
+        });
+      });
+    });
+
+    search.addEventListener('input', render);
+    reset?.addEventListener('click', () => {
+      search.value = '';
+      Object.keys(activeFilters).forEach((name) => { activeFilters[name] = 'all'; });
+      groups.forEach((group) => {
+        group.querySelectorAll('.catalog-filter').forEach((filter) => filter.classList.toggle('is-active', filter.dataset.value === 'all'));
+      });
+      render();
+      search.focus();
+    });
+
+    render();
+  };
+
+  setupCatalog({ searchId: 'therapy-search', gridId: 'therapy-grid', countId: 'therapy-result-count', emptyId: 'therapy-empty', resetId: 'therapy-reset', itemSelector: '.therapy-card', label: 'therapies', singular: 'therapy' });
+  setupCatalog({ searchId: 'blog-search', gridId: 'blog-grid', countId: 'blog-result-count', emptyId: 'blog-empty', resetId: 'blog-reset', itemSelector: '.blog-card', label: 'articles', singular: 'article' });
+
+  const newsletter = document.querySelector('.blog-newsletter-form');
+  newsletter?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const button = newsletter.querySelector('button');
+    if (button) button.textContent = 'Subscribed';
+  });
+})();

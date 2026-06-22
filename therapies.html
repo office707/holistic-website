@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Therapies | Norbu</title>
+  <meta name="description" content="Explore Norbu therapies by health goal, care approach, and appointment format.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body class="catalog-page therapies-page">
+  <div class="page">
+    <header class="topbar">
+      <a class="brand brand-link" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a>
+      <div class="shell" id="site-shell">
+        <nav class="nav" id="site-nav">
+          <a href="index.html">Home</a><a href="about.html">About</a><a class="active" href="therapies.html">Therapies</a><a href="practitioners.html">Practitioners</a><a href="blog.html">Blog</a><a href="faq.html">FAQ</a>
+        </nav>
+        <div class="icon-circle search-icon" aria-hidden="true">&#9906;</div>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+      </div>
+      <a class="login-box" href="platform.html" data-role-login-trigger><div class="icon-circle login-icon" aria-hidden="true"></div><div class="login-copy"><strong>Login</strong><span>Open the secure portal</span></div></a>
+      <a class="book-btn" href="#therapy-guidance">Book a Visit</a>
+    </header>
+
+    <main class="catalog-main">
+      <section class="catalog-hero">
+        <div class="catalog-hero-copy">
+          <div class="pill">&#10022; Therapy directory</div>
+          <h1>Find care that fits what your body needs now.</h1>
+          <p>Explore supportive therapies by health goal, care approach, and appointment format. Each path can stand alone or become part of a coordinated plan.</p>
+          <div class="catalog-hero-actions"><a class="btn btn-primary" href="#therapy-library">Explore therapies</a><a class="btn btn-secondary" href="#therapy-guidance">Help me choose</a></div>
+        </div>
+        <div class="catalog-hero-visual">
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=80" alt="Calm hands-on therapy session">
+          <div class="catalog-hero-note"><strong>Not sure where to begin?</strong><span>Start with your main goal. Our team can help shape the rest.</span></div>
+        </div>
+      </section>
+
+      <section class="catalog-toolbar" id="therapy-library" aria-label="Filter therapies">
+        <div class="catalog-toolbar-head"><div><span class="catalog-kicker">Care library</span><h2>Explore all therapies</h2></div><span class="catalog-result-count" id="therapy-result-count">9 therapies</span></div>
+        <label class="catalog-search"><span>Search</span><input id="therapy-search" type="search" placeholder="Search therapy, symptom, or benefit..." autocomplete="off"></label>
+        <div class="catalog-filter-group" data-filter-group="goal"><span>Health goal</span><div class="catalog-filter-row"><button class="catalog-filter is-active" type="button" data-value="all">All goals</button><button class="catalog-filter" type="button" data-value="stress">Stress & sleep</button><button class="catalog-filter" type="button" data-value="pain">Pain & mobility</button><button class="catalog-filter" type="button" data-value="digestion">Digestion</button><button class="catalog-filter" type="button" data-value="energy">Energy & hormones</button></div></div>
+        <div class="catalog-filter-group" data-filter-group="format"><span>Format</span><div class="catalog-filter-row"><button class="catalog-filter is-active" type="button" data-value="all">Any format</button><button class="catalog-filter" type="button" data-value="clinic">In clinic</button><button class="catalog-filter" type="button" data-value="online">Online</button><button class="catalog-filter" type="button" data-value="either">Flexible</button></div></div>
+        <button class="catalog-reset" id="therapy-reset" type="button">Reset filters</button>
+      </section>
+
+      <section class="therapy-grid" id="therapy-grid">
+        <article class="therapy-card" data-goal="stress pain" data-format="clinic" data-search="acupuncture needles pain sleep headaches nervous system tension">
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1000&q=80" alt="Acupuncture treatment">
+          <div class="therapy-card-body"><div class="therapy-card-meta"><span>Traditional care</span><span>In clinic</span></div><h3>Acupuncture</h3><p>Targeted sessions designed to support pain relief, sleep, headaches, and nervous-system regulation.</p><ul><li>45-60 minutes</li><li>Personalized point selection</li><li>Useful as a combined-care option</li></ul><a href="#therapy-guidance">Ask about acupuncture <span>&rarr;</span></a></div>
+        </article>
+        <article class="therapy-card" data-goal="digestion energy stress" data-format="either" data-search="herbal medicine plants digestion sleep hormones immunity formulations">
+          <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1000&q=80" alt="Herbal medicine preparation">
+          <div class="therapy-card-body"><div class="therapy-card-meta"><span>Plant-based</span><span>Flexible</span></div><h3>Herbal medicine</h3><p>Individual herbal protocols for digestion, sleep, cycle health, immunity, and long-view recovery.</p><ul><li>Full medication review</li><li>Phased formulations</li><li>Regular response check-ins</li></ul><a href="#therapy-guidance">Ask about herbal care <span>&rarr;</span></a></div>
+        </article>
+        <article class="therapy-card" data-goal="digestion energy" data-format="either" data-search="functional nutrition food digestion blood sugar energy hormones meal plan">
+          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1000&q=80" alt="Fresh foods for nutrition therapy">
+          <div class="therapy-card-body"><div class="therapy-card-meta"><span>Everyday support</span><span>Flexible</span></div><h3>Functional nutrition</h3><p>Practical food strategies shaped around digestion, blood-sugar steadiness, energy, and daily routine.</p><ul><li>Realistic meal structures</li><li>Lab-informed planning</li><li>Clear weekly priorities</li></ul><a href="#therapy-guidance">Ask about nutrition <span>&rarr;</span></a></div>
+        </article>
+        <article class="therapy-card" data-goal="stress energy" data-format="online" data-search="breathwork breathing stress anxiety sleep energy regulation online">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1000&q=80" alt="Guided breathwork practice">
+          <div class="therapy-card-body"><div class="therapy-card-meta"><span>Mind-body</span><span>Online</span></div><h3>Breath therapy</h3><p>Guided breathing practices for stress recovery, steadier energy, sleep preparation, and body awareness.</p><ul><li>30-45 minutes</li><li>Simple home practices</li><li>Suitable for online care</li></ul><a href="#therapy-guidance">Ask about breathwork <span>&rarr;</span></a></div>
+        </article>
+        <article class="therapy-card" data-goal="pain stress" data-format="clinic" data-search="therapeutic massage bodywork tension mobility recovery pain stress">
+          <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1000&q=80" alt="Therapeutic massage session">
+          <div class="therapy-card-body"><div class="therapy-card-meta"><span>Bodywork</span><span>In clinic</span></div><h3>Therapeutic massage</h3><p>Focused bodywork to ease physical tension, improve mobility, and support recovery between appointments.</p><ul><li>45 or 75 minutes</li><li>Pressure adapted to you</li><li>Recovery-focused follow-up</li></ul><a href="#therapy-guidance">Ask about bodywork <span>&rarr;</span></a></div>
+        </article>
+        <article class="therapy-card" data-goal="energy digestion stress" data-format="either" data-search="functional medicine diagnostics labs fatigue hormones digestion root cause">
+          <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1000&q=80" alt="Clinical laboratory review">
+          <div class="therapy-card-body"><div class="therapy-card-meta"><span>Clinical</span><span>Flexible</span></div><h3>Functional medicine</h3><p>Deeper intake and diagnostic review for complex fatigue, hormone patterns, inflammation, and digestion.</p><ul><li>75-minute first visit</li><li>Lab and history review</li><li>Phased care roadmap</li></ul><a href="#therapy-guidance">Ask about diagnostics <span>&rarr;</span></a></div>
+        </article>
+        <article class="therapy-card" data-goal="pain energy" data-format="clinic" data-search="osteopathy movement joints posture mobility pain manual therapy">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=80" alt="Manual therapy consultation">
+          <div class="therapy-card-body"><div class="therapy-card-meta"><span>Manual care</span><span>In clinic</span></div><h3>Osteopathic care</h3><p>Gentle manual assessment for posture, joints, movement restriction, and recurring physical strain.</p><ul><li>Movement-led assessment</li><li>Hands-on treatment</li><li>At-home mobility plan</li></ul><a href="#therapy-guidance">Ask about osteopathy <span>&rarr;</span></a></div>
+        </article>
+        <article class="therapy-card" data-goal="stress energy" data-format="either" data-search="mindfulness stress burnout resilience coaching meditation sleep">
+          <img src="https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&fit=crop&w=1000&q=80" alt="Mindfulness in nature">
+          <div class="therapy-card-body"><div class="therapy-card-meta"><span>Emotional wellbeing</span><span>Flexible</span></div><h3>Mindfulness coaching</h3><p>Structured support for burnout patterns, emotional regulation, steadier routines, and restorative rest.</p><ul><li>Goal-based sessions</li><li>Short daily practices</li><li>Progress review</li></ul><a href="#therapy-guidance">Ask about coaching <span>&rarr;</span></a></div>
+        </article>
+        <article class="therapy-card" data-goal="energy pain stress" data-format="clinic" data-search="infrared sauna recovery circulation relaxation muscle sleep">
+          <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=1000&q=80" alt="Warm restorative treatment room">
+          <div class="therapy-card-body"><div class="therapy-card-meta"><span>Restorative</span><span>In clinic</span></div><h3>Infrared recovery</h3><p>A calm heat-based session supporting circulation, muscle recovery, relaxation, and sleep readiness.</p><ul><li>30-minute sessions</li><li>Hydration guidance</li><li>Can complement bodywork</li></ul><a href="#therapy-guidance">Ask about recovery <span>&rarr;</span></a></div>
+        </article>
+      </section>
+      <div class="catalog-empty" id="therapy-empty" hidden><strong>No therapies match those filters.</strong><span>Try another goal or reset the search.</span></div>
+
+      <section class="therapy-guidance" id="therapy-guidance">
+        <div><span class="catalog-kicker">Personal guidance</span><h2>You do not need to choose alone.</h2><p>Tell us what is affecting your daily life, what you have already tried, and whether you prefer an online or clinic appointment. We will suggest a sensible first step.</p></div>
+        <div class="therapy-guidance-steps"><article><span>01</span><strong>Share your main concern</strong><p>A short conversation is enough to begin.</p></article><article><span>02</span><strong>Meet the right practitioner</strong><p>We match the skill set to your priorities.</p></article><article><span>03</span><strong>Build a realistic plan</strong><p>One therapy or a coordinated combination.</p></article></div>
+        <div class="catalog-hero-actions"><a class="btn btn-primary" href="practitioners.html">Find a practitioner</a><a class="btn btn-secondary" href="faq.html">Read common questions</a></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A calm alternative medicine clinic for recovery, diagnostics, and long-view care.</p></div><div><strong>Visit</strong><p>214 Cedar Grove, Suite 5<br>San Francisco, CA</p></div><div><strong>Contact</strong><p>+1 (415) 555-2184<br>hello@holistic-care.com</p></div><div><strong>Explore</strong><p><a href="about.html">About</a><br><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Practitioners</a><br><a href="blog.html">Blog</a></p></div></div></footer>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>

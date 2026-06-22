@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --bg: #f4f3ee;
   --surface: #eee8de;
   --surface-alt: #f8f8f4;
@@ -13791,4 +13791,456 @@ body.has-role-login-open {
   .about-page .about-pullquote,
   .about-page .about-experience-item,
   .about-page .about-contact-card { padding: 20px; }
+}
+
+/* Therapy directory and editorial blog */
+.catalog-page {
+  background:
+    radial-gradient(circle at 8% 5%, rgba(170, 207, 223, 0.18), transparent 24%),
+    var(--bg);
+}
+
+.catalog-main {
+  width: min(1460px, calc(100% - 40px));
+  margin: 34px auto 80px;
+  display: grid;
+  gap: 28px;
+}
+
+.catalog-hero,
+.blog-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
+  gap: 24px;
+  padding: 30px;
+  border-radius: 38px;
+  background: linear-gradient(145deg, #123f49 0%, #195764 58%, #557d73 100%);
+  color: #fff;
+  box-shadow: 0 26px 70px rgba(11, 38, 57, 0.15);
+}
+
+.catalog-hero-copy,
+.blog-hero-copy {
+  align-self: center;
+  padding: clamp(18px, 4vw, 48px);
+}
+
+.catalog-hero-copy .pill,
+.blog-hero-copy .pill {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.catalog-hero h1,
+.blog-hero h1 {
+  margin: 24px 0 18px;
+  max-width: 11ch;
+  color: #fff;
+  font-size: clamp(46px, 5.4vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.catalog-hero-copy > p,
+.blog-hero-copy > p {
+  max-width: 650px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.catalog-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.catalog-hero .btn-secondary,
+.therapy-guidance .btn-secondary {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.catalog-hero-visual {
+  position: relative;
+  min-height: 560px;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.catalog-hero-visual img,
+.blog-featured > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.catalog-hero-note {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  display: grid;
+  gap: 5px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(248, 245, 238, 0.9);
+  color: var(--text);
+  backdrop-filter: blur(8px);
+}
+
+.catalog-hero-note span { color: var(--muted); }
+
+.catalog-toolbar {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(280px, 1.15fr) minmax(260px, 0.85fr);
+  gap: 20px 30px;
+  padding: 30px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(11, 38, 57, 0.07);
+  box-shadow: var(--shadow);
+}
+
+.catalog-toolbar-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  grid-column: 1 / -1;
+}
+
+.catalog-kicker {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.catalog-toolbar h2,
+.therapy-guidance h2,
+.blog-newsletter h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(32px, 4vw, 50px);
+  line-height: 1.03;
+  letter-spacing: -0.05em;
+}
+
+.catalog-result-count {
+  flex: 0 0 auto;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(170, 211, 156, 0.26);
+  color: var(--teal-dark);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.catalog-search,
+.catalog-filter-group {
+  display: grid;
+  gap: 9px;
+}
+
+.catalog-search > span,
+.catalog-filter-group > span,
+.blog-newsletter-form label > span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.catalog-search input,
+.blog-newsletter-form input {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 16px;
+  border: 1px solid rgba(11, 38, 57, 0.12);
+  border-radius: 16px;
+  background: #f8f7f3;
+  color: var(--text);
+  font: inherit;
+}
+
+.catalog-search input:focus,
+.blog-newsletter-form input:focus {
+  outline: 3px solid rgba(147, 199, 207, 0.28);
+  border-color: var(--soft-blue);
+}
+
+.catalog-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.catalog-filter,
+.catalog-reset {
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid rgba(11, 38, 57, 0.1);
+  border-radius: 999px;
+  background: #f7f5f0;
+  color: var(--muted);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.catalog-filter:hover,
+.catalog-filter.is-active {
+  border-color: var(--teal);
+  background: var(--teal);
+  color: #fff;
+}
+
+.catalog-reset {
+  align-self: end;
+  justify-self: end;
+  background: transparent;
+  color: var(--teal);
+}
+
+.therapy-grid,
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.therapy-card,
+.blog-card {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(11, 38, 57, 0.07);
+  box-shadow: 0 16px 40px rgba(11, 38, 57, 0.07);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.therapy-card:hover,
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 52px rgba(11, 38, 57, 0.11);
+}
+
+.therapy-card[hidden],
+.blog-card[hidden] { display: none; }
+
+.therapy-card > img,
+.blog-card > img {
+  width: 100%;
+  height: 245px;
+  object-fit: cover;
+}
+
+.therapy-card-body,
+.blog-card-body {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+}
+
+.therapy-card-meta,
+.blog-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.therapy-card h3,
+.blog-card h3,
+.blog-featured h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 27px;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.therapy-card p,
+.blog-card p,
+.blog-featured p,
+.therapy-guidance p,
+.blog-newsletter p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.therapy-card ul {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.therapy-card li::before {
+  content: "+";
+  margin-right: 8px;
+  color: var(--lime);
+  font-weight: 900;
+}
+
+.therapy-card a,
+.blog-card a,
+.blog-featured a {
+  width: fit-content;
+  color: var(--teal);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.catalog-empty {
+  display: grid;
+  gap: 6px;
+  justify-items: center;
+  padding: 48px 24px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--muted);
+  text-align: center;
+}
+
+.catalog-empty[hidden] { display: none; }
+.catalog-empty strong { color: var(--text); font-size: 22px; }
+
+.therapy-guidance,
+.blog-newsletter {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 28px;
+  padding: clamp(28px, 5vw, 56px);
+  border-radius: 36px;
+  background: linear-gradient(145deg, #e5eee9 0%, #f3eee5 100%);
+  border: 1px solid rgba(11, 38, 57, 0.06);
+}
+
+.therapy-guidance-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.therapy-guidance-steps article {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.therapy-guidance-steps span,
+.blog-category {
+  width: fit-content;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(170, 207, 223, 0.28);
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.therapy-guidance > .catalog-hero-actions { grid-column: 1 / -1; margin-top: 0; }
+.therapy-guidance .btn-secondary { border-color: rgba(11, 38, 57, 0.1); background: rgba(255,255,255,.62); color: var(--teal); }
+
+.blog-hero { grid-template-columns: minmax(280px, 0.72fr) minmax(520px, 1.28fr); }
+
+.blog-featured {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(280px, 1.1fr);
+  overflow: hidden;
+  border-radius: 30px;
+  background: #f8f5ef;
+  color: var(--text);
+}
+
+.blog-featured-body {
+  display: grid;
+  align-content: center;
+  gap: 16px;
+  padding: clamp(24px, 4vw, 44px);
+}
+
+.blog-featured h2 { font-size: clamp(28px, 3vw, 42px); }
+.blog-featured .blog-card-meta { justify-content: start; gap: 18px; }
+.blog-toolbar { grid-template-columns: minmax(280px, 1fr); }
+.blog-toolbar .catalog-search { grid-column: 1 / -1; }
+.blog-toolbar .catalog-reset { position: absolute; right: 30px; bottom: 30px; }
+.blog-card-body { min-height: 300px; align-content: start; }
+.blog-card-body > a { margin-top: auto; }
+
+.blog-newsletter { align-items: end; }
+.blog-newsletter-form { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 12px; }
+.blog-newsletter-form label { display: grid; gap: 9px; }
+.blog-newsletter-form .btn { min-height: 50px; }
+
+@media (max-width: 1120px) {
+  .catalog-hero,
+  .blog-hero { grid-template-columns: 1fr; }
+  .catalog-hero h1,
+  .blog-hero h1 { max-width: 13ch; }
+  .catalog-hero-visual { min-height: 460px; }
+  .therapy-grid,
+  .blog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .therapy-guidance { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  .catalog-main { width: min(100% - 24px, 1460px); margin-top: 18px; gap: 18px; }
+  .catalog-hero,
+  .blog-hero,
+  .catalog-toolbar,
+  .therapy-guidance,
+  .blog-newsletter { padding: 20px; border-radius: 26px; }
+  .catalog-hero-copy,
+  .blog-hero-copy { padding: 12px 4px 22px; }
+  .catalog-hero h1,
+  .blog-hero h1 { font-size: clamp(40px, 12vw, 56px); }
+  .catalog-hero-copy > p,
+  .blog-hero-copy > p { font-size: 16px; }
+  .catalog-hero-visual { min-height: 410px; border-radius: 22px; }
+  .catalog-toolbar { grid-template-columns: 1fr; }
+  .catalog-toolbar-head { align-items: start; }
+  .catalog-result-count { margin-top: 4px; }
+  .catalog-reset { justify-self: stretch; }
+  .therapy-grid,
+  .blog-grid,
+  .therapy-guidance-steps { grid-template-columns: 1fr; }
+  .therapy-card,
+  .blog-card { border-radius: 24px; }
+  .therapy-card > img,
+  .blog-card > img { height: 230px; }
+  .blog-featured { grid-template-columns: 1fr; }
+  .blog-featured > img { height: 260px; }
+  .blog-toolbar .catalog-reset { position: static; }
+  .blog-newsletter { grid-template-columns: 1fr; }
+  .blog-newsletter-form { grid-template-columns: 1fr; }
+  .catalog-hero-actions .btn { width: 100%; justify-content: center; }
 }
