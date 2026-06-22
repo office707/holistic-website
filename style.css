@@ -14244,3 +14244,601 @@ body.has-role-login-open {
   .blog-newsletter-form { grid-template-columns: 1fr; }
   .catalog-hero-actions .btn { width: 100%; justify-content: center; }
 }
+/* Unified public header, practitioner profiles, and appointment booking */
+.search-icon {
+  position: relative;
+  font-size: 0 !important;
+}
+
+.search-icon::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.search-icon::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 2px;
+  background: currentColor;
+  transform: translate(8px, 8px) rotate(45deg);
+  border-radius: 2px;
+}
+
+.service-number {
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.service-arrow {
+  width: auto !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  color: var(--teal) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.directory-card-actions,
+.directory-map-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.directory-card-actions .btn,
+.directory-map-actions .btn {
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.directory-card-rating {
+  order: 5;
+  margin-top: 12px;
+}
+
+.practitioner-profile-page,
+.booking-page {
+  background:
+    radial-gradient(circle at 8% 3%, rgba(170, 207, 223, 0.18), transparent 24%),
+    var(--bg);
+}
+
+.profile-main,
+.booking-main {
+  width: min(1460px, calc(100% - 40px));
+  margin: 30px auto 80px;
+  display: grid;
+  gap: 24px;
+}
+
+.profile-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 0 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.profile-breadcrumbs a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.profile-hero {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.82fr) minmax(0, 1.18fr);
+  gap: 28px;
+  padding: 30px;
+  border-radius: 38px;
+  background: linear-gradient(145deg, #123f49 0%, #195764 62%, #557d73 100%);
+  box-shadow: 0 26px 70px rgba(11, 38, 57, 0.15);
+}
+
+.profile-portrait {
+  position: relative;
+  min-height: 620px;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.profile-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.profile-availability {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  padding: 10px 15px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 800;
+  backdrop-filter: blur(8px);
+}
+
+.profile-hero-copy {
+  align-self: center;
+  padding: clamp(20px, 4vw, 54px);
+  color: #fff;
+}
+
+.profile-kicker {
+  display: block;
+  width: fit-content;
+  margin-bottom: 14px;
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.profile-hero-copy .profile-kicker {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.profile-hero h1 {
+  margin: 0 0 16px;
+  max-width: 11ch;
+  color: #fff;
+  font-size: clamp(48px, 6vw, 82px);
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+}
+
+.profile-focus {
+  margin: 0 0 18px !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-size: 20px !important;
+  font-weight: 700;
+}
+
+.profile-hero-copy > p {
+  max-width: 720px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.profile-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 28px 0;
+}
+
+.profile-facts div {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.profile-facts strong { color: #fff; font-size: 16px; }
+.profile-facts span { color: rgba(255, 255, 255, 0.65); font-size: 12px; }
+.profile-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.profile-actions .btn-secondary { color: #fff; border-color: rgba(255,255,255,.25); background: rgba(255,255,255,.08); }
+
+.profile-content-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+}
+
+.profile-panel,
+.profile-booking-card,
+.booking-intro,
+.booking-form,
+.booking-summary,
+.booking-confirmation {
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(11, 38, 57, 0.07);
+  box-shadow: var(--shadow);
+}
+
+.profile-panel { padding: clamp(26px, 4vw, 46px); }
+.profile-panel h2,
+.profile-booking-card h2,
+.booking-intro h1,
+.booking-form-section h2,
+.booking-summary h2,
+.booking-confirmation h2 {
+  margin: 0;
+  color: var(--text);
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+.profile-panel h2,
+.profile-booking-card h2 { font-size: clamp(32px, 4vw, 48px); }
+.profile-panel h3 { margin: 30px 0 14px; font-size: 20px; }
+.profile-panel p,
+.profile-booking-card p,
+.booking-intro p,
+.booking-form-section p,
+.booking-summary p,
+.booking-confirmation p { color: var(--muted); line-height: 1.65; }
+
+.profile-tag-list { display: flex; flex-wrap: wrap; gap: 9px; }
+.profile-tag-list span { padding: 10px 13px; border-radius: 999px; background: rgba(170,207,223,.2); color: var(--teal); font-size: 13px; font-weight: 800; }
+.profile-education { display: grid; gap: 12px; margin: 24px 0 0; padding: 0; list-style: none; }
+.profile-education li { padding: 16px 18px; border-radius: 18px; background: #f5f3ee; color: var(--text); font-weight: 700; }
+
+.profile-booking-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 26px;
+  padding: clamp(28px, 5vw, 54px);
+  background: linear-gradient(145deg, #e7efe9 0%, #f3eee5 100%);
+}
+
+.booking-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 30px;
+  padding: clamp(28px, 5vw, 54px);
+  background: linear-gradient(145deg, #123f49 0%, #195764 100%);
+  color: #fff;
+}
+
+.booking-intro .profile-kicker { color: rgba(255,255,255,.72); }
+.booking-intro h1 { max-width: 12ch; color: #fff; font-size: clamp(44px, 6vw, 76px); }
+.booking-intro p { max-width: 700px; color: rgba(255,255,255,.72); font-size: 17px; }
+.booking-intro-steps { display: flex; gap: 8px; }
+.booking-intro-steps span { display: flex; align-items: center; gap: 8px; padding: 10px 13px; border-radius: 999px; background: rgba(255,255,255,.1); color: rgba(255,255,255,.8); font-size: 12px; font-weight: 700; }
+.booking-intro-steps strong { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(255,255,255,.18); color: #fff; }
+
+.booking-layout { display: grid; grid-template-columns: minmax(0, 1fr) 390px; gap: 24px; align-items: start; }
+.booking-form { display: grid; gap: 0; overflow: hidden; }
+.booking-form-section { display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 8px 20px; padding: 32px; border-bottom: 1px solid rgba(11,38,57,.08); }
+.booking-step { grid-row: 1 / span 3; display: grid; place-items: center; align-self: start; width: 46px; height: 46px; border-radius: 15px; background: var(--teal); color: #fff; font-size: 13px; font-weight: 900; }
+.booking-form-section h2 { font-size: 28px; }
+.booking-form-section > .booking-field,
+.booking-form-section > .booking-form-grid,
+.booking-form-section > .booking-times { grid-column: 2; }
+.booking-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+.booking-field { display: grid; gap: 8px; margin-top: 14px; }
+.booking-field--wide { grid-column: 1 / -1; }
+.booking-field > span,
+.booking-times legend { color: var(--muted); font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.booking-field input,
+.booking-field select,
+.booking-field textarea { width: 100%; min-height: 52px; padding: 13px 15px; border: 1px solid rgba(11,38,57,.12); border-radius: 15px; background: #f8f7f3; color: var(--text); font: inherit; }
+.booking-field textarea { resize: vertical; }
+.booking-field input:focus,
+.booking-field select:focus,
+.booking-field textarea:focus { outline: 3px solid rgba(147,199,207,.28); border-color: var(--soft-blue); }
+.booking-times { margin: 20px 0 0; padding: 0; border: 0; }
+.booking-times > div { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 10px; }
+.booking-times label { cursor: pointer; }
+.booking-times input { position: absolute; opacity: 0; pointer-events: none; }
+.booking-times span { display: block; padding: 11px 15px; border-radius: 999px; border: 1px solid rgba(11,38,57,.12); background: #f8f7f3; color: var(--text); font-weight: 800; }
+.booking-times input:checked + span { border-color: var(--teal); background: var(--teal); color: #fff; }
+.booking-consent { display: flex; align-items: flex-start; gap: 10px; padding: 22px 32px 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.booking-submit { margin: 20px 32px 32px; min-height: 54px; }
+.booking-summary { position: sticky; top: 18px; display: grid; gap: 14px; padding: 24px; }
+.booking-summary img { width: 100%; height: 280px; object-fit: cover; object-position: center top; border-radius: 22px; }
+.booking-summary h2 { font-size: 30px; }
+.booking-summary-list { display: grid; gap: 2px; margin-top: 6px; border-radius: 18px; overflow: hidden; }
+.booking-summary-list div { display: flex; justify-content: space-between; gap: 15px; padding: 13px 15px; background: #f5f3ee; }
+.booking-summary-list span { color: var(--muted); font-size: 13px; }
+.booking-summary-list strong { text-align: right; font-size: 13px; }
+.booking-summary > a { color: var(--teal); font-weight: 800; text-decoration: none; }
+.booking-confirmation { padding: clamp(28px, 5vw, 54px); text-align: center; }
+.booking-confirmation[hidden] { display: none; }
+.booking-confirmation .profile-kicker { margin-inline: auto; }
+.booking-confirmation h2 { font-size: clamp(34px, 5vw, 54px); }
+.booking-confirmation > div { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+
+@media (max-width: 1120px) {
+  .profile-hero { grid-template-columns: minmax(300px, .8fr) minmax(0, 1.2fr); }
+  .booking-layout { grid-template-columns: minmax(0, 1fr) 330px; }
+}
+
+@media (max-width: 980px) {
+  .profile-hero,
+  .profile-content-grid,
+  .booking-layout { grid-template-columns: 1fr; }
+  .profile-portrait { min-height: 540px; }
+  .booking-summary { position: static; grid-row: 1; }
+  .booking-intro { grid-template-columns: 1fr; }
+  .booking-intro-steps { flex-wrap: wrap; }
+}
+
+@media (max-width: 760px) {
+  .profile-main,
+  .booking-main { width: min(100% - 24px, 1460px); margin-top: 18px; gap: 16px; }
+  .profile-hero,
+  .profile-panel,
+  .profile-booking-card,
+  .booking-intro,
+  .booking-form,
+  .booking-summary,
+  .booking-confirmation { border-radius: 24px; }
+  .profile-hero { padding: 18px; gap: 8px; }
+  .profile-portrait { min-height: 430px; border-radius: 20px; }
+  .profile-hero-copy { padding: 24px 6px 12px; }
+  .profile-hero h1 { font-size: clamp(42px, 14vw, 58px); }
+  .profile-facts { grid-template-columns: 1fr; }
+  .profile-actions,
+  .profile-actions .btn { width: 100%; }
+  .profile-panel { padding: 24px 20px; }
+  .profile-booking-card { grid-template-columns: 1fr; align-items: start; padding: 26px 20px; }
+  .profile-booking-card .btn { width: 100%; }
+  .booking-intro { padding: 28px 20px; }
+  .booking-intro h1 { font-size: clamp(40px, 13vw, 54px); }
+  .booking-form-section { grid-template-columns: 1fr; padding: 24px 20px; }
+  .booking-step { grid-row: auto; }
+  .booking-form-section > .booking-field,
+  .booking-form-section > .booking-form-grid,
+  .booking-form-section > .booking-times { grid-column: 1; }
+  .booking-form-grid { grid-template-columns: 1fr; }
+  .booking-consent { padding: 20px 20px 0; }
+  .booking-submit { margin: 18px 20px 24px; width: calc(100% - 40px); }
+  .booking-summary img { height: 230px; }
+
+  .directory-list { grid-template-columns: 1fr !important; }
+  .directory-card { display: block !important; min-height: 0 !important; overflow: hidden !important; }
+  .directory-card img { position: static !important; display: block !important; width: 100% !important; height: 230px !important; object-fit: cover !important; transform: none !important; }
+  .directory-card-body { position: static !important; display: grid !important; gap: 12px !important; padding: 20px !important; transform: none !important; }
+  .directory-card-top { position: static !important; display: flex !important; align-items: center !important; gap: 8px !important; }
+  .directory-card .practitioner-badge,
+  .directory-card .directory-availability { position: static !important; inset: auto !important; transform: none !important; margin: 0 !important; }
+  .directory-card h3 { position: static !important; margin: 4px 0 0 !important; font-size: 27px !important; line-height: 1.08 !important; transform: none !important; }
+  .directory-card p,
+  .directory-meta,
+  .directory-card-actions { position: static !important; margin: 0 !important; transform: none !important; }
+  .directory-card-actions,
+  .directory-map-actions { grid-template-columns: 1fr !important; margin-top: 6px !important; }
+  .directory-card-actions .btn,
+  .directory-map-actions .btn { width: 100% !important; }
+}
+
+@media (max-width: 980px) {
+  body.home-page:not(.portal-dashboard-page) .topbar,
+  body.catalog-page .topbar,
+  body.directory-page .topbar,
+  body.style-one-page .topbar,
+  body.style-two-page .topbar,
+  body.practitioner-profile-page .topbar,
+  body.booking-page .topbar {
+    grid-template-columns: minmax(0, 1fr) 58px auto !important;
+    align-items: center !important;
+    gap: 9px !important;
+  }
+
+  body.home-page:not(.portal-dashboard-page) .topbar > .brand,
+  body.catalog-page .topbar > .brand,
+  body.directory-page .topbar > .brand,
+  body.style-one-page .topbar > .brand,
+  body.style-two-page .topbar > .brand,
+  body.practitioner-profile-page .topbar > .brand,
+  body.booking-page .topbar > .brand { grid-column: 1 !important; grid-row: 1 !important; }
+
+  body.home-page:not(.portal-dashboard-page) .topbar > .shell,
+  body.catalog-page .topbar > .shell,
+  body.directory-page .topbar > .shell,
+  body.style-one-page .topbar > .shell,
+  body.style-two-page .topbar > .shell,
+  body.practitioner-profile-page .topbar > .shell,
+  body.booking-page .topbar > .shell {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    position: relative !important;
+    width: 58px !important;
+    min-height: 58px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  body.home-page:not(.portal-dashboard-page) .topbar > .book-btn,
+  body.catalog-page .topbar > .book-btn,
+  body.directory-page .topbar > .book-btn,
+  body.style-one-page .topbar > .book-btn,
+  body.style-two-page .topbar > .book-btn,
+  body.practitioner-profile-page .topbar > .book-btn,
+  body.booking-page .topbar > .book-btn { grid-column: 3 !important; grid-row: 1 !important; display: inline-flex !important; }
+
+  body.home-page:not(.portal-dashboard-page) .topbar > .login-box,
+  body.catalog-page .topbar > .login-box,
+  body.directory-page .topbar > .login-box,
+  body.style-one-page .topbar > .login-box,
+  body.style-two-page .topbar > .login-box,
+  body.practitioner-profile-page .topbar > .login-box,
+  body.booking-page .topbar > .login-box { display: none !important; }
+
+  body.catalog-page .menu-toggle,
+  body.practitioner-profile-page .menu-toggle,
+  body.booking-page .menu-toggle,
+  body.style-two-page .menu-toggle { display: grid !important; }
+
+  body.catalog-page .nav,
+  body.practitioner-profile-page .nav,
+  body.booking-page .nav,
+  body.style-one-page .nav,
+  body.style-two-page .nav {
+    position: absolute !important;
+    top: calc(100% + 10px) !important;
+    right: 0 !important;
+    left: auto !important;
+    display: none !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: min(320px, calc(100vw - 28px)) !important;
+    padding: 14px !important;
+    border-radius: 24px !important;
+    background: rgba(255,255,255,.97) !important;
+    box-shadow: var(--shadow) !important;
+    z-index: 80 !important;
+  }
+
+  body.catalog-page .shell.is-open .nav,
+  body.practitioner-profile-page .shell.is-open .nav,
+  body.booking-page .shell.is-open .nav,
+  body.style-one-page .shell.is-open .nav,
+  body.style-two-page .shell.is-open .nav { display: flex !important; }
+}
+
+@media (max-width: 520px) {
+  body.home-page:not(.portal-dashboard-page) .topbar,
+  body.catalog-page .topbar,
+  body.directory-page .topbar,
+  body.style-one-page .topbar,
+  body.style-two-page .topbar,
+  body.practitioner-profile-page .topbar,
+  body.booking-page .topbar { width: calc(100% - 20px) !important; padding: 10px !important; }
+  .topbar .brand { gap: 8px !important; font-size: 21px !important; }
+  .topbar .brand-mark { width: 34px !important; height: 34px !important; border-radius: 11px !important; }
+  .topbar .book-btn { min-width: 0 !important; min-height: 52px !important; padding: 0 14px !important; font-size: 13px !important; white-space: nowrap !important; }
+}
+@media (min-width: 981px) {
+  body.home-page:not(.portal-dashboard-page) .topbar,
+  body.catalog-page .topbar,
+  body.directory-page .topbar,
+  body.style-one-page .topbar,
+  body.style-two-page .topbar,
+  body.practitioner-profile-page .topbar,
+  body.booking-page .topbar {
+    width: min(1460px, calc(100% - 40px)) !important;
+    margin: 18px auto 0 !important;
+    padding: 10px 12px !important;
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr) auto auto !important;
+    align-items: center !important;
+    gap: 14px !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  body.home-page:not(.portal-dashboard-page) .topbar > .brand,
+  body.catalog-page .topbar > .brand,
+  body.directory-page .topbar > .brand,
+  body.style-one-page .topbar > .brand,
+  body.style-two-page .topbar > .brand,
+  body.practitioner-profile-page .topbar > .brand,
+  body.booking-page .topbar > .brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    color: var(--text) !important;
+  }
+
+  body.home-page:not(.portal-dashboard-page) .topbar > .shell,
+  body.catalog-page .topbar > .shell,
+  body.directory-page .topbar > .shell,
+  body.style-one-page .topbar > .shell,
+  body.style-two-page .topbar > .shell,
+  body.practitioner-profile-page .topbar > .shell,
+  body.booking-page .topbar > .shell {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 72px !important;
+    padding: 8px 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    border-radius: 26px !important;
+    background: rgba(255, 255, 255, 0.72) !important;
+    border: 1px solid rgba(25, 87, 100, 0.06) !important;
+    box-shadow: var(--shadow) !important;
+    backdrop-filter: blur(14px) !important;
+  }
+
+  body.home-page:not(.portal-dashboard-page) .nav,
+  body.catalog-page .nav,
+  body.directory-page .nav,
+  body.style-one-page .nav,
+  body.style-two-page .nav,
+  body.practitioner-profile-page .nav,
+  body.booking-page .nav {
+    position: static !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 4px !important;
+    width: auto !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  body.home-page:not(.portal-dashboard-page) .nav a,
+  body.catalog-page .nav a,
+  body.directory-page .nav a,
+  body.style-one-page .nav a,
+  body.style-two-page .nav a,
+  body.practitioner-profile-page .nav a,
+  body.booking-page .nav a {
+    min-height: 46px !important;
+    padding: 0 14px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    border-radius: 999px !important;
+    color: var(--text) !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+  }
+
+  body.home-page:not(.portal-dashboard-page) .nav a.active,
+  body.catalog-page .nav a.active,
+  body.directory-page .nav a.active,
+  body.style-one-page .nav a.active,
+  body.style-two-page .nav a.active,
+  body.practitioner-profile-page .nav a.active,
+  body.booking-page .nav a.active {
+    background: rgba(170, 207, 223, 0.28) !important;
+    color: var(--teal) !important;
+    font-weight: 800 !important;
+  }
+
+  body.home-page:not(.portal-dashboard-page) .topbar > .login-box,
+  body.catalog-page .topbar > .login-box,
+  body.directory-page .topbar > .login-box,
+  body.style-one-page .topbar > .login-box,
+  body.style-two-page .topbar > .login-box,
+  body.practitioner-profile-page .topbar > .login-box,
+  body.booking-page .topbar > .login-box {
+    display: flex !important;
+    min-height: 72px !important;
+  }
+
+  body.home-page:not(.portal-dashboard-page) .topbar > .book-btn,
+  body.catalog-page .topbar > .book-btn,
+  body.directory-page .topbar > .book-btn,
+  body.style-one-page .topbar > .book-btn,
+  body.style-two-page .topbar > .book-btn,
+  body.practitioner-profile-page .topbar > .book-btn,
+  body.booking-page .topbar > .book-btn {
+    display: inline-flex !important;
+    min-height: 72px !important;
+  }
+}

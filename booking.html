@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Book an Appointment | Norbu</title><meta name="description" content="Choose a Norbu practitioner, appointment type, date, and time."><link rel="stylesheet" href="style.css"><link rel="icon" type="image/svg+xml" href="favicon.svg"></head>
+<body class="booking-page"><div class="page">
+<header class="topbar">
+      <a class="brand brand-link" href="index.html">
+        <div class="brand-mark"></div>
+        <span>Norbu</span>
+      </a>
+      <div class="shell" id="site-shell">
+        <nav class="nav" id="site-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="therapies.html">Therapies</a>
+          <a class="active" href="practitioners.html">Practitioners</a>
+          <a href="blog.html">Blog</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+        <div class="icon-circle search-icon" aria-hidden="true"></div>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+      </div>
+      <a class="login-box" href="platform.html" data-role-login-trigger>
+        <div class="icon-circle login-icon" aria-hidden="true"></div>
+        <div class="login-copy"><strong>Login</strong><span>Open the secure portal</span></div>
+      </a>
+      <a class="book-btn" href="booking.html">Book a Visit</a>
+    </header>
+<main class="booking-main">
+  <section class="booking-intro"><div><span class="profile-kicker">Appointment booking</span><h1>Book care without the back and forth.</h1><p>Choose your practitioner, appointment type, and a suitable time. This prototype keeps the booking local and shows a confirmation before any real scheduling connection is added.</p></div><div class="booking-intro-steps"><span><strong>1</strong> Practitioner</span><span><strong>2</strong> Visit</span><span><strong>3</strong> Your details</span></div></section>
+  <section class="booking-layout">
+    <form class="booking-form" id="booking-form">
+      <div class="booking-form-section"><span class="booking-step">01</span><div><h2>Choose your practitioner</h2><p>The doctor selected from the directory or profile is already filled in.</p></div><label class="booking-field booking-field--wide"><span>Practitioner</span><select id="booking-practitioner" name="practitioner" required></select></label></div>
+      <div class="booking-form-section"><span class="booking-step">02</span><div><h2>Select the visit</h2><p>Pick an appointment type, date, and available time.</p></div><div class="booking-form-grid"><label class="booking-field"><span>Appointment type</span><select id="booking-type" name="type" required><option value="Initial consultation">Initial consultation - 60 min</option><option value="Follow-up appointment">Follow-up appointment - 30 min</option><option value="Online consultation">Online consultation - 45 min</option></select></label><label class="booking-field"><span>Date</span><input id="booking-date" name="date" type="date" required></label></div><fieldset class="booking-times"><legend>Available times</legend><div id="booking-time-options"></div></fieldset></div>
+      <div class="booking-form-section"><span class="booking-step">03</span><div><h2>Your contact details</h2><p>Used only to prepare the appointment confirmation.</p></div><div class="booking-form-grid"><label class="booking-field"><span>Full name</span><input name="patientName" type="text" autocomplete="name" required></label><label class="booking-field"><span>Email</span><input name="email" type="email" autocomplete="email" required></label><label class="booking-field booking-field--wide"><span>What would you like help with?</span><textarea name="note" rows="4" placeholder="A short note is enough."></textarea></label></div></div>
+      <label class="booking-consent"><input type="checkbox" required><span>I confirm that this is a booking request and not emergency care.</span></label><button class="btn btn-primary booking-submit" type="submit">Review appointment</button>
+    </form>
+    <aside class="booking-summary"><span class="profile-kicker">Your selection</span><img id="booking-summary-image" src="" alt=""><h2 id="booking-summary-name">Choose a practitioner</h2><p id="booking-summary-specialty"></p><div class="booking-summary-list"><div><span>Clinic</span><strong id="booking-summary-clinic">-</strong></div><div><span>Visit</span><strong id="booking-summary-type">Initial consultation</strong></div><div><span>Date</span><strong id="booking-summary-date">Choose a date</strong></div><div><span>Time</span><strong id="booking-summary-time">Choose a time</strong></div></div><a id="booking-profile-link" href="practitioners.html">View practitioner profile</a></aside>
+  </section>
+  <section class="booking-confirmation" id="booking-confirmation" hidden><span class="profile-kicker">Ready to request</span><h2>Your appointment details are prepared.</h2><p id="booking-confirmation-copy"></p><div><a class="btn btn-primary" href="index.html">Return home</a><a class="btn btn-secondary" href="practitioners.html">Browse practitioners</a></div></section>
+</main>
+<footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A calm alternative medicine clinic for recovery, diagnostics, and long-view care.</p></div><div><strong>Visit</strong><p>214 Cedar Grove, Suite 5<br>San Francisco, CA</p></div><div><strong>Contact</strong><p>+1 (415) 555-2184<br>hello@holistic-care.com</p></div><div><strong>Explore</strong><p><a href="about.html">About</a><br><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Practitioners</a><br><a href="blog.html">Blog</a></p></div></div></footer>
+</div><script src="practitioners-data.js" defer></script><script src="script.js" defer></script></body></html>

@@ -238,6 +238,8 @@ const resetButton = document.getElementById('filter-reset');
 const resultsCopy = document.getElementById('directory-results-copy');
 const mapFrame = document.getElementById('directory-map');
 const mapLink = document.getElementById('directory-map-link');
+const directoryProfileLink = document.getElementById('directory-profile-link');
+const directoryBookLink = document.getElementById('directory-book-link');
 const nameField = document.getElementById('directory-name');
 const specialtyField = document.getElementById('directory-specialty');
 const bioField = document.getElementById('directory-bio');
@@ -282,8 +284,7 @@ if (
     const average = reviews.reduce((total, review) => total + Number(review.rating), 0) / reviews.length;
     const badge = existingBadge || document.createElement('div');
     badge.className = 'directory-card-rating';
-    badge.textContent = `${average.toFixed(1)} ★ · ${reviews.length} ${reviews.length === 1 ? 'review' : 'reviews'}`;
-
+    badge.textContent = `${average.toFixed(1)} / 5 - ${reviews.length} ${reviews.length === 1 ? 'review' : 'reviews'}`;
     if (!existingBadge) {
       card.querySelector('.directory-card-body')?.appendChild(badge);
     }
@@ -301,6 +302,8 @@ if (
       specialtyField.textContent = 'Try a different specialty, location, or availability';
       bioField.textContent = 'Reset the filters to see the full directory again.';
       mapLink.removeAttribute('href');
+      directoryProfileLink?.removeAttribute('href');
+      directoryBookLink?.removeAttribute('href');
       mapFrame.src = buildEmbedUrl('Holistic care clinic San Francisco, CA');
       if (reviewSummary) {
         reviewSummary.innerHTML = '<strong>No practitioner selected</strong><span>Select a practitioner to see their feedback summary.</span>';
@@ -312,6 +315,8 @@ if (
     specialtyField.textContent = `${card.dataset.specialty} · ${card.dataset.clinic} · ${card.dataset.availability}`;
     bioField.textContent = card.dataset.bio;
     mapLink.href = buildMapsUrl(card.dataset.locationQuery);
+    if (directoryProfileLink) directoryProfileLink.href = `practitioner-detail.html?id=${card.dataset.id}`;
+    if (directoryBookLink) directoryBookLink.href = `booking.html?practitioner=${card.dataset.id}`;
     mapFrame.src = buildEmbedUrl(card.dataset.locationQuery);
 
     if (reviewSummary) {
@@ -321,7 +326,7 @@ if (
         reviewSummary.innerHTML = '<strong>No practitioner reviews yet</strong><span>Clinic reviews can optionally be connected to this practitioner.</span>';
       } else {
         const average = reviews.reduce((total, review) => total + Number(review.rating), 0) / reviews.length;
-        reviewSummary.innerHTML = `<strong>${average.toFixed(1)} ★ from ${reviews.length} ${reviews.length === 1 ? 'review' : 'reviews'}</strong><span>Feedback connected specifically to ${card.dataset.name}.</span>`;
+        reviewSummary.innerHTML = `<strong>${average.toFixed(1)} / 5 from ${reviews.length} ${reviews.length === 1 ? 'review' : 'reviews'}</strong><span>Feedback connected specifically to ${card.dataset.name}.</span>`;
       }
     }
   };
@@ -359,7 +364,10 @@ if (
   };
 
   cards.forEach((card) => {
-    card.addEventListener('click', () => setActiveCard(card));
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('a')) return;
+      setActiveCard(card);
+    });
     card.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
@@ -1288,4 +1296,103 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
     const button = newsletter.querySelector('button');
     if (button) button.textContent = 'Subscribed';
   });
+})();
+// Practitioner profiles and appointment booking.
+(() => {
+  const practitioners = window.norbuPractitioners || [];
+  if (!practitioners.length) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const requestedId = params.get('id') || params.get('practitioner');
+  const selected = practitioners.find((practitioner) => practitioner.id === requestedId) || practitioners[0];
+  const text = (id, value) => {
+    const element = document.getElementById(id);
+    if (element) element.textContent = value;
+  };
+
+  const profileRoot = document.getElementById('practitioner-profile');
+  if (profileRoot) {
+    document.title = `${selected.name} | Norbu`;
+    const image = document.getElementById('profile-image');
+    if (image) {
+      image.src = selected.image;
+      image.alt = `${selected.name} portrait`;
+    }
+    text('profile-breadcrumb-name', selected.name);
+    text('profile-availability', selected.availability);
+    text('profile-specialty', selected.specialty);
+    text('profile-name', selected.name);
+    text('profile-focus', selected.focus);
+    text('profile-bio', selected.bio);
+    text('profile-experience', selected.experience);
+    text('profile-clinic', selected.clinic);
+    text('profile-languages', selected.languages);
+    text('profile-approach', `${selected.name} combines careful intake, clear explanations, and realistic follow-up. The aim is to make each recommendation understandable and useful between visits.`);
+    text('profile-first-name', selected.name.replace(/^Dr\.\s+/, '').split(' ')[0]);
+
+    const therapyList = document.getElementById('profile-therapies');
+    if (therapyList) therapyList.innerHTML = selected.therapies.map((therapy) => `<span>${therapy}</span>`).join('');
+    const educationList = document.getElementById('profile-education');
+    if (educationList) educationList.innerHTML = selected.education.map((item) => `<li>${item}</li>`).join('');
+    ['profile-book-link', 'profile-book-link-bottom'].forEach((id) => {
+      const link = document.getElementById(id);
+      if (link) link.href = `booking.html?practitioner=${selected.id}`;
+    });
+  }
+
+  const bookingForm = document.getElementById('booking-form');
+  if (!bookingForm) return;
+
+  const practitionerSelect = document.getElementById('booking-practitioner');
+  const typeSelect = document.getElementById('booking-type');
+  const dateInput = document.getElementById('booking-date');
+  const timeOptions = document.getElementById('booking-time-options');
+  const summaryImage = document.getElementById('booking-summary-image');
+  const profileLink = document.getElementById('booking-profile-link');
+  let activePractitioner = selected;
+  let activeTime = '';
+
+  practitionerSelect.innerHTML = practitioners.map((practitioner) => `<option value="${practitioner.id}">${practitioner.name} - ${practitioner.specialty}</option>`).join('');
+  practitionerSelect.value = selected.id;
+  dateInput.min = new Date().toISOString().split('T')[0];
+
+  const renderPractitioner = () => {
+    activePractitioner = practitioners.find((practitioner) => practitioner.id === practitionerSelect.value) || practitioners[0];
+    activeTime = '';
+    summaryImage.src = activePractitioner.image;
+    summaryImage.alt = `${activePractitioner.name} portrait`;
+    text('booking-summary-name', activePractitioner.name);
+    text('booking-summary-specialty', `${activePractitioner.specialty} - ${activePractitioner.focus}`);
+    text('booking-summary-clinic', activePractitioner.clinic);
+    profileLink.href = `practitioner-detail.html?id=${activePractitioner.id}`;
+    timeOptions.innerHTML = activePractitioner.times.map((time, index) => `<label><input type="radio" name="time" value="${time}" ${index === 0 ? 'required' : ''}><span>${time}</span></label>`).join('');
+  };
+
+  practitionerSelect.addEventListener('change', renderPractitioner);
+  typeSelect.addEventListener('change', () => text('booking-summary-type', typeSelect.value));
+  dateInput.addEventListener('change', () => {
+    const date = dateInput.value ? new Date(`${dateInput.value}T12:00:00`) : null;
+    text('booking-summary-date', date ? new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(date) : 'Choose a date');
+  });
+  timeOptions.addEventListener('change', (event) => {
+    if (event.target.matches('input[name="time"]')) {
+      activeTime = event.target.value;
+      text('booking-summary-time', activeTime);
+    }
+  });
+
+  bookingForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!bookingForm.reportValidity()) return;
+    const patientName = new FormData(bookingForm).get('patientName');
+    const confirmation = document.getElementById('booking-confirmation');
+    const copy = document.getElementById('booking-confirmation-copy');
+    if (copy) copy.textContent = `${patientName}, your request with ${activePractitioner.name} for ${dateInput.value} at ${activeTime} is ready. A live scheduling backend can send this request once connected.`;
+    if (confirmation) {
+      confirmation.hidden = false;
+      confirmation.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  });
+
+  renderPractitioner();
 })();
