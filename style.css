@@ -16220,3 +16220,25 @@ body.quiz-page .topbar.norbu-topbar {
   margin: 28px auto 0 !important;
 }
 
+body .topbar.norbu-topbar {
+  box-sizing: border-box !important;
+  height: 76px !important;
+  min-height: 76px !important;
+}
+
+body .topbar.norbu-topbar > .brand,
+body .topbar.norbu-topbar > .shell,
+body .topbar.norbu-topbar > .book-btn {
+  box-sizing: border-box !important;
+  height: 54px !important;
+  min-height: 54px !important;
+}
+
+body .topbar.norbu-topbar > .brand {
+  padding: 8px 4px !important;
+}
+
+body .topbar.norbu-topbar > .shell {
+  padding: 0 !important;
+}
+
