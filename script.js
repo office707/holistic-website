@@ -1,4 +1,4 @@
-﻿const menuShell = document.getElementById('site-shell');
+const menuShell = document.getElementById('site-shell');
 const menuToggle = document.getElementById('menu-toggle');
 const siteNav = document.getElementById('site-nav');
 
@@ -50,7 +50,7 @@ if (directoryList && practitionersForDirectory.length) {
           <h3>${escapeDirectoryHtml(practitioner.name)}</h3>
           <p>${escapeDirectoryHtml(practitioner.focus)}</p>
           <div class="directory-meta"><span>${escapeDirectoryHtml(practitioner.clinic)}</span><span>${escapeDirectoryHtml(practitioner.experience)} experience</span></div>
-          <div class="directory-card-actions"><a class="btn btn-secondary" href="practitioner-detail.html?id=${escapeDirectoryHtml(practitioner.id)}">View profile</a><a class="btn btn-primary" href="${mapUrl}" target="_blank" rel="noreferrer">Open map</a></div>
+          <div class="directory-card-actions"><a class="btn btn-secondary" href="practitioner-detail.html?id=${escapeDirectoryHtml(practitioner.id)}">View profile</a><a class="btn btn-primary" href="${mapUrl}" target="_blank" rel="noreferrer">Google reviews</a></div>
         </div>
       </article>
     `;
@@ -86,36 +86,8 @@ if (
   specialtyField &&
   bioField
 ) {
-  const reviewStorageKey = 'norbu-mvp-reviews-nl';
   const buildEmbedUrl = (query) => `https://www.google.com/maps?q=${encodeURIComponent(query)}&z=12&output=embed`;
   const buildMapsUrl = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
-
-  const getPractitionerReviews = (practitionerName) => {
-    try {
-      const reviews = JSON.parse(window.localStorage.getItem(reviewStorageKey) || '[]');
-      return Array.isArray(reviews) ? reviews.filter((review) => review.practitioner === practitionerName) : [];
-    } catch (error) {
-      return [];
-    }
-  };
-
-  const renderPractitionerRating = (card) => {
-    const reviews = getPractitionerReviews(card.dataset.name);
-    const existingBadge = card.querySelector('.directory-card-rating');
-
-    if (!reviews.length) {
-      existingBadge?.remove();
-      return;
-    }
-
-    const average = reviews.reduce((total, review) => total + Number(review.rating), 0) / reviews.length;
-    const badge = existingBadge || document.createElement('div');
-    badge.className = 'directory-card-rating';
-    badge.textContent = `${average.toFixed(1)} / 5 - ${reviews.length} ${reviews.length === 1 ? 'review' : 'reviews'}`;
-    if (!existingBadge) {
-      card.querySelector('.directory-card-body')?.appendChild(badge);
-    }
-  };
 
   const setActiveCard = (card) => {
     cards.forEach((item) => {
@@ -132,7 +104,7 @@ if (
       directoryProfileLink?.removeAttribute('href');
       mapFrame.src = buildEmbedUrl('acupuncture Netherlands');
       if (reviewSummary) {
-        reviewSummary.innerHTML = '<strong>No therapist selected</strong><span>Select a therapist to see their feedback summary.</span>';
+        reviewSummary.innerHTML = '<strong>No therapist selected</strong><span>Select a therapist to open the matching Google Maps search.</span>';
       }
       return;
     }
@@ -145,14 +117,7 @@ if (
     mapFrame.src = buildEmbedUrl(card.dataset.locationQuery);
 
     if (reviewSummary) {
-      const reviews = getPractitionerReviews(card.dataset.name);
-
-      if (!reviews.length) {
-        reviewSummary.innerHTML = '<strong>No therapist reviews yet</strong><span>Be the first to leave feedback for this profile.</span>';
-      } else {
-        const average = reviews.reduce((total, review) => total + Number(review.rating), 0) / reviews.length;
-        reviewSummary.innerHTML = `<strong>${average.toFixed(1)} / 5 from ${reviews.length} ${reviews.length === 1 ? 'review' : 'reviews'}</strong><span>Feedback connected specifically to ${card.dataset.name}.</span>`;
-      }
+      reviewSummary.innerHTML = '<strong>Google reviews</strong><span>Open Google Maps to see available Google reviews for this search.</span>';
     }
   };
 
@@ -231,147 +196,7 @@ if (
     availabilityFilter.value = presetAvailability;
   }
 
-  cards.forEach(renderPractitionerRating);
   applyFilters();
-}
-const reviewModal = document.getElementById('review-modal');
-const reviewForm = document.getElementById('review-form');
-const testimonialsList = document.getElementById('testimonials-list');
-
-if (reviewModal && reviewForm && testimonialsList) {
-  const reviewStorageKey = 'norbu-mvp-reviews-nl';
-  const openButtons = Array.from(document.querySelectorAll('[data-review-open]'));
-  const closeButtons = Array.from(reviewModal.querySelectorAll('[data-review-close]'));
-  const reviewName = document.getElementById('review-name');
-  const reviewRating = document.getElementById('review-rating');
-  const reviewPractitioner = document.getElementById('review-practitioner');
-  const reviewMessage = document.getElementById('review-message');
-  const reviewStatus = document.getElementById('review-form-status');
-  const profileReviewSummary = document.getElementById('profile-review-summary');
-  const profilePractitioners = window.norbuPractitioners || [];
-  const profileParams = new URLSearchParams(window.location.search);
-  const profileRequestedId = profileParams.get('id') || profileParams.get('practitioner');
-  const activeProfilePractitioner = profilePractitioners.find((practitioner) => practitioner.id === profileRequestedId) || profilePractitioners[0];
-  let activeReviewTrigger = null;
-
-  const escapeReviewContent = (value) => String(value)
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#39;');
-
-  const loadReviews = () => {
-    try {
-      const reviews = JSON.parse(window.localStorage.getItem(reviewStorageKey) || '[]');
-      return Array.isArray(reviews) ? reviews : [];
-    } catch (error) {
-      return [];
-    }
-  };
-
-  const saveReviews = (reviews) => {
-    try {
-      window.localStorage.setItem(reviewStorageKey, JSON.stringify(reviews));
-    } catch (error) {
-      /* Keep the submitted review visible for the current session. */
-    }
-  };
-
-  const formatReviewDate = (dateValue) => new Intl.DateTimeFormat('en-GB', {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric',
-  }).format(new Date(dateValue));
-
-  if (reviewPractitioner && profilePractitioners.length) {
-    reviewPractitioner.innerHTML = profilePractitioners.map((practitioner) => `<option value="${escapeReviewContent(practitioner.name)}">${escapeReviewContent(practitioner.name)} - ${escapeReviewContent(practitioner.clinic)}</option>`).join('');
-    if (activeProfilePractitioner) {
-      reviewPractitioner.value = activeProfilePractitioner.name;
-    }
-  }
-
-  const renderSubmittedReviews = (reviews) => {
-    testimonialsList.querySelectorAll('[data-submitted-review]').forEach((review) => review.remove());
-    const profileOnly = Boolean(profileReviewSummary && activeProfilePractitioner);
-    const visibleReviews = profileOnly
-      ? reviews.filter((review) => review.practitioner === activeProfilePractitioner.name)
-      : reviews;
-
-    if (profileReviewSummary) {
-      if (!visibleReviews.length) {
-        profileReviewSummary.innerHTML = '<strong>No reviews yet</strong><span>Be the first to add feedback for this therapist.</span>';
-      } else {
-        const average = visibleReviews.reduce((total, review) => total + Number(review.rating), 0) / visibleReviews.length;
-        profileReviewSummary.innerHTML = `<strong>${average.toFixed(1)} / 5 from ${visibleReviews.length} ${visibleReviews.length === 1 ? 'review' : 'reviews'}</strong><span>Reviews connected to ${escapeReviewContent(activeProfilePractitioner.name)}.</span>`;
-      }
-    }
-
-    visibleReviews.forEach((review) => {
-      const card = document.createElement('article');
-      card.className = 'testimonial-card testimonial-card--submitted';
-      card.dataset.submittedReview = review.id;
-      card.innerHTML = `
-        <div class="testimonial-head">
-          <div class="testimonial-person">
-            <div class="testimonial-avatar testimonial-avatar--initial" aria-hidden="true">${escapeReviewContent(review.name.charAt(0).toUpperCase())}</div>
-            <div>
-              <strong>${escapeReviewContent(review.name)}</strong>
-              <div class="testimonial-stars">${'*'.repeat(Number(review.rating))}${'-'.repeat(5 - Number(review.rating))}</div>
-              ${review.practitioner ? `<span class="testimonial-practitioner">For ${escapeReviewContent(review.practitioner)}</span>` : '<span class="testimonial-practitioner">Clinic review</span>'}
-            </div>
-          </div>
-          <div class="testimonial-date">${formatReviewDate(review.createdAt)}</div>
-        </div>
-        <p>${escapeReviewContent(review.message)}</p>
-      `;
-      testimonialsList.prepend(card);
-    });
-  };
-
-  const closeReviewModal = () => {
-    reviewModal.hidden = true;
-    document.body.classList.remove('has-review-modal-open');
-    activeReviewTrigger?.focus();
-  };
-
-  const openReviewModal = (trigger) => {
-    activeReviewTrigger = trigger;
-    reviewStatus.textContent = '';
-    reviewModal.hidden = false;
-    document.body.classList.add('has-review-modal-open');
-    window.requestAnimationFrame(() => reviewName.focus());
-  };
-
-  openButtons.forEach((button) => button.addEventListener('click', () => openReviewModal(button)));
-  closeButtons.forEach((button) => button.addEventListener('click', closeReviewModal));
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && !reviewModal.hidden) {
-      closeReviewModal();
-    }
-  });
-
-  reviewForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const nextReview = {
-      id: `review-${Date.now()}`,
-      name: reviewName.value.trim(),
-      rating: Number(reviewRating.value),
-      practitioner: reviewPractitioner.value,
-      message: reviewMessage.value.trim(),
-      createdAt: new Date().toISOString(),
-    };
-    const reviews = [nextReview, ...loadReviews()];
-    saveReviews(reviews);
-    renderSubmittedReviews(reviews);
-    reviewForm.reset();
-    reviewStatus.textContent = 'Thank you. Your review has been added.';
-    closeReviewModal();
-  });
-
-  renderSubmittedReviews(loadReviews());
 }
 
 const quizForm = document.getElementById('quiz-form');
@@ -1243,6 +1068,7 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
     if (educationList) educationList.innerHTML = selected.education.map((item) => `<li>${item}</li>`).join('');
     const profileMap = document.getElementById('profile-map');
     const profileMapLink = document.getElementById('profile-map-link');
+    const profileGoogleReviewLink = document.getElementById('profile-google-review-link');
     if (profileMap && selected.locationQuery) {
       profileMap.src = `https://www.google.com/maps?q=${encodeURIComponent(selected.locationQuery)}&z=12&output=embed`;
     }
@@ -1252,6 +1078,9 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
     const profileMapHeroLink = document.getElementById('profile-map-link-hero');
     if (profileMapHeroLink && selected.locationQuery) {
       profileMapHeroLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selected.locationQuery)}`;
+    }
+    if (profileGoogleReviewLink && selected.locationQuery) {
+      profileGoogleReviewLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selected.locationQuery)}`;
     }
   }
 
@@ -1311,6 +1140,7 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
 
   renderPractitioner();
 })();
+
 
 
 

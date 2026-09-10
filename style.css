@@ -14845,9 +14845,9 @@ body.has-role-login-open {
   }
 }
 
-/* MVP acupuncture finder launch layer */
-.mvp-finder-page,
-.mvp-profile-page {
+/* Directory acupuncture finder launch layer */
+.norbu-finder-page,
+.norbu-profile-page {
   --bg: #eef1ec;
   --surface: #f8f7f2;
   --text: #172d2f;
@@ -14860,7 +14860,7 @@ body.has-role-login-open {
   background: linear-gradient(180deg, #edf3ee 0%, #f7f3ec 52%, #e4ece7 100%) !important;
 }
 
-.mvp-hero {
+.norbu-hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 340px;
   gap: 20px;
@@ -14868,14 +14868,14 @@ body.has-role-login-open {
   margin: 18px 0 24px;
 }
 
-.mvp-hero-copy,
-.mvp-hero-panel {
+.norbu-hero-copy,
+.norbu-hero-panel {
   border: 1px solid var(--line);
   border-radius: 28px;
   box-shadow: var(--shadow);
 }
 
-.mvp-hero-copy {
+.norbu-hero-copy {
   display: grid;
   gap: 18px;
   padding: clamp(30px, 5vw, 64px);
@@ -14887,7 +14887,7 @@ body.has-role-login-open {
   align-content: end;
 }
 
-.mvp-kicker {
+.norbu-kicker {
   width: fit-content;
   padding: 8px 12px;
   border-radius: 999px;
@@ -14899,7 +14899,7 @@ body.has-role-login-open {
   text-transform: uppercase;
 }
 
-.mvp-hero h1 {
+.norbu-hero h1 {
   max-width: 760px;
   margin: 0;
   color: #fff;
@@ -14908,7 +14908,7 @@ body.has-role-login-open {
   letter-spacing: 0;
 }
 
-.mvp-hero p {
+.norbu-hero p {
   max-width: 660px;
   margin: 0;
   color: rgba(255,255,255,.82);
@@ -14916,7 +14916,7 @@ body.has-role-login-open {
   line-height: 1.55;
 }
 
-.mvp-quick-search {
+.norbu-quick-search {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 10px;
@@ -14926,12 +14926,12 @@ body.has-role-login-open {
   background: rgba(255,255,255,.94);
 }
 
-.mvp-quick-search label {
+.norbu-quick-search label {
   display: grid;
   gap: 5px;
 }
 
-.mvp-quick-search span {
+.norbu-quick-search span {
   padding-left: 6px;
   color: var(--muted);
   font-size: 12px;
@@ -14939,7 +14939,7 @@ body.has-role-login-open {
   text-transform: uppercase;
 }
 
-.mvp-quick-search input {
+.norbu-quick-search input {
   width: 100%;
   min-height: 50px;
   border: 0;
@@ -14950,7 +14950,7 @@ body.has-role-login-open {
   font: inherit;
 }
 
-.mvp-hero-panel {
+.norbu-hero-panel {
   display: grid;
   align-content: end;
   gap: 12px;
@@ -14958,13 +14958,13 @@ body.has-role-login-open {
   background: #fffaf4;
 }
 
-.mvp-hero-panel strong {
+.norbu-hero-panel strong {
   color: var(--text);
   font-size: 28px;
   line-height: 1.05;
 }
 
-.mvp-hero-panel span {
+.norbu-hero-panel span {
   padding: 13px 14px;
   border-radius: 16px;
   background: #edf3ee;
@@ -14972,27 +14972,27 @@ body.has-role-login-open {
   font-weight: 800;
 }
 
-.mvp-finder-page .directory-main {
+.norbu-finder-page .directory-main {
   width: min(1460px, calc(100% - 40px));
   margin: 22px auto 80px;
 }
 
-.mvp-finder-page .directory-filters,
-.mvp-finder-page .directory-map-panel,
-.mvp-finder-page .directory-card,
-.mvp-profile-page .profile-panel,
-.mvp-profile-page .profile-booking-card {
+.norbu-finder-page .directory-filters,
+.norbu-finder-page .directory-map-panel,
+.norbu-finder-page .directory-card,
+.norbu-profile-page .profile-panel,
+.norbu-profile-page .profile-booking-card {
   border-radius: 24px;
 }
 
-.mvp-finder-page .directory-card {
+.norbu-finder-page .directory-card {
   min-height: 360px;
 }
 
-.mvp-finder-page .directory-card h3,
-.mvp-profile-page .profile-hero h1,
-.mvp-profile-page .profile-panel h2,
-.mvp-profile-page .profile-booking-card h2 {
+.norbu-finder-page .directory-card h3,
+.norbu-profile-page .profile-hero h1,
+.norbu-profile-page .profile-panel h2,
+.norbu-profile-page .profile-booking-card h2 {
   letter-spacing: 0 !important;
 }
 
@@ -15046,50 +15046,50 @@ body.has-role-login-open {
   font-weight: 700;
 }
 
-.mvp-profile-page .profile-hero {
+.norbu-profile-page .profile-hero {
   background: linear-gradient(145deg, #143e42 0%, #205f5a 58%, #d77745 140%);
 }
 
-.mvp-profile-page .profile-portrait {
+.norbu-profile-page .profile-portrait {
   min-height: 560px;
 }
 
 @media (max-width: 980px) {
-  .mvp-hero,
+  .norbu-hero,
   .profile-content-grid--map-review {
     grid-template-columns: 1fr;
   }
 
-  .mvp-hero-copy {
+  .norbu-hero-copy {
     min-height: 520px;
   }
 }
 
 @media (max-width: 640px) {
-  .mvp-finder-page .directory-main {
+  .norbu-finder-page .directory-main {
     width: min(100% - 24px, 1460px);
   }
 
-  .mvp-hero-copy,
-  .mvp-hero-panel {
+  .norbu-hero-copy,
+  .norbu-hero-panel {
     border-radius: 22px;
   }
 
-  .mvp-quick-search {
+  .norbu-quick-search {
     grid-template-columns: 1fr;
   }
 
-  .mvp-quick-search .btn {
+  .norbu-quick-search .btn {
     width: 100%;
   }
 }
 
-/* Unified MVP navigation and color system */
-.mvp-site-page,
-.mvp-finder-page,
-.mvp-profile-page,
-.booking-page.mvp-profile-page,
-.faq-page.mvp-site-page {
+/* Unified Directory navigation and color system */
+.norbu-site-page,
+.norbu-finder-page,
+.norbu-profile-page,
+.booking-page.norbu-profile-page,
+.faq-page.norbu-site-page {
   --bg: #edf2ee;
   --surface: #fbfaf5;
   --surface-alt: #f4f0e8;
@@ -15106,181 +15106,181 @@ body.has-role-login-open {
   --shadow: 0 22px 58px rgba(18, 63, 66, 0.11);
 }
 
-body.mvp-site-page,
-body.mvp-finder-page,
-body.mvp-profile-page,
-body.booking-page.mvp-profile-page,
-body.faq-page.mvp-site-page {
+body.norbu-site-page,
+body.norbu-finder-page,
+body.norbu-profile-page,
+body.booking-page.norbu-profile-page,
+body.faq-page.norbu-site-page {
   background:
     linear-gradient(180deg, rgba(237,242,238,.96) 0%, rgba(250,246,239,.98) 48%, rgba(231,240,234,.98) 100%) !important;
   color: var(--text) !important;
 }
 
-.mvp-topbar.topbar {
+.norbu-topbar.topbar {
   position: relative !important;
   z-index: 100 !important;
 }
 
-.mvp-topbar .brand-mark,
-.mvp-site-page .brand-mark,
-.mvp-finder-page .brand-mark,
-.mvp-profile-page .brand-mark {
+.norbu-topbar .brand-mark,
+.norbu-site-page .brand-mark,
+.norbu-finder-page .brand-mark,
+.norbu-profile-page .brand-mark {
   background: linear-gradient(135deg, #1f625d 0%, #9fc8c4 58%, #d67845 100%) !important;
   box-shadow: 0 12px 28px rgba(31, 98, 93, .22) !important;
 }
 
-.mvp-topbar .shell,
-.mvp-topbar .login-box {
+.norbu-topbar .shell,
+.norbu-topbar .login-box {
   background: rgba(255, 255, 255, .78) !important;
   border: 1px solid var(--line) !important;
   box-shadow: var(--shadow) !important;
   backdrop-filter: blur(16px) !important;
 }
 
-.mvp-topbar .nav a {
+.norbu-topbar .nav a {
   color: var(--text) !important;
   font-weight: 750 !important;
 }
 
-.mvp-topbar .nav a:hover,
-.mvp-topbar .nav a.active {
+.norbu-topbar .nav a:hover,
+.norbu-topbar .nav a.active {
   background: rgba(31, 98, 93, .11) !important;
   color: var(--teal) !important;
 }
 
-.mvp-topbar .login-copy strong {
+.norbu-topbar .login-copy strong {
   color: var(--text) !important;
 }
 
-.mvp-topbar .login-copy span {
+.norbu-topbar .login-copy span {
   color: var(--muted) !important;
 }
 
-.mvp-topbar .book-btn,
-.mvp-site-page .btn-primary,
-.mvp-finder-page .btn-primary,
-.mvp-profile-page .btn-primary,
-.booking-page.mvp-profile-page .btn-primary,
-.faq-page.mvp-site-page .btn-primary {
+.norbu-topbar .book-btn,
+.norbu-site-page .btn-primary,
+.norbu-finder-page .btn-primary,
+.norbu-profile-page .btn-primary,
+.booking-page.norbu-profile-page .btn-primary,
+.faq-page.norbu-site-page .btn-primary {
   background: var(--accent) !important;
   color: #fff !important;
   border-color: transparent !important;
 }
 
-.mvp-topbar .book-btn:hover,
-.mvp-site-page .btn-primary:hover,
-.mvp-finder-page .btn-primary:hover,
-.mvp-profile-page .btn-primary:hover,
-.booking-page.mvp-profile-page .btn-primary:hover,
-.faq-page.mvp-site-page .btn-primary:hover {
+.norbu-topbar .book-btn:hover,
+.norbu-site-page .btn-primary:hover,
+.norbu-finder-page .btn-primary:hover,
+.norbu-profile-page .btn-primary:hover,
+.booking-page.norbu-profile-page .btn-primary:hover,
+.faq-page.norbu-site-page .btn-primary:hover {
   background: var(--accent-dark) !important;
 }
 
-.mvp-site-page .btn-secondary,
-.mvp-finder-page .btn-secondary,
-.mvp-profile-page .btn-secondary,
-.booking-page.mvp-profile-page .btn-secondary,
-.faq-page.mvp-site-page .btn-secondary {
+.norbu-site-page .btn-secondary,
+.norbu-finder-page .btn-secondary,
+.norbu-profile-page .btn-secondary,
+.booking-page.norbu-profile-page .btn-secondary,
+.faq-page.norbu-site-page .btn-secondary {
   border-color: var(--line) !important;
   background: rgba(255,255,255,.56) !important;
   color: var(--teal) !important;
 }
 
-.mvp-site-page .pill,
-.mvp-finder-page .pill,
-.mvp-profile-page .pill,
-.mvp-site-page .practitioner-badge,
-.mvp-finder-page .practitioner-badge,
-.mvp-profile-page .practitioner-badge,
-.mvp-site-page .practitioner-map-kicker,
-.mvp-finder-page .practitioner-map-kicker,
-.mvp-profile-page .practitioner-map-kicker,
-.mvp-site-page .profile-kicker,
-.mvp-finder-page .profile-kicker,
-.mvp-profile-page .profile-kicker,
-.faq-page.mvp-site-page .pill {
+.norbu-site-page .pill,
+.norbu-finder-page .pill,
+.norbu-profile-page .pill,
+.norbu-site-page .practitioner-badge,
+.norbu-finder-page .practitioner-badge,
+.norbu-profile-page .practitioner-badge,
+.norbu-site-page .practitioner-map-kicker,
+.norbu-finder-page .practitioner-map-kicker,
+.norbu-profile-page .practitioner-map-kicker,
+.norbu-site-page .profile-kicker,
+.norbu-finder-page .profile-kicker,
+.norbu-profile-page .profile-kicker,
+.faq-page.norbu-site-page .pill {
   background: rgba(31, 98, 93, .1) !important;
   color: var(--teal) !important;
 }
 
-.mvp-site-page .highlight {
+.norbu-site-page .highlight {
   background: rgba(159, 200, 196, .34) !important;
 }
 
-.mvp-site-page .hero-copy,
-.mvp-site-page .small-card,
-.mvp-site-page .services-hero,
-.mvp-site-page .testimonials-section,
-.mvp-site-page .news-section,
-.mvp-finder-page .directory-filters,
-.mvp-finder-page .directory-map-panel,
-.mvp-finder-page .directory-card,
-.mvp-profile-page .profile-panel,
-.mvp-profile-page .profile-booking-card,
-.booking-page.mvp-profile-page .booking-intro,
-.booking-page.mvp-profile-page .booking-form,
-.booking-page.mvp-profile-page .booking-summary,
-.booking-page.mvp-profile-page .booking-confirmation,
-.faq-page.mvp-site-page .faq-hero,
-.faq-page.mvp-site-page .faq-card,
-.faq-page.mvp-site-page .faq-contact-card {
+.norbu-site-page .hero-copy,
+.norbu-site-page .small-card,
+.norbu-site-page .services-hero,
+.norbu-site-page .testimonials-section,
+.norbu-site-page .news-section,
+.norbu-finder-page .directory-filters,
+.norbu-finder-page .directory-map-panel,
+.norbu-finder-page .directory-card,
+.norbu-profile-page .profile-panel,
+.norbu-profile-page .profile-booking-card,
+.booking-page.norbu-profile-page .booking-intro,
+.booking-page.norbu-profile-page .booking-form,
+.booking-page.norbu-profile-page .booking-summary,
+.booking-page.norbu-profile-page .booking-confirmation,
+.faq-page.norbu-site-page .faq-hero,
+.faq-page.norbu-site-page .faq-card,
+.faq-page.norbu-site-page .faq-contact-card {
   border: 1px solid var(--line) !important;
   box-shadow: var(--shadow) !important;
 }
 
-.booking-page.mvp-profile-page .booking-intro {
+.booking-page.norbu-profile-page .booking-intro {
   background: linear-gradient(145deg, var(--teal-dark) 0%, var(--teal) 100%) !important;
 }
 
-.booking-page.mvp-profile-page .booking-step,
-.booking-page.mvp-profile-page .booking-times input:checked + span {
+.booking-page.norbu-profile-page .booking-step,
+.booking-page.norbu-profile-page .booking-times input:checked + span {
   background: var(--teal) !important;
 }
 
 @media (max-width: 980px) {
-  .mvp-topbar .nav {
+  .norbu-topbar .nav {
     background: rgba(255,255,255,.98) !important;
     border: 1px solid var(--line) !important;
   }
 }
 
-/* MVP header without login */
-.mvp-topbar.topbar {
+/* Directory header without login */
+.norbu-topbar.topbar {
   grid-template-columns: auto minmax(0, 1fr) auto !important;
 }
 
-.mvp-topbar > .login-box {
+.norbu-topbar > .login-box {
   display: none !important;
 }
 
 @media (min-width: 981px) {
-  body.mvp-site-page .topbar,
-  body.mvp-finder-page .topbar,
-  body.mvp-profile-page .topbar,
-  body.booking-page.mvp-profile-page .topbar,
-  body.faq-page.mvp-site-page .topbar {
+  body.norbu-site-page .topbar,
+  body.norbu-finder-page .topbar,
+  body.norbu-profile-page .topbar,
+  body.booking-page.norbu-profile-page .topbar,
+  body.faq-page.norbu-site-page .topbar {
     grid-template-columns: auto minmax(0, 1fr) auto !important;
   }
 }
 
 @media (max-width: 980px) {
-  body.mvp-site-page .topbar,
-  body.mvp-finder-page .topbar,
-  body.mvp-profile-page .topbar,
-  body.booking-page.mvp-profile-page .topbar,
-  body.faq-page.mvp-site-page .topbar {
+  body.norbu-site-page .topbar,
+  body.norbu-finder-page .topbar,
+  body.norbu-profile-page .topbar,
+  body.booking-page.norbu-profile-page .topbar,
+  body.faq-page.norbu-site-page .topbar {
     grid-template-columns: minmax(0, 1fr) 58px auto !important;
   }
 }
 
-/* Palette switch is hidden for the MVP. */
+/* Palette switch is hidden for the Directory. */
 .hero-theme-switch,
 .hero-theme-options,
 .hero-theme-dot {
   display: none !important;
 }
 
-/* MVP quiz */
+/* Directory quiz */
 .quiz-main {
   width: min(1180px, calc(100% - 40px));
   margin: 28px auto 80px;
@@ -15435,67 +15435,67 @@ body.faq-page.mvp-site-page {
   }
 }
 
-/* MVP typography refresh */
-body.mvp-site-page,
-body.mvp-finder-page,
-body.mvp-profile-page,
+/* Directory typography refresh */
+body.norbu-site-page,
+body.norbu-finder-page,
+body.norbu-profile-page,
 body.quiz-page,
-body.faq-page.mvp-site-page {
+body.faq-page.norbu-site-page {
   font-family: "Plus Jakarta Sans", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
   font-weight: 500;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
-body.mvp-site-page h1,
-body.mvp-site-page h2,
-body.mvp-site-page h3,
-body.mvp-finder-page h1,
-body.mvp-finder-page h2,
-body.mvp-finder-page h3,
-body.mvp-profile-page h1,
-body.mvp-profile-page h2,
-body.mvp-profile-page h3,
+body.norbu-site-page h1,
+body.norbu-site-page h2,
+body.norbu-site-page h3,
+body.norbu-finder-page h1,
+body.norbu-finder-page h2,
+body.norbu-finder-page h3,
+body.norbu-profile-page h1,
+body.norbu-profile-page h2,
+body.norbu-profile-page h3,
 body.quiz-page h1,
 body.quiz-page h2,
 body.quiz-page h3,
-body.faq-page.mvp-site-page h1,
-body.faq-page.mvp-site-page h2,
-body.faq-page.mvp-site-page h3 {
+body.faq-page.norbu-site-page h1,
+body.faq-page.norbu-site-page h2,
+body.faq-page.norbu-site-page h3 {
   font-family: "Plus Jakarta Sans", Inter, ui-sans-serif, system-ui, sans-serif !important;
   font-weight: 800 !important;
   letter-spacing: 0 !important;
 }
 
-body.mvp-site-page p,
-body.mvp-finder-page p,
-body.mvp-profile-page p,
+body.norbu-site-page p,
+body.norbu-finder-page p,
+body.norbu-profile-page p,
 body.quiz-page p,
-body.faq-page.mvp-site-page p {
+body.faq-page.norbu-site-page p {
   font-weight: 500;
 }
 
-.mvp-topbar .brand,
-.mvp-topbar .nav a,
-.mvp-topbar .book-btn,
-.mvp-site-page .btn,
-.mvp-finder-page .btn,
-.mvp-profile-page .btn,
+.norbu-topbar .brand,
+.norbu-topbar .nav a,
+.norbu-topbar .book-btn,
+.norbu-site-page .btn,
+.norbu-finder-page .btn,
+.norbu-profile-page .btn,
 .quiz-page .btn,
-.faq-page.mvp-site-page .btn {
+.faq-page.norbu-site-page .btn {
   font-family: "Plus Jakarta Sans", Inter, ui-sans-serif, system-ui, sans-serif !important;
   letter-spacing: 0 !important;
 }
 
-.mvp-site-page .hero h1 {
+.norbu-site-page .hero h1 {
   font-size: clamp(50px, 6.4vw, 88px) !important;
   line-height: 1.02 !important;
   max-width: 820px;
 }
 
-.mvp-hero h1,
+.norbu-hero h1,
 .quiz-hero h1,
-.mvp-profile-page .profile-hero h1 {
+.norbu-profile-page .profile-hero h1 {
   line-height: 1.03 !important;
 }
 
@@ -15506,21 +15506,21 @@ body.faq-page.mvp-site-page p {
   line-height: 1.12 !important;
 }
 
-/* Focused MVP homepage */
-.mvp-home-page {
+/* Focused Directory homepage */
+.norbu-home-page {
   background:
     radial-gradient(circle at 82% 8%, rgba(214, 120, 69, .12), transparent 28%),
     linear-gradient(180deg, #f6f3ed 0%, #fbfaf6 48%, #eef4f1 100%);
 }
 
-.mvp-home {
+.norbu-home {
   width: min(1180px, calc(100% - 40px));
   margin: 30px auto 86px;
   display: grid;
   gap: 26px;
 }
 
-.mvp-home-hero {
+.norbu-home-hero {
   min-height: min(680px, calc(100vh - 140px));
   display: grid;
   grid-template-columns: minmax(0, 1fr) 390px;
@@ -15534,7 +15534,7 @@ body.faq-page.mvp-site-page p {
   box-shadow: 0 26px 70px rgba(18, 63, 66, .16);
 }
 
-.mvp-home-copy {
+.norbu-home-copy {
   align-self: end;
   display: grid;
   gap: 22px;
@@ -15542,8 +15542,8 @@ body.faq-page.mvp-site-page p {
   color: #fff;
 }
 
-.mvp-kicker,
-.mvp-panel-label {
+.norbu-kicker,
+.norbu-panel-label {
   width: fit-content;
   display: inline-flex;
   align-items: center;
@@ -15558,12 +15558,12 @@ body.faq-page.mvp-site-page p {
   text-transform: uppercase;
 }
 
-.mvp-home-copy .mvp-kicker {
+.norbu-home-copy .norbu-kicker {
   background: rgba(255,255,255,.14);
   color: rgba(255,255,255,.86);
 }
 
-.mvp-home-copy h1 {
+.norbu-home-copy h1 {
   max-width: 850px;
   margin: 0;
   color: #fff;
@@ -15572,7 +15572,7 @@ body.faq-page.mvp-site-page p {
   letter-spacing: 0 !important;
 }
 
-.mvp-home-copy p {
+.norbu-home-copy p {
   max-width: 680px;
   margin: 0;
   color: rgba(255,255,255,.78);
@@ -15580,13 +15580,13 @@ body.faq-page.mvp-site-page p {
   line-height: 1.62;
 }
 
-.mvp-home-actions {
+.norbu-home-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
-.mvp-home-panel {
+.norbu-home-panel {
   align-self: end;
   margin: 28px;
   padding: 26px;
@@ -15596,25 +15596,25 @@ body.faq-page.mvp-site-page p {
   box-shadow: 0 22px 55px rgba(10, 40, 42, .22);
 }
 
-.mvp-home-panel h2,
-.mvp-search-band h2,
-.mvp-section-head h2,
-.mvp-home-scope h2 {
+.norbu-home-panel h2,
+.norbu-search-band h2,
+.norbu-section-head h2,
+.norbu-home-scope h2 {
   margin: 12px 0 0;
   color: var(--text);
   font-size: clamp(28px, 3.6vw, 48px);
   line-height: 1.05;
 }
 
-.mvp-home-checks,
-.mvp-scope-list {
+.norbu-home-checks,
+.norbu-scope-list {
   display: grid;
   gap: 10px;
   margin-top: 22px;
 }
 
-.mvp-home-checks div,
-.mvp-scope-list div {
+.norbu-home-checks div,
+.norbu-scope-list div {
   display: grid;
   gap: 5px;
   padding: 14px;
@@ -15623,25 +15623,25 @@ body.faq-page.mvp-site-page p {
   background: #fffdf8;
 }
 
-.mvp-home-checks strong,
-.mvp-scope-list strong {
+.norbu-home-checks strong,
+.norbu-scope-list strong {
   color: var(--text);
   font-weight: 900;
 }
 
-.mvp-home-checks span,
-.mvp-scope-list span,
-.mvp-home-scope p,
-.mvp-flow-grid p,
-.mvp-profile-preview p {
+.norbu-home-checks span,
+.norbu-scope-list span,
+.norbu-home-scope p,
+.norbu-flow-grid p,
+.norbu-profile-preview p {
   color: var(--muted);
   line-height: 1.62;
 }
 
-.mvp-search-band,
-.mvp-home-flow,
-.mvp-home-profiles,
-.mvp-home-scope {
+.norbu-search-band,
+.norbu-home-flow,
+.norbu-home-profiles,
+.norbu-home-scope {
   padding: clamp(24px, 4vw, 44px);
   border: 1px solid rgba(18, 63, 66, .1);
   border-radius: 28px;
@@ -15649,47 +15649,47 @@ body.faq-page.mvp-site-page p {
   box-shadow: 0 18px 50px rgba(18, 63, 66, .08);
 }
 
-.mvp-search-band {
+.norbu-search-band {
   display: grid;
   grid-template-columns: minmax(0, .75fr) minmax(0, 1fr);
   align-items: center;
   gap: 24px;
 }
 
-.mvp-search-links {
+.norbu-search-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 10px;
 }
 
-.mvp-search-links a,
-.mvp-flow-grid a,
-.mvp-profile-preview a {
+.norbu-search-links a,
+.norbu-flow-grid a,
+.norbu-profile-preview a {
   color: #1f625d;
   font-weight: 900;
   text-decoration: none;
 }
 
-.mvp-search-links a {
+.norbu-search-links a {
   padding: 12px 15px;
   border: 1px solid rgba(18, 63, 66, .13);
   border-radius: 999px;
   background: #f6f3ed;
 }
 
-.mvp-section-head {
+.norbu-section-head {
   max-width: 740px;
 }
 
-.mvp-flow-grid {
+.norbu-flow-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin-top: 24px;
 }
 
-.mvp-flow-grid article {
+.norbu-flow-grid article {
   display: grid;
   gap: 12px;
   padding: 22px;
@@ -15698,38 +15698,38 @@ body.faq-page.mvp-site-page p {
   background: #fbfaf6;
 }
 
-.mvp-flow-grid span {
+.norbu-flow-grid span {
   color: #d67845;
   font-weight: 950;
 }
 
-.mvp-flow-grid h3,
-.mvp-profile-preview h3 {
+.norbu-flow-grid h3,
+.norbu-profile-preview h3 {
   margin: 0;
   color: var(--text);
   font-size: 22px;
 }
 
-.mvp-flow-grid p,
-.mvp-profile-preview p {
+.norbu-flow-grid p,
+.norbu-profile-preview p {
   margin: 0;
 }
 
-.mvp-profile-preview-grid {
+.norbu-profile-preview-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin-top: 24px;
 }
 
-.mvp-profile-preview {
+.norbu-profile-preview {
   overflow: hidden;
   border: 1px solid rgba(18, 63, 66, .1);
   border-radius: 22px;
   background: #fbfaf6;
 }
 
-.mvp-profile-preview img {
+.norbu-profile-preview img {
   width: 100%;
   height: 250px;
   object-fit: cover;
@@ -15737,13 +15737,13 @@ body.faq-page.mvp-site-page p {
   display: block;
 }
 
-.mvp-profile-preview div {
+.norbu-profile-preview div {
   display: grid;
   gap: 9px;
   padding: 20px;
 }
 
-.mvp-profile-preview span {
+.norbu-profile-preview span {
   color: #d67845;
   font-size: 12px;
   font-weight: 950;
@@ -15751,73 +15751,264 @@ body.faq-page.mvp-site-page p {
   text-transform: uppercase;
 }
 
-.mvp-home-scope {
+.norbu-home-scope {
   display: grid;
   grid-template-columns: minmax(0, .95fr) minmax(0, 1fr);
   gap: 28px;
   align-items: start;
 }
 
-.mvp-home-scope p {
+.norbu-home-scope p {
   max-width: 620px;
   margin: 16px 0 0;
 }
 
 @media (max-width: 980px) {
-  .mvp-home {
+  .norbu-home {
     width: min(100% - 24px, 1180px);
     margin-top: 20px;
     gap: 18px;
   }
 
-  .mvp-home-hero,
-  .mvp-search-band,
-  .mvp-home-scope {
+  .norbu-home-hero,
+  .norbu-search-band,
+  .norbu-home-scope {
     grid-template-columns: 1fr;
   }
 
-  .mvp-home-hero {
+  .norbu-home-hero {
     min-height: auto;
     background:
       linear-gradient(180deg, rgba(12, 46, 48, .96) 0%, rgba(18, 63, 66, .72) 70%, rgba(18, 63, 66, .42) 100%),
       url("https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1400&q=80") center / cover;
   }
 
-  .mvp-home-panel {
+  .norbu-home-panel {
     margin: 0 18px 18px;
   }
 
-  .mvp-search-links {
+  .norbu-search-links {
     justify-content: flex-start;
   }
 
-  .mvp-flow-grid,
-  .mvp-profile-preview-grid {
+  .norbu-flow-grid,
+  .norbu-profile-preview-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 640px) {
-  .mvp-home-copy {
+  .norbu-home-copy {
     padding: 32px 22px 24px;
   }
 
-  .mvp-home-copy h1 {
+  .norbu-home-copy h1 {
     font-size: clamp(42px, 14vw, 60px) !important;
   }
 
-  .mvp-home-actions .btn,
-  .mvp-search-links a {
+  .norbu-home-actions .btn,
+  .norbu-search-links a {
     width: 100%;
     justify-content: center;
     text-align: center;
   }
 
-  .mvp-home-panel,
-  .mvp-search-band,
-  .mvp-home-flow,
-  .mvp-home-profiles,
-  .mvp-home-scope {
+  .norbu-home-panel,
+  .norbu-search-band,
+  .norbu-home-flow,
+  .norbu-home-profiles,
+  .norbu-home-scope {
     border-radius: 22px;
   }
 }
+
+/* Shared public layout refinement */
+body.norbu-site-page .topbar,
+body.norbu-finder-page .topbar,
+body.norbu-profile-page .topbar,
+body.quiz-page .topbar,
+body.catalog-page .topbar {
+  width: min(1280px, calc(100% - 48px)) !important;
+}
+
+body.norbu-site-page .site-footer,
+body.norbu-finder-page .site-footer,
+body.norbu-profile-page .site-footer,
+body.quiz-page .site-footer,
+body.catalog-page .site-footer {
+  width: min(1280px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.norbu-home,
+.norbu-finder-page .directory-main,
+.norbu-profile-page .profile-main,
+.quiz-main,
+.catalog-main,
+.norbu-faq-main {
+  width: min(1280px, calc(100% - 48px)) !important;
+}
+
+.norbu-home-hero {
+  grid-template-columns: minmax(0, 1fr) 420px;
+}
+
+.norbu-home-panel {
+  margin: 34px;
+}
+
+.directory-review-summary,
+.profile-review-summary {
+  background: #eef4f1;
+}
+
+/* Finished FAQ layout */
+.norbu-faq-page {
+  background: linear-gradient(180deg, #f3f0e9 0%, #fbfaf6 48%, #eaf1ed 100%);
+}
+
+.norbu-faq-main {
+  margin: 30px auto 82px;
+  display: grid;
+  gap: 24px !important;
+}
+
+.norbu-faq-hero,
+.norbu-faq-bottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 28px;
+  align-items: end;
+  padding: clamp(30px, 5vw, 58px);
+  border: 1px solid rgba(23, 45, 47, .11);
+  border-radius: 30px;
+  background:
+    linear-gradient(135deg, rgba(20, 62, 66, .95) 0%, rgba(32, 95, 90, .9) 54%, rgba(215, 119, 69, .72) 145%),
+    url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=80") center / cover;
+  box-shadow: 0 24px 65px rgba(18, 63, 66, .14);
+  color: #fff;
+}
+
+.norbu-faq-hero h1 {
+  max-width: 760px;
+  margin: 14px 0 16px;
+  color: #fff;
+  font-size: clamp(46px, 6vw, 82px);
+  line-height: 1;
+}
+
+.norbu-faq-hero p {
+  max-width: 680px;
+  margin: 0;
+  color: rgba(255,255,255,.78);
+  font-size: 18px;
+  line-height: 1.62;
+}
+
+.norbu-faq-hero aside {
+  display: grid;
+  gap: 10px;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 22px;
+  background: rgba(251, 250, 246, .92);
+  color: var(--text);
+}
+
+.norbu-faq-hero aside strong {
+  font-size: 28px;
+  line-height: 1.08;
+}
+
+.norbu-faq-hero aside span {
+  padding: 12px 14px;
+  border-radius: 15px;
+  background: #eef4f1;
+  color: var(--teal-dark);
+  font-weight: 800;
+}
+
+.norbu-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.norbu-faq-card {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  border: 1px solid rgba(23, 45, 47, .1);
+  border-radius: 22px;
+  background: rgba(255,255,255,.82);
+  box-shadow: 0 14px 40px rgba(18, 63, 66, .07);
+}
+
+.norbu-faq-card span {
+  color: #d77745;
+  font-weight: 950;
+}
+
+.norbu-faq-card h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 24px;
+  line-height: 1.15;
+}
+
+.norbu-faq-card p,
+.norbu-faq-bottom p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.norbu-faq-bottom {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  background: #fffdf8;
+  color: var(--text);
+}
+
+.norbu-faq-bottom h2 {
+  margin: 12px 0 12px;
+  color: var(--text);
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.05;
+}
+
+@media (max-width: 980px) {
+  body.norbu-site-page .topbar,
+  body.norbu-finder-page .topbar,
+  body.norbu-profile-page .topbar,
+  body.quiz-page .topbar,
+  body.catalog-page .topbar,
+  body.norbu-site-page .site-footer,
+  body.norbu-finder-page .site-footer,
+  body.norbu-profile-page .site-footer,
+  body.quiz-page .site-footer,
+  body.catalog-page .site-footer,
+  .norbu-home,
+  .norbu-finder-page .directory-main,
+  .norbu-profile-page .profile-main,
+  .quiz-main,
+  .catalog-main,
+  .norbu-faq-main {
+    width: min(100% - 24px, 1280px) !important;
+  }
+
+  .norbu-home-hero,
+  .norbu-faq-hero,
+  .norbu-faq-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .norbu-home-panel {
+    margin: 0 18px 18px;
+  }
+
+  .norbu-faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

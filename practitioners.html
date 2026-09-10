@@ -1,20 +1,17 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Find Acupuncturists in The Netherlands | Norbu</title>
-  <meta name="description" content="Find an acupuncturist in The Netherlands by city, specialization, availability, map location, and reviews.">
+  <meta name="description" content="Find an acupuncturist in The Netherlands by city, specialization, availability, Google Maps, and Google reviews.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
-<body class="directory-page mvp-finder-page">
+<body class="directory-page norbu-finder-page">
   <div class="page">
-    <header class="topbar mvp-topbar">
-      <a class="brand brand-link" href="index.html">
-        <div class="brand-mark"></div>
-        <span>Norbu</span>
-      </a>
+    <header class="topbar norbu-topbar">
+      <a class="brand brand-link" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a>
       <div class="shell" id="site-shell">
         <nav class="nav" id="site-nav">
           <a href="index.html">Home</a>
@@ -30,131 +27,58 @@
     </header>
 
     <main class="directory-main">
-      <section class="mvp-hero">
-        <div class="mvp-hero-copy">
-          <span class="mvp-kicker">Norbu MVP directory</span>
+      <section class="norbu-hero">
+        <div class="norbu-hero-copy">
+          <span class="norbu-kicker">Acupuncture directory</span>
           <h1>Find an acupuncturist in The Netherlands.</h1>
-          <p>Search by city, specialization, and availability. Open a therapist profile, check the map, and leave or read early community reviews.</p>
-          <form class="mvp-quick-search" action="#directory-list">
-            <label>
-              <span>What are you looking for?</span>
-              <input id="filter-search" type="search" placeholder="Pain, fertility, sleep, Amsterdam..." autocomplete="off">
-            </label>
+          <p>Search by city, specialization, and availability. Open a therapist profile, then continue to Google Maps for location context and available Google reviews.</p>
+          <form class="norbu-quick-search" action="#directory-list">
+            <label><span>What are you looking for?</span><input id="filter-search" type="search" placeholder="Pain, fertility, sleep, Amsterdam..." autocomplete="off"></label>
             <button class="btn btn-primary" type="submit">Search</button>
           </form>
         </div>
-        <aside class="mvp-hero-panel">
-          <strong>First live version</strong>
-          <span>6 therapist profiles</span>
-          <span>5 Dutch cities</span>
-          <span>Map + review prototype</span>
+        <aside class="norbu-hero-panel">
+          <strong>Directory search</strong>
+          <span>Therapist profiles</span>
+          <span>Dutch city filters</span>
+          <span>Google Maps and reviews</span>
         </aside>
       </section>
 
       <section class="directory-filters card" aria-label="Filter acupuncturists">
-        <div class="directory-filters-head">
-          <div>
-            <span class="practitioner-map-kicker">Filters</span>
-            <h2>Acupuncturist finder</h2>
-          </div>
-          <p id="directory-results-copy">Showing 6 therapists</p>
-        </div>
-
+        <div class="directory-filters-head"><div><span class="practitioner-map-kicker">Filters</span><h2>Acupuncturist finder</h2></div><p id="directory-results-copy">Showing 6 therapists</p></div>
         <div class="directory-controls">
-          <label class="filter-field">
-            <span>Specialization</span>
-            <select id="filter-specialty">
-              <option value="all">All specializations</option>
-              <option value="Fertility acupuncture">Fertility acupuncture</option>
-              <option value="Pain acupuncture">Pain acupuncture</option>
-              <option value="Stress and sleep acupuncture">Stress and sleep acupuncture</option>
-              <option value="Women's health acupuncture">Women's health acupuncture</option>
-              <option value="Traditional Chinese Medicine">Traditional Chinese Medicine</option>
-              <option value="Cosmetic acupuncture">Cosmetic acupuncture</option>
-            </select>
-          </label>
-
-          <label class="filter-field">
-            <span>City</span>
-            <select id="filter-location">
-              <option value="all">All cities</option>
-              <option value="Amsterdam">Amsterdam</option>
-              <option value="Rotterdam">Rotterdam</option>
-              <option value="Utrecht">Utrecht</option>
-              <option value="The Hague">The Hague</option>
-              <option value="Eindhoven">Eindhoven</option>
-            </select>
-          </label>
-
-          <label class="filter-field">
-            <span>Availability</span>
-            <select id="filter-availability">
-              <option value="all">Any availability</option>
-              <option value="Today">Available today</option>
-              <option value="This Week">This week</option>
-              <option value="Waitlist">Waitlist only</option>
-            </select>
-          </label>
-
+          <label class="filter-field"><span>Specialization</span><select id="filter-specialty"><option value="all">All specializations</option><option value="Fertility acupuncture">Fertility acupuncture</option><option value="Pain acupuncture">Pain acupuncture</option><option value="Stress and sleep acupuncture">Stress and sleep acupuncture</option><option value="Women's health acupuncture">Women's health acupuncture</option><option value="Traditional Chinese Medicine">Traditional Chinese Medicine</option><option value="Cosmetic acupuncture">Cosmetic acupuncture</option></select></label>
+          <label class="filter-field"><span>City</span><select id="filter-location"><option value="all">All cities</option><option value="Amsterdam">Amsterdam</option><option value="Rotterdam">Rotterdam</option><option value="Utrecht">Utrecht</option><option value="The Hague">The Hague</option><option value="Eindhoven">Eindhoven</option></select></label>
+          <label class="filter-field"><span>Availability</span><select id="filter-availability"><option value="all">Any availability</option><option value="Today">Available today</option><option value="This Week">This week</option><option value="Waitlist">Waitlist only</option></select></label>
           <button id="filter-reset" class="btn btn-secondary directory-reset-btn" type="button">Reset</button>
         </div>
       </section>
 
       <section class="directory-layout">
         <div class="directory-list" id="directory-list" aria-live="polite"></div>
-
         <aside class="directory-map-panel card" id="directory-map-panel">
           <div class="directory-map-copy">
             <span class="practitioner-map-kicker">Selected therapist</span>
             <h3 id="directory-name">Sanne de Vries</h3>
             <p id="directory-specialty">Fertility acupuncture - Amsterdam - This Week</p>
-            <p id="directory-bio">Select a therapist to view their focus, reviews, and map location.</p>
-            <div class="directory-review-summary" id="directory-review-summary">
-              <strong>No therapist reviews yet</strong>
-              <span>Reviews added in this MVP appear instantly in the directory.</span>
-            </div>
+            <p id="directory-bio">Select a therapist to view their focus and map area.</p>
+            <div class="directory-review-summary" id="directory-review-summary"><strong>Google reviews</strong><span>Open Google Maps to see available Google reviews for this search.</span></div>
             <div class="directory-map-actions">
               <a id="directory-profile-link" class="btn btn-secondary" href="practitioner-detail.html?id=sanne-de-vries">View profile</a>
-              <a id="directory-map-link" class="btn btn-primary practitioner-map-link" href="https://www.google.com/maps/search/?api=1&query=fertility%20acupuncture%20Amsterdam%20Netherlands" target="_blank" rel="noreferrer">Open in Google Maps</a>
+              <a id="directory-map-link" class="btn btn-primary practitioner-map-link" href="https://www.google.com/maps/search/?api=1&query=fertility%20acupuncture%20Amsterdam%20Netherlands" target="_blank" rel="noreferrer">Open Google reviews</a>
             </div>
           </div>
-          <div class="practitioner-map-frame directory-map-frame">
-            <iframe id="directory-map" title="Google Maps location for selected therapist" src="https://www.google.com/maps?q=fertility%20acupuncture%20Amsterdam%20Netherlands&z=12&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
+          <div class="practitioner-map-frame directory-map-frame"><iframe id="directory-map" title="Google Maps location for selected therapist" src="https://www.google.com/maps?q=fertility%20acupuncture%20Amsterdam%20Netherlands&z=12&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         </aside>
       </section>
     </main>
 
-    <footer class="site-footer site-footer--directory">
-      <div class="site-footer-grid">
-        <div>
-          <a class="brand brand-link site-footer-brand" href="index.html">
-            <div class="brand-mark"></div>
-            <span>Norbu</span>
-          </a>
-          <p>A first searchable acupuncture directory for The Netherlands.</p>
-        </div>
-        <div>
-          <strong>MVP</strong>
-          <p>Profiles<br>Map search<br>Review prototype</p>
-        </div>
-        <div>
-          <strong>Scope</strong>
-          <p>Start with a profile linked to a map and reviews, then expand the database.</p>
-        </div>
-        <div>
-          <strong>Explore</strong>
-          <p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a>
-          <a href="quiz.html">Quiz</a><br><a href="faq.html">FAQ</a></p>
-        </div>
-      </div>
-    </footer>
+    <footer class="site-footer site-footer--directory"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A searchable acupuncture directory for The Netherlands.</p></div><div><strong>Use</strong><p>Profiles<br>Map search<br>Google reviews</p></div><div><strong>Scope</strong><p>Browse profiles and continue to Google for maps and reviews.</p></div><div><strong>Explore</strong><p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a><br><a href="quiz.html">Quiz</a><br><a href="faq.html">FAQ</a></p></div></div></footer>
   </div>
-
   <script src="practitioners-data.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 </html>
-
 
 

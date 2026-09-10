@@ -1,16 +1,16 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAQ | Norbu MVP</title>
-  <meta name="description" content="MVP FAQ for the Norbu acupuncture directory: profiles, Google Maps links, and local reviews.">
+  <title>FAQ | Norbu</title>
+  <meta name="description" content="Frequently asked questions about Norbu, an acupuncture directory for The Netherlands with therapist profiles, Google Maps, and Google reviews.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
-<body class="home-page faq-page mvp-site-page">
+<body class="home-page faq-page norbu-site-page norbu-faq-page">
   <div class="page">
-    <header class="topbar mvp-topbar">
+    <header class="topbar norbu-topbar">
       <a class="brand brand-link" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a>
       <div class="shell" id="site-shell">
         <nav class="nav" id="site-nav">
@@ -23,44 +23,44 @@
         <div class="icon-circle search-icon" aria-hidden="true"></div>
         <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
       </div>
-      <a class="book-btn" href="practitioners.html">Find a therapist</a>
+      <a class="book-btn" href="practitioners.html">Open finder</a>
     </header>
 
-    <main class="faq-main">
-      <section class="faq-hero card">
-        <div class="faq-hero-layout">
-          <div class="faq-hero-copy">
-            <div class="faq-hero-heading"><div class="pill">MVP FAQ</div><span class="faq-hero-status">Profiles, maps, reviews</span></div>
-            <h1>What this first version does and does not do.</h1>
-            <p>Norbu is currently a simple acupuncture directory prototype for The Netherlands. It shows sample therapist profiles, Google Maps search links, and local review functionality.</p>
-            <div class="faq-hero-actions"><a class="btn btn-primary" href="practitioners.html">Open finder</a><a class="btn btn-secondary" href="#faq-questions">Read limits</a></div>
-          </div>
-          <aside class="faq-hero-aside">
-            <span class="practitioner-map-kicker">Current scope</span>
-            <h2>No booking. No provider messaging. No medical recommendation.</h2>
-            <p>The MVP is only meant to prove the browsing flow: filter profiles, open map context, and collect early feedback.</p>
-            <div class="faq-hero-meta"><div><strong>6</strong><span>sample profiles</span></div><div><strong>5</strong><span>Dutch cities</span></div><div><strong>Local</strong><span>browser reviews</span></div></div>
-          </aside>
+    <main class="faq-main norbu-faq-main">
+      <section class="norbu-faq-hero">
+        <div>
+          <span class="norbu-kicker">Questions</span>
+          <h1>How Norbu works right now.</h1>
+          <p>Norbu helps visitors browse acupuncture therapist profiles in The Netherlands and continue to Google Maps for location context and Google reviews.</p>
+          <div class="faq-hero-actions"><a class="btn btn-primary" href="practitioners.html">Open finder</a><a class="btn btn-secondary" href="quiz.html">Take the quiz</a></div>
         </div>
+        <aside>
+          <strong>Simple directory</strong>
+          <span>Profiles by city and specialization</span>
+          <span>Google Maps links</span>
+          <span>Google reviews only</span>
+        </aside>
       </section>
 
-      <section class="faq-questions card" id="faq-questions">
-        <div class="faq-section-head"><span class="pill">Limits</span><h2>Clear MVP boundaries</h2><p>These answers keep the product honest until real provider data, moderation, and contact flows are added.</p></div>
-        <div class="faq-list">
-          <article class="faq-item"><span class="faq-item-tag">Profiles</span><h3>Are these verified providers?</h3><p>No. The current profiles are sample MVP entries used to demonstrate the directory structure.</p></article>
-          <article class="faq-item"><span class="faq-item-tag">Maps</span><h3>Are exact clinic addresses included?</h3><p>No. The map buttons open Google Maps searches by city and specialization. Exact addresses can be added later.</p></article>
-          <article class="faq-item"><span class="faq-item-tag">Reviews</span><h3>Are reviews public or moderated?</h3><p>No. Reviews in this MVP are saved locally in the visitor's browser. They are useful for testing the review flow only.</p></article>
-          <article class="faq-item"><span class="faq-item-tag">Booking</span><h3>Can users book through Norbu?</h3><p>No. Booking, messaging, payments, and scheduling are not part of this version.</p></article>
-          <article class="faq-item"><span class="faq-item-tag">Medical</span><h3>Does Norbu recommend a treatment?</h3><p>No. The site does not diagnose, rank therapists, or recommend care. It only helps visitors compare profile information.</p></article>
-          <article class="faq-item"><span class="faq-item-tag">Next</span><h3>What can be added after the MVP?</h3><p>Provider onboarding, claimed profiles, exact addresses, review moderation, and optional contact details can be added later.</p></article>
-        </div>
+      <section class="norbu-faq-grid" id="faq-questions">
+        <article class="norbu-faq-card"><span>01</span><h2>Can I book an appointment through Norbu?</h2><p>No. Norbu does not handle booking, payments, messages, or appointment requests yet. Visitors can use the directory to compare profiles and continue to Google Maps.</p></article>
+        <article class="norbu-faq-card"><span>02</span><h2>Where can visitors see reviews?</h2><p>Reviews are viewed through Google Maps. Norbu does not collect, store, moderate, or display its own reviews on the website.</p></article>
+        <article class="norbu-faq-card"><span>03</span><h2>Are exact clinic addresses included?</h2><p>Not yet. Current map buttons open Google Maps searches by city and specialization. Exact addresses can be added when provider data is confirmed.</p></article>
+        <article class="norbu-faq-card"><span>04</span><h2>Does the quiz recommend treatment?</h2><p>No. The quiz only helps visitors choose a search direction, such as fertility, pain, stress and sleep, or Traditional Chinese Medicine.</p></article>
+        <article class="norbu-faq-card"><span>05</span><h2>Are therapists ranked?</h2><p>No. Norbu does not rank therapists or create review scores. Visitors should compare profile information and check Google reviews themselves.</p></article>
+        <article class="norbu-faq-card"><span>06</span><h2>What can be added later?</h2><p>Provider-claimed profiles, exact addresses, richer city pages, moderated review imports, contact details, and booking can be added once the core directory is working.</p></article>
+      </section>
+
+      <section class="norbu-faq-bottom">
+        <div><span class="norbu-kicker">Good to know</span><h2>Norbu is an orientation tool.</h2><p>It is not medical advice and it does not replace a consultation with a qualified professional. The goal is to make the first search step clearer.</p></div>
+        <a class="btn btn-primary" href="practitioners.html">Find a therapist</a>
       </section>
     </main>
 
-    <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A first searchable acupuncture directory prototype for The Netherlands.</p></div><div><strong>MVP</strong><p>Profiles<br>Maps<br>Local reviews</p></div><div><strong>Limits</strong><p>No booking<br>No messaging<br>No recommendations</p></div><div><strong>Explore</strong><p><a href="index.html">Home</a><br><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a>
-          <a href="quiz.html">Quiz</a></p></div></div></footer>
+    <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A searchable acupuncture directory for The Netherlands.</p></div><div><strong>Use</strong><p>Profiles<br>Maps<br>Google reviews</p></div><div><strong>Not included yet</strong><p>Booking<br>Messaging<br>On-site reviews</p></div><div><strong>Explore</strong><p><a href="index.html">Home</a><br><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a><br><a href="quiz.html">Quiz</a></p></div></div></footer>
   </div>
   <script src="script.js" defer></script>
 </body>
 </html>
+
 
