@@ -1,15 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Practitioner Directory | Norbu</title>
+  <title>Find Acupuncturists in The Netherlands | Norbu</title>
+  <meta name="description" content="Find an acupuncturist in The Netherlands by city, specialization, availability, map location, and reviews.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
-<body class="directory-page">
+<body class="directory-page mvp-finder-page">
   <div class="page">
-    <header class="topbar">
+    <header class="topbar mvp-topbar">
       <a class="brand brand-link" href="index.html">
         <div class="brand-mark"></div>
         <span>Norbu</span>
@@ -17,110 +18,71 @@
       <div class="shell" id="site-shell">
         <nav class="nav" id="site-nav">
           <a href="index.html">Home</a>
-          <a href="about.html">About</a>
           <a href="therapies.html">Therapies</a>
-          <a class="active" href="practitioners.html">Practitioners</a>
-          <a href="blog.html">Blog</a>
+          <a class="active" href="practitioners.html">Find a therapist</a>
+          <a href="quiz.html">Quiz</a>
           <a href="faq.html">FAQ</a>
         </nav>
         <div class="icon-circle search-icon" aria-hidden="true"></div>
         <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
       </div>
-      <a class="login-box" href="platform.html" data-role-login-trigger>
-        <div class="icon-circle login-icon" aria-hidden="true"></div>
-        <div class="login-copy"><strong>Login</strong><span>Open the secure portal</span></div>
-      </a>
-      <a class="book-btn" href="booking.html">Book a Visit</a>
+      <a class="book-btn" href="#directory-map-panel">Open map</a>
     </header>
 
     <main class="directory-main">
-      <section class="subpage-hero subpage-hero--directory card">
-        <div class="subpage-hero-grid">
-          <div class="subpage-hero-copy">
-            <div class="subpage-breadcrumbs">
-              <a href="index.html">Home</a>
-              <span>/</span>
-              <span>Practitioners</span>
-            </div>
-            <span class="subpage-hero-kicker">Practitioner directory</span>
-            <h1>Find the right practitioner with a clearer overview.</h1>
-            <p>Compare specialties, locations, and availability, then choose whether to view a full profile or book directly.</p>
-
-            <nav class="subpage-hero-links" aria-label="Directory sections">
-              <a href="#filter-search">Search</a>
-              <a href="#filter-specialty">Specialties</a>
-              <a href="#directory-list">Directory</a>
-              <a href="#directory-map-panel">Map view</a>
-            </nav>
-          </div>
-
-          <div class="subpage-hero-visual">
-            <article class="subpage-hero-image subpage-hero-image--main">
-              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80" alt="Norbu practitioner portrait">
-            </article>
-
-            <div class="subpage-hero-stack">
-              <article class="subpage-hero-image subpage-hero-image--small">
-                <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=900&q=80" alt="Norbu herbal therapy practitioner portrait">
-              </article>
-              <article class="subpage-hero-image subpage-hero-image--small">
-                <img src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&w=900&q=80" alt="Norbu pediatric practitioner portrait">
-              </article>
-            </div>
-          </div>
+      <section class="mvp-hero">
+        <div class="mvp-hero-copy">
+          <span class="mvp-kicker">Norbu MVP directory</span>
+          <h1>Find an acupuncturist in The Netherlands.</h1>
+          <p>Search by city, specialization, and availability. Open a therapist profile, check the map, and leave or read early community reviews.</p>
+          <form class="mvp-quick-search" action="#directory-list">
+            <label>
+              <span>What are you looking for?</span>
+              <input id="filter-search" type="search" placeholder="Pain, fertility, sleep, Amsterdam..." autocomplete="off">
+            </label>
+            <button class="btn btn-primary" type="submit">Search</button>
+          </form>
         </div>
-
-        <div class="subpage-hero-metrics">
-          <div class="subpage-hero-metric">
-            <strong>18 active practitioners</strong>
-            <span>Profile cards with focus area, clinic, and availability.</span>
-          </div>
-          <div class="subpage-hero-metric">
-            <strong>6 core specialties</strong>
-            <span>From functional medicine to acupuncture and pediatrics.</span>
-          </div>
-          <div class="subpage-hero-metric">
-            <strong>3 clinic locations</strong>
-            <span>Switch cards to update the live Google Maps panel.</span>
-          </div>
-        </div>
+        <aside class="mvp-hero-panel">
+          <strong>First live version</strong>
+          <span>6 therapist profiles</span>
+          <span>5 Dutch cities</span>
+          <span>Map + review prototype</span>
+        </aside>
       </section>
 
-      <section class="directory-filters card">
+      <section class="directory-filters card" aria-label="Filter acupuncturists">
         <div class="directory-filters-head">
           <div>
             <span class="practitioner-map-kicker">Filters</span>
-            <h2>Practitioner finder</h2>
+            <h2>Acupuncturist finder</h2>
           </div>
-          <p id="directory-results-copy">Showing 8 practitioners</p>
+          <p id="directory-results-copy">Showing 6 therapists</p>
         </div>
 
         <div class="directory-controls">
           <label class="filter-field">
-            <span>Search</span>
-            <input id="filter-search" type="search" placeholder="Name or focus area">
-          </label>
-
-          <label class="filter-field">
-            <span>Specialty</span>
+            <span>Specialization</span>
             <select id="filter-specialty">
-              <option value="all">All specialties</option>
-              <option value="Functional Medicine">Functional Medicine</option>
-              <option value="Herbal Therapy">Herbal Therapy</option>
-              <option value="Pediatrics">Pediatrics</option>
-              <option value="Ultrasound">Ultrasound</option>
-              <option value="Acupuncture">Acupuncture</option>
-              <option value="Nutrition">Nutrition</option>
+              <option value="all">All specializations</option>
+              <option value="Fertility acupuncture">Fertility acupuncture</option>
+              <option value="Pain acupuncture">Pain acupuncture</option>
+              <option value="Stress and sleep acupuncture">Stress and sleep acupuncture</option>
+              <option value="Women's health acupuncture">Women's health acupuncture</option>
+              <option value="Traditional Chinese Medicine">Traditional Chinese Medicine</option>
+              <option value="Cosmetic acupuncture">Cosmetic acupuncture</option>
             </select>
           </label>
 
           <label class="filter-field">
-            <span>Clinic area</span>
+            <span>City</span>
             <select id="filter-location">
-              <option value="all">All locations</option>
-              <option value="Downtown">Downtown</option>
-              <option value="Northside">Northside</option>
-              <option value="Waterfront">Waterfront</option>
+              <option value="all">All cities</option>
+              <option value="Amsterdam">Amsterdam</option>
+              <option value="Rotterdam">Rotterdam</option>
+              <option value="Utrecht">Utrecht</option>
+              <option value="The Hague">The Hague</option>
+              <option value="Eindhoven">Eindhoven</option>
             </select>
           </label>
 
@@ -134,148 +96,30 @@
             </select>
           </label>
 
-          <button id="filter-reset" class="btn btn-secondary directory-reset-btn" type="button">Reset filters</button>
+          <button id="filter-reset" class="btn btn-secondary directory-reset-btn" type="button">Reset</button>
         </div>
       </section>
 
       <section class="directory-layout">
-        <div class="directory-list" id="directory-list">
-          <article class="directory-card is-selected" tabindex="0" data-id="elena-markova" data-name="Dr. Elena Markova" data-specialty="Functional Medicine" data-clinic="Downtown" data-availability="Today" data-location-query="Functional medicine clinic downtown San Francisco, CA" data-focus="Metabolic balance, hormone recovery, chronic fatigue" data-bio="Leads recovery plans for long-term fatigue, hormonal imbalance, and resilience after burnout.">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1000&q=80" alt="Dr. Elena Markova portrait">
-            <div class="directory-card-body">
-              <div class="directory-card-top">
-                <span class="practitioner-badge">Functional Medicine</span>
-                <span class="directory-availability">Today</span>
-              </div>
-              <h3>Dr. Elena Markova</h3>
-              <p>Metabolic balance, hormone recovery, chronic fatigue</p>
-              <div class="directory-meta"><span>Downtown</span><span>25 min consult intro</span></div>
-
-              <div class="directory-card-actions"><a class="btn btn-secondary" href="practitioner-detail.html?id=elena-markova">View profile</a><a class="btn btn-primary" href="booking.html?practitioner=elena-markova">Book appointment</a></div>
-            </div>
-          </article>
-
-          <article class="directory-card" tabindex="0" data-id="julia-soren" data-name="Dr. Julia Soren" data-specialty="Herbal Therapy" data-clinic="Northside" data-availability="This Week" data-location-query="Herbal therapy clinic Northside San Francisco, CA" data-focus="Digestion, herbal formulations, sleep support" data-bio="Builds herbal protocols and phased supplement plans for digestion, stress load, and sleep regulation.">
-            <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1000&q=80" alt="Dr. Julia Soren portrait">
-            <div class="directory-card-body">
-              <div class="directory-card-top">
-                <span class="practitioner-badge">Herbal Therapy</span>
-                <span class="directory-availability">This Week</span>
-              </div>
-              <h3>Dr. Julia Soren</h3>
-              <p>Digestion, herbal formulations, sleep support</p>
-              <div class="directory-meta"><span>Northside</span><span>Plant-based care plans</span></div>
-
-              <div class="directory-card-actions"><a class="btn btn-secondary" href="practitioner-detail.html?id=julia-soren">View profile</a><a class="btn btn-primary" href="booking.html?practitioner=julia-soren">Book appointment</a></div>
-            </div>
-          </article>
-
-          <article class="directory-card" tabindex="0" data-id="tatiana-lee" data-name="Dr. Tatiana Lee" data-specialty="Pediatrics" data-clinic="Downtown" data-availability="Today" data-location-query="Pediatric clinic downtown San Francisco, CA" data-focus="Child development, immune support, calmer routines" data-bio="Works with infants and children on immunity, routines, appetite, and developmental wellbeing.">
-            <img src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&w=1000&q=80" alt="Dr. Tatiana Lee portrait">
-            <div class="directory-card-body">
-              <div class="directory-card-top">
-                <span class="practitioner-badge">Pediatrics</span>
-                <span class="directory-availability">Today</span>
-              </div>
-              <h3>Dr. Tatiana Lee</h3>
-              <p>Child development, immune support, calmer routines</p>
-              <div class="directory-meta"><span>Downtown</span><span>Family-first consultations</span></div>
-
-              <div class="directory-card-actions"><a class="btn btn-secondary" href="practitioner-detail.html?id=tatiana-lee">View profile</a><a class="btn btn-primary" href="booking.html?practitioner=tatiana-lee">Book appointment</a></div>
-            </div>
-          </article>
-
-          <article class="directory-card" tabindex="0" data-id="liana-morel" data-name="Dr. Liana Morel" data-specialty="Ultrasound" data-clinic="Waterfront" data-availability="This Week" data-location-query="Ultrasound clinic waterfront San Francisco, CA" data-focus="Imaging review, scan follow-up, diagnostics" data-bio="Handles ultrasound diagnostics, imaging explanations, and coordinated follow-up with treatment teams.">
-            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1000&q=80" alt="Dr. Liana Morel portrait">
-            <div class="directory-card-body">
-              <div class="directory-card-top">
-                <span class="practitioner-badge">Ultrasound</span>
-                <span class="directory-availability">This Week</span>
-              </div>
-              <h3>Dr. Liana Morel</h3>
-              <p>Imaging review, scan follow-up, diagnostics</p>
-              <div class="directory-meta"><span>Waterfront</span><span>Modern imaging suite</span></div>
-
-              <div class="directory-card-actions"><a class="btn btn-secondary" href="practitioner-detail.html?id=liana-morel">View profile</a><a class="btn btn-primary" href="booking.html?practitioner=liana-morel">Book appointment</a></div>
-            </div>
-          </article>
-
-          <article class="directory-card" tabindex="0" data-id="noor-patel" data-name="Dr. Noor Patel" data-specialty="Acupuncture" data-clinic="Northside" data-availability="Today" data-location-query="Acupuncture clinic Northside San Francisco, CA" data-focus="Pain relief, stress regulation, migraines" data-bio="Supports nervous system regulation and pain relief through focused acupuncture protocols.">
-            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1000&q=80" alt="Dr. Noor Patel portrait">
-            <div class="directory-card-body">
-              <div class="directory-card-top">
-                <span class="practitioner-badge">Acupuncture</span>
-                <span class="directory-availability">Today</span>
-              </div>
-              <h3>Dr. Noor Patel</h3>
-              <p>Pain relief, stress regulation, migraines</p>
-              <div class="directory-meta"><span>Northside</span><span>Nervous system support</span></div>
-
-              <div class="directory-card-actions"><a class="btn btn-secondary" href="practitioner-detail.html?id=noor-patel">View profile</a><a class="btn btn-primary" href="booking.html?practitioner=noor-patel">Book appointment</a></div>
-            </div>
-          </article>
-
-          <article class="directory-card" tabindex="0" data-id="miriam-kline" data-name="Dr. Miriam Kline" data-specialty="Nutrition" data-clinic="Downtown" data-availability="This Week" data-location-query="Nutrition clinic downtown San Francisco, CA" data-focus="Gut repair, meal structure, sustainable energy" data-bio="Designs realistic nutrition plans for blood sugar, digestive balance, and long-term energy.">
-            <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1000&q=80" alt="Dr. Miriam Kline portrait">
-            <div class="directory-card-body">
-              <div class="directory-card-top">
-                <span class="practitioner-badge">Nutrition</span>
-                <span class="directory-availability">This Week</span>
-              </div>
-              <h3>Dr. Miriam Kline</h3>
-              <p>Gut repair, meal structure, sustainable energy</p>
-              <div class="directory-meta"><span>Downtown</span><span>Practical food strategies</span></div>
-
-              <div class="directory-card-actions"><a class="btn btn-secondary" href="practitioner-detail.html?id=miriam-kline">View profile</a><a class="btn btn-primary" href="booking.html?practitioner=miriam-kline">Book appointment</a></div>
-            </div>
-          </article>
-
-          <article class="directory-card" tabindex="0" data-id="adrian-sol" data-name="Dr. Adrian Sol" data-specialty="Functional Medicine" data-clinic="Waterfront" data-availability="Waitlist" data-location-query="Functional medicine clinic waterfront San Francisco, CA" data-focus="Inflammation, recovery planning, lab review" data-bio="Combines diagnostics review with longer-range recovery planning for chronic inflammatory patterns.">
-            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=1000&q=80" alt="Dr. Adrian Sol portrait">
-            <div class="directory-card-body">
-              <div class="directory-card-top">
-                <span class="practitioner-badge">Functional Medicine</span>
-                <span class="directory-availability">Waitlist</span>
-              </div>
-              <h3>Dr. Adrian Sol</h3>
-              <p>Inflammation, recovery planning, lab review</p>
-              <div class="directory-meta"><span>Waterfront</span><span>Complex case intake</span></div>
-
-              <div class="directory-card-actions"><a class="btn btn-secondary" href="practitioner-detail.html?id=adrian-sol">View profile</a><a class="btn btn-primary" href="booking.html?practitioner=adrian-sol">Book appointment</a></div>
-            </div>
-          </article>
-
-          <article class="directory-card" tabindex="0" data-id="sophie-marin" data-name="Dr. Sophie Marin" data-specialty="Pediatrics" data-clinic="Northside" data-availability="This Week" data-location-query="Pediatric clinic Northside San Francisco, CA" data-focus="Feeding, sleep, sensory balance" data-bio="Supports children and parents with calmer routines, feeding transitions, and stress reduction.">
-            <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=1000&q=80" alt="Dr. Sophie Marin portrait">
-            <div class="directory-card-body">
-              <div class="directory-card-top">
-                <span class="practitioner-badge">Pediatrics</span>
-                <span class="directory-availability">This Week</span>
-              </div>
-              <h3>Dr. Sophie Marin</h3>
-              <p>Feeding, sleep, sensory balance</p>
-              <div class="directory-meta"><span>Northside</span><span>Family-centered visits</span></div>
-
-              <div class="directory-card-actions"><a class="btn btn-secondary" href="practitioner-detail.html?id=sophie-marin">View profile</a><a class="btn btn-primary" href="booking.html?practitioner=sophie-marin">Book appointment</a></div>
-            </div>
-          </article>
-        </div>
+        <div class="directory-list" id="directory-list" aria-live="polite"></div>
 
         <aside class="directory-map-panel card" id="directory-map-panel">
           <div class="directory-map-copy">
-            <span class="practitioner-map-kicker">Selected practitioner</span>
-            <h3 id="directory-name">Dr. Elena Markova</h3>
-            <p id="directory-specialty">Functional Medicine · Downtown · Today</p>
-            <p id="directory-bio">Leads recovery plans for long-term fatigue, hormonal imbalance, and resilience after burnout.</p>
+            <span class="practitioner-map-kicker">Selected therapist</span>
+            <h3 id="directory-name">Sanne de Vries</h3>
+            <p id="directory-specialty">Fertility acupuncture - Amsterdam - This Week</p>
+            <p id="directory-bio">Select a therapist to view their focus, reviews, and map location.</p>
             <div class="directory-review-summary" id="directory-review-summary">
-              <strong>No practitioner reviews yet</strong>
-              <span>Clinic reviews can optionally be connected to a practitioner.</span>
+              <strong>No therapist reviews yet</strong>
+              <span>Reviews added in this MVP appear instantly in the directory.</span>
             </div>
-            <div class="directory-map-actions"><a id="directory-profile-link" class="btn btn-secondary" href="practitioner-detail.html?id=elena-markova">View profile</a><a id="directory-book-link" class="btn btn-primary" href="booking.html?practitioner=elena-markova">Book appointment</a></div>
-            <a id="directory-map-link" class="btn btn-primary practitioner-map-link" href="https://www.google.com/maps/search/?api=1&query=Functional%20medicine%20clinic%20downtown%20San%20Francisco%2C%20CA" target="_blank" rel="noreferrer">Open in Google Maps</a>
+            <div class="directory-map-actions">
+              <a id="directory-profile-link" class="btn btn-secondary" href="practitioner-detail.html?id=sanne-de-vries">View profile</a>
+              <a id="directory-map-link" class="btn btn-primary practitioner-map-link" href="https://www.google.com/maps/search/?api=1&query=fertility%20acupuncture%20Amsterdam%20Netherlands" target="_blank" rel="noreferrer">Open in Google Maps</a>
+            </div>
           </div>
           <div class="practitioner-map-frame directory-map-frame">
-            <iframe id="directory-map" title="Google Maps location for selected practitioner" src="https://www.google.com/maps?q=Functional%20medicine%20clinic%20downtown%20San%20Francisco%2C%20CA&z=13&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe id="directory-map" title="Google Maps location for selected therapist" src="https://www.google.com/maps?q=fertility%20acupuncture%20Amsterdam%20Netherlands&z=12&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </aside>
       </section>
@@ -288,24 +132,29 @@
             <div class="brand-mark"></div>
             <span>Norbu</span>
           </a>
-          <p>Use the directory to compare specialties, clinic areas, and availability before you book.</p>
+          <p>A first searchable acupuncture directory for The Netherlands.</p>
         </div>
         <div>
-          <strong>Directory</strong>
-          <p>18 practitioners<br>6 specialties<br>3 clinic areas</p>
+          <strong>MVP</strong>
+          <p>Profiles<br>Map search<br>Review prototype</p>
         </div>
         <div>
-          <strong>Maps</strong>
-          <p>Switch practitioner cards to update the embedded Google Maps view and summary.</p>
+          <strong>Scope</strong>
+          <p>Start with a profile linked to a map and reviews, then expand the database.</p>
         </div>
         <div>
-          <strong>Navigation</strong>
-          <p><a href="index.html">Home</a><br><a href="about.html">About</a><br><a href="platform.html">Platform</a></p>
+          <strong>Explore</strong>
+          <p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a>
+          <a href="quiz.html">Quiz</a><br><a href="faq.html">FAQ</a></p>
         </div>
       </div>
     </footer>
   </div>
 
+  <script src="practitioners-data.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 </html>
+
+
+

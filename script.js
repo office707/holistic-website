@@ -1,4 +1,4 @@
-const menuShell = document.getElementById('site-shell');
+﻿const menuShell = document.getElementById('site-shell');
 const menuToggle = document.getElementById('menu-toggle');
 const siteNav = document.getElementById('site-nav');
 
@@ -24,209 +24,37 @@ if (menuShell && menuToggle && siteNav) {
   });
 }
 
-const themeButtons = Array.from(document.querySelectorAll('.hero-theme-dot'));
 const siteBody = document.body;
 
-if (siteBody) {
-  const storageKey = 'home-theme-choice';
-  const fallbackThemes = ['dusk', 'sage', 'terracotta'];
-  const buttonThemes = themeButtons.map((button) => button.dataset.themeChoice).filter(Boolean);
-  const availableThemes = new Set(buttonThemes.length ? buttonThemes : fallbackThemes);
-  const defaultTheme = siteBody.dataset.siteTheme || buttonThemes[0] || fallbackThemes[0];
-  let storedTheme = null;
+const directoryList = document.getElementById('directory-list');
+const practitionersForDirectory = window.norbuPractitioners || [];
+const escapeDirectoryHtml = (value) => String(value || '')
+  .replaceAll('&', '&amp;')
+  .replaceAll('<', '&lt;')
+  .replaceAll('>', '&gt;')
+  .replaceAll('"', '&quot;')
+  .replaceAll("'", '&#39;');
 
-  try {
-    storedTheme = window.localStorage.getItem(storageKey);
-  } catch (error) {
-    storedTheme = null;
-  }
+if (directoryList && practitionersForDirectory.length) {
+  directoryList.innerHTML = practitionersForDirectory.map((practitioner, index) => {
+    const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(practitioner.locationQuery || practitioner.clinic)}`;
 
-  const applySiteTheme = (themeName) => {
-    const nextTheme = availableThemes.has(themeName) ? themeName : defaultTheme;
-    siteBody.dataset.siteTheme = nextTheme;
-
-    themeButtons.forEach((button) => {
-      const isActive = button.dataset.themeChoice === nextTheme;
-      button.classList.toggle('is-active', isActive);
-      button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-    });
-
-    try {
-      window.localStorage.setItem(storageKey, nextTheme);
-    } catch (error) {
-      /* Ignore storage failures and keep the current in-memory theme. */
-    }
-  };
-
-  applySiteTheme(availableThemes.has(storedTheme) ? storedTheme : defaultTheme);
-
-  themeButtons.forEach((button) => {
-    button.addEventListener('click', () => applySiteTheme(button.dataset.themeChoice));
-  });
-}
-
-const roleLoginTriggers = Array.from(document.querySelectorAll('[data-role-login-trigger]'));
-
-if (siteBody && roleLoginTriggers.length) {
-  const currentRole = siteBody.dataset.portalRole || '';
-  const roleOptions = [
-    {
-      id: 'admin',
-      href: 'platform.html',
-      label: 'Admin',
-      eyebrow: 'Operations',
-      icon: '▣',
-      description: 'Manage roles, approvals, and internal operations across the protected areas.',
-      bullets: [
-        'Approvals, access, and system oversight',
-        'The main control area for the platform team',
-      ],
-    },
-    {
-      id: 'user',
-      href: 'user-dashboard.html',
-      label: 'User',
-      eyebrow: 'Personal space',
-      icon: '◎',
-      description: 'A calm private area for journaling, appointments, personal details, and guided resources.',
-      bullets: [
-        'Private journal entries and progress notes',
-        'Appointments, resources, and personal details',
-      ],
-    },
-    {
-      id: 'doctor',
-      href: 'doctor-dashboard.html',
-      label: 'Doctor',
-      eyebrow: 'Clinical area',
-      icon: '◌',
-      description: 'A focused workspace for daily sessions, patient context, clinical notes, and follow-up steps.',
-      bullets: [
-        'Today’s schedule and active cases',
-        'Documentation, notes, and follow-up actions',
-      ],
-    },
-  ];
-  let activeTrigger = null;
-
-  const modal = document.createElement('div');
-  modal.className = 'role-login-modal';
-  modal.hidden = true;
-  modal.innerHTML = `
-    <div class="role-login-modal__backdrop" data-role-login-close></div>
-    <div class="role-login-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="role-login-title">
-      <div class="role-login-modal__header">
-        <div>
-          <span class="role-login-modal__eyebrow">Protected Areas</span>
-          <h2 id="role-login-title">Choose your login area</h2>
-          <p>Select the admin dashboard, the user dashboard, or the doctor dashboard.</p>
+    return `
+      <article class="directory-card ${index === 0 ? 'is-selected' : ''}" tabindex="0" data-id="${escapeDirectoryHtml(practitioner.id)}" data-name="${escapeDirectoryHtml(practitioner.name)}" data-specialty="${escapeDirectoryHtml(practitioner.specialty)}" data-clinic="${escapeDirectoryHtml(practitioner.clinic)}" data-availability="${escapeDirectoryHtml(practitioner.availability)}" data-location-query="${escapeDirectoryHtml(practitioner.locationQuery)}" data-focus="${escapeDirectoryHtml(practitioner.focus)}" data-bio="${escapeDirectoryHtml(practitioner.bio)}">
+        <img src="${escapeDirectoryHtml(practitioner.image)}" alt="${escapeDirectoryHtml(practitioner.name)} portrait">
+        <div class="directory-card-body">
+          <div class="directory-card-top">
+            <span class="practitioner-badge">${escapeDirectoryHtml(practitioner.specialty)}</span>
+            <span class="directory-availability">${escapeDirectoryHtml(practitioner.availability)}</span>
+          </div>
+          <h3>${escapeDirectoryHtml(practitioner.name)}</h3>
+          <p>${escapeDirectoryHtml(practitioner.focus)}</p>
+          <div class="directory-meta"><span>${escapeDirectoryHtml(practitioner.clinic)}</span><span>${escapeDirectoryHtml(practitioner.experience)} experience</span></div>
+          <div class="directory-card-actions"><a class="btn btn-secondary" href="practitioner-detail.html?id=${escapeDirectoryHtml(practitioner.id)}">View profile</a><a class="btn btn-primary" href="${mapUrl}" target="_blank" rel="noreferrer">Open map</a></div>
         </div>
-        <button class="role-login-modal__close" type="button" aria-label="Close role selection" data-role-login-close>×</button>
-      </div>
-      <div class="role-login-modal__grid">
-        ${roleOptions.map((option) => {
-          const isCurrent = option.id === currentRole;
-
-          return `
-            <a
-              class="role-login-option role-login-option--${option.id}${isCurrent ? ' is-current' : ''}"
-              href="${option.href}"
-              ${isCurrent ? 'aria-current="page"' : ''}
-            >
-              <div class="role-login-option__top">
-                <span class="role-login-option__icon" aria-hidden="true">${option.icon}</span>
-                <span class="role-login-option__state">${isCurrent ? 'Current' : 'Open'}</span>
-              </div>
-              <span class="role-login-option__label">${option.eyebrow}</span>
-              <h3>${option.label}</h3>
-              <p>${option.description}</p>
-              <ul>
-                ${option.bullets.map((bullet) => `<li>${bullet}</li>`).join('')}
-              </ul>
-            </a>
-          `;
-        }).join('')}
-      </div>
-    </div>
-  `;
-
-  siteBody.appendChild(modal);
-
-  const dialog = modal.querySelector('.role-login-modal__dialog');
-
-  const getFocusableElements = () => Array.from(
-    modal.querySelectorAll('a[href], button:not([disabled])'),
-  );
-
-  const closeRoleLoginModal = () => {
-    modal.hidden = true;
-    siteBody.classList.remove('has-role-login-open');
-
-    if (activeTrigger) {
-      activeTrigger.focus();
-    }
-  };
-
-  const openRoleLoginModal = (trigger) => {
-    activeTrigger = trigger;
-    modal.hidden = false;
-    siteBody.classList.add('has-role-login-open');
-    window.requestAnimationFrame(() => {
-      getFocusableElements()[0]?.focus();
-    });
-  };
-
-  roleLoginTriggers.forEach((trigger) => {
-    trigger.addEventListener('click', (event) => {
-      event.preventDefault();
-      openRoleLoginModal(trigger);
-    });
-  });
-
-  modal.addEventListener('click', (event) => {
-    if (event.target.closest('[data-role-login-close]')) {
-      closeRoleLoginModal();
-    }
-  });
-
-  document.addEventListener('keydown', (event) => {
-    if (modal.hidden) {
-      return;
-    }
-
-    if (event.key === 'Escape') {
-      event.preventDefault();
-      closeRoleLoginModal();
-      return;
-    }
-
-    if (event.key !== 'Tab') {
-      return;
-    }
-
-    const focusable = getFocusableElements();
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
-
-    if (!first || !last) {
-      return;
-    }
-
-    if (event.shiftKey && document.activeElement === first) {
-      event.preventDefault();
-      last.focus();
-      return;
-    }
-
-    if (!event.shiftKey && document.activeElement === last) {
-      event.preventDefault();
-      first.focus();
-    }
-  });
-
-  dialog.addEventListener('click', (event) => {
-    event.stopPropagation();
-  });
+      </article>
+    `;
+  }).join('');
 }
 
 const cards = Array.from(document.querySelectorAll('.directory-card'));
@@ -239,7 +67,6 @@ const resultsCopy = document.getElementById('directory-results-copy');
 const mapFrame = document.getElementById('directory-map');
 const mapLink = document.getElementById('directory-map-link');
 const directoryProfileLink = document.getElementById('directory-profile-link');
-const directoryBookLink = document.getElementById('directory-book-link');
 const nameField = document.getElementById('directory-name');
 const specialtyField = document.getElementById('directory-specialty');
 const bioField = document.getElementById('directory-bio');
@@ -259,8 +86,8 @@ if (
   specialtyField &&
   bioField
 ) {
-  const reviewStorageKey = 'aurea-demo-reviews-en';
-  const buildEmbedUrl = (query) => `https://www.google.com/maps?q=${encodeURIComponent(query)}&z=13&output=embed`;
+  const reviewStorageKey = 'norbu-mvp-reviews-nl';
+  const buildEmbedUrl = (query) => `https://www.google.com/maps?q=${encodeURIComponent(query)}&z=12&output=embed`;
   const buildMapsUrl = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 
   const getPractitionerReviews = (practitionerName) => {
@@ -298,32 +125,30 @@ if (
     });
 
     if (!card) {
-      nameField.textContent = 'No practitioner matches these filters';
-      specialtyField.textContent = 'Try a different specialty, location, or availability';
-      bioField.textContent = 'Reset the filters to see the full directory again.';
+      nameField.textContent = 'No therapist matches these filters';
+      specialtyField.textContent = 'Try another specialization, city, or availability';
+      bioField.textContent = 'Reset the filters to see the full Netherlands acupuncture directory again.';
       mapLink.removeAttribute('href');
       directoryProfileLink?.removeAttribute('href');
-      directoryBookLink?.removeAttribute('href');
-      mapFrame.src = buildEmbedUrl('Holistic care clinic San Francisco, CA');
+      mapFrame.src = buildEmbedUrl('acupuncture Netherlands');
       if (reviewSummary) {
-        reviewSummary.innerHTML = '<strong>No practitioner selected</strong><span>Select a practitioner to see their feedback summary.</span>';
+        reviewSummary.innerHTML = '<strong>No therapist selected</strong><span>Select a therapist to see their feedback summary.</span>';
       }
       return;
     }
 
     nameField.textContent = card.dataset.name;
-    specialtyField.textContent = `${card.dataset.specialty} · ${card.dataset.clinic} · ${card.dataset.availability}`;
+    specialtyField.textContent = `${card.dataset.specialty} - ${card.dataset.clinic} - ${card.dataset.availability}`;
     bioField.textContent = card.dataset.bio;
     mapLink.href = buildMapsUrl(card.dataset.locationQuery);
     if (directoryProfileLink) directoryProfileLink.href = `practitioner-detail.html?id=${card.dataset.id}`;
-    if (directoryBookLink) directoryBookLink.href = `booking.html?practitioner=${card.dataset.id}`;
     mapFrame.src = buildEmbedUrl(card.dataset.locationQuery);
 
     if (reviewSummary) {
       const reviews = getPractitionerReviews(card.dataset.name);
 
       if (!reviews.length) {
-        reviewSummary.innerHTML = '<strong>No practitioner reviews yet</strong><span>Clinic reviews can optionally be connected to this practitioner.</span>';
+        reviewSummary.innerHTML = '<strong>No therapist reviews yet</strong><span>Be the first to leave feedback for this profile.</span>';
       } else {
         const average = reviews.reduce((total, review) => total + Number(review.rating), 0) / reviews.length;
         reviewSummary.innerHTML = `<strong>${average.toFixed(1)} / 5 from ${reviews.length} ${reviews.length === 1 ? 'review' : 'reviews'}</strong><span>Feedback connected specifically to ${card.dataset.name}.</span>`;
@@ -355,7 +180,7 @@ if (
     });
 
     const visibleCards = getVisibleCards();
-    resultsCopy.textContent = visibleCards.length === 1 ? 'Showing 1 practitioner' : `Showing ${visibleCards.length} practitioners`;
+    resultsCopy.textContent = visibleCards.length === 1 ? 'Showing 1 therapist' : `Showing ${visibleCards.length} therapists`;
 
     const currentActive = document.querySelector('.directory-card.is-selected');
     if (!currentActive || currentActive.style.display === 'none') {
@@ -389,16 +214,32 @@ if (
     applyFilters();
   });
 
+  const directoryParams = new URLSearchParams(window.location.search);
+  const presetSpecialty = directoryParams.get('specialty');
+  const presetCity = directoryParams.get('city');
+  const presetAvailability = directoryParams.get('availability');
+
+  if (presetSpecialty && [...specialtyFilter.options].some((option) => option.value === presetSpecialty)) {
+    specialtyFilter.value = presetSpecialty;
+  }
+
+  if (presetCity && [...locationFilter.options].some((option) => option.value === presetCity)) {
+    locationFilter.value = presetCity;
+  }
+
+  if (presetAvailability && [...availabilityFilter.options].some((option) => option.value === presetAvailability)) {
+    availabilityFilter.value = presetAvailability;
+  }
+
   cards.forEach(renderPractitionerRating);
   applyFilters();
 }
-
 const reviewModal = document.getElementById('review-modal');
 const reviewForm = document.getElementById('review-form');
 const testimonialsList = document.getElementById('testimonials-list');
 
 if (reviewModal && reviewForm && testimonialsList) {
-  const reviewStorageKey = 'aurea-demo-reviews-en';
+  const reviewStorageKey = 'norbu-mvp-reviews-nl';
   const openButtons = Array.from(document.querySelectorAll('[data-review-open]'));
   const closeButtons = Array.from(reviewModal.querySelectorAll('[data-review-close]'));
   const reviewName = document.getElementById('review-name');
@@ -406,6 +247,11 @@ if (reviewModal && reviewForm && testimonialsList) {
   const reviewPractitioner = document.getElementById('review-practitioner');
   const reviewMessage = document.getElementById('review-message');
   const reviewStatus = document.getElementById('review-form-status');
+  const profileReviewSummary = document.getElementById('profile-review-summary');
+  const profilePractitioners = window.norbuPractitioners || [];
+  const profileParams = new URLSearchParams(window.location.search);
+  const profileRequestedId = profileParams.get('id') || profileParams.get('practitioner');
+  const activeProfilePractitioner = profilePractitioners.find((practitioner) => practitioner.id === profileRequestedId) || profilePractitioners[0];
   let activeReviewTrigger = null;
 
   const escapeReviewContent = (value) => String(value)
@@ -438,10 +284,30 @@ if (reviewModal && reviewForm && testimonialsList) {
     year: 'numeric',
   }).format(new Date(dateValue));
 
+  if (reviewPractitioner && profilePractitioners.length) {
+    reviewPractitioner.innerHTML = profilePractitioners.map((practitioner) => `<option value="${escapeReviewContent(practitioner.name)}">${escapeReviewContent(practitioner.name)} - ${escapeReviewContent(practitioner.clinic)}</option>`).join('');
+    if (activeProfilePractitioner) {
+      reviewPractitioner.value = activeProfilePractitioner.name;
+    }
+  }
+
   const renderSubmittedReviews = (reviews) => {
     testimonialsList.querySelectorAll('[data-submitted-review]').forEach((review) => review.remove());
+    const profileOnly = Boolean(profileReviewSummary && activeProfilePractitioner);
+    const visibleReviews = profileOnly
+      ? reviews.filter((review) => review.practitioner === activeProfilePractitioner.name)
+      : reviews;
 
-    reviews.forEach((review) => {
+    if (profileReviewSummary) {
+      if (!visibleReviews.length) {
+        profileReviewSummary.innerHTML = '<strong>No reviews yet</strong><span>Be the first to add feedback for this therapist.</span>';
+      } else {
+        const average = visibleReviews.reduce((total, review) => total + Number(review.rating), 0) / visibleReviews.length;
+        profileReviewSummary.innerHTML = `<strong>${average.toFixed(1)} / 5 from ${visibleReviews.length} ${visibleReviews.length === 1 ? 'review' : 'reviews'}</strong><span>Reviews connected to ${escapeReviewContent(activeProfilePractitioner.name)}.</span>`;
+      }
+    }
+
+    visibleReviews.forEach((review) => {
       const card = document.createElement('article');
       card.className = 'testimonial-card testimonial-card--submitted';
       card.dataset.submittedReview = review.id;
@@ -451,7 +317,7 @@ if (reviewModal && reviewForm && testimonialsList) {
             <div class="testimonial-avatar testimonial-avatar--initial" aria-hidden="true">${escapeReviewContent(review.name.charAt(0).toUpperCase())}</div>
             <div>
               <strong>${escapeReviewContent(review.name)}</strong>
-              <div class="testimonial-stars">${'★'.repeat(Number(review.rating))}${'☆'.repeat(5 - Number(review.rating))}</div>
+              <div class="testimonial-stars">${'*'.repeat(Number(review.rating))}${'-'.repeat(5 - Number(review.rating))}</div>
               ${review.practitioner ? `<span class="testimonial-practitioner">For ${escapeReviewContent(review.practitioner)}</span>` : '<span class="testimonial-practitioner">Clinic review</span>'}
             </div>
           </div>
@@ -506,6 +372,47 @@ if (reviewModal && reviewForm && testimonialsList) {
   });
 
   renderSubmittedReviews(loadReviews());
+}
+
+const quizForm = document.getElementById('quiz-form');
+const quizResult = document.getElementById('quiz-result');
+
+if (quizForm && quizResult) {
+  const resultTitle = document.getElementById('quiz-result-title');
+  const resultCopy = document.getElementById('quiz-result-copy');
+  const resultLink = document.getElementById('quiz-result-link');
+  const resetQuiz = document.getElementById('quiz-reset');
+
+  quizForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!quizForm.reportValidity()) return;
+
+    const formData = new FormData(quizForm);
+    const specialty = String(formData.get('goal') || '');
+    const city = String(formData.get('city') || 'all');
+    const availability = String(formData.get('availability') || 'all');
+    const params = new URLSearchParams();
+
+    if (specialty) params.set('specialty', specialty);
+    if (city !== 'all') params.set('city', city);
+    if (availability !== 'all') params.set('availability', availability);
+
+    if (resultTitle) resultTitle.textContent = specialty || 'Start with the finder';
+    if (resultCopy) {
+      const cityCopy = city === 'all' ? 'all available cities' : city;
+      const timeCopy = availability === 'all' ? 'any availability' : availability.toLowerCase();
+      resultCopy.textContent = `Start by comparing ${specialty} profiles in ${cityCopy} with ${timeCopy}. This is only a search direction, not a medical recommendation.`;
+    }
+    if (resultLink) resultLink.href = `practitioners.html?${params.toString()}`;
+
+    quizResult.hidden = false;
+    quizResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  resetQuiz?.addEventListener('click', () => {
+    quizForm.reset();
+    quizResult.hidden = true;
+  });
 }
 
 const portalDashboard = document.querySelector('[data-portal-dashboard]');
@@ -891,7 +798,7 @@ if (portalDashboard) {
           </div>
           <strong>${appointment.time}</strong>
         </div>
-        <p>${formatDate(appointment.date)} · ${appointment.practitioner}</p>
+        <p>${formatDate(appointment.date)} - ${appointment.practitioner}</p>
         <div class="appointment-item-actions">
           <button type="button" data-appointment-action="view">View</button>
           <button type="button" data-appointment-action="reschedule">Reschedule</button>
@@ -1327,17 +1234,25 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
     text('profile-experience', selected.experience);
     text('profile-clinic', selected.clinic);
     text('profile-languages', selected.languages);
-    text('profile-approach', `${selected.name} combines careful intake, clear explanations, and realistic follow-up. The aim is to make each recommendation understandable and useful between visits.`);
+    text('profile-approach', `${selected.name} combines careful intake, clear explanations, and realistic follow-up. The aim is to help visitors understand whether this acupuncture specialization is a useful search direction before they compare profiles.`);
     text('profile-first-name', selected.name.replace(/^Dr\.\s+/, '').split(' ')[0]);
 
     const therapyList = document.getElementById('profile-therapies');
     if (therapyList) therapyList.innerHTML = selected.therapies.map((therapy) => `<span>${therapy}</span>`).join('');
     const educationList = document.getElementById('profile-education');
     if (educationList) educationList.innerHTML = selected.education.map((item) => `<li>${item}</li>`).join('');
-    ['profile-book-link', 'profile-book-link-bottom'].forEach((id) => {
-      const link = document.getElementById(id);
-      if (link) link.href = `booking.html?practitioner=${selected.id}`;
-    });
+    const profileMap = document.getElementById('profile-map');
+    const profileMapLink = document.getElementById('profile-map-link');
+    if (profileMap && selected.locationQuery) {
+      profileMap.src = `https://www.google.com/maps?q=${encodeURIComponent(selected.locationQuery)}&z=12&output=embed`;
+    }
+    if (profileMapLink && selected.locationQuery) {
+      profileMapLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selected.locationQuery)}`;
+    }
+    const profileMapHeroLink = document.getElementById('profile-map-link-hero');
+    if (profileMapHeroLink && selected.locationQuery) {
+      profileMapHeroLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selected.locationQuery)}`;
+    }
   }
 
   const bookingForm = document.getElementById('booking-form');
@@ -1396,3 +1311,6 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
 
   renderPractitioner();
 })();
+
+
+

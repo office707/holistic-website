@@ -1,8 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Practitioner Profile | Norbu</title><meta name="description" content="Meet a Norbu practitioner and explore their care focus, experience, and availability."><link rel="stylesheet" href="style.css"><link rel="icon" type="image/svg+xml" href="favicon.svg"></head>
-<body class="practitioner-profile-page"><div class="page">
-<header class="topbar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Therapist Profile | Norbu</title>
+  <meta name="description" content="View a Norbu acupuncture therapist profile with specialization, map location, availability, and reviews.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body class="practitioner-profile-page mvp-profile-page">
+  <div class="page">
+    <header class="topbar mvp-topbar">
       <a class="brand brand-link" href="index.html">
         <div class="brand-mark"></div>
         <span>Norbu</span>
@@ -10,32 +18,93 @@
       <div class="shell" id="site-shell">
         <nav class="nav" id="site-nav">
           <a href="index.html">Home</a>
-          <a href="about.html">About</a>
           <a href="therapies.html">Therapies</a>
-          <a class="active" href="practitioners.html">Practitioners</a>
-          <a href="blog.html">Blog</a>
+          <a class="active" href="practitioners.html">Find a therapist</a>
+          <a href="quiz.html">Quiz</a>
           <a href="faq.html">FAQ</a>
         </nav>
         <div class="icon-circle search-icon" aria-hidden="true"></div>
         <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
       </div>
-      <a class="login-box" href="platform.html" data-role-login-trigger>
-        <div class="icon-circle login-icon" aria-hidden="true"></div>
-        <div class="login-copy"><strong>Login</strong><span>Open the secure portal</span></div>
-      </a>
-      <a class="book-btn" href="booking.html">Book a Visit</a>
+      <a class="book-btn" href="#profile-map">Open map</a>
     </header>
-<main class="profile-main" id="practitioner-profile">
-  <nav class="profile-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="practitioners.html">Practitioners</a><span>/</span><span id="profile-breadcrumb-name">Profile</span></nav>
-  <section class="profile-hero">
-    <div class="profile-portrait"><img id="profile-image" src="" alt=""><span class="profile-availability" id="profile-availability"></span></div>
-    <div class="profile-hero-copy"><span class="profile-kicker" id="profile-specialty"></span><h1 id="profile-name">Practitioner profile</h1><p class="profile-focus" id="profile-focus"></p><p id="profile-bio"></p><div class="profile-facts"><div><strong id="profile-experience"></strong><span>Clinical experience</span></div><div><strong id="profile-clinic"></strong><span>Norbu clinic</span></div><div><strong id="profile-languages"></strong><span>Languages</span></div></div><div class="profile-actions"><a class="btn btn-primary" id="profile-book-link" href="booking.html">Book an appointment</a><a class="btn btn-secondary" href="practitioners.html">Back to directory</a></div></div>
-  </section>
-  <section class="profile-content-grid">
-    <article class="profile-panel"><span class="profile-kicker">Approach</span><h2>Care that is clear and collaborative.</h2><p id="profile-approach"></p><h3>Areas of care</h3><div class="profile-tag-list" id="profile-therapies"></div></article>
-    <article class="profile-panel"><span class="profile-kicker">Training</span><h2>Education and credentials</h2><ul class="profile-education" id="profile-education"></ul></article>
-  </section>
-  <section class="profile-booking-card"><div><span class="profile-kicker">Next step</span><h2>Choose a time with <span id="profile-first-name">your practitioner</span>.</h2><p>The booking form carries this practitioner forward automatically. You can still change the selection before confirming.</p></div><a class="btn btn-primary" id="profile-book-link-bottom" href="booking.html">View available times</a></section>
-</main>
-<footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A calm alternative medicine clinic for recovery, diagnostics, and long-view care.</p></div><div><strong>Visit</strong><p>214 Cedar Grove, Suite 5<br>San Francisco, CA</p></div><div><strong>Contact</strong><p>+1 (415) 555-2184<br>hello@holistic-care.com</p></div><div><strong>Explore</strong><p><a href="about.html">About</a><br><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Practitioners</a><br><a href="blog.html">Blog</a></p></div></div></footer>
-</div><script src="practitioners-data.js" defer></script><script src="script.js" defer></script></body></html>
+
+    <main class="profile-main" id="practitioner-profile">
+      <nav class="profile-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="practitioners.html">Find a therapist</a><span>/</span><span id="profile-breadcrumb-name">Profile</span></nav>
+
+      <section class="profile-hero">
+        <div class="profile-portrait"><img id="profile-image" src="" alt=""><span class="profile-availability" id="profile-availability"></span></div>
+        <div class="profile-hero-copy">
+          <span class="profile-kicker" id="profile-specialty"></span>
+          <h1 id="profile-name">Therapist profile</h1>
+          <p class="profile-focus" id="profile-focus"></p>
+          <p id="profile-bio"></p>
+          <div class="profile-facts">
+            <div><strong id="profile-experience"></strong><span>Experience</span></div>
+            <div><strong id="profile-clinic"></strong><span>City</span></div>
+            <div><strong id="profile-languages"></strong><span>Languages</span></div>
+          </div>
+          <div class="profile-actions"><a class="btn btn-primary" id="profile-map-link-hero" href="https://www.google.com/maps/search/?api=1&query=acupuncture%20Netherlands" target="_blank" rel="noreferrer">Open in Google Maps</a><a class="btn btn-secondary" href="practitioners.html">Back to finder</a></div>
+        </div>
+      </section>
+
+      <section class="profile-content-grid">
+        <article class="profile-panel"><span class="profile-kicker">Approach</span><h2>Profile details before you decide.</h2><p id="profile-approach"></p><h3>Areas of care</h3><div class="profile-tag-list" id="profile-therapies"></div></article>
+        <article class="profile-panel"><span class="profile-kicker">Training</span><h2>Education and credentials</h2><ul class="profile-education" id="profile-education"></ul></article>
+      </section>
+
+      <section class="profile-content-grid profile-content-grid--map-review">
+        <article class="profile-panel profile-map-card">
+          <span class="profile-kicker">Map</span>
+          <h2>Location area</h2>
+          <p>The MVP uses Google Maps search for the therapist city and specialization. Exact clinic addresses can be added once providers claim their profiles.</p>
+          <div class="practitioner-map-frame profile-map-frame"><iframe id="profile-map" title="Therapist map location" src="https://www.google.com/maps?q=acupuncture%20Netherlands&z=12&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <a class="btn btn-secondary" id="profile-map-link" href="https://www.google.com/maps/search/?api=1&query=acupuncture%20Netherlands" target="_blank" rel="noreferrer">Open map</a>
+        </article>
+
+        <article class="profile-panel profile-review-card" id="profile-reviews">
+          <span class="profile-kicker">Reviews</span>
+          <h2>Community feedback</h2>
+          <p>For this first MVP, reviews are stored locally in the visitor browser and connected to the selected therapist.</p>
+          <div class="profile-review-summary" id="profile-review-summary"><strong>No reviews yet</strong><span>Be the first to add feedback for this therapist.</span></div>
+          <div class="testimonials-list profile-testimonials-list" id="testimonials-list"></div>
+          <button class="btn btn-primary" type="button" data-review-open>Leave a review</button>
+        </article>
+      </section>
+
+      <section class="profile-booking-card"><div><span class="profile-kicker">MVP scope</span><h2>Map and reviews first.</h2><p>This first version focuses only on comparing therapist profiles, opening the Google Maps area, and collecting early reviews. Direct contact, exact addresses, and scheduling are not part of this MVP.</p></div><a class="btn btn-primary" href="#profile-reviews">Read reviews</a></section>
+    </main>
+
+    <div class="review-modal" id="review-modal" hidden>
+      <div class="review-modal__backdrop" data-review-close></div>
+      <div class="review-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="review-title">
+        <button class="review-modal__close" type="button" aria-label="Close review form" data-review-close>&times;</button>
+        <span class="dashboard-panel-kicker">Share your experience</span>
+        <h2 id="review-title">Leave feedback</h2>
+        <p>Your review will appear on this prototype profile and in the finder summary on this device.</p>
+        <form class="review-form" id="review-form">
+          <div class="review-form__grid">
+            <label><span>Your name</span><input id="review-name" name="name" type="text" autocomplete="name" required></label>
+            <label><span>Rating</span><select id="review-rating" name="rating" required><option value="5">5 - Excellent</option><option value="4">4 - Very good</option><option value="3">3 - Good</option><option value="2">2 - Fair</option><option value="1">1 - Poor</option></select></label>
+          </div>
+          <label><span>Therapist</span><select id="review-practitioner" name="practitioner" required></select></label>
+          <label><span>Your review</span><textarea id="review-message" name="message" rows="5" required></textarea></label>
+          <div class="review-form__actions"><button class="btn btn-primary" type="submit">Submit review</button><button class="btn btn-secondary" type="button" data-review-close>Cancel</button></div>
+          <p class="review-form__status" id="review-form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A first searchable acupuncture directory for The Netherlands.</p></div><div><strong>MVP</strong><p>Profile<br>Map<br>Reviews</p></div><div><strong>MVP</strong><p>No booking<br>No provider messaging</p></div><div><strong>Explore</strong><p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a>
+          <a href="quiz.html">Quiz</a></p></div></div></footer>
+  </div>
+  <script src="practitioners-data.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
+
+
+
+
+
+

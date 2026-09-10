@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
-<body class="home-page">
+<body class="home-page mvp-site-page">
   <div class="page">
-    <header class="topbar">
+    <header class="topbar mvp-topbar">
       <a class="brand brand-link" href="index.html">
         <div class="brand-mark"></div>
         <span>Norbu</span>
@@ -17,118 +17,97 @@
       <div class="shell" id="site-shell">
         <nav class="nav" id="site-nav">
           <a class="active" href="index.html">Home</a>
-          <a href="about.html">About</a>
           <a href="therapies.html">Therapies</a>
-          <a href="practitioners.html">Practitioners</a>
-          <a href="blog.html">Blog</a>
+          <a href="practitioners.html">Find a therapist</a>
+          <a href="quiz.html">Quiz</a>
           <a href="faq.html">FAQ</a>
         </nav>
         <div class="icon-circle search-icon" aria-hidden="true"></div>
         <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
       </div>
-      <a class="login-box" href="platform.html" data-role-login-trigger>
-        <div class="icon-circle login-icon" aria-hidden="true"></div>
-        <div class="login-copy"><strong>Login</strong><span>Open the secure portal</span></div>
-      </a>
-      <a class="book-btn" href="booking.html">Book a Visit</a>
+      <a class="book-btn" href="practitioners.html">Find a therapist</a>
     </header>
 
     <main>
       <section class="hero">
         <article class="card hero-copy">
           <div class="hero-toolbar">
-            <div class="pill">Natural healing for modern life</div>
+            <div class="pill">Acupuncture directory for The Netherlands</div>
 
-            <div class="hero-theme-switch" aria-label="Color theme switcher">
-              <span>Palette</span>
-              <div class="hero-theme-options" role="group" aria-label="Hero color variants">
-                <button class="hero-theme-dot is-active" type="button" data-theme-choice="dusk" aria-pressed="true" aria-label="Use dusk theme"></button>
-                <button class="hero-theme-dot" type="button" data-theme-choice="sage" aria-pressed="false" aria-label="Use sage theme"></button>
-                <button class="hero-theme-dot" type="button" data-theme-choice="terracotta" aria-pressed="false" aria-label="Use terracotta theme"></button>
-              </div>
-            </div>
           </div>
 
           <h1>
-            Alternative medicine
-            for <span class="highlight">balance</span>
-            and everyday vitality
+            Find the right
+            <span class="highlight">acupuncturist</span>
+            near you
           </h1>
 
           <p>
-            Discover a calmer approach to wellbeing through herbal care,
-            acupuncture, breathwork, nutrition, and restorative therapies
-            tailored to your body, energy, and long-term routine.
+            Norbu lets visitors compare acupuncture therapist profiles by city,
+            specialization, profile details, map location, and early
+            community reviews.
           </p>
 
           <div class="cta-row">
-            <a class="btn btn-primary" href="#">Book a Session</a>
-            <a class="btn btn-secondary" href="therapies.html">Explore Therapies ›</a>
+            <a class="btn btn-primary" href="practitioners.html">Find a therapist</a>
+            <a class="btn btn-secondary" href="therapies.html">Explore specializations</a>
           </div>
 
           <div class="experts">
             <div class="faces">
-              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=180&q=80" alt="Holistic practitioner portrait">
-              <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=180&q=80" alt="Wellness expert portrait">
-              <img src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&w=180&q=80" alt="Natural therapy specialist portrait">
-              <div class="doctor-badge">32+</div>
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=180&q=80" alt="Sample therapist portrait">
+              <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=180&q=80" alt="Sample therapist portrait">
+              <img src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&w=180&q=80" alt="Sample therapist portrait">
+              <div class="doctor-badge">6</div>
             </div>
             <div>
-              <strong>certified wellness practitioners</strong>
-              <span>Across 12 complementary disciplines</span>
+              <strong>sample therapist profiles</strong>
+              <span>Amsterdam, Rotterdam, Utrecht, The Hague, Eindhoven</span>
             </div>
           </div>
         </article>
 
         <div class="hero-visual">
-          <img class="hero-media" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1400&q=80" alt="Holistic consultation with tea and natural remedies">
-
-          <div class="rating">
-            <div class="rating-mark">Rating</div>
-            <div>
-              <strong>4.8 <span class="stars">5.0 / 5</span></strong>
-              <span>Community wellness rating</span>
-            </div>
-          </div>
+          <img class="hero-media" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1400&q=80" alt="Acupuncture directory preview">
         </div>
       </section>
 
       <section class="info-grid" id="about">
         <article class="card small-card support-card">
           <div class="support-copy">
-            <h2>Personal guidance with trust, attention, and calm support</h2>
-            <p>Practical follow-up after each visit to help new habits actually stick</p>
+            <h2>Simple profile comparison without extra promises</h2>
+            <p>City, specialization, profile details, map search, and reviews in one place.</p>
           </div>
           <div class="support-visual">
-            <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=900&q=80" alt="Two holistic practitioners smiling">
+            <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=900&q=80" alt="Two holistic therapists smiling">
           </div>
         </article>
 
         <article class="card small-card checklist-card">
-          <h2>Popular wellness paths:</h2>
+          <h2>Popular acupuncture searches:</h2>
           <div class="chips">
-            <div class="chip">+ Herbal medicine</div>
+            <div class="chip">+ Fertility acupuncture</div>
             <div class="chip">+ Acupuncture</div>
-            <div class="chip">+ Functional nutrition</div>
-            <div class="chip">+ Breath therapy</div>
+            <div class="chip">+ Pain acupuncture</div>
+            <div class="chip">+ Stress and sleep</div>
             <div class="chip">+ Stress recovery</div>
             <div class="chip">+ Sleep support</div>
-            <div class="chip">+ Mind-body balance</div>
+            <div class="chip">+ Women's health</div>
           </div>
-          <a class="more-link" href="about.html">Learn more ›</a>
+          <a class="more-link" href="practitioners.html">Learn more ></a>
         </article>
 
         <article class="card small-card quality-card">
-          <h2>Thoughtful alternative care with clear professional standards</h2>
-          <p>Ongoing training, careful intake, and personalized plans rooted in whole-body wellbeing</p>
+          <h2>Simple MVP without provider claims</h2>
+          <p>No ranking, verification, booking, or medical recommendation is included yet.</p>
         </article>
       </section>
 
       <section class="services-section">
         <article class="card services-hero">
           <div class="services-intro">
-            <div class="pill">Services</div>
-            <h2>A wide spectrum of integrative wellness services</h2>
+            <div class="pill">Categories</div>
+            <h2>Core acupuncture specializations for the first MVP</h2>
 
             <div class="services-grid">
               <article class="service-tile">
@@ -136,7 +115,7 @@
                   <span class="service-number">01</span>
                   <span class="service-arrow">Explore</span>
                 </div>
-                <h3>Adult wellness care</h3>
+                <h3>Fertility acupuncture</h3>
               </article>
 
               <article class="service-tile">
@@ -144,7 +123,7 @@
                   <span class="service-number">02</span>
                   <span class="service-arrow">Explore</span>
                 </div>
-                <h3>Family and child support</h3>
+                <h3>Pain acupuncture</h3>
               </article>
 
               <article class="service-tile is-active">
@@ -152,7 +131,7 @@
                   <span class="service-number">03</span>
                   <span class="service-arrow">Explore</span>
                 </div>
-                <h3>Day retreat programs</h3>
+                <h3>Stress and sleep</h3>
               </article>
 
               <article class="service-tile">
@@ -160,7 +139,7 @@
                   <span class="service-number">04</span>
                   <span class="service-arrow">Explore</span>
                 </div>
-                <h3>Guided treatment rooms</h3>
+                <h3>Women's health</h3>
               </article>
 
               <article class="service-tile">
@@ -168,7 +147,7 @@
                   <span class="service-number">05</span>
                   <span class="service-arrow">Explore</span>
                 </div>
-                <h3>Body scan and energy assessment</h3>
+                <h3>Traditional Chinese Medicine</h3>
               </article>
 
               <article class="service-tile">
@@ -176,7 +155,7 @@
                   <span class="service-number">06</span>
                   <span class="service-arrow">Explore</span>
                 </div>
-                <h3>Functional imaging review</h3>
+                <h3>Cosmetic acupuncture</h3>
               </article>
 
               <article class="service-tile">
@@ -184,7 +163,7 @@
                   <span class="service-number">07</span>
                   <span class="service-arrow">Explore</span>
                 </div>
-                <h3>Vitality diagnostics</h3>
+                <h3>Amsterdam therapists</h3>
               </article>
 
               <article class="service-tile">
@@ -192,13 +171,13 @@
                   <span class="service-number">08</span>
                   <span class="service-arrow">Explore</span>
                 </div>
-                <h3>In-home wellness visits</h3>
+                <h3>Rotterdam therapists</h3>
               </article>
             </div>
           </div>
 
           <div class="services-side">
-            <img class="service-portrait" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80" alt="Smiling practitioner portrait">
+            <img class="service-portrait" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80" alt="Smiling therapist portrait">
           </div>
         </article>
 
@@ -208,13 +187,13 @@
           </article>
 
           <article class="card lab-copy-card">
-            <h3>Express assessments</h3>
+            <h3>Start with a simple searchable database</h3>
             <p>
-              We offer a focused range of wellness screening services designed to help spot imbalances early, track recovery, and give practitioners faster insight into stress, energy, and nutritional needs.
+              This MVP proves the core flow: find a therapist, compare the profile, open the map, and add a review. Provider onboarding and exact addresses can come later.
             </p>
             <div class="lab-actions">
-              <a class="btn btn-primary" href="#">Book Now</a>
-              <a class="btn btn-secondary" href="#">Learn More ›</a>
+              <a class="btn btn-primary" href="#">Find therapists</a>
+              <a class="btn btn-secondary" href="#">Explore categories</a>
             </div>
           </article>
 
@@ -230,76 +209,76 @@
         </div>
       </section>
 
-      <section class="practitioners-section practitioners-section--landing">
-        <div class="practitioners-head">
-          <div class="pill">Practitioners</div>
-          <h2>Meet the clinic practitioners</h2>
-          <p>Start with a few core specialists here, then open the full directory to compare locations, focus areas, and availability.</p>
+      <section class="therapists-section therapists-section--landing">
+        <div class="therapists-head">
+          <div class="pill">Find a therapist</div>
+          <h2>Explore acupuncture therapists</h2>
+          <p>Start with a searchable first set of profiles, then compare cities, specializations, availability, map areas, and reviews.</p>
         </div>
 
-        <div class="practitioners-layout practitioners-layout--landing">
-          <div class="practitioners-track practitioners-track--landing">
-            <article class="practitioner-card">
-              <div class="practitioner-photo">
+        <div class="therapists-layout therapists-layout--landing">
+          <div class="therapists-track therapists-track--landing">
+            <article class="therapist-card">
+              <div class="therapist-photo">
                 <img class="photo-left" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1000&q=80" alt="Dr. Elena Markova portrait">
               </div>
-              <div class="practitioner-badge">Functional Medicine</div>
-              <h3>Dr. Elena Markova</h3>
-              <p class="practitioner-location">Metabolic health and recovery planning</p>
+              <div class="therapist-badge">Fertility acupuncture</div>
+              <h3>Sanne de Vries</h3>
+              <p class="therapist-location">Amsterdam - IVF support and cycle care</p>
             </article>
 
-            <article class="practitioner-card">
-              <div class="practitioner-photo">
+            <article class="therapist-card">
+              <div class="therapist-photo">
                 <img class="photo-center" src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1000&q=80" alt="Dr. Julia Soren portrait">
               </div>
-              <div class="practitioner-badge">Herbal Therapy</div>
-              <h3>Dr. Julia Soren</h3>
-              <p class="practitioner-location">Plant-based protocols and digestive support</p>
+              <div class="therapist-badge">Pain acupuncture</div>
+              <h3>Marco Jansen</h3>
+              <p class="therapist-location">Rotterdam - back pain and sports recovery</p>
             </article>
 
-            <article class="practitioner-card is-featured">
-              <div class="practitioner-arrow"></div>
-              <div class="practitioner-photo">
+            <article class="therapist-card is-featured">
+              <div class="therapist-arrow"></div>
+              <div class="therapist-photo">
                 <img class="photo-right" src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&w=1000&q=80" alt="Dr. Tatiana Lee portrait">
               </div>
-              <div class="practitioner-badge">Pediatrics</div>
-              <h3>Dr. Tatiana Lee</h3>
-              <p class="practitioner-location">Child development, sleep, and family routines</p>
+              <div class="therapist-badge">Stress and sleep</div>
+              <h3>Lina van Dijk</h3>
+              <p class="therapist-location">Utrecht - sleep and burnout recovery</p>
             </article>
 
-            <article class="practitioner-card">
-              <div class="practitioner-photo">
+            <article class="therapist-card">
+              <div class="therapist-photo">
                 <img class="photo-center" src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=1000&q=80" alt="Dr. Liana Morel portrait">
               </div>
-              <div class="practitioner-badge">Ultrasound</div>
-              <h3>Dr. Liana Morel</h3>
-              <p class="practitioner-location">Imaging reviews and structured follow-up</p>
+              <div class="therapist-badge">Women's health</div>
+              <h3>Amina Bakker</h3>
+              <p class="therapist-location">The Hague - cycle and menopause support</p>
             </article>
           </div>
 
-          <aside class="card practitioners-directory-teaser">
+          <aside class="card therapists-directory-teaser">
             <div>
-              <span class="practitioner-map-kicker">Full Directory</span>
-              <h3>Browse all practitioners on a dedicated page</h3>
-              <p>See more doctors, filter by specialty or location, and switch the Google Maps view based on the profile you choose.</p>
+              <span class="therapist-map-kicker">Therapist finder</span>
+              <h3>Browse profiles with map and reviews</h3>
+              <p>Filter by specialization or Dutch city, open a profile, and switch the Google Maps view based on the therapist you choose.</p>
             </div>
 
             <div class="directory-teaser-stats">
               <div>
-                <strong>18</strong>
-                <span>practitioners</span>
+                <strong>6</strong>
+                <span>profiles</span>
               </div>
               <div>
                 <strong>6</strong>
-                <span>specialties</span>
+                <span>specializations</span>
               </div>
               <div>
-                <strong>3</strong>
-                <span>clinic areas</span>
+                <strong>5</strong>
+                <span>Dutch cities</span>
               </div>
             </div>
 
-            <a class="btn btn-primary" href="practitioners.html">Open Practitioner Directory</a>
+            <a class="btn btn-primary" href="practitioners.html">Open therapist finder</a>
           </aside>
         </div>
       </section>
@@ -308,62 +287,13 @@
         <div class="testimonials-layout">
           <div class="testimonials-intro">
             <div class="pill">Reviews</div>
-            <h2>Honest opinions about our clinic</h2>
-            <p>Share your experience with the clinic and help others choose the right kind of care.</p>
+            <h2>Reviews only after someone adds them</h2>
+            <p>No review score is shown until feedback is added in this MVP. Submitted reviews are stored locally in the browser.</p>
             <button class="btn btn-primary" type="button" data-review-open>Leave Feedback</button>
           </div>
 
           <div>
-            <div class="testimonials-list" id="testimonials-list">
-              <article class="testimonial-card">
-                <div class="testimonial-head">
-                  <div class="testimonial-person">
-                    <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Reviewer portrait">
-                    <div>
-                      <strong>Elena Losenko</strong>
-                      <div class="testimonial-stars">5.0 / 5</div>
-                    </div>
-                  </div>
-                  <div class="testimonial-date">September 26, 2023</div>
-                </div>
-                <p>We have been visiting this clinic as a family for quite a long time. What stands out most is the wide range of services, from lab work and diagnostics to specialist consultations. The practitioners are attentive, clear, and genuinely helpful.</p>
-                <a class="testimonial-link" href="#">Read full review</a>
-              </article>
-
-              <article class="testimonial-card">
-                <div class="testimonial-head">
-                  <div class="testimonial-person">
-                    <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Reviewer portrait">
-                    <div>
-                      <strong>Angelina Aks</strong>
-                      <div class="testimonial-stars">5.0 / 5</div>
-                    </div>
-                  </div>
-                  <div class="testimonial-date">April 15</div>
-                </div>
-                <p>This is the most grounded and professional wellness clinic I have visited. Everything runs on time, the space is calm and clean, and the staff explain every step without pressure. I felt listened to instead of rushed.</p>
-                <a class="testimonial-link" href="#">Read full review</a>
-              </article>
-
-              <article class="testimonial-card">
-                <div class="testimonial-head">
-                  <div class="testimonial-person">
-                    <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="Reviewer portrait">
-                    <div>
-                      <strong>Zhanna Sokratova</strong>
-                      <div class="testimonial-stars">5.0 / 5</div>
-                    </div>
-                  </div>
-                  <div class="testimonial-date">October 23, 2023</div>
-                </div>
-                <p>I started coming here recently and have been impressed by the atmosphere, the thoughtful specialists, and the overall level of care. Appointments are well organized and the recommendations feel personalized rather than generic.</p>
-                <a class="testimonial-link" href="#">Read full review</a>
-              </article>
-            </div>
-
-            <div class="testimonials-more">
-              <a class="btn btn-secondary" href="#">Show More</a>
-            </div>
+            <div class="testimonials-list" id="testimonials-list"></div>
           </div>
         </div>
       </section>
@@ -374,7 +304,7 @@
           <button class="review-modal__close" type="button" aria-label="Close review form" data-review-close>&times;</button>
           <span class="dashboard-panel-kicker">Share your experience</span>
           <h2 id="review-title">Leave feedback for Norbu</h2>
-          <p>Your review supports the clinic overall. You can also connect it to the practitioner who treated you.</p>
+          <p>Your review supports the directory overall. You can connect it to the therapist you visited.</p>
 
           <form class="review-form" id="review-form">
             <div class="review-form__grid">
@@ -394,9 +324,9 @@
               </label>
             </div>
             <label>
-              <span>Practitioner (optional)</span>
-              <select id="review-practitioner" name="practitioner">
-                <option value="">Clinic review only</option>
+              <span>Therapist (optional)</span>
+              <select id="review-therapist" name="therapist">
+                <option value="">Directory review only</option>
                 <option>Dr. Elena Markova</option>
                 <option>Dr. Julia Soren</option>
                 <option>Dr. Tatiana Lee</option>
@@ -427,11 +357,11 @@
           </article>
 
           <article class="promo-copy-card">
-            <h2>Ultrasound screening</h2>
-            <p>We use modern equipment and careful diagnostic protocols to support accurate screening, earlier intervention, and more confident treatment decisions for every patient.</p>
+            <h2>Therapist profiles with map context</h2>
+            <p>Each profile currently shows specialization, city, language, availability, local reviews, and a Google Maps search area.</p>
             <div class="promo-actions">
-              <a class="btn btn-primary" href="#">Book Now</a>
-              <a class="btn btn-secondary" href="#">Learn More ›</a>
+              <a class="btn btn-primary" href="#">Find therapists</a>
+              <a class="btn btn-secondary" href="#">Explore categories</a>
             </div>
           </article>
         </div>
@@ -439,34 +369,34 @@
         <section class="news-section">
           <div class="news-head">
             <div class="pill">News</div>
-            <h2>Latest publications</h2>
+            <h2>Next MVP additions</h2>
             <div class="news-nav">
-              <a class="news-nav-btn" href="blog.html">Previous</a>
-              <a class="news-nav-btn" href="blog.html">Next</a>
+              <a class="news-nav-btn" href="practitioners.html">Previous</a>
+              <a class="news-nav-btn" href="practitioners.html">Next</a>
             </div>
           </div>
 
           <div class="news-grid">
             <article class="news-card">
-              <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=1200&q=80" alt="Child consultation article">
+              <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=1200&q=80" alt="Provider profile roadmap">
               <div class="news-card-body">
-                <h3>Pediatric care at Norbu Clinic</h3>
-                <p>We are proud to bring together an attentive team of child-focused practitioners ready to support early development, calm routines, and family wellbeing.</p>
+                <h3>Provider profiles later</h3>
+                <p>The next step can be provider-claimed profiles, clearer profile ownership, and exact location data.</p>
                 <div class="news-meta">
-                  <a class="news-read" href="blog.html">Read more ›</a>
-                  <div class="news-stats"><span>30.07.2025</span><span>◉ 168</span></div>
+                  <a class="news-read" href="practitioners.html">Read more ></a>
+                  <div class="news-stats"><span>30.07.2025</span><span>â—‰ 168</span></div>
                 </div>
               </div>
             </article>
 
             <article class="news-card">
-              <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80" alt="Specialist appointment article">
+              <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80" alt="Provider contact roadmap">
               <div class="news-card-body">
-                <h3>New specialist booking window now open</h3>
-                <p>Appointments are now available for a focused integrative consultation led by our visiting practitioner team, with expanded intake options this month.</p>
+                <h3>Provider profile claims later</h3>
+                <p>Appointments are now available for a focused integrative consultation led by our visiting therapist team, with expanded intake options this month.</p>
                 <div class="news-meta">
-                  <a class="news-read" href="blog.html">Read more ›</a>
-                  <div class="news-stats"><span>24.07.2025</span><span>◉ 18</span></div>
+                  <a class="news-read" href="practitioners.html">Read more ></a>
+                  <div class="news-stats"><span>24.07.2025</span><span>â—‰ 18</span></div>
                 </div>
               </div>
             </article>
@@ -474,11 +404,11 @@
             <article class="news-card">
               <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=80" alt="Massage therapy article">
               <div class="news-card-body">
-                <h3>Massage therapy joins our wellness program</h3>
-                <p>A new bodywork offering is now available in the clinic, combining recovery massage, stress relief, and supportive treatment for physical tension.</p>
+                <h3>Review moderation and ranking</h3>
+                <p>The next version can add provider onboarding, claimable profiles, moderation, and optional contact details.</p>
                 <div class="news-meta">
-                  <a class="news-read" href="blog.html">Read more ›</a>
-                  <div class="news-stats"><span>10.07.2025</span><span>◉ 8</span></div>
+                  <a class="news-read" href="practitioners.html">Read more ></a>
+                  <div class="news-stats"><span>10.07.2025</span><span>â—‰ 8</span></div>
                 </div>
               </div>
             </article>
@@ -494,19 +424,20 @@
             <div class="brand-mark"></div>
             <span>Norbu</span>
           </a>
-          <p>A calm alternative medicine clinic for recovery, diagnostics, and long-view care.</p>
+          <p>A first searchable acupuncture directory for The Netherlands.</p>
         </div>
         <div>
           <strong>Visit</strong>
-          <p>214 Cedar Grove, Suite 5<br>San Francisco, CA</p>
+          <p>Amsterdam<br>The Netherlands</p>
         </div>
         <div>
-          <strong>Contact</strong>
-          <p>+1 (415) 555-2184<br>hello@holistic-care.com</p>
+          <strong>MVP</strong>
+          <p>hello@norbu.example<br>Provider onboarding next</p>
         </div>
         <div>
           <strong>Explore</strong>
-          <p><a href="about.html">About</a><br><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Practitioners</a><br><a href="blog.html">Blog</a></p>
+          <p><a href="index.html">Home</a><br><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a>
+          <a href="quiz.html">Quiz</a><br><a href="faq.html">FAQ</a></p>
         </div>
       </div>
     </footer>
@@ -514,3 +445,16 @@
   <script src="script.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
