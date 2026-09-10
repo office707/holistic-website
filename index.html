@@ -1,13 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Norbu</title>
+  <title>Norbu | Acupuncture directory</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
-<body class="home-page mvp-site-page">
+<body class="home-page mvp-site-page mvp-home-page">
   <div class="page">
     <header class="topbar mvp-topbar">
       <a class="brand brand-link" href="index.html">
@@ -25,395 +25,143 @@
         <div class="icon-circle search-icon" aria-hidden="true"></div>
         <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
       </div>
-      <a class="book-btn" href="practitioners.html">Find a therapist</a>
+      <a class="book-btn" href="practitioners.html">Open finder</a>
     </header>
 
-    <main>
-      <section class="hero">
-        <article class="card hero-copy">
-          <div class="hero-toolbar">
-            <div class="pill">Acupuncture directory for The Netherlands</div>
-
-          </div>
-
-          <h1>
-            Find the right
-            <span class="highlight">acupuncturist</span>
-            near you
-          </h1>
-
+    <main class="mvp-home">
+      <section class="mvp-home-hero">
+        <div class="mvp-home-copy">
+          <span class="mvp-kicker">Norbu MVP</span>
+          <h1>Find an acupuncturist in The Netherlands.</h1>
           <p>
-            Norbu lets visitors compare acupuncture therapist profiles by city,
-            specialization, profile details, map location, and early
-            community reviews.
+            A focused first version for browsing acupuncture therapist profiles by city,
+            specialization, map area, and local reviews.
           </p>
-
-          <div class="cta-row">
-            <a class="btn btn-primary" href="practitioners.html">Find a therapist</a>
-            <a class="btn btn-secondary" href="therapies.html">Explore specializations</a>
+          <div class="mvp-home-actions">
+            <a class="btn btn-primary" href="practitioners.html">Open finder</a>
+            <a class="btn btn-secondary" href="quiz.html">Take the quiz</a>
           </div>
+        </div>
 
-          <div class="experts">
-            <div class="faces">
-              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=180&q=80" alt="Sample therapist portrait">
-              <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=180&q=80" alt="Sample therapist portrait">
-              <img src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&w=180&q=80" alt="Sample therapist portrait">
-              <div class="doctor-badge">6</div>
+        <aside class="mvp-home-panel" aria-label="What works in this MVP">
+          <span class="mvp-panel-label">Live MVP scope</span>
+          <h2>What visitors can do now</h2>
+          <div class="mvp-home-checks">
+            <div>
+              <strong>Browse profiles</strong>
+              <span>Compare sample therapists by city and acupuncture focus.</span>
             </div>
             <div>
-              <strong>sample therapist profiles</strong>
-              <span>Amsterdam, Rotterdam, Utrecht, The Hague, Eindhoven</span>
+              <strong>Open Google Maps</strong>
+              <span>Jump from a profile to a relevant map search area.</span>
+            </div>
+            <div>
+              <strong>Add local reviews</strong>
+              <span>Reviews appear only after they are submitted in the browser.</span>
             </div>
           </div>
-        </article>
+        </aside>
+      </section>
 
-        <div class="hero-visual">
-          <img class="hero-media" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1400&q=80" alt="Acupuncture directory preview">
+      <section class="mvp-search-band" aria-label="Quick starts">
+        <div>
+          <span class="mvp-kicker">Start here</span>
+          <h2>Search by need or location</h2>
+        </div>
+        <div class="mvp-search-links">
+          <a href="practitioners.html?city=Amsterdam">Amsterdam</a>
+          <a href="practitioners.html?specialty=Pain%20acupuncture">Pain acupuncture</a>
+          <a href="practitioners.html?specialty=Stress%20and%20sleep%20acupuncture">Stress and sleep</a>
+          <a href="practitioners.html?specialty=Fertility%20acupuncture">Fertility</a>
         </div>
       </section>
 
-      <section class="info-grid" id="about">
-        <article class="card small-card support-card">
-          <div class="support-copy">
-            <h2>Simple profile comparison without extra promises</h2>
-            <p>City, specialization, profile details, map search, and reviews in one place.</p>
-          </div>
-          <div class="support-visual">
-            <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=900&q=80" alt="Two holistic therapists smiling">
-          </div>
-        </article>
-
-        <article class="card small-card checklist-card">
-          <h2>Popular acupuncture searches:</h2>
-          <div class="chips">
-            <div class="chip">+ Fertility acupuncture</div>
-            <div class="chip">+ Acupuncture</div>
-            <div class="chip">+ Pain acupuncture</div>
-            <div class="chip">+ Stress and sleep</div>
-            <div class="chip">+ Stress recovery</div>
-            <div class="chip">+ Sleep support</div>
-            <div class="chip">+ Women's health</div>
-          </div>
-          <a class="more-link" href="practitioners.html">Learn more ></a>
-        </article>
-
-        <article class="card small-card quality-card">
-          <h2>Simple MVP without provider claims</h2>
-          <p>No ranking, verification, booking, or medical recommendation is included yet.</p>
-        </article>
-      </section>
-
-      <section class="services-section">
-        <article class="card services-hero">
-          <div class="services-intro">
-            <div class="pill">Categories</div>
-            <h2>Core acupuncture specializations for the first MVP</h2>
-
-            <div class="services-grid">
-              <article class="service-tile">
-                <div class="service-top">
-                  <span class="service-number">01</span>
-                  <span class="service-arrow">Explore</span>
-                </div>
-                <h3>Fertility acupuncture</h3>
-              </article>
-
-              <article class="service-tile">
-                <div class="service-top">
-                  <span class="service-number">02</span>
-                  <span class="service-arrow">Explore</span>
-                </div>
-                <h3>Pain acupuncture</h3>
-              </article>
-
-              <article class="service-tile is-active">
-                <div class="service-top">
-                  <span class="service-number">03</span>
-                  <span class="service-arrow">Explore</span>
-                </div>
-                <h3>Stress and sleep</h3>
-              </article>
-
-              <article class="service-tile">
-                <div class="service-top">
-                  <span class="service-number">04</span>
-                  <span class="service-arrow">Explore</span>
-                </div>
-                <h3>Women's health</h3>
-              </article>
-
-              <article class="service-tile">
-                <div class="service-top">
-                  <span class="service-number">05</span>
-                  <span class="service-arrow">Explore</span>
-                </div>
-                <h3>Traditional Chinese Medicine</h3>
-              </article>
-
-              <article class="service-tile">
-                <div class="service-top">
-                  <span class="service-number">06</span>
-                  <span class="service-arrow">Explore</span>
-                </div>
-                <h3>Cosmetic acupuncture</h3>
-              </article>
-
-              <article class="service-tile">
-                <div class="service-top">
-                  <span class="service-number">07</span>
-                  <span class="service-arrow">Explore</span>
-                </div>
-                <h3>Amsterdam therapists</h3>
-              </article>
-
-              <article class="service-tile">
-                <div class="service-top">
-                  <span class="service-number">08</span>
-                  <span class="service-arrow">Explore</span>
-                </div>
-                <h3>Rotterdam therapists</h3>
-              </article>
-            </div>
-          </div>
-
-          <div class="services-side">
-            <img class="service-portrait" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80" alt="Smiling therapist portrait">
-          </div>
-        </article>
-
-        <div class="services-bottom">
-          <article class="card lab-image-card">
-            <img src="https://images.unsplash.com/photo-1579165466741-7f35e4755660?auto=format&fit=crop&w=1200&q=80" alt="Blood draw and laboratory sample collection">
+      <section class="mvp-home-flow">
+        <div class="mvp-section-head">
+          <span class="mvp-kicker">How it works</span>
+          <h2>A simple route from question to map</h2>
+        </div>
+        <div class="mvp-flow-grid">
+          <article>
+            <span>01</span>
+            <h3>Choose a starting point</h3>
+            <p>Use the quiz or jump straight into the finder with a city or specialization.</p>
+            <a href="quiz.html">Open quiz</a>
           </article>
-
-          <article class="card lab-copy-card">
-            <h3>Start with a simple searchable database</h3>
-            <p>
-              This MVP proves the core flow: find a therapist, compare the profile, open the map, and add a review. Provider onboarding and exact addresses can come later.
-            </p>
-            <div class="lab-actions">
-              <a class="btn btn-primary" href="#">Find therapists</a>
-              <a class="btn btn-secondary" href="#">Explore categories</a>
-            </div>
+          <article>
+            <span>02</span>
+            <h3>Compare profiles</h3>
+            <p>Review focus areas, languages, availability labels, and profile details.</p>
+            <a href="practitioners.html">Browse profiles</a>
           </article>
-
-          <article class="card service-tags-card">
-            <div class="service-chip">+ Blood wellness panel</div>
-            <div class="service-chip">+ Vitamins</div>
-            <div class="service-chip">+ Enzymes</div>
-            <div class="service-chip">+ Specific proteins</div>
-            <div class="service-chip">+ Hormonal insights</div>
-            <div class="service-chip">+ Immune balance</div>
-            <div class="service-chip service-more">More</div>
+          <article>
+            <span>03</span>
+            <h3>Open map and reviews</h3>
+            <p>Use Google Maps search and read local feedback when reviews exist.</p>
+            <a href="practitioners.html">Open finder</a>
           </article>
         </div>
       </section>
 
-      <section class="therapists-section therapists-section--landing">
-        <div class="therapists-head">
-          <div class="pill">Find a therapist</div>
-          <h2>Explore acupuncture therapists</h2>
-          <p>Start with a searchable first set of profiles, then compare cities, specializations, availability, map areas, and reviews.</p>
+      <section class="mvp-home-profiles">
+        <div class="mvp-section-head">
+          <span class="mvp-kicker">Directory preview</span>
+          <h2>Sample therapist profiles for the first version</h2>
         </div>
-
-        <div class="therapists-layout therapists-layout--landing">
-          <div class="therapists-track therapists-track--landing">
-            <article class="therapist-card">
-              <div class="therapist-photo">
-                <img class="photo-left" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1000&q=80" alt="Dr. Elena Markova portrait">
-              </div>
-              <div class="therapist-badge">Fertility acupuncture</div>
+        <div class="mvp-profile-preview-grid">
+          <article class="mvp-profile-preview">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80" alt="Sample therapist portrait">
+            <div>
+              <span>Amsterdam</span>
               <h3>Sanne de Vries</h3>
-              <p class="therapist-location">Amsterdam - IVF support and cycle care</p>
-            </article>
-
-            <article class="therapist-card">
-              <div class="therapist-photo">
-                <img class="photo-center" src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1000&q=80" alt="Dr. Julia Soren portrait">
-              </div>
-              <div class="therapist-badge">Pain acupuncture</div>
-              <h3>Marco Jansen</h3>
-              <p class="therapist-location">Rotterdam - back pain and sports recovery</p>
-            </article>
-
-            <article class="therapist-card is-featured">
-              <div class="therapist-arrow"></div>
-              <div class="therapist-photo">
-                <img class="photo-right" src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&w=1000&q=80" alt="Dr. Tatiana Lee portrait">
-              </div>
-              <div class="therapist-badge">Stress and sleep</div>
-              <h3>Lina van Dijk</h3>
-              <p class="therapist-location">Utrecht - sleep and burnout recovery</p>
-            </article>
-
-            <article class="therapist-card">
-              <div class="therapist-photo">
-                <img class="photo-center" src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=1000&q=80" alt="Dr. Liana Morel portrait">
-              </div>
-              <div class="therapist-badge">Women's health</div>
-              <h3>Amina Bakker</h3>
-              <p class="therapist-location">The Hague - cycle and menopause support</p>
-            </article>
-          </div>
-
-          <aside class="card therapists-directory-teaser">
+              <p>Fertility acupuncture and IVF support.</p>
+              <a href="practitioner-detail.html?id=sanne-de-vries">View profile</a>
+            </div>
+          </article>
+          <article class="mvp-profile-preview">
+            <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=900&q=80" alt="Sample therapist portrait">
             <div>
-              <span class="therapist-map-kicker">Therapist finder</span>
-              <h3>Browse profiles with map and reviews</h3>
-              <p>Filter by specialization or Dutch city, open a profile, and switch the Google Maps view based on the therapist you choose.</p>
+              <span>Rotterdam</span>
+              <h3>Marco Jansen</h3>
+              <p>Pain acupuncture and sports recovery.</p>
+              <a href="practitioner-detail.html?id=marco-jansen">View profile</a>
             </div>
-
-            <div class="directory-teaser-stats">
-              <div>
-                <strong>6</strong>
-                <span>profiles</span>
-              </div>
-              <div>
-                <strong>6</strong>
-                <span>specializations</span>
-              </div>
-              <div>
-                <strong>5</strong>
-                <span>Dutch cities</span>
-              </div>
+          </article>
+          <article class="mvp-profile-preview">
+            <img src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&w=900&q=80" alt="Sample therapist portrait">
+            <div>
+              <span>Utrecht</span>
+              <h3>Lina van Dijk</h3>
+              <p>Stress, sleep, and burnout recovery support.</p>
+              <a href="practitioner-detail.html?id=lina-van-dijk">View profile</a>
             </div>
-
-            <a class="btn btn-primary" href="practitioners.html">Open therapist finder</a>
-          </aside>
+          </article>
         </div>
       </section>
 
-      <section class="testimonials-section">
-        <div class="testimonials-layout">
-          <div class="testimonials-intro">
-            <div class="pill">Reviews</div>
-            <h2>Reviews only after someone adds them</h2>
-            <p>No review score is shown until feedback is added in this MVP. Submitted reviews are stored locally in the browser.</p>
-            <button class="btn btn-primary" type="button" data-review-open>Leave Feedback</button>
-          </div>
-
+      <section class="mvp-home-scope">
+        <div>
+          <span class="mvp-kicker">Honest scope</span>
+          <h2>No promises beyond the current MVP</h2>
+          <p>
+            Norbu is currently a directory prototype. It helps people orient themselves,
+            compare profile information, open map searches, and leave local feedback.
+          </p>
+        </div>
+        <div class="mvp-scope-list">
           <div>
-            <div class="testimonials-list" id="testimonials-list"></div>
+            <strong>No booking yet</strong>
+            <span>Appointments and calendar logic can be added later.</span>
+          </div>
+          <div>
+            <strong>No medical recommendation</strong>
+            <span>The quiz only suggests a search direction, not a diagnosis.</span>
+          </div>
+          <div>
+            <strong>No fake rankings</strong>
+            <span>Review scores are shown only when reviews actually exist.</span>
           </div>
         </div>
-      </section>
-
-      <div class="review-modal" id="review-modal" hidden>
-        <div class="review-modal__backdrop" data-review-close></div>
-        <div class="review-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="review-title">
-          <button class="review-modal__close" type="button" aria-label="Close review form" data-review-close>&times;</button>
-          <span class="dashboard-panel-kicker">Share your experience</span>
-          <h2 id="review-title">Leave feedback for Norbu</h2>
-          <p>Your review supports the directory overall. You can connect it to the therapist you visited.</p>
-
-          <form class="review-form" id="review-form">
-            <div class="review-form__grid">
-              <label>
-                <span>Your name</span>
-                <input id="review-name" name="name" type="text" autocomplete="name" required>
-              </label>
-              <label>
-                <span>Rating</span>
-                <select id="review-rating" name="rating" required>
-                  <option value="5">5 - Excellent</option>
-                  <option value="4">4 - Very good</option>
-                  <option value="3">3 - Good</option>
-                  <option value="2">2 - Fair</option>
-                  <option value="1">1 - Poor</option>
-                </select>
-              </label>
-            </div>
-            <label>
-              <span>Therapist (optional)</span>
-              <select id="review-therapist" name="therapist">
-                <option value="">Directory review only</option>
-                <option>Dr. Elena Markova</option>
-                <option>Dr. Julia Soren</option>
-                <option>Dr. Tatiana Lee</option>
-                <option>Dr. Liana Morel</option>
-                <option>Dr. Noor Patel</option>
-                <option>Dr. Miriam Kline</option>
-                <option>Dr. Adrian Sol</option>
-                <option>Dr. Sophie Marin</option>
-              </select>
-            </label>
-            <label>
-              <span>Your review</span>
-              <textarea id="review-message" name="message" rows="5" required></textarea>
-            </label>
-            <div class="review-form__actions">
-              <button class="btn btn-primary" type="submit">Submit review</button>
-              <button class="btn btn-secondary" type="button" data-review-close>Cancel</button>
-            </div>
-            <p class="review-form__status" id="review-form-status" role="status" aria-live="polite"></p>
-          </form>
-        </div>
-      </div>
-
-      <section class="updates-section">
-        <div class="promo-strip">
-          <article class="promo-image-card">
-            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1200&q=80" alt="Ultrasound consultation">
-          </article>
-
-          <article class="promo-copy-card">
-            <h2>Therapist profiles with map context</h2>
-            <p>Each profile currently shows specialization, city, language, availability, local reviews, and a Google Maps search area.</p>
-            <div class="promo-actions">
-              <a class="btn btn-primary" href="#">Find therapists</a>
-              <a class="btn btn-secondary" href="#">Explore categories</a>
-            </div>
-          </article>
-        </div>
-
-        <section class="news-section">
-          <div class="news-head">
-            <div class="pill">News</div>
-            <h2>Next MVP additions</h2>
-            <div class="news-nav">
-              <a class="news-nav-btn" href="practitioners.html">Previous</a>
-              <a class="news-nav-btn" href="practitioners.html">Next</a>
-            </div>
-          </div>
-
-          <div class="news-grid">
-            <article class="news-card">
-              <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=1200&q=80" alt="Provider profile roadmap">
-              <div class="news-card-body">
-                <h3>Provider profiles later</h3>
-                <p>The next step can be provider-claimed profiles, clearer profile ownership, and exact location data.</p>
-                <div class="news-meta">
-                  <a class="news-read" href="practitioners.html">Read more ></a>
-                  <div class="news-stats"><span>30.07.2025</span><span>â—‰ 168</span></div>
-                </div>
-              </div>
-            </article>
-
-            <article class="news-card">
-              <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80" alt="Provider contact roadmap">
-              <div class="news-card-body">
-                <h3>Provider profile claims later</h3>
-                <p>Appointments are now available for a focused integrative consultation led by our visiting therapist team, with expanded intake options this month.</p>
-                <div class="news-meta">
-                  <a class="news-read" href="practitioners.html">Read more ></a>
-                  <div class="news-stats"><span>24.07.2025</span><span>â—‰ 18</span></div>
-                </div>
-              </div>
-            </article>
-
-            <article class="news-card">
-              <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=80" alt="Massage therapy article">
-              <div class="news-card-body">
-                <h3>Review moderation and ranking</h3>
-                <p>The next version can add provider onboarding, claimable profiles, moderation, and optional contact details.</p>
-                <div class="news-meta">
-                  <a class="news-read" href="practitioners.html">Read more ></a>
-                  <div class="news-stats"><span>10.07.2025</span><span>â—‰ 8</span></div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
       </section>
     </main>
 
@@ -427,17 +175,16 @@
           <p>A first searchable acupuncture directory for The Netherlands.</p>
         </div>
         <div>
-          <strong>Visit</strong>
-          <p>Amsterdam<br>The Netherlands</p>
+          <strong>MVP</strong>
+          <p>Profiles<br>Google Maps<br>Local reviews</p>
         </div>
         <div>
-          <strong>MVP</strong>
-          <p>hello@norbu.example<br>Provider onboarding next</p>
+          <strong>Not included yet</strong>
+          <p>Booking<br>Messaging<br>Provider login</p>
         </div>
         <div>
           <strong>Explore</strong>
-          <p><a href="index.html">Home</a><br><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a>
-          <a href="quiz.html">Quiz</a><br><a href="faq.html">FAQ</a></p>
+          <p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a><br><a href="quiz.html">Quiz</a><br><a href="faq.html">FAQ</a></p>
         </div>
       </div>
     </footer>
@@ -445,16 +192,3 @@
   <script src="script.js" defer></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
