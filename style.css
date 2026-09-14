@@ -16620,3 +16620,1551 @@ body .topbar.norbu-topbar > .shell {
   }
 }
 
+/* Norbu consolidated live theme */
+:root {
+  --norbu-bg: #f3f6f2;
+  --norbu-bg-2: #fbfaf6;
+  --norbu-surface: rgba(255, 255, 255, .86);
+  --norbu-surface-solid: #ffffff;
+  --norbu-panel: #f8f5ee;
+  --norbu-ink: #122f32;
+  --norbu-text: #18383a;
+  --norbu-muted: #657977;
+  --norbu-line: rgba(18, 47, 50, .12);
+  --norbu-line-strong: rgba(18, 47, 50, .18);
+  --norbu-teal: #1f625d;
+  --norbu-teal-dark: #123f42;
+  --norbu-teal-soft: #e4efeb;
+  --norbu-accent: #c96f42;
+  --norbu-accent-dark: #a95631;
+  --norbu-blue: #dbe7ea;
+  --norbu-shadow-sm: 0 10px 26px rgba(18, 47, 50, .07);
+  --norbu-shadow: 0 24px 70px rgba(18, 47, 50, .11);
+  --norbu-radius-sm: 14px;
+  --norbu-radius: 22px;
+  --norbu-radius-lg: 30px;
+  --norbu-max: 1220px;
+  --norbu-wide: 1400px;
+}
+
+body.norbu-site-page,
+body.norbu-finder-page,
+body.norbu-profile-page,
+body.quiz-page,
+body.catalog-page {
+  min-height: 100vh !important;
+  margin: 0 !important;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(201, 111, 66, .10), transparent 28rem),
+    radial-gradient(circle at 95% 10%, rgba(31, 98, 93, .13), transparent 26rem),
+    linear-gradient(180deg, var(--norbu-bg) 0%, var(--norbu-bg-2) 44%, #edf3ee 100%) !important;
+  color: var(--norbu-text) !important;
+  font-family: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0 !important;
+}
+
+body.norbu-site-page *,
+body.norbu-finder-page *,
+body.norbu-profile-page *,
+body.quiz-page *,
+body.catalog-page * {
+  box-sizing: border-box;
+}
+
+body.norbu-site-page a,
+body.norbu-finder-page a,
+body.norbu-profile-page a,
+body.quiz-page a,
+body.catalog-page a {
+  color: inherit;
+}
+
+body.norbu-site-page img,
+body.norbu-finder-page img,
+body.norbu-profile-page img,
+body.quiz-page img,
+body.catalog-page img {
+  max-width: 100%;
+}
+
+body.norbu-site-page h1,
+body.norbu-site-page h2,
+body.norbu-site-page h3,
+body.norbu-finder-page h1,
+body.norbu-finder-page h2,
+body.norbu-finder-page h3,
+body.norbu-profile-page h1,
+body.norbu-profile-page h2,
+body.norbu-profile-page h3,
+body.quiz-page h1,
+body.quiz-page h2,
+body.quiz-page h3,
+body.catalog-page h1,
+body.catalog-page h2,
+body.catalog-page h3 {
+  margin: 0 !important;
+  color: var(--norbu-ink) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.04 !important;
+}
+
+body.norbu-site-page p,
+body.norbu-finder-page p,
+body.norbu-profile-page p,
+body.quiz-page p,
+body.catalog-page p {
+  margin: 0 !important;
+  color: var(--norbu-muted) !important;
+  line-height: 1.68 !important;
+}
+
+body .topbar.norbu-topbar {
+  width: min(var(--norbu-max), calc(100% - 48px)) !important;
+  height: 72px !important;
+  min-height: 72px !important;
+  margin: 24px auto 0 !important;
+  padding: 9px 10px !important;
+  display: grid !important;
+  grid-template-columns: 142px minmax(0, 1fr) 132px !important;
+  align-items: center !important;
+  gap: 14px !important;
+  border: 1px solid rgba(18, 47, 50, .10) !important;
+  border-radius: 28px !important;
+  background: rgba(255, 255, 255, .82) !important;
+  box-shadow: var(--norbu-shadow-sm) !important;
+  backdrop-filter: blur(18px) !important;
+}
+
+body .topbar.norbu-topbar > .brand,
+body .site-footer-brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  min-width: 0 !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  padding: 6px 4px !important;
+  color: var(--norbu-ink) !important;
+  font-size: 21px !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+}
+
+body .topbar.norbu-topbar .brand-mark,
+body .site-footer .brand-mark {
+  width: 38px !important;
+  height: 38px !important;
+  flex: 0 0 38px !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.28), transparent 44%),
+    linear-gradient(135deg, var(--norbu-teal) 0%, #7daaa4 100%) !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.28), 0 10px 20px rgba(18, 47, 50, .12) !important;
+}
+
+body .topbar.norbu-topbar > .shell {
+  grid-column: 2 !important;
+  justify-self: center !important;
+  width: 100% !important;
+  max-width: 690px !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  padding: 4px !important;
+  border: 1px solid rgba(18, 47, 50, .08) !important;
+  border-radius: 22px !important;
+  background: rgba(242, 247, 244, .78) !important;
+  box-shadow: none !important;
+}
+
+body .topbar.norbu-topbar .nav {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+}
+
+body .topbar.norbu-topbar .nav a {
+  min-height: 42px !important;
+  padding: 0 13px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 18px !important;
+  color: var(--norbu-text) !important;
+  font-size: 13px !important;
+  font-weight: 750 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  transition: background .18s ease, color .18s ease, transform .18s ease !important;
+}
+
+body .topbar.norbu-topbar .nav a:hover,
+body .topbar.norbu-topbar .nav a.active {
+  background: var(--norbu-surface-solid) !important;
+  color: var(--norbu-teal) !important;
+  box-shadow: 0 6px 16px rgba(18, 47, 50, .07) !important;
+}
+
+body .topbar.norbu-topbar .menu-toggle,
+body .topbar.norbu-topbar .icon-circle {
+  display: none !important;
+}
+
+body .topbar.norbu-topbar > .book-btn,
+.btn,
+.catalog-filter,
+.catalog-reset {
+  min-height: 48px !important;
+  padding: 0 18px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  border: 1px solid transparent !important;
+  border-radius: 18px !important;
+  font-family: inherit !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease !important;
+}
+
+body .topbar.norbu-topbar > .book-btn,
+.btn-primary {
+  background: var(--norbu-accent) !important;
+  color: #fff !important;
+  box-shadow: 0 12px 24px rgba(201, 111, 66, .20) !important;
+}
+
+body .topbar.norbu-topbar > .book-btn:hover,
+.btn-primary:hover {
+  background: var(--norbu-accent-dark) !important;
+  transform: translateY(-1px) !important;
+}
+
+.btn-secondary,
+.catalog-filter,
+.catalog-reset {
+  background: #fff !important;
+  color: var(--norbu-teal-dark) !important;
+  border-color: var(--norbu-line) !important;
+  box-shadow: none !important;
+}
+
+.btn-secondary:hover,
+.catalog-filter:hover,
+.catalog-filter.is-active,
+.catalog-reset:hover {
+  background: var(--norbu-teal-soft) !important;
+  color: var(--norbu-teal) !important;
+  border-color: rgba(31, 98, 93, .22) !important;
+}
+
+.norbu-home,
+.norbu-finder-page .directory-main,
+.norbu-profile-page .profile-main,
+.quiz-main,
+.catalog-main,
+.norbu-faq-main {
+  width: min(var(--norbu-max), calc(100% - 48px)) !important;
+  margin: 24px auto 84px !important;
+  display: grid !important;
+  gap: 22px !important;
+}
+
+.norbu-finder-page .directory-main,
+.catalog-main {
+  width: min(var(--norbu-wide), calc(100% - 48px)) !important;
+}
+
+.norbu-home-hero,
+.norbu-hero,
+.profile-hero,
+.quiz-hero,
+.catalog-hero,
+.norbu-faq-hero {
+  overflow: hidden !important;
+  border: 1px solid var(--norbu-line) !important;
+  border-radius: var(--norbu-radius-lg) !important;
+  background: var(--norbu-surface) !important;
+  box-shadow: var(--norbu-shadow) !important;
+}
+
+.norbu-home-hero {
+  min-height: 620px !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 360px !important;
+  align-items: stretch !important;
+  background:
+    linear-gradient(90deg, rgba(18, 63, 66, .92) 0%, rgba(31, 98, 93, .75) 48%, rgba(31, 98, 93, .18) 100%),
+    url("https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1800&q=80") center / cover !important;
+}
+
+.norbu-home-copy,
+.norbu-hero-copy,
+.catalog-hero-copy,
+.quiz-hero,
+.norbu-faq-hero {
+  padding: clamp(34px, 5.5vw, 68px) !important;
+}
+
+.norbu-home-copy {
+  align-self: end !important;
+  display: grid !important;
+  gap: 22px !important;
+}
+
+.norbu-home-copy h1,
+.norbu-hero h1,
+.catalog-hero h1,
+.quiz-hero h1,
+.norbu-faq-hero h1,
+.norbu-profile-page .profile-hero h1 {
+  max-width: 860px !important;
+  font-size: clamp(48px, 6.5vw, 84px) !important;
+  line-height: .98 !important;
+}
+
+.norbu-home-copy h1,
+.norbu-home-copy p,
+.norbu-home-copy .norbu-kicker,
+.norbu-hero-copy h1,
+.norbu-hero-copy p,
+.norbu-hero-copy .norbu-kicker {
+  color: #fff !important;
+}
+
+.norbu-home-copy p,
+.norbu-hero p,
+.catalog-hero-copy > p,
+.quiz-hero p,
+.norbu-faq-hero p,
+.profile-hero-copy > p,
+.profile-focus {
+  max-width: 700px !important;
+  font-size: 17px !important;
+}
+
+.norbu-home-copy p,
+.norbu-hero-copy p {
+  color: rgba(255,255,255,.82) !important;
+}
+
+.norbu-home-actions,
+.catalog-hero-actions,
+.faq-hero-actions,
+.profile-actions,
+.quiz-result-actions,
+.directory-map-actions,
+.directory-card-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+}
+
+.norbu-kicker,
+.norbu-panel-label,
+.profile-kicker,
+.practitioner-map-kicker,
+.catalog-kicker,
+.pill {
+  width: fit-content !important;
+  min-height: 30px !important;
+  padding: 7px 11px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  border-radius: 999px !important;
+  background: var(--norbu-teal-soft) !important;
+  color: var(--norbu-teal) !important;
+  font-size: 12px !important;
+  font-weight: 850 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+}
+
+.norbu-home-copy .norbu-kicker,
+.norbu-hero-copy .norbu-kicker {
+  background: rgba(255,255,255,.15) !important;
+  color: rgba(255,255,255,.9) !important;
+}
+
+.norbu-home-panel,
+.norbu-hero-panel {
+  align-self: end !important;
+  display: grid !important;
+  align-content: start !important;
+  gap: 14px !important;
+  margin: 24px !important;
+  padding: 24px !important;
+  border: 1px solid rgba(255,255,255,.44) !important;
+  border-radius: 24px !important;
+  background: rgba(255,255,255,.90) !important;
+  box-shadow: 0 22px 50px rgba(18, 47, 50, .16) !important;
+}
+
+.norbu-home-panel h2,
+.norbu-search-band h2,
+.norbu-section-head h2,
+.norbu-home-scope h2,
+.norbu-faq-bottom h2,
+.catalog-toolbar h2,
+.profile-panel h2,
+.profile-booking-card h2,
+.norbu-hero-panel strong {
+  font-size: clamp(26px, 3vw, 42px) !important;
+  line-height: 1.08 !important;
+}
+
+.norbu-home-checks,
+.norbu-scope-list {
+  display: grid !important;
+  gap: 10px !important;
+}
+
+.norbu-home-checks div,
+.norbu-scope-list div,
+.norbu-hero-panel span,
+.profile-facts div,
+.profile-review-summary,
+.directory-review-summary {
+  padding: 14px !important;
+  border: 1px solid var(--norbu-line) !important;
+  border-radius: 16px !important;
+  background: rgba(255,255,255,.72) !important;
+}
+
+.norbu-home-checks strong,
+.norbu-scope-list strong,
+.profile-facts strong,
+.directory-review-summary strong,
+.profile-review-summary strong {
+  display: block !important;
+  color: var(--norbu-ink) !important;
+  font-weight: 850 !important;
+}
+
+.norbu-home-checks span,
+.norbu-scope-list span,
+.directory-review-summary span,
+.profile-review-summary span {
+  color: var(--norbu-muted) !important;
+  font-size: 14px !important;
+}
+
+.norbu-search-band,
+.norbu-home-flow,
+.norbu-home-profiles,
+.norbu-home-scope,
+.norbu-faq-bottom,
+.directory-filters,
+.directory-map-panel,
+.profile-panel,
+.profile-booking-card,
+.quiz-card,
+.quiz-result,
+.catalog-toolbar,
+.therapy-card,
+.norbu-faq-card {
+  border: 1px solid var(--norbu-line) !important;
+  border-radius: var(--norbu-radius) !important;
+  background: var(--norbu-surface) !important;
+  box-shadow: var(--norbu-shadow-sm) !important;
+}
+
+.norbu-search-band,
+.norbu-home-flow,
+.norbu-home-profiles,
+.norbu-home-scope,
+.norbu-faq-bottom,
+.directory-filters,
+.profile-panel,
+.profile-booking-card,
+.quiz-card,
+.quiz-result,
+.catalog-toolbar {
+  padding: clamp(24px, 4vw, 42px) !important;
+}
+
+.norbu-search-band,
+.norbu-home-scope,
+.norbu-faq-bottom,
+.profile-booking-card {
+  display: grid !important;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1fr) !important;
+  gap: 26px !important;
+  align-items: center !important;
+}
+
+.norbu-search-links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+}
+
+.norbu-search-links a,
+.norbu-flow-grid a,
+.norbu-profile-preview a,
+.therapy-card a {
+  color: var(--norbu-teal) !important;
+  font-weight: 850 !important;
+  text-decoration: none !important;
+}
+
+.norbu-search-links a {
+  min-height: 44px !important;
+  padding: 0 15px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  border: 1px solid var(--norbu-line) !important;
+  border-radius: 999px !important;
+  background: #fff !important;
+}
+
+.norbu-section-head {
+  max-width: 760px !important;
+  display: grid !important;
+  gap: 12px !important;
+}
+
+.norbu-flow-grid,
+.norbu-profile-preview-grid,
+.norbu-faq-grid,
+.therapy-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+  margin-top: 22px !important;
+}
+
+.norbu-flow-grid article,
+.norbu-profile-preview,
+.therapy-card,
+.norbu-faq-card {
+  overflow: hidden !important;
+  display: grid !important;
+  gap: 12px !important;
+  border: 1px solid var(--norbu-line) !important;
+  border-radius: 20px !important;
+  background: rgba(255,255,255,.74) !important;
+}
+
+.norbu-flow-grid article,
+.norbu-faq-card {
+  padding: 22px !important;
+}
+
+.norbu-flow-grid span,
+.norbu-faq-card > span {
+  color: var(--norbu-accent) !important;
+  font-weight: 900 !important;
+}
+
+.norbu-flow-grid h3,
+.norbu-profile-preview h3,
+.therapy-card h3,
+.norbu-faq-card h2 {
+  font-size: 22px !important;
+}
+
+.norbu-profile-preview img,
+.therapy-card img,
+.directory-card img {
+  width: 100% !important;
+  height: 230px !important;
+  display: block !important;
+  object-fit: cover !important;
+}
+
+.norbu-profile-preview div,
+.therapy-card-body {
+  padding: 20px !important;
+  display: grid !important;
+  gap: 10px !important;
+}
+
+.norbu-hero {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 320px !important;
+  gap: 0 !important;
+  align-items: stretch !important;
+  background:
+    linear-gradient(90deg, rgba(18, 63, 66, .88) 0%, rgba(31, 98, 93, .72) 62%, rgba(31, 98, 93, .10) 100%),
+    url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1800&q=80") center / cover !important;
+}
+
+.norbu-hero-copy {
+  min-height: 500px !important;
+  display: grid !important;
+  align-content: end !important;
+  gap: 18px !important;
+}
+
+.norbu-hero-panel {
+  margin: 24px !important;
+  background: rgba(255,255,255,.92) !important;
+}
+
+.norbu-quick-search {
+  width: min(760px, 100%) !important;
+  padding: 8px !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  gap: 8px !important;
+  border: 1px solid rgba(255,255,255,.26) !important;
+  border-radius: 20px !important;
+  background: rgba(255,255,255,.93) !important;
+}
+
+.norbu-quick-search label,
+.filter-field,
+.catalog-search,
+.catalog-filter-group {
+  display: grid !important;
+  gap: 7px !important;
+}
+
+.norbu-quick-search span,
+.filter-field span,
+.catalog-search > span,
+.catalog-filter-group > span {
+  color: var(--norbu-muted) !important;
+  font-size: 12px !important;
+  font-weight: 850 !important;
+  letter-spacing: .05em !important;
+  text-transform: uppercase !important;
+}
+
+input,
+select {
+  min-height: 50px !important;
+  width: 100% !important;
+  border: 1px solid var(--norbu-line) !important;
+  border-radius: 16px !important;
+  padding: 0 14px !important;
+  background: #fff !important;
+  color: var(--norbu-ink) !important;
+  font: inherit !important;
+  outline: none !important;
+}
+
+input:focus,
+select:focus {
+  border-color: rgba(31, 98, 93, .45) !important;
+  box-shadow: 0 0 0 4px rgba(31, 98, 93, .10) !important;
+}
+
+.directory-filters-head,
+.catalog-toolbar-head {
+  display: flex !important;
+  align-items: end !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+  margin-bottom: 20px !important;
+}
+
+.directory-controls {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto !important;
+  gap: 12px !important;
+  align-items: end !important;
+}
+
+.directory-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0, .96fr) minmax(380px, .72fr) !important;
+  gap: 18px !important;
+  align-items: start !important;
+}
+
+.directory-list {
+  display: grid !important;
+  gap: 14px !important;
+}
+
+.directory-card {
+  overflow: hidden !important;
+  display: grid !important;
+  grid-template-columns: 180px minmax(0, 1fr) !important;
+  min-height: 250px !important;
+  border: 1px solid var(--norbu-line) !important;
+  border-radius: var(--norbu-radius) !important;
+  background: var(--norbu-surface) !important;
+  box-shadow: var(--norbu-shadow-sm) !important;
+  cursor: pointer !important;
+}
+
+.directory-card.is-selected {
+  border-color: rgba(31, 98, 93, .42) !important;
+  box-shadow: 0 0 0 4px rgba(31, 98, 93, .10), var(--norbu-shadow-sm) !important;
+}
+
+.directory-card img {
+  height: 100% !important;
+  min-height: 250px !important;
+}
+
+.directory-card-body {
+  min-width: 0 !important;
+  padding: 20px !important;
+  display: grid !important;
+  gap: 12px !important;
+}
+
+.directory-card-top,
+.directory-meta,
+.therapy-card-meta {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  align-items: center !important;
+}
+
+.practitioner-badge,
+.directory-availability,
+.therapy-card-meta span {
+  min-height: 28px !important;
+  padding: 6px 10px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  border-radius: 999px !important;
+  background: var(--norbu-teal-soft) !important;
+  color: var(--norbu-teal) !important;
+  font-size: 12px !important;
+  font-weight: 850 !important;
+}
+
+.directory-availability,
+.therapy-card-meta span:last-child {
+  background: #f4e4da !important;
+  color: var(--norbu-accent-dark) !important;
+}
+
+.directory-card h3 {
+  font-size: 26px !important;
+}
+
+.directory-card-actions {
+  margin-top: auto !important;
+}
+
+.directory-map-panel {
+  position: sticky !important;
+  top: 18px !important;
+  overflow: hidden !important;
+}
+
+.directory-map-copy {
+  padding: 24px !important;
+  display: grid !important;
+  gap: 14px !important;
+}
+
+.directory-map-copy h3 {
+  font-size: 30px !important;
+}
+
+.practitioner-map-frame,
+.directory-map-frame,
+.profile-map-frame {
+  overflow: hidden !important;
+  border-radius: 20px !important;
+  background: var(--norbu-blue) !important;
+}
+
+.practitioner-map-frame iframe,
+.directory-map-frame iframe,
+.profile-map-frame iframe {
+  width: 100% !important;
+  min-height: 330px !important;
+  display: block !important;
+  border: 0 !important;
+}
+
+.profile-breadcrumbs {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  color: var(--norbu-muted) !important;
+  font-size: 14px !important;
+}
+
+.profile-breadcrumbs a {
+  color: var(--norbu-teal) !important;
+  text-decoration: none !important;
+  font-weight: 750 !important;
+}
+
+.profile-hero {
+  display: grid !important;
+  grid-template-columns: 430px minmax(0, 1fr) !important;
+  gap: 0 !important;
+  background: linear-gradient(135deg, var(--norbu-teal-dark) 0%, var(--norbu-teal) 62%, #e5c0a9 160%) !important;
+}
+
+.profile-portrait {
+  position: relative !important;
+  min-height: 560px !important;
+}
+
+.profile-portrait img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+}
+
+.profile-availability {
+  position: absolute !important;
+  left: 18px !important;
+  bottom: 18px !important;
+  min-height: 36px !important;
+  padding: 8px 12px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.92) !important;
+  color: var(--norbu-teal) !important;
+  font-weight: 850 !important;
+}
+
+.profile-hero-copy {
+  padding: clamp(32px, 5vw, 64px) !important;
+  display: grid !important;
+  align-content: center !important;
+  gap: 18px !important;
+}
+
+.profile-hero-copy h1,
+.profile-hero-copy p,
+.profile-hero-copy .profile-focus {
+  color: #fff !important;
+}
+
+.profile-hero-copy p {
+  color: rgba(255,255,255,.82) !important;
+}
+
+.profile-facts {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+}
+
+.profile-facts div {
+  background: rgba(255,255,255,.12) !important;
+  border-color: rgba(255,255,255,.22) !important;
+}
+
+.profile-facts strong,
+.profile-facts span {
+  color: #fff !important;
+}
+
+.profile-content-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+}
+
+.profile-content-grid--map-review {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr) !important;
+}
+
+.profile-panel,
+.profile-booking-card {
+  display: grid !important;
+  gap: 16px !important;
+  align-content: start !important;
+}
+
+.profile-tag-list {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+.profile-tag-list span,
+.profile-education li {
+  border-radius: 999px !important;
+  background: var(--norbu-teal-soft) !important;
+  color: var(--norbu-teal) !important;
+  font-weight: 750 !important;
+}
+
+.profile-tag-list span {
+  padding: 8px 11px !important;
+}
+
+.profile-education {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: grid !important;
+  gap: 10px !important;
+  list-style: none !important;
+}
+
+.profile-education li {
+  padding: 12px 14px !important;
+}
+
+.quiz-hero {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  gap: 24px !important;
+  align-items: end !important;
+}
+
+.quiz-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0, .95fr) minmax(340px, .45fr) !important;
+  gap: 18px !important;
+  align-items: start !important;
+}
+
+.quiz-card,
+.quiz-result {
+  display: grid !important;
+  gap: 22px !important;
+}
+
+.quiz-step {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  display: grid !important;
+  gap: 10px !important;
+}
+
+.quiz-step legend {
+  margin-bottom: 8px !important;
+  color: var(--norbu-ink) !important;
+  font-size: 21px !important;
+  font-weight: 850 !important;
+}
+
+.quiz-step label {
+  padding: 14px !important;
+  display: flex !important;
+  gap: 12px !important;
+  align-items: center !important;
+  border: 1px solid var(--norbu-line) !important;
+  border-radius: 16px !important;
+  background: #fff !important;
+  color: var(--norbu-text) !important;
+  cursor: pointer !important;
+}
+
+.quiz-step input {
+  width: 18px !important;
+  min-height: 18px !important;
+  flex: 0 0 18px !important;
+}
+
+.catalog-hero {
+  display: grid !important;
+  grid-template-columns: minmax(0, .92fr) minmax(420px, .7fr) !important;
+  align-items: stretch !important;
+  background: var(--norbu-surface) !important;
+}
+
+.catalog-hero-copy {
+  display: grid !important;
+  gap: 18px !important;
+  align-content: center !important;
+}
+
+.catalog-hero-visual {
+  position: relative !important;
+  min-height: 480px !important;
+  overflow: hidden !important;
+  border-radius: 0 !important;
+}
+
+.catalog-hero-visual img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+}
+
+.catalog-hero-note {
+  position: absolute !important;
+  right: 18px !important;
+  bottom: 18px !important;
+  max-width: 260px !important;
+  padding: 16px !important;
+  display: grid !important;
+  gap: 4px !important;
+  border-radius: 18px !important;
+  background: rgba(255,255,255,.92) !important;
+  box-shadow: var(--norbu-shadow-sm) !important;
+}
+
+.catalog-hero-note strong {
+  color: var(--norbu-ink) !important;
+}
+
+.catalog-filter-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+.therapy-card {
+  align-content: start !important;
+}
+
+.therapy-card ul {
+  margin: 0 !important;
+  padding-left: 18px !important;
+  color: var(--norbu-muted) !important;
+}
+
+.catalog-empty {
+  padding: 28px !important;
+  display: grid !important;
+  gap: 6px !important;
+  border: 1px dashed var(--norbu-line-strong) !important;
+  border-radius: var(--norbu-radius) !important;
+  background: rgba(255,255,255,.7) !important;
+}
+
+.norbu-faq-hero {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 320px !important;
+  gap: 28px !important;
+  align-items: center !important;
+}
+
+.norbu-faq-hero > div {
+  display: grid !important;
+  gap: 18px !important;
+}
+
+.norbu-faq-hero aside {
+  display: grid !important;
+  gap: 10px !important;
+  padding: 22px !important;
+  border: 1px solid var(--norbu-line) !important;
+  border-radius: 22px !important;
+  background: var(--norbu-panel) !important;
+}
+
+.norbu-faq-hero aside strong {
+  color: var(--norbu-ink) !important;
+  font-size: 24px !important;
+}
+
+.norbu-faq-hero aside span {
+  padding: 12px !important;
+  border-radius: 14px !important;
+  background: #fff !important;
+  color: var(--norbu-muted) !important;
+}
+
+.site-footer {
+  width: min(var(--norbu-max), calc(100% - 48px)) !important;
+  margin: 0 auto 28px !important;
+  padding: 28px !important;
+  border: 1px solid var(--norbu-line) !important;
+  border-radius: 26px !important;
+  background: rgba(18, 47, 50, .94) !important;
+  color: rgba(255,255,255,.84) !important;
+  box-shadow: var(--norbu-shadow-sm) !important;
+}
+
+.site-footer-grid {
+  display: grid !important;
+  grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+}
+
+.site-footer .brand,
+.site-footer strong {
+  color: #fff !important;
+}
+
+.site-footer p,
+.site-footer a {
+  color: rgba(255,255,255,.72) !important;
+  text-decoration: none !important;
+}
+
+.site-footer a:hover {
+  color: #fff !important;
+}
+
+@media (max-width: 1100px) {
+  body .topbar.norbu-topbar {
+    grid-template-columns: minmax(0, 1fr) 52px 126px !important;
+  }
+
+  body .topbar.norbu-topbar > .shell {
+    justify-self: end !important;
+    width: 52px !important;
+    max-width: 52px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    position: relative !important;
+  }
+
+  body .topbar.norbu-topbar .menu-toggle {
+    width: 52px !important;
+    height: 52px !important;
+    display: grid !important;
+    place-items: center !important;
+    border: 1px solid var(--norbu-line) !important;
+    border-radius: 18px !important;
+    background: #fff !important;
+    cursor: pointer !important;
+  }
+
+  body .topbar.norbu-topbar .menu-toggle span {
+    width: 18px !important;
+    height: 2px !important;
+    display: block !important;
+    margin: 2px 0 !important;
+    border-radius: 999px !important;
+    background: var(--norbu-ink) !important;
+  }
+
+  body .topbar.norbu-topbar .nav {
+    position: absolute !important;
+    top: calc(100% + 10px) !important;
+    right: 0 !important;
+    z-index: 60 !important;
+    width: min(300px, calc(100vw - 24px)) !important;
+    height: auto !important;
+    display: none !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 6px !important;
+    padding: 10px !important;
+    border: 1px solid var(--norbu-line) !important;
+    border-radius: 20px !important;
+    background: rgba(255,255,255,.98) !important;
+    box-shadow: var(--norbu-shadow) !important;
+  }
+
+  body .topbar.norbu-topbar .shell.is-open .nav {
+    display: flex !important;
+  }
+
+  body .topbar.norbu-topbar .nav a {
+    width: 100% !important;
+    justify-content: flex-start !important;
+  }
+
+  .norbu-home-hero,
+  .norbu-hero,
+  .profile-hero,
+  .catalog-hero,
+  .norbu-faq-hero,
+  .directory-layout,
+  .profile-content-grid,
+  .profile-content-grid--map-review,
+  .quiz-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .directory-map-panel {
+    position: static !important;
+  }
+
+  .profile-portrait {
+    min-height: 420px !important;
+  }
+
+  .catalog-hero-visual {
+    min-height: 360px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body .topbar.norbu-topbar {
+    width: calc(100% - 24px) !important;
+    height: 64px !important;
+    min-height: 64px !important;
+    margin-top: 12px !important;
+    padding: 8px 10px !important;
+    grid-template-columns: minmax(0, 1fr) 44px !important;
+    gap: 8px !important;
+    border-radius: 20px !important;
+  }
+
+  body .topbar.norbu-topbar > .brand {
+    height: 48px !important;
+    min-height: 48px !important;
+    font-size: 18px !important;
+  }
+
+  body .topbar.norbu-topbar .brand-mark {
+    width: 34px !important;
+    height: 34px !important;
+    flex-basis: 34px !important;
+  }
+
+  body .topbar.norbu-topbar > .shell,
+  body .topbar.norbu-topbar .menu-toggle {
+    width: 44px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+  }
+
+  body .topbar.norbu-topbar > .book-btn {
+    display: none !important;
+  }
+
+  .norbu-home,
+  .norbu-finder-page .directory-main,
+  .norbu-profile-page .profile-main,
+  .quiz-main,
+  .catalog-main,
+  .norbu-faq-main {
+    width: calc(100% - 24px) !important;
+    margin-top: 16px !important;
+    margin-bottom: 54px !important;
+    gap: 16px !important;
+  }
+
+  .norbu-home-hero,
+  .norbu-search-band,
+  .norbu-home-scope,
+  .norbu-faq-bottom,
+  .quiz-hero {
+    grid-template-columns: 1fr !important;
+  }
+
+  .norbu-home-hero,
+  .norbu-hero,
+  .profile-hero,
+  .quiz-hero,
+  .catalog-hero,
+  .norbu-faq-hero,
+  .norbu-search-band,
+  .norbu-home-flow,
+  .norbu-home-profiles,
+  .norbu-home-scope,
+  .norbu-faq-bottom,
+  .directory-filters,
+  .directory-map-panel,
+  .profile-panel,
+  .profile-booking-card,
+  .quiz-card,
+  .quiz-result,
+  .catalog-toolbar,
+  .therapy-card,
+  .norbu-faq-card {
+    border-radius: 20px !important;
+  }
+
+  .norbu-home-hero {
+    min-height: auto !important;
+    background:
+      linear-gradient(180deg, rgba(18, 63, 66, .94), rgba(31, 98, 93, .72)),
+      url("https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80") center / cover !important;
+  }
+
+  .norbu-home-copy,
+  .norbu-hero-copy,
+  .profile-hero-copy,
+  .catalog-hero-copy,
+  .quiz-hero,
+  .norbu-faq-hero {
+    padding: 28px 20px !important;
+  }
+
+  .norbu-home-copy h1,
+  .norbu-hero h1,
+  .catalog-hero h1,
+  .quiz-hero h1,
+  .norbu-faq-hero h1,
+  .norbu-profile-page .profile-hero h1 {
+    font-size: clamp(34px, 11.5vw, 52px) !important;
+    line-height: 1.02 !important;
+  }
+
+  .norbu-home-copy p,
+  .norbu-hero p,
+  .catalog-hero-copy > p,
+  .quiz-hero p,
+  .norbu-faq-hero p,
+  .profile-hero-copy > p {
+    font-size: 16px !important;
+  }
+
+  .norbu-home-panel,
+  .norbu-hero-panel {
+    margin: 0 14px 14px !important;
+    padding: 18px !important;
+  }
+
+  .norbu-search-band,
+  .norbu-home-flow,
+  .norbu-home-profiles,
+  .norbu-home-scope,
+  .norbu-faq-bottom,
+  .directory-filters,
+  .profile-panel,
+  .profile-booking-card,
+  .quiz-card,
+  .quiz-result,
+  .catalog-toolbar {
+    padding: 20px 18px !important;
+  }
+
+  .norbu-flow-grid,
+  .norbu-profile-preview-grid,
+  .norbu-faq-grid,
+  .therapy-grid,
+  .profile-facts {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .norbu-profile-preview img,
+  .therapy-card img {
+    height: 210px !important;
+  }
+
+  .norbu-search-links,
+  .directory-controls,
+  .catalog-filter-row,
+  .norbu-home-actions,
+  .catalog-hero-actions,
+  .faq-hero-actions,
+  .profile-actions,
+  .quiz-result-actions,
+  .directory-map-actions,
+  .directory-card-actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    justify-content: stretch !important;
+  }
+
+  .btn,
+  .norbu-search-links a,
+  .catalog-filter,
+  .catalog-reset {
+    width: 100% !important;
+    min-height: 50px !important;
+  }
+
+  .directory-filters-head,
+  .catalog-toolbar-head {
+    display: grid !important;
+    align-items: start !important;
+  }
+
+  .directory-card {
+    grid-template-columns: 1fr !important;
+    min-height: 0 !important;
+  }
+
+  .directory-card img {
+    height: 220px !important;
+    min-height: 0 !important;
+  }
+
+  .directory-card-body,
+  .directory-map-copy {
+    padding: 18px !important;
+  }
+
+  .practitioner-map-frame iframe,
+  .directory-map-frame iframe,
+  .profile-map-frame iframe {
+    min-height: 260px !important;
+  }
+
+  .profile-portrait {
+    min-height: 0 !important;
+  }
+
+  .profile-portrait img {
+    height: 320px !important;
+  }
+
+  .catalog-hero-visual {
+    min-height: 260px !important;
+  }
+
+  .catalog-hero-note {
+    position: static !important;
+    max-width: none !important;
+    margin: 12px !important;
+  }
+
+  .quiz-step legend {
+    font-size: 18px !important;
+  }
+
+  .site-footer {
+    width: calc(100% - 24px) !important;
+    padding: 24px 18px !important;
+    border-radius: 20px !important;
+  }
+
+  .site-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  body .topbar.norbu-topbar,
+  .norbu-home,
+  .norbu-finder-page .directory-main,
+  .norbu-profile-page .profile-main,
+  .quiz-main,
+  .catalog-main,
+  .norbu-faq-main,
+  .site-footer {
+    width: calc(100% - 18px) !important;
+  }
+
+  .norbu-home-copy h1,
+  .norbu-hero h1,
+  .catalog-hero h1,
+  .quiz-hero h1,
+  .norbu-faq-hero h1,
+  .norbu-profile-page .profile-hero h1 {
+    font-size: clamp(32px, 11vw, 44px) !important;
+  }
+}
+
+body.norbu-site-page .topbar.norbu-topbar,
+body.norbu-finder-page .topbar.norbu-topbar,
+body.norbu-profile-page .topbar.norbu-topbar,
+body.directory-page .topbar.norbu-topbar,
+body.practitioner-profile-page .topbar.norbu-topbar,
+body.quiz-page .topbar.norbu-topbar,
+body.catalog-page .topbar.norbu-topbar,
+body.faq-page .topbar.norbu-topbar {
+  height: 72px !important;
+  min-height: 72px !important;
+  margin: 24px auto 0 !important;
+}
+
+body.norbu-site-page .topbar.norbu-topbar > .brand,
+body.norbu-finder-page .topbar.norbu-topbar > .brand,
+body.norbu-profile-page .topbar.norbu-topbar > .brand,
+body.directory-page .topbar.norbu-topbar > .brand,
+body.practitioner-profile-page .topbar.norbu-topbar > .brand,
+body.quiz-page .topbar.norbu-topbar > .brand,
+body.catalog-page .topbar.norbu-topbar > .brand,
+body.faq-page .topbar.norbu-topbar > .brand,
+body.norbu-site-page .topbar.norbu-topbar > .shell,
+body.norbu-finder-page .topbar.norbu-topbar > .shell,
+body.norbu-profile-page .topbar.norbu-topbar > .shell,
+body.directory-page .topbar.norbu-topbar > .shell,
+body.practitioner-profile-page .topbar.norbu-topbar > .shell,
+body.quiz-page .topbar.norbu-topbar > .shell,
+body.catalog-page .topbar.norbu-topbar > .shell,
+body.faq-page .topbar.norbu-topbar > .shell,
+body.norbu-site-page .topbar.norbu-topbar > .book-btn,
+body.norbu-finder-page .topbar.norbu-topbar > .book-btn,
+body.norbu-profile-page .topbar.norbu-topbar > .book-btn,
+body.directory-page .topbar.norbu-topbar > .book-btn,
+body.practitioner-profile-page .topbar.norbu-topbar > .book-btn,
+body.quiz-page .topbar.norbu-topbar > .book-btn,
+body.catalog-page .topbar.norbu-topbar > .book-btn,
+body.faq-page .topbar.norbu-topbar > .book-btn {
+  height: 52px !important;
+  min-height: 52px !important;
+}
+
+@media (max-width: 760px) {
+  body.norbu-site-page .topbar.norbu-topbar,
+  body.norbu-finder-page .topbar.norbu-topbar,
+  body.norbu-profile-page .topbar.norbu-topbar,
+  body.directory-page .topbar.norbu-topbar,
+  body.practitioner-profile-page .topbar.norbu-topbar,
+  body.quiz-page .topbar.norbu-topbar,
+  body.catalog-page .topbar.norbu-topbar,
+  body.faq-page .topbar.norbu-topbar {
+    height: 64px !important;
+    min-height: 64px !important;
+    margin: 12px auto 0 !important;
+  }
+
+  body.norbu-site-page .topbar.norbu-topbar > .brand,
+  body.norbu-finder-page .topbar.norbu-topbar > .brand,
+  body.norbu-profile-page .topbar.norbu-topbar > .brand,
+  body.directory-page .topbar.norbu-topbar > .brand,
+  body.practitioner-profile-page .topbar.norbu-topbar > .brand,
+  body.quiz-page .topbar.norbu-topbar > .brand,
+  body.catalog-page .topbar.norbu-topbar > .brand,
+  body.faq-page .topbar.norbu-topbar > .brand {
+    height: 48px !important;
+    min-height: 48px !important;
+  }
+
+  body.norbu-site-page .topbar.norbu-topbar > .shell,
+  body.norbu-finder-page .topbar.norbu-topbar > .shell,
+  body.norbu-profile-page .topbar.norbu-topbar > .shell,
+  body.directory-page .topbar.norbu-topbar > .shell,
+  body.practitioner-profile-page .topbar.norbu-topbar > .shell,
+  body.quiz-page .topbar.norbu-topbar > .shell,
+  body.catalog-page .topbar.norbu-topbar > .shell,
+  body.faq-page .topbar.norbu-topbar > .shell {
+    height: 44px !important;
+    min-height: 44px !important;
+  }
+}
+
+body.norbu-site-page .norbu-home-copy h1,
+body.norbu-site-page .norbu-home-copy p,
+body.norbu-site-page .norbu-home-copy .norbu-kicker,
+body.norbu-finder-page .norbu-hero-copy h1,
+body.norbu-finder-page .norbu-hero-copy p,
+body.norbu-finder-page .norbu-hero-copy .norbu-kicker,
+body.norbu-profile-page .profile-hero-copy h1,
+body.norbu-profile-page .profile-hero-copy p,
+body.norbu-profile-page .profile-hero-copy .profile-focus {
+  color: #fff !important;
+}
+
+body.norbu-site-page .norbu-home-copy p,
+body.norbu-finder-page .norbu-hero-copy p,
+body.norbu-profile-page .profile-hero-copy p {
+  color: rgba(255, 255, 255, .84) !important;
+}
+
+body.norbu-site-page .norbu-home-hero {
+  background:
+    linear-gradient(90deg, rgba(18, 47, 50, .96) 0%, rgba(18, 63, 66, .86) 52%, rgba(18, 63, 66, .30) 100%),
+    url("https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1800&q=80") center / cover !important;
+}
+
+body.norbu-finder-page .norbu-hero {
+  background:
+    linear-gradient(90deg, rgba(18, 47, 50, .95) 0%, rgba(18, 63, 66, .82) 60%, rgba(18, 63, 66, .28) 100%),
+    url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1800&q=80") center / cover !important;
+}
+
+@media (max-width: 760px) {
+  body.norbu-site-page .norbu-home-hero {
+    background:
+      linear-gradient(180deg, rgba(18, 47, 50, .96), rgba(18, 63, 66, .88)),
+      url("https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80") center / cover !important;
+  }
+
+  body.norbu-finder-page .norbu-hero {
+    background:
+      linear-gradient(180deg, rgba(18, 47, 50, .96), rgba(18, 63, 66, .88)),
+      url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80") center / cover !important;
+  }
+}
+
