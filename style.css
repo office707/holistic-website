@@ -16242,3 +16242,381 @@ body .topbar.norbu-topbar > .shell {
   padding: 0 !important;
 }
 
+/* Mobile public-site polish */
+@media (max-width: 760px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  body .topbar.norbu-topbar {
+    width: calc(100% - 24px) !important;
+    height: 64px !important;
+    min-height: 64px !important;
+    margin: 12px auto 0 !important;
+    padding: 8px 10px !important;
+    grid-template-columns: minmax(0, 1fr) 44px !important;
+    gap: 8px !important;
+    border-radius: 20px !important;
+  }
+
+  body .topbar.norbu-topbar > .brand {
+    height: 48px !important;
+    min-height: 48px !important;
+    padding: 6px 0 !important;
+    gap: 8px !important;
+    font-size: 18px !important;
+    overflow: hidden !important;
+  }
+
+  body .topbar.norbu-topbar .brand-mark {
+    width: 34px !important;
+    height: 34px !important;
+    flex: 0 0 34px !important;
+    border-radius: 11px !important;
+  }
+
+  body .topbar.norbu-topbar > .shell {
+    grid-column: 2 !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    justify-self: end !important;
+    position: relative !important;
+  }
+
+  body .topbar.norbu-topbar .menu-toggle {
+    width: 44px !important;
+    height: 44px !important;
+    display: grid !important;
+    place-items: center !important;
+    border-radius: 14px !important;
+    background: #eef4f1 !important;
+  }
+
+  body .topbar.norbu-topbar > .book-btn {
+    display: none !important;
+  }
+
+  body .topbar.norbu-topbar .nav {
+    position: absolute !important;
+    top: calc(100% + 10px) !important;
+    right: 0 !important;
+    left: auto !important;
+    z-index: 50 !important;
+    width: min(280px, calc(100vw - 24px)) !important;
+    display: none !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 6px !important;
+    padding: 12px !important;
+    border: 1px solid rgba(23, 45, 47, .1) !important;
+    border-radius: 18px !important;
+    background: rgba(255, 255, 255, .98) !important;
+    box-shadow: 0 18px 44px rgba(19, 54, 55, .16) !important;
+  }
+
+  body .topbar.norbu-topbar .shell.is-open .nav {
+    display: flex !important;
+  }
+
+  body .topbar.norbu-topbar .nav a {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    min-height: 44px !important;
+  }
+
+  .norbu-home,
+  .norbu-finder-page .directory-main,
+  .norbu-profile-page .profile-main,
+  .quiz-main,
+  .catalog-main,
+  .norbu-faq-main {
+    width: calc(100% - 24px) !important;
+    margin-top: 16px !important;
+    gap: 16px !important;
+  }
+
+  .norbu-home-hero,
+  .norbu-search-band,
+  .norbu-home-scope,
+  .norbu-faq-hero,
+  .norbu-faq-bottom,
+  .norbu-hero,
+  .profile-hero,
+  .profile-content-grid,
+  .profile-content-grid--map-review,
+  .quiz-hero,
+  .quiz-layout,
+  .catalog-hero,
+  .directory-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .norbu-home-hero,
+  .norbu-faq-hero,
+  .norbu-faq-bottom,
+  .norbu-hero-copy,
+  .norbu-hero-panel,
+  .profile-hero,
+  .quiz-hero,
+  .quiz-card,
+  .quiz-result,
+  .catalog-hero,
+  .catalog-toolbar,
+  .directory-filters,
+  .directory-map-panel,
+  .directory-card,
+  .profile-panel,
+  .profile-booking-card {
+    border-radius: 22px !important;
+  }
+
+  .norbu-home-hero {
+    min-height: auto !important;
+  }
+
+  .norbu-home-copy,
+  .norbu-hero-copy,
+  .norbu-faq-hero,
+  .profile-hero,
+  .quiz-hero,
+  .catalog-hero-copy {
+    padding: 28px 20px !important;
+  }
+
+  .norbu-home-copy h1,
+  .norbu-faq-hero h1,
+  .norbu-hero h1,
+  .quiz-hero h1,
+  .catalog-hero h1,
+  .norbu-profile-page .profile-hero h1 {
+    max-width: 100% !important;
+    font-size: clamp(36px, 12vw, 54px) !important;
+    line-height: 1.02 !important;
+  }
+
+  .norbu-home-copy p,
+  .norbu-faq-hero p,
+  .norbu-hero p,
+  .quiz-hero p,
+  .catalog-hero-copy > p,
+  .norbu-profile-page .profile-hero p {
+    max-width: 100% !important;
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+
+  .norbu-home-panel {
+    margin: 0 14px 14px !important;
+    padding: 18px !important;
+  }
+
+  .norbu-home-panel h2,
+  .norbu-search-band h2,
+  .norbu-section-head h2,
+  .norbu-home-scope h2,
+  .norbu-faq-bottom h2,
+  .catalog-toolbar h2,
+  .profile-panel h2 {
+    font-size: clamp(26px, 9vw, 36px) !important;
+  }
+
+  .norbu-home-actions,
+  .faq-hero-actions,
+  .profile-actions,
+  .catalog-hero-actions,
+  .directory-card-actions,
+  .quiz-result-actions,
+  .faq-contact-actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .btn,
+  .norbu-search-links a,
+  .catalog-filter,
+  .catalog-reset {
+    width: 100% !important;
+    min-height: 50px !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .norbu-search-band,
+  .norbu-home-flow,
+  .norbu-home-profiles,
+  .norbu-home-scope,
+  .norbu-faq-bottom,
+  .quiz-card,
+  .quiz-result,
+  .catalog-toolbar,
+  .profile-booking-card {
+    padding: 22px 18px !important;
+  }
+
+  .norbu-search-links,
+  .catalog-filter-row {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .norbu-flow-grid,
+  .norbu-profile-preview-grid,
+  .norbu-faq-grid,
+  .therapy-grid,
+  .profile-facts {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .norbu-profile-preview img,
+  .therapy-card img,
+  .directory-card img {
+    height: 210px !important;
+  }
+
+  .norbu-hero-copy {
+    min-height: auto !important;
+    align-content: end !important;
+  }
+
+  .norbu-hero-panel {
+    padding: 20px !important;
+    align-content: start !important;
+  }
+
+  .norbu-quick-search,
+  .directory-controls,
+  .profile-booking-card {
+    grid-template-columns: 1fr !important;
+  }
+
+  .directory-map-panel {
+    position: static !important;
+  }
+
+  .directory-map-frame,
+  .directory-map-frame iframe,
+  .profile-map-frame,
+  .profile-map-frame iframe {
+    min-height: 260px !important;
+  }
+
+  .profile-portrait {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  .profile-portrait img {
+    height: 320px !important;
+    object-fit: cover !important;
+  }
+
+  .catalog-hero-visual {
+    min-height: 260px !important;
+  }
+
+  .site-footer {
+    width: calc(100% - 24px) !important;
+    padding: 24px 18px !important;
+    border-radius: 20px !important;
+  }
+
+  .site-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  body .topbar.norbu-topbar {
+    width: calc(100% - 18px) !important;
+  }
+
+  body .topbar.norbu-topbar > .brand {
+    font-size: 17px !important;
+  }
+
+  .norbu-home,
+  .norbu-finder-page .directory-main,
+  .norbu-profile-page .profile-main,
+  .quiz-main,
+  .catalog-main,
+  .norbu-faq-main,
+  .site-footer {
+    width: calc(100% - 18px) !important;
+  }
+
+  .norbu-home-copy h1,
+  .norbu-faq-hero h1,
+  .norbu-hero h1,
+  .quiz-hero h1,
+  .catalog-hero h1,
+  .norbu-profile-page .profile-hero h1 {
+    font-size: clamp(33px, 11.5vw, 46px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.home-page .topbar.norbu-topbar,
+  body.directory-page .topbar.norbu-topbar,
+  body.catalog-page .topbar.norbu-topbar,
+  body.practitioner-profile-page .topbar.norbu-topbar,
+  body.quiz-page .topbar.norbu-topbar,
+  body.faq-page .topbar.norbu-topbar {
+    height: 64px !important;
+    min-height: 64px !important;
+    margin: 12px auto 0 !important;
+  }
+
+  body.home-page .topbar.norbu-topbar > .brand,
+  body.directory-page .topbar.norbu-topbar > .brand,
+  body.catalog-page .topbar.norbu-topbar > .brand,
+  body.practitioner-profile-page .topbar.norbu-topbar > .brand,
+  body.quiz-page .topbar.norbu-topbar > .brand,
+  body.faq-page .topbar.norbu-topbar > .brand {
+    height: 48px !important;
+    min-height: 48px !important;
+  }
+
+  body.home-page .topbar.norbu-topbar > .shell,
+  body.directory-page .topbar.norbu-topbar > .shell,
+  body.catalog-page .topbar.norbu-topbar > .shell,
+  body.practitioner-profile-page .topbar.norbu-topbar > .shell,
+  body.quiz-page .topbar.norbu-topbar > .shell,
+  body.faq-page .topbar.norbu-topbar > .shell {
+    width: 44px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+  }
+
+  .catalog-main,
+  .catalog-hero,
+  .catalog-hero-copy,
+  .catalog-hero-visual,
+  .catalog-toolbar,
+  .catalog-toolbar-head,
+  .catalog-search,
+  .catalog-filter-group,
+  .therapy-guidance,
+  .therapy-card {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .catalog-hero,
+  .catalog-toolbar {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .catalog-result-count {
+    justify-self: start !important;
+  }
+}
+
