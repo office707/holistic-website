@@ -49,8 +49,8 @@ if (directoryList && practitionersForDirectory.length) {
           </div>
           <h3>${escapeDirectoryHtml(practitioner.name)}</h3>
           <p>${escapeDirectoryHtml(practitioner.focus)}</p>
-          <div class="directory-meta"><span>${escapeDirectoryHtml(practitioner.clinic)}</span><span>${escapeDirectoryHtml(practitioner.experience)} experience</span></div>
-          <div class="directory-card-actions"><a class="btn btn-secondary" href="practitioner-detail.html?id=${escapeDirectoryHtml(practitioner.id)}">View profile</a><a class="btn btn-primary" href="${mapUrl}" target="_blank" rel="noreferrer">Google reviews</a></div>
+          <div class="directory-meta"><span>${escapeDirectoryHtml(practitioner.clinic)}</span><span>${escapeDirectoryHtml(practitioner.experience)} background</span></div>
+          <div class="directory-card-actions"><a class="btn btn-secondary" href="practitioner-detail.html?id=${escapeDirectoryHtml(practitioner.id)}">View profile</a><a class="btn btn-primary" href="${mapUrl}" target="_blank" rel="noreferrer">Open Google Maps</a></div>
         </div>
       </article>
     `;
@@ -97,14 +97,14 @@ if (
     });
 
     if (!card) {
-      nameField.textContent = 'No therapist matches these filters';
-      specialtyField.textContent = 'Try another specialization, city, or availability';
+      nameField.textContent = 'No profile matches these filters';
+      specialtyField.textContent = 'Try another specialization, city, or listing status';
       bioField.textContent = 'Reset the filters to see the full Netherlands acupuncture directory again.';
       mapLink.removeAttribute('href');
       directoryProfileLink?.removeAttribute('href');
       mapFrame.src = buildEmbedUrl('acupuncture Netherlands');
       if (reviewSummary) {
-        reviewSummary.innerHTML = '<strong>No therapist selected</strong><span>Select a therapist to open the matching Google Maps search.</span>';
+        reviewSummary.innerHTML = '<strong>No profile selected</strong><span>Select a profile to open the matching Google Maps search.</span>';
       }
       return;
     }
@@ -117,7 +117,7 @@ if (
     mapFrame.src = buildEmbedUrl(card.dataset.locationQuery);
 
     if (reviewSummary) {
-      reviewSummary.innerHTML = '<strong>Google reviews</strong><span>Open Google Maps to see available Google reviews for this search.</span>';
+      reviewSummary.innerHTML = '<strong>Google Maps</strong><span>Open Google Maps to check location details and any reviews available on Google.</span>';
     }
   };
 
@@ -145,7 +145,7 @@ if (
     });
 
     const visibleCards = getVisibleCards();
-    resultsCopy.textContent = visibleCards.length === 1 ? 'Showing 1 therapist' : `Showing ${visibleCards.length} therapists`;
+    resultsCopy.textContent = visibleCards.length === 1 ? 'Showing 1 profile' : `Showing ${visibleCards.length} profiles`;
 
     const currentActive = document.querySelector('.directory-card.is-selected');
     if (!currentActive || currentActive.style.display === 'none') {
@@ -224,9 +224,9 @@ if (quizForm && quizResult) {
 
     if (resultTitle) resultTitle.textContent = specialty || 'Start with the finder';
     if (resultCopy) {
-      const cityCopy = city === 'all' ? 'all available cities' : city;
-      const timeCopy = availability === 'all' ? 'any availability' : availability.toLowerCase();
-      resultCopy.textContent = `Start by comparing ${specialty} profiles in ${cityCopy} with ${timeCopy}. This is only a search direction, not a medical recommendation.`;
+      const cityCopy = city === 'all' ? 'all listed cities' : city;
+      const statusCopy = availability === 'all' ? 'all listing statuses' : availability.toLowerCase();
+      resultCopy.textContent = `Start by browsing ${specialty} profiles in ${cityCopy} with ${statusCopy}. This is only a search direction, not a medical recommendation.`;
     }
     if (resultLink) resultLink.href = `practitioners.html?${params.toString()}`;
 
@@ -1019,7 +1019,7 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
     render();
   };
 
-  setupCatalog({ searchId: 'therapy-search', gridId: 'therapy-grid', countId: 'therapy-result-count', emptyId: 'therapy-empty', resetId: 'therapy-reset', itemSelector: '.therapy-card', label: 'therapies', singular: 'therapy' });
+  setupCatalog({ searchId: 'therapy-search', gridId: 'therapy-grid', countId: 'therapy-result-count', emptyId: 'therapy-empty', resetId: 'therapy-reset', itemSelector: '.therapy-card', label: 'categories', singular: 'category' });
   setupCatalog({ searchId: 'blog-search', gridId: 'blog-grid', countId: 'blog-result-count', emptyId: 'blog-empty', resetId: 'blog-reset', itemSelector: '.blog-card', label: 'articles', singular: 'article' });
 
   const newsletter = document.querySelector('.blog-newsletter-form');
@@ -1059,7 +1059,7 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
     text('profile-experience', selected.experience);
     text('profile-clinic', selected.clinic);
     text('profile-languages', selected.languages);
-    text('profile-approach', `${selected.name} combines careful intake, clear explanations, and realistic follow-up. The aim is to help visitors understand whether this acupuncture specialization is a useful search direction before they compare profiles.`);
+    text('profile-approach', `${selected.name}'s profile lists focus areas, background, languages, and a Google Maps search link. Use it as a comparison point before checking external map and review details on Google.`);
     text('profile-first-name', selected.name.replace(/^Dr\.\s+/, '').split(' ')[0]);
 
     const therapyList = document.getElementById('profile-therapies');

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz | Norbu</title>
-  <meta name="description" content="A short non-medical quiz that helps visitors choose a starting category in the Norbu acupuncture directory.">
+  <meta name="description" content="A short non-medical quiz that helps visitors choose a starting point in the Norbu acupuncture directory.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
@@ -30,8 +30,8 @@
       <section class="quiz-hero card">
         <div>
           <span class="norbu-kicker">Starting point quiz</span>
-          <h1>Find a useful search direction.</h1>
-          <p>This quiz does not diagnose, rank therapists, or recommend treatment. It only points you to a category to start browsing in the directory.</p>
+          <h1>Not sure where to start?</h1>
+          <p>Answer a few simple questions to choose a search direction. The quiz does not diagnose, rank therapists, or recommend treatment.</p>
         </div>
         <a class="btn btn-secondary" href="practitioners.html">Skip to finder</a>
       </section>
@@ -39,7 +39,7 @@
       <section class="quiz-layout">
         <form class="quiz-card card" id="quiz-form">
           <fieldset class="quiz-step">
-            <legend>What best describes why you are looking?</legend>
+            <legend>What topic should your search start with?</legend>
             <label><input type="radio" name="goal" value="Fertility acupuncture" required><span>Fertility, IVF, or cycle-related focus</span></label>
             <label><input type="radio" name="goal" value="Pain acupuncture"><span>Pain, tension, headaches, or sports recovery</span></label>
             <label><input type="radio" name="goal" value="Stress and sleep acupuncture"><span>Stress, sleep, burnout, or regulation</span></label>
@@ -49,7 +49,7 @@
           </fieldset>
 
           <fieldset class="quiz-step">
-            <legend>Which city is easiest to browse first?</legend>
+            <legend>Which city do you want to browse first?</legend>
             <label><input type="radio" name="city" value="all" required><span>Show all cities</span></label>
             <label><input type="radio" name="city" value="Amsterdam"><span>Amsterdam</span></label>
             <label><input type="radio" name="city" value="Rotterdam"><span>Rotterdam</span></label>
@@ -59,29 +59,29 @@
           </fieldset>
 
           <fieldset class="quiz-step">
-            <legend>How soon do you want to compare options?</legend>
-            <label><input type="radio" name="availability" value="all" required><span>Any availability</span></label>
-            <label><input type="radio" name="availability" value="Today"><span>Available today</span></label>
-            <label><input type="radio" name="availability" value="This Week"><span>This week</span></label>
-            <label><input type="radio" name="availability" value="Waitlist"><span>Waitlist is fine</span></label>
+            <legend>How much profile detail do you want to see?</legend>
+            <label><input type="radio" name="availability" value="all" required><span>Show all listing statuses</span></label>
+            <label><input type="radio" name="availability" value="Map search ready"><span>Google Maps search ready</span></label>
+            <label><input type="radio" name="availability" value="Profile details available"><span>Profile details available</span></label>
+            <label><input type="radio" name="availability" value="Needs confirmation"><span>Needs confirmation is fine</span></label>
           </fieldset>
 
-          <button class="btn btn-primary quiz-submit" type="submit">Show starting point</button>
+          <button class="btn btn-primary quiz-submit" type="submit">Find a starting point</button>
         </form>
 
         <aside class="quiz-result card" id="quiz-result" hidden>
-          <span class="profile-kicker">Suggested search</span>
+          <span class="profile-kicker">Search direction</span>
           <h2 id="quiz-result-title">Start with a category</h2>
           <p id="quiz-result-copy"></p>
           <div class="quiz-result-actions">
-            <a class="btn btn-primary" id="quiz-result-link" href="practitioners.html">Open matching profiles</a>
+            <a class="btn btn-primary" id="quiz-result-link" href="practitioners.html">Open matching listings</a>
             <button class="btn btn-secondary" id="quiz-reset" type="button">Try again</button>
           </div>
         </aside>
       </section>
     </main>
 
-    <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A searchable acupuncture directory for The Netherlands.</p></div><div><strong>Use</strong><p>Profiles<br>Maps<br>Google reviews</p></div><div><strong>Quiz</strong><p>Search direction only<br>No medical advice</p></div><div><strong>Explore</strong><p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a><br><a href="faq.html">FAQ</a></p></div></div></footer>
+    <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A searchable acupuncture directory for The Netherlands.</p></div><div><strong>Use</strong><p>Profiles<br>Google Maps<br>Reviews on Google</p></div><div><strong>Quiz</strong><p>Search direction only<br>No medical advice</p></div><div><strong>Explore</strong><p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a><br><a href="faq.html">FAQ</a></p></div></div></footer>
   </div>
   <script src="script.js" defer></script>
 </body>
