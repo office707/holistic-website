@@ -34,14 +34,23 @@ const escapeDirectoryHtml = (value) => String(value || '')
   .replaceAll('>', '&gt;')
   .replaceAll('"', '&quot;')
   .replaceAll("'", '&#39;');
+const practitionerPlaceholderImage = 'norbu-profile-placeholder.svg';
+const getPractitionerImage = (practitioner) => practitioner.image || practitionerPlaceholderImage;
+const getPractitionerImageAlt = (practitioner) => (
+  practitioner.image
+    ? `Photo of ${practitioner.name}`
+    : `Neutral Norbu placeholder for ${practitioner.name}`
+);
 
 if (directoryList && practitionersForDirectory.length) {
   directoryList.innerHTML = practitionersForDirectory.map((practitioner, index) => {
     const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(practitioner.locationQuery || practitioner.clinic)}`;
+    const image = getPractitionerImage(practitioner);
+    const imageAlt = getPractitionerImageAlt(practitioner);
 
     return `
       <article class="directory-card ${index === 0 ? 'is-selected' : ''}" tabindex="0" data-id="${escapeDirectoryHtml(practitioner.id)}" data-name="${escapeDirectoryHtml(practitioner.name)}" data-specialty="${escapeDirectoryHtml(practitioner.specialty)}" data-clinic="${escapeDirectoryHtml(practitioner.clinic)}" data-availability="${escapeDirectoryHtml(practitioner.availability)}" data-location-query="${escapeDirectoryHtml(practitioner.locationQuery)}" data-focus="${escapeDirectoryHtml(practitioner.focus)}" data-bio="${escapeDirectoryHtml(practitioner.bio)}">
-        <img src="${escapeDirectoryHtml(practitioner.image)}" alt="${escapeDirectoryHtml(practitioner.name)} portrait">
+        <img src="${escapeDirectoryHtml(image)}" alt="${escapeDirectoryHtml(imageAlt)}">
         <div class="directory-card-body">
           <div class="directory-card-top">
             <span class="practitioner-badge">${escapeDirectoryHtml(practitioner.specialty)}</span>
@@ -1047,8 +1056,8 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
     document.title = `${selected.name} | Norbu`;
     const image = document.getElementById('profile-image');
     if (image) {
-      image.src = selected.image;
-      image.alt = `${selected.name} portrait`;
+      image.src = getPractitionerImage(selected);
+      image.alt = getPractitionerImageAlt(selected);
     }
     text('profile-breadcrumb-name', selected.name);
     text('profile-availability', selected.availability);
