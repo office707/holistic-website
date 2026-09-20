@@ -41,6 +41,31 @@ const getPractitionerImageAlt = (practitioner) => (
     ? `Photo of ${practitioner.name}`
     : `Neutral Norbu placeholder for ${practitioner.name}`
 );
+const uniqueValues = (items, key) => Array.from(new Set(items.map((item) => item[key]).filter(Boolean))).sort((a, b) => a.localeCompare(b));
+const setSelectOptions = (select, values, allLabel) => {
+  if (!select) return;
+  const currentValue = select.value;
+  select.innerHTML = [
+    `<option value="all">${escapeDirectoryHtml(allLabel)}</option>`,
+    ...values.map((value) => `<option value="${escapeDirectoryHtml(value)}">${escapeDirectoryHtml(value)}</option>`),
+  ].join('');
+  select.value = [...select.options].some((option) => option.value === currentValue) ? currentValue : 'all';
+};
+
+const homePreviewGrid = document.querySelector('.norbu-profile-preview-grid');
+if (homePreviewGrid && practitionersForDirectory.length) {
+  homePreviewGrid.innerHTML = practitionersForDirectory.slice(0, 3).map((practitioner) => `
+    <article class="norbu-profile-preview">
+      <img src="${escapeDirectoryHtml(getPractitionerImage(practitioner))}" alt="${escapeDirectoryHtml(getPractitionerImageAlt(practitioner))}">
+      <div>
+        <span>${escapeDirectoryHtml(practitioner.clinic || 'Needs confirmation')}</span>
+        <h3>${escapeDirectoryHtml(practitioner.name)}</h3>
+        <p>${escapeDirectoryHtml(practitioner.focus || practitioner.specialty || 'Profile details imported from sample data.')}</p>
+        <a href="practitioner-detail.html?id=${escapeDirectoryHtml(practitioner.id)}">View profile</a>
+      </div>
+    </article>
+  `).join('');
+}
 
 if (directoryList && practitionersForDirectory.length) {
   directoryList.innerHTML = practitionersForDirectory.map((practitioner, index) => {
@@ -58,7 +83,7 @@ if (directoryList && practitionersForDirectory.length) {
           </div>
           <h3>${escapeDirectoryHtml(practitioner.name)}</h3>
           <p>${escapeDirectoryHtml(practitioner.focus)}</p>
-          <div class="directory-meta"><span>${escapeDirectoryHtml(practitioner.clinic)}</span><span>${escapeDirectoryHtml(practitioner.experience)} background</span></div>
+          <div class="directory-meta"><span>${escapeDirectoryHtml(practitioner.clinic)}</span><span>${escapeDirectoryHtml(practitioner.practiceName || practitioner.source || practitioner.availability)}</span></div>
           <div class="directory-card-actions"><a class="btn btn-secondary" href="practitioner-detail.html?id=${escapeDirectoryHtml(practitioner.id)}">View profile</a><a class="btn btn-primary" href="${mapUrl}" target="_blank" rel="noreferrer">Open Google Maps</a></div>
         </div>
       </article>
@@ -97,6 +122,9 @@ if (
 ) {
   const buildEmbedUrl = (query) => `https://www.google.com/maps?q=${encodeURIComponent(query)}&z=12&output=embed`;
   const buildMapsUrl = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+  setSelectOptions(specialtyFilter, uniqueValues(practitionersForDirectory, 'specialty'), 'All specializations');
+  setSelectOptions(locationFilter, uniqueValues(practitionersForDirectory, 'clinic'), 'All cities');
+  setSelectOptions(availabilityFilter, uniqueValues(practitionersForDirectory, 'availability'), 'Any listing status');
 
   const setActiveCard = (card) => {
     cards.forEach((item) => {
@@ -1065,7 +1093,7 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
     text('profile-name', selected.name);
     text('profile-focus', selected.focus);
     text('profile-bio', selected.bio);
-    text('profile-experience', selected.experience);
+    text('profile-experience', selected.practiceName || selected.source || selected.experience);
     text('profile-clinic', selected.clinic);
     text('profile-languages', selected.languages);
     text('profile-approach', `${selected.name}'s profile lists focus areas, background, languages, and a Google Maps search link. Use it as a comparison point before checking external map and review details on Google.`);
