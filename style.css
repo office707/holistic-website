@@ -18247,3 +18247,95 @@ body .topbar.norbu-topbar .shell.is-open .menu-toggle span:nth-child(3) {
   }
 }
 
+/* Finder layout correction after legacy directory concepts */
+body.norbu-finder-page .directory-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(390px, 440px) !important;
+  gap: 20px !important;
+  align-items: start !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.norbu-finder-page .directory-list {
+  order: 1 !important;
+  min-width: 0 !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+}
+
+body.norbu-finder-page .directory-map-panel {
+  order: 2 !important;
+  min-width: 0 !important;
+  position: sticky !important;
+  top: 18px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 1px solid var(--norbu-line) !important;
+  border-radius: var(--norbu-radius) !important;
+  background: var(--norbu-surface) !important;
+  box-shadow: var(--norbu-shadow-sm) !important;
+}
+
+body.norbu-finder-page .directory-map-copy {
+  padding: 24px !important;
+}
+
+body.norbu-finder-page .directory-map-copy .practitioner-map-kicker {
+  color: var(--norbu-teal) !important;
+}
+
+body.norbu-finder-page .directory-map-copy h3 {
+  color: var(--norbu-ink) !important;
+}
+
+body.norbu-finder-page .directory-map-copy p {
+  color: var(--norbu-muted) !important;
+  opacity: 1 !important;
+}
+
+body.norbu-finder-page .directory-map-frame,
+body.norbu-finder-page .directory-map-frame iframe {
+  min-height: 320px !important;
+}
+
+body.norbu-finder-page .directory-card,
+body.norbu-finder-page .directory-card:nth-child(odd),
+body.norbu-finder-page .directory-card:hover,
+body.norbu-finder-page .directory-card:focus-visible,
+body.norbu-finder-page .directory-card.is-selected {
+  transform: none !important;
+}
+
+body.norbu-finder-page .directory-card {
+  display: grid !important;
+  grid-template-columns: 180px minmax(0, 1fr) !important;
+  min-height: 250px !important;
+}
+
+@media (max-width: 1100px) {
+  body.norbu-finder-page .directory-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.norbu-finder-page .directory-list,
+  body.norbu-finder-page .directory-map-panel {
+    order: initial !important;
+  }
+
+  body.norbu-finder-page .directory-map-panel {
+    position: static !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.norbu-finder-page .directory-card {
+    grid-template-columns: 1fr !important;
+    min-height: 0 !important;
+  }
+}
+
