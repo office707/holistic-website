@@ -649,7 +649,7 @@ window.norbuPractitioners = [
   },
   {
     "id": "franois-vinks-tilburg-acupunctuur-massage-praktijk-qibeau",
-    "name": "Fran�ois Vinks",
+    "name": "François Vinks",
     "practiceName": "Acupunctuur & Massage Praktijk Qibeau",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur",
@@ -777,7 +777,7 @@ window.norbuPractitioners = [
   },
   {
     "id": "ren-van-lier-rotterdam-acupunctuur-aan-de-maas",
-    "name": "Ren� van Lier",
+    "name": "René van Lier",
     "practiceName": "Acupunctuur aan de Maas",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur",
@@ -842,7 +842,7 @@ window.norbuPractitioners = [
   {
     "id": "patricia-smits-opheij-arcen-acupunctuur-arcen-w-wi",
     "name": "Patricia Smits Opheij",
-    "practiceName": "Acupunctuur Arcen \"W� W�i\"",
+    "practiceName": "Acupunctuur Arcen \"Wu Wei\"",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur",
     "clinic": "Arcen",
@@ -860,7 +860,7 @@ window.norbuPractitioners = [
     "experience": "Not listed",
     "languages": "Not listed",
     "image": "",
-    "bio": "Listed practice: Acupunctuur Arcen \"W� W�i\". City: Arcen. Source listing: zhong.nl.",
+    "bio": "Listed practice: Acupunctuur Arcen \"Wu Wei\". City: Arcen. Source listing: zhong.nl.",
     "education": [
       "Source profile: zhong.nl"
     ],
@@ -868,7 +868,7 @@ window.norbuPractitioners = [
       "Acupunctuur"
     ],
     "times": [],
-    "locationQuery": "Acupunctuur Arcen \"W� W�i\", Arcen",
+    "locationQuery": "Acupunctuur Arcen \"Wu Wei\", Arcen",
     "sourceRow": 28
   },
   {
@@ -970,7 +970,7 @@ window.norbuPractitioners = [
   },
   {
     "id": "jos-van-der-meulen-rotterdam-acupunctuur-de-bron",
-    "name": "Jos� van der Meulen",
+    "name": "José van der Meulen",
     "practiceName": "Acupunctuur De Bron",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur",
@@ -1679,8 +1679,8 @@ window.norbuPractitioners = [
   },
   {
     "id": "jos-tammer-clements-soesterberg-acupunctuur-maria-jos",
-    "name": "Jos� Tammer-Clements",
-    "practiceName": "Acupunctuur Maria Jos�",
+    "name": "José Tammer-Clements",
+    "practiceName": "Acupunctuur Maria José",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur, Tuina, Kruiden",
     "clinic": "Soesterberg",
@@ -1708,7 +1708,7 @@ window.norbuPractitioners = [
       "Kruiden"
     ],
     "times": [],
-    "locationQuery": "Acupunctuur Maria Jos�, Koppenlaan 8, 3769 BL, Soesterberg",
+    "locationQuery": "Acupunctuur Maria José, Koppenlaan 8, 3769 BL, Soesterberg",
     "sourceRow": 54
   },
   {
@@ -4697,7 +4697,7 @@ window.norbuPractitioners = [
   },
   {
     "id": "jos-hermsen-nijmegen-axireaxi-qiatsu-massagekracht",
-    "name": "Jos� Hermsen",
+    "name": "José Hermsen",
     "practiceName": "Axireaxi - Qiatsu Massagekracht",
     "specialty": "Shiatsu",
     "specializationDetail": "Shiatsu",
@@ -6392,7 +6392,7 @@ window.norbuPractitioners = [
   {
     "id": "jamila-yakoubi-s-hertogenbosch-clnic-acupunctuur-huidzorg",
     "name": "Jamila Yakoubi",
-    "practiceName": "CL�NIC Acupunctuur & Huidzorg",
+    "practiceName": "CLÍNIC Acupunctuur & Huidzorg",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur",
     "clinic": "'s-Hertogenbosch",
@@ -6410,7 +6410,7 @@ window.norbuPractitioners = [
     "experience": "Not listed",
     "languages": "Not listed",
     "image": "",
-    "bio": "Listed practice: CL�NIC Acupunctuur & Huidzorg. City: 's-Hertogenbosch. Source listing: zhong.nl.",
+    "bio": "Listed practice: CLÍNIC Acupunctuur & Huidzorg. City: 's-Hertogenbosch. Source listing: zhong.nl.",
     "education": [
       "Source profile: zhong.nl"
     ],
@@ -6418,7 +6418,7 @@ window.norbuPractitioners = [
       "Acupunctuur"
     ],
     "times": [],
-    "locationQuery": "CL�NIC Acupunctuur & Huidzorg, 's-Hertogenbosch",
+    "locationQuery": "CLÍNIC Acupunctuur & Huidzorg, 's-Hertogenbosch",
     "sourceRow": 199
   },
   {
@@ -6648,7 +6648,7 @@ window.norbuPractitioners = [
   },
   {
     "id": "nicols-pinto-schulz-amsterdam-de-eland-wellness-house",
-    "name": "Nicol�s Pinto Schulz",
+    "name": "Nicolás Pinto Schulz",
     "practiceName": "De Eland Wellness House",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur, Tuina",
@@ -7367,7 +7367,7 @@ window.norbuPractitioners = [
   },
   {
     "id": "lisa-seerden-pist-ravenstein-esoterisch-gezondheidscentrum-san-zhong-yi",
-    "name": "Lisa Seerden-Pi�st",
+    "name": "Lisa Seerden-Piëst",
     "practiceName": "Esoterisch Gezondheidscentrum San Zhong Yi",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur, Shiatsu, Tuina",
@@ -8273,7 +8273,7 @@ window.norbuPractitioners = [
   },
   {
     "id": "eugnie-van-gaver-huizen-healing-via",
-    "name": "Eug�nie van Gaver",
+    "name": "Eugénie van Gaver",
     "practiceName": "Healing Via",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur",
@@ -8856,7 +8856,7 @@ window.norbuPractitioners = [
   },
   {
     "id": "dpey-calor-rotterdam-i-lotus-traditional-chinese-medical-center",
-    "name": "D�pey Calor",
+    "name": "Dépey Calor",
     "practiceName": "I-LOTUS Traditional Chinese Medical Center",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur, Kruiden",
@@ -9957,7 +9957,7 @@ window.norbuPractitioners = [
   },
   {
     "id": "renate-ijkhout-von-schkkmann-doorwerth-ki-of-qi",
-    "name": "Renate IJkhout-von Sch�kkmann",
+    "name": "Renate IJkhout-von Schükkmann",
     "practiceName": "Ki-of-Qi",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur, Tuina",
@@ -10806,7 +10806,7 @@ window.norbuPractitioners = [
   },
   {
     "id": "marille-van-mierlo-weel-dongen-marielle-van-mierlo-acupunctuur",
-    "name": "Mari�lle van Mierlo-Weel",
+    "name": "Mariëlle van Mierlo-Weel",
     "practiceName": "Marielle van Mierlo Acupunctuur",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur",
@@ -10838,8 +10838,8 @@ window.norbuPractitioners = [
   },
   {
     "id": "ray-marin-voorschoten-marin-praktijk-voor-chinese-geneeswijze",
-    "name": "Ray Mari�n",
-    "practiceName": "Mari�n Praktijk voor Chinese geneeswijze",
+    "name": "Ray Mariën",
+    "practiceName": "Mariën Praktijk voor Chinese geneeswijze",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur, Kruiden",
     "clinic": "Voorschoten",
@@ -10857,7 +10857,7 @@ window.norbuPractitioners = [
     "experience": "Not listed",
     "languages": "Not listed",
     "image": "",
-    "bio": "Listed practice: Mari�n Praktijk voor Chinese geneeswijze. City: Voorschoten. Source listing: zhong.nl.",
+    "bio": "Listed practice: Mariën Praktijk voor Chinese geneeswijze. City: Voorschoten. Source listing: zhong.nl.",
     "education": [
       "Source profile: zhong.nl"
     ],
@@ -10866,7 +10866,7 @@ window.norbuPractitioners = [
       "Kruiden"
     ],
     "times": [],
-    "locationQuery": "Mari�n Praktijk voor Chinese geneeswijze, Voorschoten",
+    "locationQuery": "Mariën Praktijk voor Chinese geneeswijze, Voorschoten",
     "sourceRow": 336
   },
   {
@@ -11294,7 +11294,7 @@ window.norbuPractitioners = [
   {
     "id": "jessie-jane-peeters-2380-ravels-be-mngmn",
     "name": "Jessie Jane Peeters",
-    "practiceName": "M�ngm�n",
+    "practiceName": "Mingmen",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur",
     "clinic": "2380 Ravels (BE)",
@@ -11312,7 +11312,7 @@ window.norbuPractitioners = [
     "experience": "Not listed",
     "languages": "Not listed",
     "image": "",
-    "bio": "Listed practice: M�ngm�n. City: 2380 Ravels (BE). Source listing: zhong.nl.",
+    "bio": "Listed practice: Mingmen. City: 2380 Ravels (BE). Source listing: zhong.nl.",
     "education": [
       "Source profile: zhong.nl"
     ],
@@ -11320,12 +11320,12 @@ window.norbuPractitioners = [
       "Acupunctuur"
     ],
     "times": [],
-    "locationQuery": "M�ngm�n, 2380 Ravels (BE)",
+    "locationQuery": "Mingmen, 2380 Ravels (BE)",
     "sourceRow": 350
   },
   {
     "id": "rene-moize-de-chateleux-delft-moize-acupunctuur-kruiden-praktijk-aan-huis",
-    "name": "Ren�e Moize De Chateleux",
+    "name": "Renée Moize De Chateleux",
     "practiceName": "Moize acupunctuur & kruiden Praktijk aan huis",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur, Kruiden",
@@ -12008,7 +12008,7 @@ window.norbuPractitioners = [
   },
   {
     "id": "anglique-volp-knaape-maarssen-praktijk-dang-gui",
-    "name": "Ang�lique Volp-Knaape",
+    "name": "Angélique Volp-Knaape",
     "practiceName": "Praktijk Dang Gui",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur",
@@ -12533,7 +12533,7 @@ window.norbuPractitioners = [
   {
     "id": "annoeschka-brandwijk-doorwerth-praktijk-mng-herstel-en-balans",
     "name": "Annoeschka Brandwijk",
-    "practiceName": "Praktijk M�ng , Herstel en Balans",
+    "practiceName": "Praktijk Meng , Herstel en Balans",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur, Tuina",
     "clinic": "Doorwerth",
@@ -12551,7 +12551,7 @@ window.norbuPractitioners = [
     "experience": "Not listed",
     "languages": "Not listed",
     "image": "",
-    "bio": "Listed practice: Praktijk M�ng , Herstel en Balans. City: Doorwerth. Source listing: zhong.nl.",
+    "bio": "Listed practice: Praktijk Meng , Herstel en Balans. City: Doorwerth. Source listing: zhong.nl.",
     "education": [
       "Source profile: zhong.nl"
     ],
@@ -12560,7 +12560,7 @@ window.norbuPractitioners = [
       "Tuina"
     ],
     "times": [],
-    "locationQuery": "Praktijk M�ng , Herstel en Balans, Doorwerth",
+    "locationQuery": "Praktijk Meng , Herstel en Balans, Doorwerth",
     "sourceRow": 388
   },
   {
@@ -12697,7 +12697,7 @@ window.norbuPractitioners = [
   {
     "id": "nicole-fijten-van-der-spoel-schiedam-praktijk-rn-do",
     "name": "Nicole Fijten-van der Spoel",
-    "practiceName": "Praktijk R�n D�o",
+    "practiceName": "Praktijk Ren Dao",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur, Shiatsu, Kruiden",
     "clinic": "Schiedam",
@@ -12715,7 +12715,7 @@ window.norbuPractitioners = [
     "experience": "Not listed",
     "languages": "Not listed",
     "image": "",
-    "bio": "Listed practice: Praktijk R�n D�o. City: Schiedam. Source listing: zhong.nl.",
+    "bio": "Listed practice: Praktijk Ren Dao. City: Schiedam. Source listing: zhong.nl.",
     "education": [
       "Source profile: zhong.nl"
     ],
@@ -12725,7 +12725,7 @@ window.norbuPractitioners = [
       "Kruiden"
     ],
     "times": [],
-    "locationQuery": "Praktijk R�n D�o, Schiedam",
+    "locationQuery": "Praktijk Ren Dao, Schiedam",
     "sourceRow": 393
   },
   {
@@ -13808,7 +13808,7 @@ window.norbuPractitioners = [
   },
   {
     "id": "frdrique-veltman-heusden-puur-acupunctuur-heusden",
-    "name": "Fr�d�rique Veltman",
+    "name": "Frédérique Veltman",
     "practiceName": "Puur Acupunctuur Heusden",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur",
@@ -15428,7 +15428,7 @@ window.norbuPractitioners = [
   },
   {
     "id": "stef-hnneman-kaatsheuvel-shuang-long-kaatsheuvel",
-    "name": "Stef H�nneman",
+    "name": "Stef Hünneman",
     "practiceName": "Shuang Long Kaatsheuvel",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur",
@@ -15851,7 +15851,7 @@ window.norbuPractitioners = [
   {
     "id": "syama-fatingan-ridderkerk-t-c-m-schoonheidspraktijk-syama",
     "name": "Syama Fatingan",
-    "practiceName": "T.C.M. & Schoonheidspraktijk� Syama",
+    "practiceName": "T.C.M. & Schoonheidspraktijk Syama",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur, Tuina",
     "clinic": "Ridderkerk",
@@ -15878,7 +15878,7 @@ window.norbuPractitioners = [
       "Tuina"
     ],
     "times": [],
-    "locationQuery": "T.C.M. & Schoonheidspraktijk� Syama, Boksdoornstraat 88, 2982 BD, Ridderkerk",
+    "locationQuery": "T.C.M. & Schoonheidspraktijk Syama, Boksdoornstraat 88, 2982 BD, Ridderkerk",
     "sourceRow": 490
   },
   {
@@ -17190,7 +17190,7 @@ window.norbuPractitioners = [
   },
   {
     "id": "danille-willems-utrecht-vrouwengeneeskunde-kinderwens-zwangerschap-menopauze",
-    "name": "Dani�lle Willems",
+    "name": "Daniëlle Willems",
     "practiceName": "Vrouwengeneeskunde Kinderwens, Zwangerschap, Menopauze",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur, Kruiden",
@@ -17224,7 +17224,7 @@ window.norbuPractitioners = [
   {
     "id": "casey-choong-vinkeveen-wn-acupuncture",
     "name": "Casey Choong",
-    "practiceName": "w�n acupuncture",
+    "practiceName": "wen acupuncture",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur",
     "clinic": "Vinkeveen",
@@ -17242,7 +17242,7 @@ window.norbuPractitioners = [
     "experience": "Not listed",
     "languages": "Not listed",
     "image": "",
-    "bio": "Listed practice: w�n acupuncture. City: Vinkeveen. Source listing: zhong.nl.",
+    "bio": "Listed practice: wen acupuncture. City: Vinkeveen. Source listing: zhong.nl.",
     "education": [
       "Source profile: zhong.nl"
     ],
@@ -17250,7 +17250,7 @@ window.norbuPractitioners = [
       "Acupunctuur"
     ],
     "times": [],
-    "locationQuery": "w�n acupuncture, Vinkeveen",
+    "locationQuery": "wen acupuncture, Vinkeveen",
     "sourceRow": 532
   },
   {
@@ -17583,7 +17583,7 @@ window.norbuPractitioners = [
   {
     "id": "natasja-van-de-kraats-putten-ynggung-praktijk-voor-acupunctuur",
     "name": "Natasja van de Kraats",
-    "practiceName": "Y�nggu�ng Praktijk voor Acupunctuur",
+    "practiceName": "Yangguang Praktijk voor Acupunctuur",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur",
     "clinic": "Putten",
@@ -17601,7 +17601,7 @@ window.norbuPractitioners = [
     "experience": "Not listed",
     "languages": "Not listed",
     "image": "",
-    "bio": "Listed practice: Y�nggu�ng Praktijk voor Acupunctuur. City: Putten. Source listing: zhong.nl.",
+    "bio": "Listed practice: Yangguang Praktijk voor Acupunctuur. City: Putten. Source listing: zhong.nl.",
     "education": [
       "Source profile: zhong.nl"
     ],
@@ -17609,7 +17609,7 @@ window.norbuPractitioners = [
       "Acupunctuur"
     ],
     "times": [],
-    "locationQuery": "Y�nggu�ng Praktijk voor Acupunctuur, Putten",
+    "locationQuery": "Yangguang Praktijk voor Acupunctuur, Putten",
     "sourceRow": 543
   },
   {
@@ -18920,7 +18920,7 @@ window.norbuPractitioners = [
   },
   {
     "id": "jos-dezijn-den-nul-acupunctuur-olst-wijhe",
-    "name": "Jos� Dezijn",
+    "name": "José Dezijn",
     "practiceName": "Acupunctuur Olst-Wijhe",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur, Tuina",
@@ -21518,8 +21518,8 @@ window.norbuPractitioners = [
   },
   {
     "id": "maril-van-de-weert-amsterdam-praktijk-maril-van-de-weert",
-    "name": "Mari�l van de Weert",
-    "practiceName": "Praktijk Mari�l van de Weert",
+    "name": "Mariël van de Weert",
+    "practiceName": "Praktijk Mariël van de Weert",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur, Shiatsu",
     "clinic": "Amsterdam",
@@ -21537,7 +21537,7 @@ window.norbuPractitioners = [
     "experience": "Not listed",
     "languages": "Not listed",
     "image": "",
-    "bio": "Listed practice: Praktijk Mari�l van de Weert. City: Amsterdam. Source listing: zhong.nl.",
+    "bio": "Listed practice: Praktijk Mariël van de Weert. City: Amsterdam. Source listing: zhong.nl.",
     "education": [
       "Source profile: zhong.nl"
     ],
@@ -21546,7 +21546,7 @@ window.norbuPractitioners = [
       "Shiatsu"
     ],
     "times": [],
-    "locationQuery": "Praktijk Mari�l van de Weert, Amsterdam",
+    "locationQuery": "Praktijk Mariël van de Weert, Amsterdam",
     "sourceRow": 664
   },
   {
@@ -22107,7 +22107,7 @@ window.norbuPractitioners = [
   {
     "id": "angela-wentink-beermann-ruurlo-qi-sh-praktijk-voor-acupunctuur",
     "name": "Angela Wentink-Beermann",
-    "practiceName": "Qi sh�/Praktijk voor Acupunctuur",
+    "practiceName": "Qi she / Praktijk voor Acupunctuur",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur, Shiatsu",
     "clinic": "Ruurlo",
@@ -22125,7 +22125,7 @@ window.norbuPractitioners = [
     "experience": "Not listed",
     "languages": "Not listed",
     "image": "",
-    "bio": "Listed practice: Qi sh�/Praktijk voor Acupunctuur. City: Ruurlo. Source listing: zhong.nl.",
+    "bio": "Listed practice: Qi she / Praktijk voor Acupunctuur. City: Ruurlo. Source listing: zhong.nl.",
     "education": [
       "Source profile: zhong.nl"
     ],
@@ -22134,7 +22134,7 @@ window.norbuPractitioners = [
       "Shiatsu"
     ],
     "times": [],
-    "locationQuery": "Qi sh�/Praktijk voor Acupunctuur, Ruurlo",
+    "locationQuery": "Qi she / Praktijk voor Acupunctuur, Ruurlo",
     "sourceRow": 682
   },
   {
@@ -22397,7 +22397,7 @@ window.norbuPractitioners = [
   },
   {
     "id": "ayse-zcan-amsterdam-sem-cure-b-v-acupunctuur-fythoterapie",
-    "name": "Ayse �zcan",
+    "name": "Ayse Özcan",
     "practiceName": "Sem Cure B.V. Acupunctuur & Fythoterapie",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur",
@@ -22750,8 +22750,8 @@ window.norbuPractitioners = [
   },
   {
     "id": "leeroy-rder-spijkenisse-tcm-praktijk-rder",
-    "name": "Leeroy R�der",
-    "practiceName": "TCM Praktijk R�der",
+    "name": "Leeroy Röder",
+    "practiceName": "TCM Praktijk Röder",
     "specialty": "Acupunctuur",
     "specializationDetail": "Acupunctuur",
     "clinic": "Spijkenisse",
@@ -22769,7 +22769,7 @@ window.norbuPractitioners = [
     "experience": "Not listed",
     "languages": "Not listed",
     "image": "",
-    "bio": "Listed practice: TCM Praktijk R�der. City: Spijkenisse. Source listing: zhong.nl.",
+    "bio": "Listed practice: TCM Praktijk Röder. City: Spijkenisse. Source listing: zhong.nl.",
     "education": [
       "Source profile: zhong.nl"
     ],
@@ -22777,7 +22777,7 @@ window.norbuPractitioners = [
       "Acupunctuur"
     ],
     "times": [],
-    "locationQuery": "TCM Praktijk R�der, Spijkenisse",
+    "locationQuery": "TCM Praktijk Röder, Spijkenisse",
     "sourceRow": 702
   },
   {
