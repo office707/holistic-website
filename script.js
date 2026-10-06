@@ -1141,8 +1141,8 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
     text('profile-bio', selected.bio);
     text('profile-experience', selected.practiceName || selected.source || selected.experience);
     text('profile-clinic', selected.clinic);
-    text('profile-languages', selected.languages);
-    text('profile-approach', `${selected.name}'s profile lists focus areas, background, languages, and a Google Maps search link. Use it as a comparison point before checking external map and review details on Google.`);
+    text('profile-source', selected.source || 'Directory listing');
+    text('profile-approach', `${selected.name}'s profile lists focus areas, practice details, the original directory source, and a Google Maps search link. Use these details as a comparison point before checking the provider's own information.`);
     text('profile-first-name', selected.name.replace(/^Dr\.\s+/, '').split(' ')[0]);
 
     const therapyList = document.getElementById('profile-therapies');
@@ -1152,6 +1152,18 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
     const profileMap = document.getElementById('profile-map');
     const profileMapLink = document.getElementById('profile-map-link');
     const profileGoogleReviewLink = document.getElementById('profile-google-review-link');
+    const profileSourceLink = document.getElementById('profile-source-link');
+    const profileWebsiteLink = document.getElementById('profile-website-link');
+    const normalizeExternalUrl = (value) => {
+      if (!value) return '';
+      return /^https?:\/\//i.test(value) ? value : `https://${value}`;
+    };
+    const setOptionalExternalLink = (element, value) => {
+      if (!element) return;
+      const url = normalizeExternalUrl(value);
+      element.hidden = !url;
+      if (url) element.href = url;
+    };
     if (profileMap && selected.locationQuery) {
       profileMap.src = `https://www.google.com/maps?q=${encodeURIComponent(selected.locationQuery)}&z=12&output=embed`;
     }
@@ -1165,6 +1177,8 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
     if (profileGoogleReviewLink && selected.locationQuery) {
       profileGoogleReviewLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selected.locationQuery)}`;
     }
+    setOptionalExternalLink(profileSourceLink, selected.profileUrl);
+    setOptionalExternalLink(profileWebsiteLink, selected.website);
   }
 
   const bookingForm = document.getElementById('booking-form');

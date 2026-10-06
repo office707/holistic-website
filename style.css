@@ -15030,6 +15030,20 @@ body.has-role-login-open {
   font-size: 13px;
 }
 
+.profile-external-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.profile-external-actions .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.profile-external-actions .btn[hidden] {
+  display: none !important;
+}
+
 .profile-testimonials-list {
   max-height: 520px;
   overflow: auto;
