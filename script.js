@@ -56,7 +56,7 @@ const homePreviewGrid = document.querySelector('.norbu-profile-preview-grid');
 if (homePreviewGrid && practitionersForDirectory.length) {
   homePreviewGrid.innerHTML = practitionersForDirectory.slice(0, 3).map((practitioner) => `
     <article class="norbu-profile-preview">
-      <img src="${escapeDirectoryHtml(getPractitionerImage(practitioner))}" alt="${escapeDirectoryHtml(getPractitionerImageAlt(practitioner))}">
+      <img src="${escapeDirectoryHtml(getPractitionerImage(practitioner))}" alt="${escapeDirectoryHtml(getPractitionerImageAlt(practitioner))}" loading="lazy">
       <div>
         <span>${escapeDirectoryHtml(practitioner.clinic || 'Needs confirmation')}</span>
         <h3>${escapeDirectoryHtml(practitioner.name)}</h3>
@@ -75,7 +75,7 @@ if (directoryList && practitionersForDirectory.length) {
 
     return `
       <article class="directory-card ${index === 0 ? 'is-selected' : ''}" tabindex="0" data-id="${escapeDirectoryHtml(practitioner.id)}" data-name="${escapeDirectoryHtml(practitioner.name)}" data-specialty="${escapeDirectoryHtml(practitioner.specialty)}" data-clinic="${escapeDirectoryHtml(practitioner.clinic)}" data-availability="${escapeDirectoryHtml(practitioner.availability)}" data-location-query="${escapeDirectoryHtml(practitioner.locationQuery)}" data-focus="${escapeDirectoryHtml(practitioner.focus)}" data-bio="${escapeDirectoryHtml(practitioner.bio)}">
-        <img src="${escapeDirectoryHtml(image)}" alt="${escapeDirectoryHtml(imageAlt)}">
+        <img src="${escapeDirectoryHtml(image)}" alt="${escapeDirectoryHtml(imageAlt)}" loading="lazy">
         <div class="directory-card-body">
           <div class="directory-card-top">
             <span class="practitioner-badge">${escapeDirectoryHtml(practitioner.specialty)}</span>
@@ -233,6 +233,7 @@ if (
     availabilityFilter.value = presetAvailability;
   }
 
+  setActiveCard(cards[0]);
   applyFilters();
 }
 
@@ -1100,9 +1101,9 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
     text('profile-first-name', selected.name.replace(/^Dr\.\s+/, '').split(' ')[0]);
 
     const therapyList = document.getElementById('profile-therapies');
-    if (therapyList) therapyList.innerHTML = selected.therapies.map((therapy) => `<span>${therapy}</span>`).join('');
+    if (therapyList) therapyList.innerHTML = (selected.therapies || []).map((therapy) => `<span>${escapeDirectoryHtml(therapy)}</span>`).join('');
     const educationList = document.getElementById('profile-education');
-    if (educationList) educationList.innerHTML = selected.education.map((item) => `<li>${item}</li>`).join('');
+    if (educationList) educationList.innerHTML = (selected.education || []).map((item) => `<li>${escapeDirectoryHtml(item)}</li>`).join('');
     const profileMap = document.getElementById('profile-map');
     const profileMapLink = document.getElementById('profile-map-link');
     const profileGoogleReviewLink = document.getElementById('profile-google-review-link');
@@ -1133,20 +1134,20 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
   let activePractitioner = selected;
   let activeTime = '';
 
-  practitionerSelect.innerHTML = practitioners.map((practitioner) => `<option value="${practitioner.id}">${practitioner.name} - ${practitioner.specialty}</option>`).join('');
+  practitionerSelect.innerHTML = practitioners.map((practitioner) => `<option value="${escapeDirectoryHtml(practitioner.id)}">${escapeDirectoryHtml(practitioner.name)} - ${escapeDirectoryHtml(practitioner.specialty)}</option>`).join('');
   practitionerSelect.value = selected.id;
   dateInput.min = new Date().toISOString().split('T')[0];
 
   const renderPractitioner = () => {
     activePractitioner = practitioners.find((practitioner) => practitioner.id === practitionerSelect.value) || practitioners[0];
     activeTime = '';
-    summaryImage.src = activePractitioner.image;
-    summaryImage.alt = `${activePractitioner.name} portrait`;
+    summaryImage.src = getPractitionerImage(activePractitioner);
+    summaryImage.alt = getPractitionerImageAlt(activePractitioner);
     text('booking-summary-name', activePractitioner.name);
     text('booking-summary-specialty', `${activePractitioner.specialty} - ${activePractitioner.focus}`);
     text('booking-summary-clinic', activePractitioner.clinic);
     profileLink.href = `practitioner-detail.html?id=${activePractitioner.id}`;
-    timeOptions.innerHTML = activePractitioner.times.map((time, index) => `<label><input type="radio" name="time" value="${time}" ${index === 0 ? 'required' : ''}><span>${time}</span></label>`).join('');
+    timeOptions.innerHTML = (activePractitioner.times || []).map((time, index) => `<label><input type="radio" name="time" value="${escapeDirectoryHtml(time)}" ${index === 0 ? 'required' : ''}><span>${escapeDirectoryHtml(time)}</span></label>`).join('');
   };
 
   practitionerSelect.addEventListener('change', renderPractitioner);
