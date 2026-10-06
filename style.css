@@ -18154,6 +18154,43 @@ body.norbu-finder-page .norbu-hero {
     url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1800&q=80") center / cover !important;
 }
 
+body.norbu-finder-page .norbu-hero-copy {
+  background: transparent !important;
+}
+
+.directory-results-column {
+  min-width: 0;
+}
+
+.directory-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 22px;
+  padding: 18px;
+  border: 1px solid var(--norbu-line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .88);
+  box-shadow: var(--norbu-shadow-sm);
+}
+
+.directory-pagination[hidden] {
+  display: none !important;
+}
+
+.directory-pagination span {
+  min-width: 110px;
+  color: var(--norbu-ink);
+  font-weight: 800;
+  text-align: center;
+}
+
+.directory-pagination button:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+}
+
 @media (max-width: 760px) {
   body.norbu-site-page .norbu-home-hero {
     background:
@@ -18337,5 +18374,14 @@ body.norbu-finder-page .directory-card {
     grid-template-columns: 1fr !important;
     min-height: 0 !important;
   }
+}
+
+/* Finder pagination and single hero image overrides */
+body.norbu-finder-page .norbu-hero > .norbu-hero-copy {
+  background: transparent !important;
+}
+
+body.norbu-finder-page .directory-card[hidden] {
+  display: none !important;
 }
 

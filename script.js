@@ -98,6 +98,10 @@ const locationFilter = document.getElementById('filter-location');
 const availabilityFilter = document.getElementById('filter-availability');
 const resetButton = document.getElementById('filter-reset');
 const resultsCopy = document.getElementById('directory-results-copy');
+const pagination = document.getElementById('directory-pagination');
+const previousPageButton = document.getElementById('directory-page-previous');
+const nextPageButton = document.getElementById('directory-page-next');
+const pageStatus = document.getElementById('directory-page-status');
 const mapFrame = document.getElementById('directory-map');
 const mapLink = document.getElementById('directory-map-link');
 const directoryProfileLink = document.getElementById('directory-profile-link');
@@ -120,6 +124,8 @@ if (
   specialtyField &&
   bioField
 ) {
+  const pageSize = 10;
+  let currentPage = 1;
   const buildEmbedUrl = (query) => `https://www.google.com/maps?q=${encodeURIComponent(query)}&z=12&output=embed`;
   const buildMapsUrl = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
   setSelectOptions(specialtyFilter, uniqueValues(practitionersForDirectory, 'specialty'), 'All specializations');
@@ -158,15 +164,14 @@ if (
     }
   };
 
-  const getVisibleCards = () => cards.filter((card) => card.style.display !== 'none');
-
-  const applyFilters = () => {
+  const applyFilters = (resetPage = false) => {
+    if (resetPage) currentPage = 1;
     const query = searchInput.value.trim().toLowerCase();
     const specialty = specialtyFilter.value;
     const clinic = locationFilter.value;
     const availability = availabilityFilter.value;
 
-    cards.forEach((card) => {
+    const matchingCards = cards.filter((card) => {
       const haystack = [
         card.dataset.name,
         card.dataset.focus,
@@ -177,16 +182,37 @@ if (
       const matchesSpecialty = specialty === 'all' || card.dataset.specialty === specialty;
       const matchesClinic = clinic === 'all' || card.dataset.clinic === clinic;
       const matchesAvailability = availability === 'all' || card.dataset.availability === availability;
-      const visible = matchesQuery && matchesSpecialty && matchesClinic && matchesAvailability;
-      card.style.display = visible ? '' : 'none';
+      return matchesQuery && matchesSpecialty && matchesClinic && matchesAvailability;
     });
 
-    const visibleCards = getVisibleCards();
-    resultsCopy.textContent = visibleCards.length === 1 ? 'Showing 1 profile' : `Showing ${visibleCards.length} profiles`;
+    const totalPages = Math.max(1, Math.ceil(matchingCards.length / pageSize));
+    currentPage = Math.min(currentPage, totalPages);
+    const pageStart = (currentPage - 1) * pageSize;
+    const pageCards = matchingCards.slice(pageStart, pageStart + pageSize);
+    const pageCardSet = new Set(pageCards);
+
+    cards.forEach((card) => {
+      card.hidden = !pageCardSet.has(card);
+    });
+
+    if (matchingCards.length === 0) {
+      resultsCopy.textContent = 'Showing 0 profiles';
+    } else {
+      const firstResult = pageStart + 1;
+      const lastResult = pageStart + pageCards.length;
+      resultsCopy.textContent = `Showing ${firstResult}-${lastResult} of ${matchingCards.length} profiles`;
+    }
+
+    if (pagination && previousPageButton && nextPageButton && pageStatus) {
+      pagination.hidden = matchingCards.length <= pageSize;
+      previousPageButton.disabled = currentPage === 1;
+      nextPageButton.disabled = currentPage === totalPages || matchingCards.length === 0;
+      pageStatus.textContent = `Page ${matchingCards.length ? currentPage : 0} of ${matchingCards.length ? totalPages : 0}`;
+    }
 
     const currentActive = document.querySelector('.directory-card.is-selected');
-    if (!currentActive || currentActive.style.display === 'none') {
-      setActiveCard(visibleCards[0] ?? null);
+    if (!currentActive || currentActive.hidden) {
+      setActiveCard(pageCards[0] ?? null);
     }
   };
 
@@ -204,8 +230,27 @@ if (
   });
 
   [searchInput, specialtyFilter, locationFilter, availabilityFilter].forEach((control) => {
-    control.addEventListener('input', applyFilters);
-    control.addEventListener('change', applyFilters);
+    control.addEventListener('input', () => applyFilters(true));
+    control.addEventListener('change', () => applyFilters(true));
+  });
+
+  document.querySelector('.norbu-quick-search')?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    applyFilters(true);
+    directoryList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  previousPageButton?.addEventListener('click', () => {
+    if (currentPage <= 1) return;
+    currentPage -= 1;
+    applyFilters();
+    directoryList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  nextPageButton?.addEventListener('click', () => {
+    currentPage += 1;
+    applyFilters();
+    directoryList.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
   resetButton.addEventListener('click', () => {
@@ -213,7 +258,7 @@ if (
     specialtyFilter.value = 'all';
     locationFilter.value = 'all';
     availabilityFilter.value = 'all';
-    applyFilters();
+    applyFilters(true);
   });
 
   const directoryParams = new URLSearchParams(window.location.search);
@@ -234,7 +279,7 @@ if (
   }
 
   setActiveCard(cards[0]);
-  applyFilters();
+  applyFilters(true);
 }
 
 const quizForm = document.getElementById('quiz-form');

@@ -28,7 +28,7 @@
 
     <main class="directory-main">
       <section class="norbu-hero">
-        <div class="norbu-hero-copy">
+        <div class="norbu-hero-copy" style="background: transparent !important;">
           <span class="norbu-kicker">Acupuncture directory</span>
           <h1>Search acupuncture profiles by city and focus area.</h1>
           <p>Use the filters to compare listed profiles. Each profile links to Google Maps, where location details and any available reviews are managed by Google.</p>
@@ -56,7 +56,14 @@
       </section>
 
       <section class="directory-layout">
-        <div class="directory-list" id="directory-list" aria-live="polite"></div>
+        <div class="directory-results-column">
+          <div class="directory-list" id="directory-list" aria-live="polite"></div>
+          <nav class="directory-pagination" id="directory-pagination" aria-label="Therapist result pages">
+            <button class="btn btn-secondary" id="directory-page-previous" type="button">Previous</button>
+            <span id="directory-page-status" aria-live="polite">Page 1</span>
+            <button class="btn btn-primary" id="directory-page-next" type="button">Next</button>
+          </nav>
+        </div>
         <aside class="directory-map-panel card" id="directory-map-panel">
           <div class="directory-map-copy">
             <span class="practitioner-map-kicker">Selected therapist</span>
