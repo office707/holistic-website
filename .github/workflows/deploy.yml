@@ -1,5 +1,5 @@
 
-name: Check TransIP Connection
+name: Deploy Norbu to TransIP
 
 on:
   push:
@@ -9,6 +9,10 @@ on:
 
 permissions:
   contents: read
+
+concurrency:
+  group: norbu-production
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -23,7 +27,22 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y lftp
 
-      - name: Check TransIP directories
+      - name: Prepare website files
+        run: |
+          mkdir -p site-upload
+          find . -maxdepth 1 -type f \
+            \( -name '*.html' \
+            -o -name '*.css' \
+            -o -name '*.js' \
+            -o -name '*.svg' \
+            -o -name '*.png' \
+            -o -name '*.jpg' \
+            -o -name '*.jpeg' \
+            -o -name '*.webp' \
+            -o -name '*.ico' \) \
+            -exec cp {} site-upload/ \;
+
+      - name: Deploy website to TransIP
         env:
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
           SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
@@ -32,7 +51,7 @@ jobs:
           lftp -u "$SFTP_USERNAME","$SFTP_PASSWORD" "sftp://$SFTP_HOST" <<'EOF'
           set cmd:fail-exit yes
           set sftp:auto-confirm yes
-          pwd
-          cls -la
+          cd www
+          mirror --reverse --verbose ./site-upload .
           bye
           EOF
