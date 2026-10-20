@@ -1,4 +1,28 @@
 
+name: Check TransIP Connection
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout website
+        uses: actions/checkout@v4
+
+      - name: Install SFTP client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+
       - name: Check TransIP directories
         env:
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
