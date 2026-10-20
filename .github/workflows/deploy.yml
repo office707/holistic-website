@@ -1,1 +1,46 @@
 
+
+name: Deploy Norbu to TransIP
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: norbu-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout website
+        uses: actions/checkout@v4
+
+      - name: Install SFTP client
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Deploy website to TransIP
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
+          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+        run: |
+          lftp -u "$SFTP_USERNAME","$SFTP_PASSWORD" "sftp://$SFTP_HOST" <<'EOF'
+          set cmd:fail-exit yes
+          set sftp:auto-confirm yes
+          mirror --reverse --verbose \
+            --exclude-glob .git/ \
+            --exclude-glob .github/ \
+            --exclude-glob README* \
+            --exclude-glob .env* \
+            --exclude-glob node_modules/ \
+            ./ /www
+          bye
+          EOF
