@@ -186,7 +186,8 @@ if (
 
   const applyFilters = (resetPage = false) => {
     if (resetPage) currentPage = 1;
-    const query = searchInput.value.trim().toLowerCase();
+    const normalizeSearch = (value) => value.toLowerCase().replaceAll('acupunctuur', 'acupuncture').replaceAll('chinese herbs', 'herbal medicine').replaceAll('kruiden', 'herbal medicine').replaceAll('tuina', 'tui na');
+    const query = normalizeSearch(searchInput.value.trim());
     const specialty = specialtyFilter.value;
     const clinic = locationFilter.value;
     const availability = availabilityFilter.value;
@@ -197,8 +198,9 @@ if (
         card.dataset.focus,
         card.dataset.specialty,
         card.dataset.clinic,
-      ].join(' ').toLowerCase();
-      const matchesQuery = !query || haystack.includes(query);
+      ].join(' ');
+      const searchableText = normalizeSearch(haystack);
+      const matchesQuery = !query || searchableText.includes(query);
       const matchesSpecialty = specialty === 'all' || card.dataset.specialty === specialty;
       const matchesClinic = clinic === 'all' || card.dataset.clinic === clinic;
       const matchesAvailability = availability === 'all' || card.dataset.availability === availability;
@@ -292,6 +294,8 @@ if (
   });
 
   const directoryParams = new URLSearchParams(window.location.search);
+  const presetSearch = directoryParams.get('search');
+  if (presetSearch) searchInput.value = presetSearch;
   const presetSpecialty = directoryParams.get('specialty');
   const presetCity = directoryParams.get('city');
   const presetAvailability = directoryParams.get('availability');
@@ -1302,7 +1306,7 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
       observer.unobserve(target);
     });
   }, { threshold: 0.08 });
-  document.querySelectorAll('main > section, .norbu-flow-grid > article, .norbu-profile-preview').forEach((element) => observer.observe(element));
+  document.querySelectorAll('main:not(.compass-home) > section, .norbu-flow-grid > article, .norbu-profile-preview').forEach((element) => observer.observe(element));
   reducedMotion.addEventListener('change', () => {
     if (reducedMotion.matches) {
       observer.disconnect();

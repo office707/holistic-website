@@ -8,10 +8,11 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="site-shell.css?v=20261116-4">
+  <link rel="stylesheet" href="home.css?v=20261116-7">
 </head>
-<body class="site-layout norbu-site-page norbu-home-page">
+<body class="site-layout norbu-site-page home-refresh" data-home-motion="on">
   <div class="page">
-    <header class="topbar norbu-topbar">
+<header class="topbar norbu-topbar">
       <a class="brand brand-link" href="index.html" aria-label="Norbu home"><div class="brand-mark" aria-hidden="true"></div><span>Norbu</span></a>
       <div class="shell" id="site-shell">
         <nav class="nav" id="site-nav" aria-label="Main navigation">
@@ -28,83 +29,66 @@
       </div>
       <a class="book-btn" href="practitioners.html">Open finder</a>
     </header>
-
-    <main class="norbu-home">
-      <section class="norbu-home-hero">
-        <div class="norbu-home-copy">
-          <span class="norbu-kicker">Norbu directory</span>
-          <h1>Find an acupuncturist in The Netherlands.</h1>
-          <p>Compare acupuncture profiles by city and focus area, then continue to Google Maps to check location details and any reviews available on Google.</p>
-          <div class="norbu-home-actions">
-            <a class="btn btn-primary" href="practitioners.html">Open finder</a>
-            <a class="btn btn-secondary" href="quiz.html">Take the quiz</a>
-          </div>
+    <main class="compass-home">
+      <section class="compass-hero" aria-labelledby="home-title">
+        <div class="compass-hero-copy">
+          <span class="compass-eyebrow"><span class="compass-dot"></span> Your compass for complementary care</span>
+          <h1 id="home-title"><span>A clearer path.</span><span>A little closer</span><em>to you.</em></h1>
+          <p>Discover acupuncture and complementary practices across the Netherlands. Understand your options, compare real practice profiles, and find a place to start.</p>
+          <form class="compass-search" id="home-search" action="practitioners.html" method="get">
+            <label for="home-search-input">Where would you like to begin?</label>
+            <div><input id="home-search-input" name="search" type="search" placeholder="Try Amsterdam, acupuncture, cupping…"><button type="submit" aria-label="Search practices">Search <span aria-hidden="true">→</span></button></div>
+          </form>
+          <div class="compass-hero-links"><a href="quiz.html">Need a starting point? Take the quiz <span aria-hidden="true">→</span></a><a href="#how-it-works">How Norbu works</a></div>
+          <div class="compass-hero-bottom"><span>Explore. Compare. Find your direction.</span><button id="home-motion-toggle" type="button" aria-pressed="false">Pause animation</button></div>
         </div>
-
-        <aside class="norbu-home-panel" aria-label="What visitors can use">
-          <span class="norbu-panel-label">Current scope</span>
-          <h2>A clear first search step</h2>
-          <div class="norbu-home-checks">
-            <div><strong>Browse profiles</strong><span>Compare listed profile details such as city, focus area, languages, and background.</span></div>
-            <div><strong>Open Google Maps</strong><span>Use each profile's Google Maps link to check the location context externally.</span></div>
-            <div><strong>Check external reviews</strong><span>Norbu does not collect reviews. Any ratings or reviews are viewed on Google.</span></div>
-          </div>
-        </aside>
-      </section>
-
-      <section class="norbu-search-band" aria-label="Quick starts">
-        <div><span class="norbu-kicker">Start here</span><h2>Search by city or focus area</h2></div>
-        <div class="norbu-search-links">
-          <a href="practitioners.html?city=Amsterdam">Amsterdam</a>
-          <a href="practitioners.html?specialty=Pain%20acupuncture">Pain acupuncture</a>
-          <a href="practitioners.html?specialty=Stress%20and%20sleep%20acupuncture">Stress and sleep</a>
-          <a href="practitioners.html?specialty=Fertility%20acupuncture">Fertility</a>
+        <div class="compass-hero-art">
+          <div class="compass-photo-frame"><img class="compass-hero-photo" src="home-acupuncture.jpg" width="1400" height="933" alt="A practitioner carefully placing an acupuncture needle during a treatment" fetchpriority="high"></div>
+          <div class="compass-orbit" aria-hidden="true"><span>Find your balance</span><span>→</span></div>
+          <a class="compass-float compass-float-top" href="practitioners.html"><span class="compass-float-icon" aria-hidden="true">⌖</span><div><strong><span data-profile-count>1,806</span> listed profiles</strong><span>Across the Netherlands</span></div><span aria-hidden="true">→</span></a>
+          <div class="compass-photo-note"><span class="compass-dot"></span> Acupuncture in practice <small>Illustrative photo</small></div>
         </div>
       </section>
 
-      <section class="norbu-home-flow">
-        <div class="norbu-section-head"><span class="norbu-kicker">How it works</span><h2>From a question to Google Maps</h2></div>
-        <div class="norbu-flow-grid">
-          <article><span>01</span><h3>Choose a starting point</h3><p>Use the quiz or go straight to the finder with a city or acupuncture focus area.</p><a href="quiz.html">Open quiz</a></article>
-          <article><span>02</span><h3>Compare profile details</h3><p>Review listed focus areas, languages, city, background, and profile notes.</p><a href="practitioners.html">Browse profiles</a></article>
-          <article><span>03</span><h3>Continue to Google</h3><p>Open Google Maps to check location details and any reviews available directly on Google.</p><a href="practitioners.html">Open finder</a></article>
-        </div>
+      <section class="compass-intro" aria-labelledby="intro-title" data-home-reveal>
+        <div><span class="compass-eyebrow">Meet Norbu</span><h2 id="intro-title">Less searching.<br><em>More understanding.</em></h2></div>
+        <div class="compass-intro-copy"><p>Finding a complementary practitioner can feel like starting without a map. Norbu brings practice listings and therapy information together, so you can explore with more context.</p><p>Browse by city or therapy, read the details supplied by each listing, and continue to the practice’s website or Google Maps. You choose the next step.</p><a class="compass-text-link" href="about.html">Get to know Norbu <span aria-hidden="true">→</span></a></div>
+        <div class="compass-stats"><div><strong data-count-target="1806" data-count-key="profiles">1,806</strong><span>Listed profiles</span></div><div><strong>Your city</strong><span>Find a local practice</span></div><div><strong>One place</strong><span>To explore your options</span></div></div>
       </section>
 
-      <section class="norbu-home-profiles">
-        <div class="norbu-section-head"><span class="norbu-kicker">Directory preview</span><h2>Example profile entries</h2></div>
-        <div class="norbu-profile-preview-grid">
-          <article class="norbu-profile-preview"><img src="norbu-profile-placeholder.svg" alt="Neutral Norbu placeholder for Sanne de Vries"><div><span>Amsterdam</span><h3>Sanne de Vries</h3><p>Fertility acupuncture and IVF support.</p><a href="practitioner-detail.html?id=sanne-de-vries">View profile</a></div></article>
-          <article class="norbu-profile-preview"><img src="norbu-profile-placeholder.svg" alt="Neutral Norbu placeholder for Marco Jansen"><div><span>Rotterdam</span><h3>Marco Jansen</h3><p>Pain acupuncture and sports recovery.</p><a href="practitioner-detail.html?id=marco-jansen">View profile</a></div></article>
-          <article class="norbu-profile-preview"><img src="norbu-profile-placeholder.svg" alt="Neutral Norbu placeholder for Lina van Dijk"><div><span>Utrecht</span><h3>Lina van Dijk</h3><p>Stress, sleep, and burnout recovery support.</p><a href="practitioner-detail.html?id=lina-van-dijk">View profile</a></div></article>
+      <section class="compass-therapies" aria-labelledby="therapy-title" data-home-reveal>
+        <div class="compass-section-heading"><div><span class="compass-eyebrow">Explore the approaches</span><h2 id="therapy-title">A starting point<br>for <em>your curiosity.</em></h2></div><p>Different practices list different approaches. Get to know the terms before you compare practitioners.</p></div>
+        <div class="compass-therapy-grid">
+          <a class="compass-therapy-card" href="practitioners.html?search=acupuncture"><span class="compass-therapy-number">01 <span aria-hidden="true">→</span></span><svg viewBox="0 0 120 90" fill="none" aria-hidden="true"><path d="M24 69 72 21M48 76 96 28M65 14l14 14M89 21l14 14"/><circle cx="32" cy="37" r="12"/></svg><h3>Acupuncture</h3><p>A practice using fine needles placed at specific points. Compare training, focus areas and practice information.</p><span class="compass-card-link">Explore listed profiles →</span></a>
+          <a class="compass-therapy-card" href="practitioners.html?search=cupping"><span class="compass-therapy-number">02 <span aria-hidden="true">→</span></span><svg viewBox="0 0 120 90" fill="none" aria-hidden="true"><path d="M27 66V39c0-20 29-20 29 0v27M65 66V29c0-20 29-20 29 0v37M21 68h41M59 68h41"/><path d="M36 40v18m38-29v26"/></svg><h3>Cupping</h3><p>Cups create suction on the skin. Some practitioners list it alongside acupuncture and other approaches.</p><span class="compass-card-link">Explore listed profiles →</span></a>
+          <a class="compass-therapy-card" href="practitioners.html?search=herbal%20medicine"><span class="compass-therapy-number">03 <span aria-hidden="true">→</span></span><svg viewBox="0 0 120 90" fill="none" aria-hidden="true"><path d="M57 76V25m0 30C31 55 23 40 25 24c21-1 32 11 32 31Zm1-13c25 0 35-13 35-29-20-1-35 11-35 29Z"/></svg><h3>Herbal medicine</h3><p>Profiles may list Chinese herbs or “kruiden”. Discuss suitability and medicine interactions with a qualified professional.</p><span class="compass-card-link">Explore listed profiles →</span></a>
+          <a class="compass-therapy-card" href="practitioners.html?search=tui%20na"><span class="compass-therapy-number">04 <span aria-hidden="true">→</span></span><svg viewBox="0 0 120 90" fill="none" aria-hidden="true"><path d="M24 58c18-21 26-21 44-5s26 16 33 4M24 72c18-21 26-21 44-5s26 16 33 4M38 31c2-14 16-18 24-7s17 11 25 1"/></svg><h3>Tui Na</h3><p>A form of Chinese manual therapy, also written “Tuina”. Discover practices that include it in their listings.</p><span class="compass-card-link">Explore listed profiles →</span></a>
         </div>
+        <div class="compass-therapy-footer"><span>These descriptions explain listing terms; they are not treatment recommendations.</span><a class="compass-text-link" href="therapies.html">Explore focus areas →</a></div>
       </section>
 
-      <section class="norbu-home-scope">
-        <div><span class="norbu-kicker">Clear scope</span><h2>What Norbu does and does not do</h2><p>Norbu helps visitors orient themselves, compare profile information, and continue to Google Maps. It is not a booking platform or a medical recommendation service.</p></div>
-        <div class="norbu-scope-list">
-          <div><strong>No booking yet</strong><span>Appointments, calendars, contact requests, and payments are not part of this version.</span></div>
-          <div><strong>No medical recommendation</strong><span>The quiz suggests a search direction only. It does not diagnose or recommend treatment.</span></div>
-          <div><strong>No on-site reviews</strong><span>Norbu does not collect, publish, or score reviews. Reviews stay on Google.</span></div>
-        </div>
+      <section class="compass-steps" id="how-it-works" aria-labelledby="steps-title" data-home-reveal>
+        <div class="compass-steps-copy"><span class="compass-eyebrow">How it works</span><h2 id="steps-title">From “where do I start?”<br>to <em>your next step.</em></h2><p>You do not need to know every therapy or practice before you begin. Start with a place or an approach and explore from there.</p><div class="compass-step-buttons" role="group" aria-label="Explore the search steps"><button type="button" data-home-step="0" aria-pressed="true"><span>01</span><strong>Explore your options</strong><span aria-hidden="true">→</span></button><button type="button" data-home-step="1" aria-pressed="false"><span>02</span><strong>Get to know a practice</strong><span aria-hidden="true">→</span></button><button type="button" data-home-step="2" aria-pressed="false"><span>03</span><strong>Choose your next step</strong><span aria-hidden="true">→</span></button></div></div>
+        <div class="compass-step-stage" aria-live="polite"><div class="compass-stage-decoration" aria-hidden="true"></div><span class="compass-stage-label" id="home-step-label">01 / Explore</span><div class="compass-stage-icon" id="home-step-icon" aria-hidden="true">⌖</div><h3 id="home-step-title">Your search starts with you.</h3><p id="home-step-copy">Enter a city or therapy in the finder. Compare the list with the map, or use the quiz to find a search direction.</p><a class="compass-button" id="home-step-link" href="practitioners.html">Start exploring →</a></div>
       </section>
+
+      <section class="compass-practices" aria-labelledby="practices-title" data-home-reveal>
+        <div class="compass-section-heading"><div><span class="compass-eyebrow">Meet the practices</span><h2 id="practices-title">People behind<br><em>the profiles.</em></h2></div><div><p>A few entries from the directory. Explore their listed approaches, location and original practice information.</p><a class="compass-text-link" href="practitioners.html">Browse the full directory →</a></div></div>
+        <div class="compass-practice-grid" id="home-practices"></div>
+        <p class="compass-small-print">A selection of directory entries, not a ranking or endorsement. Photos and practice details come from the linked source listings.</p>
+      </section>
+
+      <section class="compass-cities" aria-labelledby="cities-title" data-home-reveal><div><span class="compass-eyebrow">Around the Netherlands</span><h2 id="cities-title">Your city.<br><em>Your starting point.</em></h2><p>Find out which practices are listed near you.</p></div><div class="compass-city-links"><a href="practitioners.html?city=Amsterdam">Amsterdam <span aria-hidden="true">→</span></a><a href="practitioners.html?city=Rotterdam">Rotterdam <span aria-hidden="true">→</span></a><a href="practitioners.html?city=Utrecht">Utrecht <span aria-hidden="true">→</span></a><a href="practitioners.html?city=Den%20Haag">Den Haag <span aria-hidden="true">→</span></a><a href="practitioners.html?city=Eindhoven">Eindhoven <span aria-hidden="true">→</span></a><a href="practitioners.html">All locations <span aria-hidden="true">→</span></a></div></section>
+
+      <section class="compass-questions" aria-labelledby="questions-title" data-home-reveal><div><span class="compass-eyebrow">Before you begin</span><h2 id="questions-title">A little clarity<br><em>goes a long way.</em></h2><a class="compass-text-link" href="faq.html">More questions? Visit the FAQ →</a></div><div class="compass-faq-list"><details><summary>What exactly is Norbu?</summary><p>Norbu is a directory for exploring acupuncture and complementary practice listings in the Netherlands. It brings together available profile information, therapy search terms and links to original sources.</p></details><details><summary>Can I book an appointment through Norbu?</summary><p>Direct booking is not available yet. Open the practice’s website or Google Maps listing to check contact details and ask the practice about appointments.</p></details><details><summary>Are the practitioners independently verified?</summary><p>Directory entries come from listed external sources. Inclusion does not mean Norbu has independently verified a practitioner’s qualifications. Check registration, training and suitability directly with the provider.</p></details><details><summary>Where can I find reviews?</summary><p>Use the Google Maps link on each practice profile to check available Google reviews. Reviews and ratings are managed by Google. Norbu does not publish its own patient reviews.</p></details><details><summary>Does the quiz recommend a treatment?</summary><p>The quiz offers a starting direction for browsing. It does not diagnose, assess suitability or replace advice from a qualified healthcare professional.</p></details></div></section>
+
+      <section class="compass-final" data-home-reveal><span class="compass-eyebrow">Take the next step</span><h2>A little direction.<br><em>A world to explore.</em></h2><p>Start with a city, a question, or an approach you would like to understand.</p><div><a class="compass-button compass-button-light" href="practitioners.html">Find a practice →</a><a class="compass-final-secondary" href="quiz.html">Take the quiz →</a></div></section>
     </main>
-
-    <footer class="site-footer site-footer--home">
-      <div class="site-footer-grid">
-        <div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A searchable acupuncture directory for The Netherlands.</p></div>
-        <div><strong>Use</strong><p>Profiles<br>External Google Maps<br>Reviews on Google</p></div>
-        <div><strong>Not included yet</strong><p>Booking<br>Messaging<br>On-site reviews</p></div>
-        <div><strong>Explore</strong><p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a><br><a href="quiz.html">Quiz</a><br><a href="faq.html">FAQ</a></p></div>
-      </div>
-    </footer>
+    <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>Your compass for exploring complementary care in the Netherlands.</p></div><div><strong>Explore</strong><p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a practice</a><br><a href="quiz.html">Take the quiz</a></p></div><div><strong>Get to know Norbu</strong><p><a href="about.html">About</a><br><a href="faq.html">FAQ</a><br><a href="blog.html">Journal</a></p></div><div><strong>A clear starting point</strong><p>Compare directory information and check details directly with the practice.</p></div></div></footer>
   </div>
   <script src="practitioners-data.js?v=20261006-3" defer></script>
-  <script src="script.js?v=20261116-1" defer></script>
+  <script src="script.js?v=20261116-7" defer></script>
   <script src="site-shell.js?v=20261116-4" defer></script>
+  <script src="home.js?v=20261116-7" defer></script>
 </body>
 </html>
-
-
-
-
