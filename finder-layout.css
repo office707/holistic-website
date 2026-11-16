@@ -1,0 +1,83 @@
+/* Finder composition: compact controls, two columns of profiles, half-width map. */
+body.norbu-finder-page { background: #fff !important; }
+body.norbu-finder-page > .page { width: 100% !important; max-width: none !important; padding: 0 !important; overflow: visible !important; }
+body.norbu-finder-page .topbar { margin: 0 !important; width: 100% !important; max-width: none !important; border-radius: 0 !important; padding: 18px 32px !important; box-shadow: none !important; border-bottom: 1px solid #e5e9e6 !important; }
+body.norbu-finder-page .directory-main { width: 100% !important; max-width: none !important; padding: 0 !important; gap: 0 !important; margin: 0 !important; }
+.finder-search-bar { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 24px 32px; }
+.finder-search-bar h1 { margin: 5px 0 0 !important; font-size: clamp(22px,2vw,32px) !important; line-height: 1.2 !important; letter-spacing: -.035em; color: #193c3e !important; }
+body.norbu-finder-page .finder-search-bar .norbu-quick-search { width: min(520px,50%); margin: 0 !important; padding: 6px !important; border: 1px solid #dce3de !important; border-radius: 48px !important; background: #fff !important; box-shadow: 0 4px 14px #173e3e0a !important; display: flex !important; gap: 8px !important; }
+body.norbu-finder-page .finder-search-bar label { padding: 4px 12px !important; flex: 1; min-width: 0; }
+body.norbu-finder-page .finder-search-bar label span { font-size: 11px !important; color: #526662 !important; }
+body.norbu-finder-page .finder-search-bar input { border: 0 !important; box-shadow: none !important; padding: 4px 0 !important; background: transparent !important; min-height: 24px !important; font-size: 14px !important; }
+body.norbu-finder-page .finder-search-bar button { border-radius: 40px !important; min-height: 48px !important; padding: 12px 22px !important; }
+body.norbu-finder-page .directory-filters { margin: 0 !important; padding: 0 32px 20px !important; border: 0 !important; border-bottom: 1px solid #e5e9e6 !important; box-shadow: none !important; border-radius: 0 !important; background: #fff !important; }
+body.norbu-finder-page .directory-controls { display: flex !important; align-items: center !important; gap: 12px !important; flex-wrap: wrap; }
+body.norbu-finder-page .filter-field { display: flex !important; flex-direction: row !important; align-items: center; gap: 6px; border: 1px solid #dde4df; border-radius: 32px; padding: 8px 14px; min-width: 0 !important; }
+body.norbu-finder-page .filter-field > span { font-size: 11px !important; white-space: nowrap; }
+body.norbu-finder-page .filter-field select { width: auto !important; max-width: 190px; min-height: 24px !important; border: 0 !important; padding: 0 20px 0 0 !important; font-size: 12px !important; background-color: transparent !important; }
+body.norbu-finder-page .directory-reset-btn { min-height: 38px !important; border-radius: 30px !important; padding: 8px 16px !important; font-size: 12px !important; }
+body.norbu-finder-page .directory-layout { grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important; gap: 0 !important; align-items: start !important; }
+body.norbu-finder-page .directory-results-column { padding: 24px 28px 32px; min-width: 0; }
+.finder-results-heading { margin-bottom: 20px; }
+.finder-results-heading h2 { margin: 0 0 6px !important; font-size: 20px !important; line-height: 1.3 !important; color: #193c3e; }
+.finder-results-heading p { margin: 0 !important; font-size: 13px !important; color: #64726e; }
+body.norbu-finder-page .directory-list { grid-template-columns: repeat(2,minmax(0,1fr)) !important; gap: 26px 18px !important; }
+body.norbu-finder-page .directory-card.finder-grid-card { display: flex !important; flex-direction: column !important; gap: 0 !important; min-height: 0 !important; padding: 0 !important; border: 0 !important; border-radius: 14px !important; box-shadow: none !important; background: transparent !important; overflow: visible !important; }
+body.norbu-finder-page .directory-card.finder-grid-card.is-selected { box-shadow: 0 0 0 2px #195764 !important; outline-offset: 4px; }
+body.norbu-finder-page .directory-card.finder-grid-card > img { width: 100% !important; height: auto !important; aspect-ratio: 1.15; max-height: none !important; object-fit: cover !important; border-radius: 14px !important; background: #edf1ed; }
+body.norbu-finder-page .directory-card-body { padding: 12px 5px 8px !important; gap: 7px !important; }
+body.norbu-finder-page .directory-card-top { display: block !important; }
+body.norbu-finder-page .directory-card .directory-availability { display: none !important; }
+body.norbu-finder-page .directory-card .practitioner-badge { padding: 0 !important; font-size: 11px !important; color: #53716b !important; background: transparent !important; }
+body.norbu-finder-page .directory-card h3 { font-size: 17px !important; margin: 0 !important; line-height: 1.3 !important; }
+body.norbu-finder-page .directory-card-body > p { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin: 0 !important; font-size: 13px !important; line-height: 1.5 !important; }
+body.norbu-finder-page .directory-meta { display: block !important; font-size: 12px !important; }
+body.norbu-finder-page .directory-meta span { padding: 0 !important; background: transparent !important; display: block !important; font-size: 12px !important; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+body.norbu-finder-page .directory-meta span + span { display: none !important; }
+body.norbu-finder-page .directory-card-actions { display: flex !important; gap: 12px !important; flex-wrap: wrap; }
+body.norbu-finder-page .directory-card-actions .btn { padding: 0 !important; min-height: 24px !important; background: transparent !important; color: #195764 !important; box-shadow: none !important; border: 0 !important; border-radius: 0 !important; font-size: 11px !important; text-decoration: underline; }
+body.norbu-finder-page .directory-map-panel { position: sticky !important; top: 0 !important; height: 100dvh !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; overflow: hidden !important; background: #e5ede7 !important; }
+body.norbu-finder-page .finder-map-surface { height: 100% !important; }
+body.norbu-finder-page .directory-map-frame, body.norbu-finder-page .directory-map-frame iframe, body.norbu-finder-page #finder-google-map { height: 100% !important; min-height: 0 !important; width: 100% !important; border-radius: 0 !important; }
+body.norbu-finder-page .finder-map-status { position: absolute; top: 16px; left: 16px; right: 16px; margin: 0; padding: 10px 14px; border-radius: 12px; background: #fffffff2; box-shadow: 0 2px 12px #193c3e12; pointer-events: none; font-size: 11px; }
+body.norbu-finder-page .directory-map-copy { position: absolute !important; bottom: 42px; left: 50%; transform: translateX(-50%); width: min(290px,calc(100% - 40px)); padding: 0 !important; gap: 0 !important; border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 10px 40px #173e3e30; }
+body.norbu-finder-page .directory-map-copy[hidden] { display: none !important; }
+.finder-preview-image { width: 100%; height: 150px; object-fit: cover; display: block; background: #edf1ed; }
+.finder-preview-body { padding: 14px; }
+body.norbu-finder-page .directory-map-copy h3 { font-size: 19px !important; line-height: 1.25 !important; margin: 0 0 6px !important; }
+body.norbu-finder-page .directory-map-copy #directory-specialty { font-size: 12px !important; line-height: 1.5 !important; }
+body.norbu-finder-page .directory-map-copy #directory-bio, body.norbu-finder-page .directory-review-summary, body.norbu-finder-page .directory-map-copy .practitioner-map-kicker { display: none !important; }
+body.norbu-finder-page .directory-map-actions { display: flex; gap: 10px; margin-top: 12px !important; }
+body.norbu-finder-page .directory-map-actions .btn { min-height: 32px !important; padding: 8px 10px !important; font-size: 11px !important; }
+.finder-preview-close { position: absolute; top: 10px; right: 10px; width: 32px; height: 32px; border-radius: 50%; border: 0; background: white; color: #193c3e; font-size: 24px; line-height: 1; cursor: pointer; box-shadow: 0 2px 6px #0002; }
+body.norbu-finder-page .site-footer { margin: 0 !important; border-radius: 0 !important; }
+@media (max-width: 1100px) and (min-width: 901px) {
+ body.norbu-finder-page .directory-results-column { padding: 20px 16px; }
+ body.norbu-finder-page .directory-list { gap: 20px 12px !important; }
+ body.norbu-finder-page .directory-card h3 { font-size: 15px !important; }
+}
+@media (max-width: 900px) {
+ .finder-search-bar { padding: 20px; flex-direction: column; align-items: stretch; gap: 16px; }
+ body.norbu-finder-page .finder-search-bar .norbu-quick-search { width: 100% !important; }
+ body.norbu-finder-page .directory-filters { padding: 0 20px 16px !important; }
+ body.norbu-finder-page .directory-controls { gap: 8px !important; }
+ body.norbu-finder-page .filter-field { flex: 1 1 180px; justify-content: space-between; }
+ body.norbu-finder-page .filter-field select { max-width: 160px; }
+ body.norbu-finder-page .directory-layout { grid-template-columns: minmax(0,1fr) !important; }
+ body.norbu-finder-page .directory-results-column { padding: 8px 20px 24px; }
+ body.norbu-finder-page .directory-map-panel { position: relative !important; height: 75dvh !important; min-height: 520px; }
+ .finder-view-switch { margin: 14px auto !important; }
+}
+@media (max-width: 380px) {
+ body.norbu-finder-page .directory-list { gap: 16px 10px !important; }
+ body.norbu-finder-page .directory-results-column { padding-left: 14px; padding-right: 14px; }
+ body.norbu-finder-page .directory-card h3 { font-size: 14px !important; }
+}
+body.norbu-finder-page .directory-card.finder-grid-card[hidden] { display: none !important; }
+body.norbu-finder-page .directory-card.finder-grid-card .directory-card-body { display: flex !important; flex-direction: column !important; justify-content: flex-start !important; min-height: 0 !important; height: auto !important; }
+body.norbu-finder-page .directory-card.finder-grid-card .directory-card-body > * { margin-top: 0 !important; margin-bottom: 0 !important; min-height: 0 !important; }
+body.norbu-finder-page .directory-card.finder-grid-card .directory-card-top { line-height: 1.3 !important; }
+body.norbu-finder-page .directory-card.finder-grid-card .directory-meta { line-height: 1.5 !important; }
+body.norbu-finder-page .directory-card.finder-grid-card .directory-card-actions { margin-top: 4px !important; }
+body.norbu-finder-page .directory-meta span { border-radius: 0 !important; min-height: 0 !important; height: auto !important; line-height: 1.5 !important; }
+body.norbu-finder-page .directory-card-actions .btn { width: auto !important; }

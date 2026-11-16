@@ -74,7 +74,7 @@ if (directoryList && practitionersForDirectory.length) {
     const imageAlt = getPractitionerImageAlt(practitioner);
 
     return `
-      <article class="directory-card ${index === 0 ? 'is-selected' : ''}" tabindex="0" data-id="${escapeDirectoryHtml(practitioner.id)}" data-name="${escapeDirectoryHtml(practitioner.name)}" data-specialty="${escapeDirectoryHtml(practitioner.specialty)}" data-clinic="${escapeDirectoryHtml(practitioner.clinic)}" data-availability="${escapeDirectoryHtml(practitioner.availability)}" data-location-query="${escapeDirectoryHtml(practitioner.locationQuery)}" data-focus="${escapeDirectoryHtml(practitioner.focus)}" data-bio="${escapeDirectoryHtml(practitioner.bio)}">
+      <article class="directory-card finder-grid-card ${index === 0 ? 'is-selected' : ''}" tabindex="0" data-id="${escapeDirectoryHtml(practitioner.id)}" data-name="${escapeDirectoryHtml(practitioner.name)}" data-specialty="${escapeDirectoryHtml(practitioner.specialty)}" data-clinic="${escapeDirectoryHtml(practitioner.clinic)}" data-availability="${escapeDirectoryHtml(practitioner.availability)}" data-location-query="${escapeDirectoryHtml(practitioner.locationQuery)}" data-focus="${escapeDirectoryHtml(practitioner.focus)}" data-bio="${escapeDirectoryHtml(practitioner.bio)}">
         <img src="${escapeDirectoryHtml(image)}" alt="${escapeDirectoryHtml(imageAlt)}" loading="lazy">
         <div class="directory-card-body">
           <div class="directory-card-top">
@@ -142,6 +142,14 @@ if (
     }));
   };
   const setActiveCard = (card) => {
+    const preview = document.getElementById('finder-map-preview');
+    if (preview) preview.hidden = !card;
+    const previewImage = document.getElementById('finder-preview-image');
+    if (previewImage && card) {
+      const profile = practitionersForDirectory.find((item) => item.id === card.dataset.id);
+      previewImage.src = getPractitionerImage(profile);
+      previewImage.alt = getPractitionerImageAlt(profile);
+    }
     cards.forEach((item) => {
       const active = item === card;
       item.classList.toggle('is-selected', active);
@@ -308,6 +316,14 @@ if (
       card.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'nearest' });
     }
   });
+  document.querySelector('.finder-preview-close')?.addEventListener('click', () => {
+    document.getElementById('finder-map-preview').hidden = true;
+  });
+  directoryList.addEventListener('error', (event) => {
+    if (event.target.tagName === 'IMG' && !event.target.src.endsWith(practitionerPlaceholderImage)) {
+      event.target.src = practitionerPlaceholderImage;
+    }
+  }, true);
   applyFilters(true);
 }
 
