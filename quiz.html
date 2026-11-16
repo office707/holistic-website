@@ -7,20 +7,23 @@
   <meta name="description" content="A short non-medical quiz that helps visitors choose a starting point in the Norbu acupuncture directory.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="site-shell.css?v=20261116-4">
 </head>
-<body class="quiz-page norbu-site-page">
+<body class="site-layout quiz-page norbu-site-page">
   <div class="page">
     <header class="topbar norbu-topbar">
-      <a class="brand brand-link" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a>
+      <a class="brand brand-link" href="index.html" aria-label="Norbu home"><div class="brand-mark" aria-hidden="true"></div><span>Norbu</span></a>
       <div class="shell" id="site-shell">
-        <nav class="nav" id="site-nav">
+        <nav class="nav" id="site-nav" aria-label="Main navigation">
           <a href="index.html">Home</a>
+          <a href="about.html">About</a>
           <a href="therapies.html">Therapies</a>
           <a href="practitioners.html">Find a therapist</a>
-          <a class="active" href="quiz.html">Quiz</a>
+          <a class="active" aria-current="page" href="quiz.html">Quiz</a>
+          <a href="blog.html">Blog</a>
           <a href="faq.html">FAQ</a>
+          <a href="platform.html">Portal</a>
         </nav>
-        <div class="icon-circle search-icon" aria-hidden="true"></div>
         <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
       </div>
       <a class="book-btn" href="practitioners.html">Open finder</a>
@@ -84,8 +87,10 @@
     <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A searchable acupuncture directory for The Netherlands.</p></div><div><strong>Use</strong><p>Profiles<br>Google Maps<br>Reviews on Google</p></div><div><strong>Quiz</strong><p>Search direction only<br>No medical advice</p></div><div><strong>Explore</strong><p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a><br><a href="faq.html">FAQ</a></p></div></div></footer>
   </div>
   <script src="script.js" defer></script>
+  <script src="site-shell.js?v=20261116-4" defer></script>
 </body>
 </html>
+
 
 
 

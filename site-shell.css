@@ -1,0 +1,123 @@
+/* One shared outer grid and header for every static page. Loaded last. */
+:root { --site-gutter: 32px; --site-max-width: 1440px; --site-section-gap: 32px; }
+body.site-layout { margin: 0 !important; padding: 0 !important; }
+body.site-layout > .page {
+  width: min(var(--site-max-width), calc(100% - 2 * var(--site-gutter))) !important;
+  max-width: none !important; padding: 0 !important; margin: 0 auto !important;
+  overflow: visible !important;
+}
+body.site-layout > .page > .topbar.norbu-topbar {
+  display: grid !important; grid-template-columns: 150px minmax(0,1fr) 130px !important;
+  gap: 16px !important; align-items: center !important; position: relative !important;
+  inset: auto !important; width: 100% !important; max-width: none !important;
+  height: 76px !important; min-height: 76px !important;
+  margin: 24px 0 0 !important; padding: 10px 16px !important;
+  border: 1px solid #e1e8e4 !important; border-radius: 24px !important;
+  background: #fffffff2 !important; box-shadow: 0 8px 28px #193c3e0a !important;
+  z-index: 30;
+}
+body.site-layout .topbar.norbu-topbar > .brand {
+  position: static !important; inset: auto !important; transform: none !important;
+  display: flex !important; align-items: center !important; gap: 10px !important;
+  width: auto !important; height: 52px !important; min-height: 52px !important;
+  padding: 0 !important; margin: 0 !important; color: #173e3e !important;
+  font-size: 23px !important; font-weight: 800 !important; grid-column: 1 !important;
+}
+body.site-layout .topbar.norbu-topbar .brand-mark { width: 38px !important; height: 38px !important; flex: 0 0 38px !important; border-radius: 12px !important; }
+body.site-layout .topbar.norbu-topbar > .shell {
+  position: relative !important; inset: auto !important; transform: none !important;
+  display: flex !important; justify-content: center !important; align-items: center !important;
+  width: 100% !important; height: 52px !important; min-height: 52px !important;
+  padding: 0 !important; margin: 0 !important; border: 0 !important;
+  border-radius: 0 !important; background: transparent !important; box-shadow: none !important; grid-column: 2 !important;
+}
+body.site-layout .topbar.norbu-topbar .nav {
+  position: static !important; display: flex !important; justify-content: center !important;
+  align-items: center !important; gap: 4px !important; width: fit-content !important;
+  margin: 0 !important; padding: 4px !important; border: 1px solid #e2e9e5 !important;
+  border-radius: 40px !important; background: #f5f9f6 !important;
+  box-shadow: none !important; transform: none !important;
+}
+body.site-layout .topbar.norbu-topbar .nav a {
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  min-height: 40px !important; padding: 10px 12px !important; border: 0 !important;
+  border-radius: 28px !important; background: transparent !important; box-shadow: none !important;
+  color: #173e3e !important; font: 700 13px/1.2 'Plus Jakarta Sans', sans-serif !important;
+  text-decoration: none !important; white-space: nowrap;
+}
+body.site-layout .topbar.norbu-topbar .nav a.active,
+body.site-layout .topbar.norbu-topbar .nav a:hover { background: #fff !important; box-shadow: 0 3px 10px #193c3e0a !important; }
+body.site-layout .topbar.norbu-topbar > .book-btn {
+  display: flex !important; justify-content: center !important; align-items: center !important;
+  position: static !important; inset: auto !important; transform: none !important;
+  width: 130px !important; height: 48px !important; min-height: 48px !important;
+  padding: 12px 16px !important; margin: 0 !important; border: 0 !important;
+  border-radius: 16px !important; background: #cc7543 !important; color: #fff !important;
+  font: 700 13px/1.2 'Plus Jakarta Sans', sans-serif !important; grid-column: 3 !important;
+}
+body.site-layout .topbar.norbu-topbar .menu-toggle { display: none !important; }
+body.site-layout > .page > main {
+  width: 100% !important; max-width: none !important; padding: 0 !important;
+  margin: var(--site-section-gap) 0 0 !important;
+}
+/* Sections use the outer grid. Their own content padding remains intentional. */
+body.site-layout > .page > main > section,
+body.site-layout > .page > main > .site-context-nav {
+  width: 100% !important; max-width: none !important; margin-left: 0 !important; margin-right: 0 !important;
+}
+body.site-layout > .page > .site-footer {
+  width: 100% !important; max-width: none !important; margin: 40px 0 24px !important;
+  border-radius: 24px !important; box-sizing: border-box;
+}
+.site-context-nav { display: flex; gap: 10px; flex-wrap: wrap; padding: 0 0 20px; }
+.site-context-nav a { padding: 10px 16px; border: 1px solid #dce5df; border-radius: 24px; color: #195764; font-size: 13px; text-decoration: none; }
+.site-context-nav a.active { background: #195764; color: white; }
+body.site-layout .topbar.norbu-topbar a:focus-visible,
+body.site-layout .topbar.norbu-topbar button:focus-visible { outline: 3px solid #195764 !important; outline-offset: 3px; }
+/* Keep the reference finder split inside the same page edges as the header. */
+body.site-layout.norbu-finder-page .finder-search-bar { padding: 0 0 20px !important; }
+body.site-layout.norbu-finder-page .directory-filters { padding-left: 0 !important; padding-right: 0 !important; }
+body.site-layout.norbu-finder-page .directory-results-column { padding-left: 0 !important; padding-right: 24px !important; }
+@media (max-width: 1100px) {
+  body.site-layout > .page > .topbar.norbu-topbar { grid-template-columns: 1fr 48px 130px !important; }
+  body.site-layout .topbar.norbu-topbar > .shell { width: 48px !important; justify-self: end; }
+  body.site-layout .topbar.norbu-topbar .menu-toggle { display: block !important; position: relative !important; width: 44px !important; height: 44px !important; min-width: 44px !important; padding: 0 !important; border: 1px solid #dce5df !important; border-radius: 14px !important; background: #f5f9f6 !important; }
+  body.site-layout .topbar.norbu-topbar .nav { display: none !important; position: absolute !important; top: 62px !important; right: 0 !important; left: auto !important; width: 270px !important; max-width: calc(100vw - 2 * var(--site-gutter)) !important; padding: 10px !important; border-radius: 18px !important; background: #fff !important; box-shadow: 0 16px 40px #193c3e25 !important; }
+  body.site-layout .topbar.norbu-topbar .shell.is-open .nav { display: flex !important; flex-direction: column !important; align-items: stretch !important; }
+  body.site-layout .topbar.norbu-topbar .nav a { justify-content: flex-start !important; }
+}
+@media (max-width: 760px) {
+  :root { --site-gutter: 16px; --site-section-gap: 24px; }
+  body.site-layout > .page > .topbar.norbu-topbar { grid-template-columns: minmax(0,1fr) 44px !important; height: 64px !important; min-height: 64px !important; margin-top: 12px !important; padding: 8px 12px !important; gap: 12px !important; border-radius: 20px !important; }
+  body.site-layout .topbar.norbu-topbar > .brand { height: 46px !important; min-height: 46px !important; font-size: 21px !important; }
+  body.site-layout .topbar.norbu-topbar > .shell { height: 44px !important; min-height: 44px !important; width: 44px !important; }
+  body.site-layout .topbar.norbu-topbar > .book-btn { display: none !important; }
+  body.site-layout .topbar.norbu-topbar .nav { top: 54px !important; right: 0 !important; }
+  body.site-layout > .page > .site-footer { margin-top: 32px !important; margin-bottom: 16px !important; border-radius: 20px !important; }
+}
+@media (max-width: 900px) {
+  body.site-layout.norbu-finder-page .directory-results-column { padding-right: 0 !important; }
+}
+body.site-layout .topbar.norbu-topbar .menu-toggle span {
+  position: absolute !important; top: 50% !important; left: 50% !important;
+  width: 18px !important; height: 2px !important; margin: 0 !important;
+  border: 0 !important; border-radius: 2px !important; background: #195764 !important;
+  opacity: 1 !important; box-shadow: none !important;
+}
+body.site-layout .topbar.norbu-topbar .menu-toggle span:nth-child(1) { transform: translate(-50%, -7px) !important; }
+body.site-layout .topbar.norbu-topbar .menu-toggle span:nth-child(2) { transform: translate(-50%, -1px) !important; }
+body.site-layout .topbar.norbu-topbar .menu-toggle span:nth-child(3) { transform: translate(-50%, 5px) !important; }
+body.site-layout .topbar.norbu-topbar .shell.is-open .menu-toggle span:nth-child(1) { transform: translate(-50%, -1px) rotate(45deg) !important; }
+body.site-layout .topbar.norbu-topbar .shell.is-open .menu-toggle span:nth-child(2) { opacity: 0 !important; }
+body.site-layout .topbar.norbu-topbar .shell.is-open .menu-toggle span:nth-child(3) { transform: translate(-50%, -1px) rotate(-45deg) !important; }
+/* Centre all images within their existing frames and preserve proportions. */
+body.site-layout img {
+  display: block !important; max-width: 100% !important;
+  margin-left: auto !important; margin-right: auto !important;
+  object-fit: cover !important; object-position: 50% 50% !important;
+}
+/* Artwork and placeholders must remain fully visible. */
+body.site-layout img[src$=".svg"] { object-fit: contain !important; }
+body.site-layout :is(.norbu-home-hero, .norbu-hero, .profile-hero, .quiz-hero, .catalog-hero, .norbu-faq-hero, .style-one-hero, .style-two-hero) {
+  background-position: center center !important;
+}

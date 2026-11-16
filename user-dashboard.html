@@ -6,17 +6,30 @@
   <title>User Dashboard | Norbu</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="site-shell.css?v=20261116-4">
 </head>
-<body class="home-page platform-page portal-dashboard-page" data-portal-role="user">
+<body class="site-layout home-page platform-page portal-dashboard-page" data-portal-role="user">
   <div class="page">
-    <header class="topbar">
-      <a class="brand brand-link" href="index.html">
-        <div class="brand-mark"></div>
-        <span>Norbu</span>
-      </a>
-
+    <header class="topbar norbu-topbar">
+      <a class="brand brand-link" href="index.html" aria-label="Norbu home"><div class="brand-mark" aria-hidden="true"></div><span>Norbu</span></a>
       <div class="shell" id="site-shell">
-        <nav class="nav" id="site-nav">
+        <nav class="nav" id="site-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="therapies.html">Therapies</a>
+          <a href="practitioners.html">Find a therapist</a>
+          <a href="quiz.html">Quiz</a>
+          <a href="blog.html">Blog</a>
+          <a href="faq.html">FAQ</a>
+          <a class="active" aria-current="page" href="platform.html">Portal</a>
+        </nav>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+      </div>
+      <a class="book-btn" href="practitioners.html">Open finder</a>
+    </header>
+
+    <main class="platform-main dashboard-main" data-portal-dashboard>
+      <nav class="site-context-nav" aria-label="Dashboard navigation">
           <a class="active" href="#dashboard-overview">Overview</a>
           <a href="#dashboard-journal">Journal</a>
           <a href="#dashboard-appointments">Appointments</a>
@@ -24,26 +37,6 @@
           <a href="#dashboard-resources">Resources</a>
           <a href="#dashboard-progress">Reflection</a>
         </nav>
-        <div class="icon-circle search-icon" aria-hidden="true"></div>
-        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-
-      <a class="login-box is-active" href="user-dashboard.html" data-role-login-trigger>
-        <div class="icon-circle login-icon" aria-hidden="true"></div>
-        <div class="login-copy">
-          <strong>User</strong>
-          <span>Role menu</span>
-        </div>
-      </a>
-
-      <a class="book-btn" href="index.html">Back to homepage</a>
-    </header>
-
-    <main class="platform-main dashboard-main" data-portal-dashboard>
       <section class="dashboard-hero card" id="dashboard-overview">
         <div class="dashboard-hero-grid">
           <div class="dashboard-hero-copy">
@@ -357,5 +350,7 @@
     </footer>
   </div>
   <script src="script.js" defer></script>
+  <script src="site-shell.js?v=20261116-4" defer></script>
 </body>
 </html>
+

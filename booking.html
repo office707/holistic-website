@@ -1,29 +1,30 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Book an Appointment | Norbu</title><meta name="description" content="Choose a Norbu therapist, appointment type, date, and time."><link rel="stylesheet" href="style.css"><link rel="icon" type="image/svg+xml" href="favicon.svg"></head>
-<body class="booking-page mvp-profile-page"><div class="page">
-<header class="topbar mvp-topbar">
-      <a class="brand brand-link" href="index.html">
-        <div class="brand-mark"></div>
-        <span>Norbu</span>
-      </a>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Book an Appointment | Norbu</title><meta name="description" content="Choose a Norbu therapist, appointment type, date, and time."><link rel="stylesheet" href="style.css"><link rel="icon" type="image/svg+xml" href="favicon.svg">  <link rel="stylesheet" href="site-shell.css?v=20261116-4">
+</head>
+<body class="site-layout booking-page mvp-profile-page"><div class="page">
+<header class="topbar norbu-topbar">
+      <a class="brand brand-link" href="index.html" aria-label="Norbu home"><div class="brand-mark" aria-hidden="true"></div><span>Norbu</span></a>
       <div class="shell" id="site-shell">
-        <nav class="nav" id="site-nav">
+        <nav class="nav" id="site-nav" aria-label="Main navigation">
           <a href="index.html">Home</a>
+          <a href="about.html">About</a>
           <a href="therapies.html">Therapies</a>
-          <a class="active" href="practitioners.html">Find a therapist</a>
+          <a class="active" aria-current="page" href="practitioners.html">Find a therapist</a>
+          <a href="quiz.html">Quiz</a>
+          <a href="blog.html">Blog</a>
           <a href="faq.html">FAQ</a>
+          <a href="platform.html">Portal</a>
         </nav>
-        <div class="icon-circle search-icon" aria-hidden="true"></div>
         <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
       </div>
-      <a class="book-btn" href="booking.html">Request visit</a>
+      <a class="book-btn" href="practitioners.html">Open finder</a>
     </header>
 <main class="booking-main">
   <section class="booking-intro"><div><span class="profile-kicker">Appointment booking</span><h1>Request an acupuncture visit.</h1><p>Choose a therapist, visit type, preferred date, and time. This MVP prepares the request locally before a real scheduling backend is connected.</p></div><div class="booking-intro-steps"><span><strong>1</strong> Therapist</span><span><strong>2</strong> Visit</span><span><strong>3</strong> Your details</span></div></section>
   <section class="booking-layout">
     <form class="booking-form" id="booking-form">
-      <div class="booking-form-section"><span class="booking-step">01</span><div><h2>Choose your therapist</h2><p>The therapist selected from the finder or profile is already filled in.</p></div><label class="booking-field booking-field--wide"><span>Therapist</span><select id="booking-therapist" name="therapist" required></select></label></div>
+      <div class="booking-form-section"><span class="booking-step">01</span><div><h2>Choose your therapist</h2><p>The therapist selected from the finder or profile is already filled in.</p></div><label class="booking-field booking-field--wide"><span>Therapist</span><select id="booking-practitioner" name="therapist" required></select></label></div>
       <div class="booking-form-section"><span class="booking-step">02</span><div><h2>Select the visit</h2><p>Pick an appointment type, date, and available time.</p></div><div class="booking-form-grid"><label class="booking-field"><span>Appointment type</span><select id="booking-type" name="type" required><option value="Initial consultation">Initial consultation - 60 min</option><option value="Follow-up appointment">Follow-up appointment - 30 min</option><option value="Online consultation">Online consultation - 45 min</option></select></label><label class="booking-field"><span>Date</span><input id="booking-date" name="date" type="date" required></label></div><fieldset class="booking-times"><legend>Available times</legend><div id="booking-time-options"></div></fieldset></div>
       <div class="booking-form-section"><span class="booking-step">03</span><div><h2>Your contact details</h2><p>Used only to prepare the appointment confirmation.</p></div><div class="booking-form-grid"><label class="booking-field"><span>Full name</span><input name="patientName" type="text" autocomplete="name" required></label><label class="booking-field"><span>Email</span><input name="email" type="email" autocomplete="email" required></label><label class="booking-field booking-field--wide"><span>What would you like help with?</span><textarea name="note" rows="4" placeholder="A short note is enough."></textarea></label></div></div>
       <label class="booking-consent"><input type="checkbox" required><span>I confirm that this is a booking request and not emergency care.</span></label><button class="btn btn-primary booking-submit" type="submit">Review appointment</button>
@@ -33,7 +34,9 @@
   <section class="booking-confirmation" id="booking-confirmation" hidden><span class="profile-kicker">Ready to request</span><h2>Your appointment details are prepared.</h2><p id="booking-confirmation-copy"></p><div><a class="btn btn-primary" href="index.html">Return home</a><a class="btn btn-secondary" href="practitioners.html">Browse therapists</a></div></section>
 </main>
 <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A first searchable acupuncture directory for The Netherlands.</p></div><div><strong>Visit</strong><p>Amsterdam<br>The Netherlands</p></div><div><strong>Contact</strong><p>hello@norbu.example<br>Provider onboarding next</p></div><div><strong>Explore</strong><p><a href="index.html">Home</a><br><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a><br><a href="faq.html">FAQ</a></p></div></div></footer>
-</div><script src="practitioners-data.js?v=20261006-3" defer></script><script src="script.js?v=20261006-3" defer></script></body></html>
+</div><script src="practitioners-data.js?v=20261006-3" defer></script><script src="script.js?v=20261006-3" defer></script>  <script src="site-shell.js?v=20261116-4" defer></script>
+</body></html>
+
 
 
 

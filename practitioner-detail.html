@@ -8,20 +8,23 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="profile-reviews.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="site-shell.css?v=20261116-4">
 </head>
-<body class="practitioner-profile-page norbu-profile-page">
+<body class="site-layout practitioner-profile-page norbu-profile-page">
   <div class="page">
     <header class="topbar norbu-topbar">
-      <a class="brand brand-link" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a>
+      <a class="brand brand-link" href="index.html" aria-label="Norbu home"><div class="brand-mark" aria-hidden="true"></div><span>Norbu</span></a>
       <div class="shell" id="site-shell">
-        <nav class="nav" id="site-nav">
+        <nav class="nav" id="site-nav" aria-label="Main navigation">
           <a href="index.html">Home</a>
+          <a href="about.html">About</a>
           <a href="therapies.html">Therapies</a>
-          <a class="active" href="practitioners.html">Find a therapist</a>
+          <a class="active" aria-current="page" href="practitioners.html">Find a therapist</a>
           <a href="quiz.html">Quiz</a>
+          <a href="blog.html">Blog</a>
           <a href="faq.html">FAQ</a>
+          <a href="platform.html">Portal</a>
         </nav>
-        <div class="icon-circle search-icon" aria-hidden="true"></div>
         <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
       </div>
       <a class="book-btn" href="practitioners.html">Open finder</a>
@@ -89,8 +92,10 @@
   <script src="maps-config.js" defer></script>
   <script src="google-places.js" defer></script>
   <script src="profile-reviews.js" defer></script>
+  <script src="site-shell.js?v=20261116-4" defer></script>
 </body>
 </html>
+
 
 
 

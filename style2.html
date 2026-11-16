@@ -6,35 +6,31 @@
   <title>Style 2 Concept | Norbu</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="site-shell.css?v=20261116-4">
 </head>
-<body class="style-two-page">
+<body class="site-layout style-two-page">
   <div class="page" id="top">
-    <main class="style-two-main">
-      <section class="style-two-hero" id="style-two-about">
-        <div class="style-two-hero-media">
-          <header class="topbar">
-      <a class="brand brand-link" href="index.html">
-        <div class="brand-mark"></div>
-        <span>Norbu</span>
-      </a>
+    <header class="topbar norbu-topbar">
+      <a class="brand brand-link" href="index.html" aria-label="Norbu home"><div class="brand-mark" aria-hidden="true"></div><span>Norbu</span></a>
       <div class="shell" id="site-shell">
-        <nav class="nav" id="site-nav">
+        <nav class="nav" id="site-nav" aria-label="Main navigation">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="therapies.html">Therapies</a>
-          <a href="practitioners.html">Practitioners</a>
+          <a href="practitioners.html">Find a therapist</a>
+          <a href="quiz.html">Quiz</a>
           <a href="blog.html">Blog</a>
           <a href="faq.html">FAQ</a>
+          <a href="platform.html">Portal</a>
         </nav>
-        <div class="icon-circle search-icon" aria-hidden="true"></div>
         <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
       </div>
-      <a class="login-box" href="platform.html" data-role-login-trigger>
-        <div class="icon-circle login-icon" aria-hidden="true"></div>
-        <div class="login-copy"><strong>Login</strong><span>Open the secure portal</span></div>
-      </a>
-      <a class="book-btn" href="booking.html">Book a Visit</a>
+      <a class="book-btn" href="practitioners.html">Open finder</a>
     </header>
+    <main class="style-two-main">
+      <section class="style-two-hero" id="style-two-about">
+        <div class="style-two-hero-media">
+          
           <img class="style-two-hero-image" src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=2200&q=80" alt="Alternative medicine treatment session">
           <div class="style-two-hero-content">
             <h1>Alternative medicine for stress, pain, hormones, and recovery.</h1>
@@ -306,5 +302,7 @@
     </footer>
   </div>
   <script src="script.js" defer></script>
+  <script src="site-shell.js?v=20261116-4" defer></script>
 </body>
 </html>
+
