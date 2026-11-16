@@ -121,3 +121,37 @@ body.site-layout img[src$=".svg"] { object-fit: contain !important; }
 body.site-layout :is(.norbu-home-hero, .norbu-hero, .profile-hero, .quiz-hero, .catalog-hero, .norbu-faq-hero, .style-one-hero, .style-two-hero) {
   background-position: center center !important;
 }
+
+/* A lighter footer with clear destinations and space around each link. */
+body.site-layout > .page > .site-footer.compass-footer {
+  display: block !important; padding: clamp(28px,4vw,56px) !important;
+  background: #edf1e6 !important; color: #173e3e !important;
+  border: 1px solid #dce3d6 !important; border-radius: 26px !important;
+  box-shadow: none !important; overflow: hidden !important;
+}
+body.site-layout .compass-footer .cf-lead { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding-bottom: 36px; border-bottom: 1px solid #d3deca; }
+body.site-layout .compass-footer .cf-eyebrow { display: block; color: #607e64; font-size: 10px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; margin-bottom: 18px; }
+body.site-layout .compass-footer .cf-lead h2 { margin: 0 !important; font-family: 'Plus Jakarta Sans',Arial,sans-serif !important; font-size: clamp(29px,3vw,42px) !important; font-weight: 700 !important; line-height: 1.15 !important; letter-spacing: -.045em !important; color: #173e3e !important; }
+body.site-layout .compass-footer .cf-lead em { color: #729782 !important; font-style: normal; }
+body.site-layout .compass-footer .cf-action { display: inline-flex; align-items: center; justify-content: center; gap: 28px; padding: 16px 22px; border: 1px solid #194e46; border-radius: 12px; color: #fff !important; background: #194e46; font-size: 12px !important; font-weight: 750; text-decoration: none; white-space: nowrap; }
+body.site-layout .compass-footer .cf-action span { font-size: 20px; }
+body.site-layout .compass-footer .cf-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 36px; padding: 36px 0; }
+body.site-layout .compass-footer .cf-brand .brand { display: flex !important; align-items: center !important; gap: 10px !important; padding: 0 !important; color: #173e3e !important; font-size: 24px !important; font-weight: 800 !important; text-decoration: none; }
+body.site-layout .compass-footer .brand-mark { display: grid !important; place-items: center !important; width: 38px !important; height: 38px !important; flex: 0 0 38px !important; border-radius: 12px !important; }
+body.site-layout .compass-footer .cf-brand p { margin: 18px 0 0 !important; max-width: 300px; color: #657a66 !important; font-size: 12px !important; line-height: 1.85 !important; }
+body.site-layout .compass-footer nav { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding-top: 8px; }
+body.site-layout .compass-footer nav h3 { color: #315940 !important; font: 800 11px/1.5 'Plus Jakarta Sans',Arial,sans-serif !important; letter-spacing: .03em !important; text-transform: none !important; margin: 0 0 6px !important; }
+body.site-layout .compass-footer nav a { color: #596f5b !important; font-size: 12px !important; line-height: 1.7 !important; text-decoration: none !important; }
+body.site-layout .compass-footer nav a:hover, body.site-layout .compass-footer .cf-bottom a:hover { color: #194e46 !important; text-decoration: underline !important; text-underline-offset: 4px; }
+body.site-layout .compass-footer .cf-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px 24px; padding-top: 24px; border-top: 1px solid #d3deca; font-size: 10px; line-height: 1.7; color: #6c806d; }
+body.site-layout .compass-footer .cf-bottom a { color: #4c6d51 !important; font-size: 10px !important; text-decoration: none !important; }
+body.site-layout .compass-footer a:focus-visible { outline: 3px solid #cc7544 !important; outline-offset: 5px !important; }
+@media(max-width:1000px) { body.site-layout .compass-footer .cf-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 28px; } body.site-layout .compass-footer .cf-brand { grid-column: 1 / -1; } body.site-layout .compass-footer .cf-brand p { max-width: 440px; } }
+@media(max-width:600px) {
+  body.site-layout > .page > .site-footer.compass-footer { padding: 28px 24px !important; border-radius: 22px !important; }
+  body.site-layout .compass-footer .cf-lead { align-items: flex-start; flex-direction: column; gap: 24px; padding-bottom: 28px; }
+  body.site-layout .compass-footer .cf-lead h2 { font-size: 31px !important; }
+  body.site-layout .compass-footer .cf-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px 20px; padding: 28px 0; }
+  body.site-layout .compass-footer .cf-grid nav:last-child { grid-column: 1 / -1; }
+  body.site-layout .compass-footer .cf-bottom { align-items: flex-start; flex-direction: column; gap: 12px; }
+}

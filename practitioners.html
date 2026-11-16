@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="finder-layout.css?v=20261116-2">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="site-shell.css?v=20261116-4">
-  <link rel="stylesheet" href="compass-pages.css?v=20261116-8">
+  <link rel="stylesheet" href="site-shell.css?v=20261116-9">
+  <link rel="stylesheet" href="compass-pages.css?v=20261116-9">
 </head>
 <body id="norbu-interior" class="compass-page site-layout directory-page norbu-finder-page">
-  <div class="page">
+  <div class="page" id="top">
     <header class="topbar norbu-topbar">
       <a class="brand brand-link" href="index.html" aria-label="Norbu home"><div class="brand-mark" aria-hidden="true"></div><span>Norbu</span></a>
       <div class="shell" id="site-shell">
@@ -35,9 +35,9 @@
       <div class="cp-topline"><div><a href="index.html">Norbu</a><span aria-hidden="true">/</span><span>Find a practice</span></div><button type="button" id="page-motion-toggle" aria-pressed="false">Pause animation</button></div>
       <section class="finder-search-bar" aria-label="Search practices">
         <div><span class="norbu-kicker">Find your care</span><h1>Acupuncture, closer to you.</h1></div>
-        <form class="norbu-quick-search" action="#directory-list">
-          <label><span>Where or what are you looking for?</span><input id="filter-search" type="search" placeholder="City, practice or focus area" autocomplete="off"></label>
-          <button class="btn btn-primary" type="submit">Search</button>
+        <form class="norbu-quick-search finder-search-box" action="#directory-list">
+          <label for="filter-search">Where or what are you looking for?</label>
+          <div class="finder-search-row"><input id="filter-search" type="search" placeholder="City, practice or focus area" autocomplete="off"><button class="btn btn-primary" type="submit">Search <span aria-hidden="true">→</span></button></div>
         </form>
       </section>
 
@@ -90,13 +90,17 @@
       </section>
     </main>
 
-    <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>Your compass for exploring complementary care in the Netherlands.</p></div><div><strong>Explore</strong><p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a practice</a><br><a href="quiz.html">Take the quiz</a></p></div><div><strong>Get to know Norbu</strong><p><a href="about.html">About</a><br><a href="faq.html">FAQ</a><br><a href="blog.html">Journal</a></p></div><div><strong>A clear starting point</strong><p>Compare directory information and check details directly with the practice.</p></div></div></footer>
+    <footer class="site-footer compass-footer">
+      <div class="cf-lead"><div><span class="cf-eyebrow">Your compass for complementary care</span><h2>A little curiosity.<br><em>Your next direction.</em></h2></div><a class="cf-action" href="practitioners.html">Explore practices <span aria-hidden="true">→</span></a></div>
+      <div class="cf-grid"><div class="cf-brand"><a class="brand brand-link" href="index.html" aria-label="Norbu home"><div class="brand-mark" aria-hidden="true"></div><span>Norbu</span></a><p>Discover approaches, compare practice listings and find your own starting point in the Netherlands.</p></div><nav aria-label="Explore Norbu"><h3>Explore</h3><a href="practitioners.html">Find a practice</a><a href="therapies.html">Therapies & approaches</a><a href="quiz.html">Find your starting point</a></nav><nav aria-label="About Norbu"><h3>Get to know Norbu</h3><a href="about.html">Our approach</a><a href="faq.html">Questions & answers</a><a href="blog.html">The journal</a></nav><nav aria-label="Practices by city"><h3>Closer to you</h3><a href="practitioners.html?city=Amsterdam">Amsterdam</a><a href="practitioners.html?city=Rotterdam">Rotterdam</a><a href="practitioners.html?city=Utrecht">Utrecht</a><a href="practitioners.html">All locations →</a></nav></div>
+      <div class="cf-bottom"><span>© <span data-footer-year>2026</span> Norbu</span><span>A directory to explore. Confirm details directly with the practice.</span><a href="#top" data-back-to-top>Back to top ↑</a></div>
+    </footer>
   </div>
   <script src="practitioners-data.js?v=20261006-3" defer></script>
   <script src="maps-config.js" defer></script>
   <script src="finder-map.js?v=20261116-2" defer></script>
   <script src="script.js?v=20261116-8" defer></script>
-  <script src="site-shell.js?v=20261116-4" defer></script>
+  <script src="site-shell.js?v=20261116-9" defer></script>
   <script src="compass-pages.js?v=20261116-8" defer></script>
 </body>
 </html>

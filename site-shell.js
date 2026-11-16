@@ -13,3 +13,8 @@
     if (img.complete && img.naturalWidth === 0) replaceUnavailableImage(img);
   });
 })();
+
+// Shared footer housekeeping; anchor navigation works without JavaScript too.
+document.querySelectorAll('[data-footer-year]').forEach((element) => {
+  element.textContent = String(new Date().getFullYear());
+});

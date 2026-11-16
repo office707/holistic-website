@@ -81,8 +81,8 @@ body.home-refresh .compass-home .compass-step-stage p { color: #c5d7ca; font-siz
 .compass-step-stage .compass-button { margin-top: 28px; }
 .compass-practice-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
 .compass-practice-card { border: 1px solid #dde4d8; border-radius: 20px; overflow: hidden; background: #fffefa; }
-.compass-practice-photo { overflow: hidden; aspect-ratio: 1.3; background: #e4ebe1; }
-body.home-refresh .compass-practice-photo img { width: 100%; height: 100%; object-fit: contain !important; background: #e8eee5; }
+.compass-practice-photo { overflow: hidden; aspect-ratio: 1; background: #e4ebe1; }
+body.home-refresh .compass-practice-photo img { width: 100%; height: 100%; object-fit: cover !important; background: #e8eee5; }
 .compass-practice-body { padding: 24px; }
 .compass-practice-city { font-size: 10px; letter-spacing: .12em; font-weight: 800; text-transform: uppercase; color: #6a846d; }
 body.home-refresh .compass-home .compass-practice-body h3 { font-size: 24px; letter-spacing: -.045em; margin: 12px 0 5px; }
@@ -158,7 +158,7 @@ body[data-home-motion="off"] .compass-home * { transition: none !important; }
  .compass-therapy-card svg { width: 80px; height: 70px; margin: 20px auto; }
  .compass-card-link { font-size: 10px; line-height: 1.6; }
  .compass-practice-grid { grid-template-columns: 1fr; gap: 20px; }
- .compass-practice-photo { aspect-ratio: 1.25; }
+ .compass-practice-photo { aspect-ratio: 1; }
  .compass-practice-body { padding: 22px; }
  .compass-cities { padding: 28px 24px; }
  .compass-city-links { gap: 10px; }
@@ -191,3 +191,20 @@ body.home-refresh .compass-home .compass-final p { color: #d1e0d4 !important; ma
 body.home-refresh .compass-home .compass-final-secondary { color: #fff !important; }
 @media (max-width: 1100px) { body.home-refresh .compass-home h1 { font-size: clamp(40px,4.8vw,60px) !important; } }
 @media (max-width: 760px) { body.home-refresh .compass-home h1 { font-size: clamp(40px,9.6vw,66px) !important; } }
+
+/* Individual portrait focal points keep faces readable in full-width frames. */
+body.home-refresh .compass-practice-photo img[src="home-ines.jpg"] { object-position: 50% 55% !important; }
+body.home-refresh .compass-practice-photo img[src="home-berline.jpg"] { object-position: 50% 50% !important; }
+body.home-refresh .compass-practice-photo img[src="home-felix.jpg"] { object-position: 50% 18% !important; }
+/* A real link replaces the decorative circle that looked like a button. */
+body.home-refresh .compass-orbit.compass-hero-cta {
+  display: flex; flex-direction: row; align-items: center; justify-content: center;
+  width: auto; height: auto; min-height: 54px; padding: 12px 16px; gap: 18px;
+  border: 1px solid #ffffffa0; border-radius: 14px; background: #fffefaf5;
+  color: #194e46; text-decoration: none; transform: none; box-shadow: 0 8px 28px #173e3e20;
+}
+body.home-refresh .compass-hero-cta span:first-child { font-size: 12px; font-weight: 800; letter-spacing: 0; text-transform: none; }
+body.home-refresh .compass-hero-cta span:last-child { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #e9efe1; font-size: 20px; line-height: 1; }
+body.home-refresh[data-home-motion="on"] .compass-orbit.compass-hero-cta { animation: none; }
+body.home-refresh .compass-hero-cta:hover { background: #fff; box-shadow: 0 10px 32px #173e3e30; }
+@media(max-width:760px) { body.home-refresh .compass-orbit.compass-hero-cta { bottom: 62px; right: 20px; padding: 10px 12px; min-height: 48px; gap: 12px; } }
