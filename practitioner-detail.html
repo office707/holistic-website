@@ -6,6 +6,7 @@
   <title>Therapist Profile | Norbu</title>
   <meta name="description" content="View an acupuncture profile on Norbu, then continue to Google Maps for location details and any reviews available on Google.">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="profile-reviews.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body class="practitioner-profile-page norbu-profile-page">
@@ -54,16 +55,22 @@
         <article class="profile-panel profile-map-card">
           <span class="profile-kicker">Map</span>
           <h2>Google Maps search</h2>
-          <p>Norbu opens a Google Maps search for this city and focus area. Exact clinic addresses can be added once provider data is confirmed.</p>
+          <p>Norbu opens a Google Maps search for this city and focus area. Check the practice details on Google before visiting.</p>
           <div class="practitioner-map-frame profile-map-frame"><iframe id="profile-map" title="Therapist map location" src="https://www.google.com/maps?q=acupuncture%20Netherlands&z=12&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
           <a class="btn btn-secondary" id="profile-map-link" href="https://www.google.com/maps/search/?api=1&query=acupuncture%20Netherlands" target="_blank" rel="noreferrer">Open in Google Maps</a>
         </article>
 
         <article class="profile-panel profile-review-card" id="profile-reviews">
-          <span class="profile-kicker">External profile</span>
-          <h2>Reviews and practice details</h2>
-          <p>The supplied directory data does not include review text. Check Google Maps for current reviews, or continue to the original listing and practice website.</p>
-          <div class="profile-review-summary"><strong>Verified external links</strong><span>Review content and ratings remain on Google. Profile details come from the listed directory source.</span></div>
+          <span class="profile-kicker">Google Maps</span>
+          <h2>Reviews from Google</h2>
+          <p id="google-reviews-status" role="status">Google reviews are not available on this profile yet. You can check the practice on Google Maps.</p>
+          <div id="google-reviews-content" hidden>
+            <div class="google-review-rating" id="google-review-rating"></div>
+            <p class="google-review-source">Source: Google Maps · Google provides a selection of up to five reviews.</p>
+            <p id="google-review-practice"></p>
+            <div id="google-review-attributions"></div>
+            <div id="google-review-list"></div>
+          </div>
           <div class="profile-external-actions">
             <a class="btn btn-primary" id="profile-google-review-link" href="https://www.google.com/maps/search/?api=1&query=acupuncture%20Netherlands" target="_blank" rel="noreferrer">Reviews on Google</a>
             <a class="btn btn-secondary" id="profile-source-link" href="#" target="_blank" rel="noreferrer">Original profile</a>
@@ -75,12 +82,16 @@
       <section class="profile-booking-card"><div><span class="profile-kicker">Current scope</span><h2>Profiles and Google Maps first.</h2><p>This version focuses on comparing listed profile details and continuing to Google for map context and external reviews. Direct contact, exact addresses, and scheduling can be added later.</p></div><a class="btn btn-primary" href="practitioners.html">Back to finder</a></section>
     </main>
 
-    <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A searchable acupuncture directory for The Netherlands.</p></div><div><strong>Use</strong><p>Profile details<br>Google Maps<br>Reviews on Google</p></div><div><strong>Not included yet</strong><p>Booking<br>Messaging<br>On-site reviews</p></div><div><strong>Explore</strong><p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a><br><a href="quiz.html">Quiz</a><br><a href="faq.html">FAQ</a></p></div></div></footer>
+    <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A searchable acupuncture directory for The Netherlands.</p></div><div><strong>Use</strong><p>Profile details<br>Google Maps<br>Reviews on Google</p></div><div><strong>Not included yet</strong><p>Booking<br>Messaging<br>Reviews from Google</p></div><div><strong>Explore</strong><p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a><br><a href="quiz.html">Quiz</a><br><a href="faq.html">FAQ</a></p></div></div></footer>
   </div>
   <script src="practitioners-data.js?v=20261006-3" defer></script>
-  <script src="script.js?v=20261006-3" defer></script>
+  <script src="script.js?v=20261116-1" defer></script>
+  <script src="maps-config.js" defer></script>
+  <script src="google-places.js" defer></script>
+  <script src="profile-reviews.js" defer></script>
 </body>
 </html>
+
 
 
 

@@ -132,6 +132,15 @@ if (
   setSelectOptions(locationFilter, uniqueValues(practitionersForDirectory, 'clinic'), 'All cities');
   setSelectOptions(availabilityFilter, uniqueValues(practitionersForDirectory, 'availability'), 'Any listing status');
 
+  const publishMapState = () => {
+    const visibleIds = new Set(cards.filter((card) => !card.hidden).map((card) => card.dataset.id));
+    window.dispatchEvent(new CustomEvent('norbu:directory', {
+      detail: {
+        profiles: practitionersForDirectory.filter((profile) => visibleIds.has(profile.id)),
+        selectedId: document.querySelector('.directory-card.is-selected')?.dataset.id || null,
+      },
+    }));
+  };
   const setActiveCard = (card) => {
     cards.forEach((item) => {
       const active = item === card;
@@ -149,6 +158,7 @@ if (
       if (reviewSummary) {
         reviewSummary.innerHTML = '<strong>No profile selected</strong><span>Select a profile to open the matching Google Maps search.</span>';
       }
+      publishMapState();
       return;
     }
 
@@ -157,7 +167,9 @@ if (
     bioField.textContent = card.dataset.bio;
     mapLink.href = buildMapsUrl(card.dataset.locationQuery);
     if (directoryProfileLink) directoryProfileLink.href = `practitioner-detail.html?id=${card.dataset.id}`;
-    mapFrame.src = buildEmbedUrl(card.dataset.locationQuery);
+    const nextMapUrl = buildEmbedUrl(card.dataset.locationQuery);
+    if (mapFrame.src !== nextMapUrl) mapFrame.src = nextMapUrl;
+    publishMapState();
 
     if (reviewSummary) {
       reviewSummary.innerHTML = '<strong>Google Maps</strong><span>Open Google Maps to check location details and any reviews available on Google.</span>';
@@ -214,6 +226,16 @@ if (
     if (!currentActive || currentActive.hidden) {
       setActiveCard(pageCards[0] ?? null);
     }
+    publishMapState();
+    let empty = document.getElementById('finder-empty');
+    if (!empty) {
+      empty = document.createElement('p');
+      empty.id = 'finder-empty';
+      empty.className = 'finder-empty';
+      empty.textContent = 'No profiles found. Try a different city or reset your filters.';
+      directoryList.after(empty);
+    }
+    empty.hidden = matchingCards.length !== 0;
   };
 
   cards.forEach((card) => {
@@ -222,7 +244,7 @@ if (
       setActiveCard(card);
     });
     card.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
+      if (event.target === card && (event.key === 'Enter' || event.key === ' ')) {
         event.preventDefault();
         setActiveCard(card);
       }
@@ -278,7 +300,14 @@ if (
     availabilityFilter.value = presetAvailability;
   }
 
-  setActiveCard(cards[0]);
+  window.addEventListener('norbu:select-practitioner', (event) => {
+    const card = cards.find((item) => item.dataset.id === event.detail.id && !item.hidden);
+    if (!card) return;
+    setActiveCard(card);
+    if (window.matchMedia('(min-width: 901px)').matches) {
+      card.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'nearest' });
+    }
+  });
   applyFilters(true);
 }
 
@@ -1241,3 +1270,27 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
 
 
 
+
+
+// Gentle entrance animations; content stays visible if animation support is unavailable.
+(() => {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (reducedMotion.matches || !('IntersectionObserver' in window)) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(({ target, isIntersecting }) => {
+      if (!isIntersecting) return;
+      target.animate([
+        { opacity: 0, transform: 'translateY(20px)' },
+        { opacity: 1, transform: 'translateY(0)' },
+      ], { duration: 650, easing: 'cubic-bezier(.2,.7,.2,1)' });
+      observer.unobserve(target);
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('main > section, .norbu-flow-grid > article, .norbu-profile-preview').forEach((element) => observer.observe(element));
+  reducedMotion.addEventListener('change', () => {
+    if (reducedMotion.matches) {
+      observer.disconnect();
+      document.getAnimations().forEach((animation) => animation.cancel());
+    }
+  });
+})();
