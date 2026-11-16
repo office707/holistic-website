@@ -42,6 +42,34 @@ jobs:
             -o -name '*.ico' \) \
             -exec cp {} site-upload/ \;
 
+      - name: Preserve server rules and configure cache revalidation
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
+          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+        run: |
+          lftp -u "$SFTP_USERNAME","$SFTP_PASSWORD" "sftp://$SFTP_HOST" > "$RUNNER_TEMP/norbu-remote-files.txt" <<'EOF'
+          set cmd:fail-exit yes
+          set sftp:auto-confirm yes
+          cd www
+          cls -1a
+          bye
+          EOF
+          if grep -Eq '(^|/)\.htaccess$' "$RUNNER_TEMP/norbu-remote-files.txt"; then
+            lftp -u "$SFTP_USERNAME","$SFTP_PASSWORD" "sftp://$SFTP_HOST" <<EOF
+          set cmd:fail-exit yes
+          set sftp:auto-confirm yes
+          cd www
+          get .htaccess -o "$RUNNER_TEMP/norbu-existing.htaccess"
+          bye
+          EOF
+          else
+            : > "$RUNNER_TEMP/norbu-existing.htaccess"
+          fi
+          python3 scripts/prepare_cache_policy.py \
+            "$RUNNER_TEMP/norbu-existing.htaccess" \
+            deploy/cache-policy.htaccess site-upload/.htaccess
+
       - name: Deploy website to TransIP
         env:
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
@@ -55,3 +83,25 @@ jobs:
           mirror --reverse --verbose ./site-upload .
           bye
           EOF
+
+
+      - name: Verify production cache headers
+        run: |
+          python3 - <<'PYVERIFY'
+          import os
+          import time
+          import urllib.request
+
+          for path in ('index.html', 'therapies.html', 'site-shell.css', 'site-shell.js'):
+              url = f"https://norbu-compass.com/{path}?deploy={os.environ['GITHUB_SHA']}"
+              for attempt in range(5):
+                  request = urllib.request.Request(url, headers={'Cache-Control': 'no-cache'})
+                  with urllib.request.urlopen(request, timeout=20) as response:
+                      policy = response.headers.get('Cache-Control', '')
+                  if 'no-cache' in policy and 'must-revalidate' in policy:
+                      print(f'{path}: {policy}')
+                      break
+                  if attempt == 4:
+                      raise RuntimeError(f'{path}: expected revalidation headers, got {policy!r}')
+                  time.sleep(2)
+          PYVERIFY

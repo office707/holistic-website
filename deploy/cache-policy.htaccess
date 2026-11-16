@@ -1,0 +1,8 @@
+# BEGIN NORBU CACHE POLICY
+# Revalidate documents and code so navigation/layout updates stay in sync.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html?|css|js)$">
+    Header set Cache-Control "no-cache, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+# END NORBU CACHE POLICY
