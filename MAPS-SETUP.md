@@ -1,31 +1,50 @@
-# Finder map setup
+# Google Maps overview and profile reviews
 
-The finder works with no API key: selecting a profile updates the Google Maps embed, and mobile visitors can switch between list and map. The embed shows a Google search result; its position is not independently verified by Norbu.
+## Current activation status
 
-To enable the shared map with clickable markers:
+- The selected-practice Google Maps embed works without a browser API key.
+- The all-results map implementation is ready, but `maps-config.js` still has an empty key.
+- `practitioner-locations.js` has no coordinates yet. No bulk address export has been performed. Explicit data-owner permission to transmit the practitioner addresses to PDOK is pending.
+- Profile reviews also need verified Google Place IDs and Places API (New). No review associations are configured.
 
-1. Create a Google Cloud project, enable billing, and enable **Maps JavaScript API** and **Geocoding API**.
-2. Create a browser API key. Restrict it to the website's exact HTTP referrers (including the www variant if used), and restrict API access to the two APIs above. Browser keys are public by design; never use an unrestricted server key.
-3. Enter the restricted key as `apiKey` in `maps-config.js`.
-4. Set Google Cloud usage quotas and billing alerts appropriate to the expected traffic.
-5. Test the production domain: filter a city, click a marker, switch result pages, and test mobile list/map switching. An API loading or authorization failure restores the embed.
+## Overview map behaviour
 
-Only addresses on the current results page (at most ten) are geocoded, sequentially. Results are kept in memory for that page session. Records without a street address and postal code, partial matches, and city-level matches do not get exact-location markers. The status below the map reports how many records could be located; all profiles retain a Google Maps search link.
+The finder publishes **every matching profile**, independent of the ten-item list page. The map clusters nearby points by screen position. Clicking a group zooms in; co-located practices can be selected from a list. Selecting a practice marker changes the list to the correct page and highlights its profile preview. Changing list pages keeps the complete matching map set. Filters update both views.
 
-## Validation for this change
+Only profiles with confirmed coordinates are placed. The map status reports the located count and the full matching count. Missing/incomplete/ambiguous addresses stay in the list with their Google Maps search link; no city-centre points are invented. The provider is Google Maps throughout.
 
-Local Chromium checks used all 1,806 existing profiles: ten visible results per page, profile selection, empty search, reset, pagination, mobile view switching, mobile width, and reduced-motion behavior. No browser JavaScript errors occurred. External network requests were blocked in this test environment, so live Google map tiles, production referrer restrictions, and geocoding must be checked after adding a key. The multi-marker integration is prepared but cannot be validated against Google without a configured project.
+## Coordinate preparation (separate from Google reviews)
+
+The prepared script `scripts/build_practice_locations.py` sends only the street address and postcode components to the public Dutch PDOK Locatieserver/BAG service. It does not send emails, phone numbers or review content. This is an external address export and requires the data owner's explicit permission to use PDOK. Do not run it before that permission is given.
+
+After permission, run from the repository root:
+
+```sh
+python3 scripts/build_practice_locations.py --allow-pdok-export
+```
+
+It accepts only unique matches with the exact street, postcode, house number and house letter, with no unexpected unit suffix, inside the Netherlands. Unsupported formats and ambiguous matches are left unplaced. Requests are rate-limited and checkpointed to `/tmp/norbu-pdok-address-cache.json`; failed requests are not cached and can be retried. It writes `practitioner-locations.js`, which must then be committed and deployed. The frontend makes no per-visitor geocoding calls. PDOK/BAG attribution is displayed above the Google attribution area.
+
+If PDOK is not authorised, supply verified coordinates from an authorised source in the same `{locations: {profileId: {lat, lng}}}` format instead. Do not use the empty dataset as evidence that no real practice exists at an address.
+
+## Enable the Google overview
+
+1. Create a Google Cloud project with billing and enable **Maps JavaScript API**.
+2. Create a browser key restricted to the production HTTP referrers, including `https://norbu-compass.com/*` and the www domain if used, and restrict its API access. Browser keys are public by design; never use an unrestricted server key.
+3. Configure the restricted key as `apiKey` in `maps-config.js` and deploy the prepared locations.
+4. Configure usage quotas and billing alerts. Budget alerts alone do not cap costs.
+5. Test the real domain: national results, city filters, zooming clusters, selecting a marker on another list page, mobile list/map switching, and an API failure. Loading/authentication failures restore the embed.
+
+Geocoding API is not required for this precomputed-coordinate overview. Google Maps usage can still incur charges.
 
 ## Google reviews on individual profiles
 
-`practitioner-detail.html` includes a Google review panel shared by all practitioner profiles. It loads Google's rating, rating count, and up to five Google-selected reviews through the Maps JavaScript **Places Library (New)**. Reviews show author attribution and source links, plus Google's listing name and address so practice-level reviews are not presented as independently verified reviews of a specific doctor. Missing configuration, missing data, and API failures retain a Google Maps link without inventing ratings.
+Enable **Places API (New)** and allow it in the browser key restrictions. Requesting ratings/review fields can incur separate Google Places charges.
 
-To activate reviews:
+Add verified associations in `google-places.js`, keyed by the existing profile ID and valued with its Google Place ID, or supply `googlePlaceId` on the profile record. The planned automatic Google practice matching is a separate unfinished task. Do not match on name alone.
 
-1. Enable **Places API (New)** in the Google Cloud project in addition to the APIs used by the finder. Allow it in the browser key's API restrictions. Review Google's current pricing: requesting rating/review fields can incur Places charges separately from map loads.
-2. Verify the Google listing for each practitioner, using the practice name, full address, and website. A shared practice listing contains practice reviews; confirm that it is appropriate for that profile.
-3. Add the verified association in `google-places.js`, keyed by the existing Norbu profile ID and valued with the Google Place ID. Alternatively an individual practitioner record may supply `googlePlaceId`. There are no verified Place IDs in the supplied dataset; no automatic name-only matching is performed.
-4. Configure the restricted browser key in `maps-config.js`. Add the site's public privacy policy and terms links as required by Google's current Maps Platform terms before activating Places in production, and verify Google/provider/author attribution against those terms.
-5. Test an actual mapped profile on the approved domain, including its listing identity, Google links, rating and reviews. No rating or review content is persisted by this integration.
+The profile panel shows Google's rating/count and up to five Google-selected reviews, author/provider attribution, listing name/address and source links. Practice-level reviews must not be represented as independently verified reviews of an individual doctor. Missing configuration/data and API failures retain a Google Maps link. No review content is persisted. Check the applicable Google attribution, privacy and terms requirements before activating Places in production.
 
-Local Chromium tests with mocked Google responses cover no key, no mapping, five-review rendering, safe review text, author/provider attribution, rating-only results, empty results, API failure, JavaScript errors, and mobile overflow. These tests do not validate live Google access or the identity of any practice listing; both require the setup above.
+## Validation
+
+Local Chromium tests with simulated Google Maps and simulated coordinates covered all 1,806 matching profiles, clustering, independence from list pagination, marker selection across list pages, filtering, zero results, group zooming and authentication fallback. Offline address-matching tests covered exact matches, wrong house letters, unexpected units and ambiguous matches; they made no network calls. These tests do not validate real Google access or real practice positions. Those checks remain pending the required key, authorised coordinate source and deployment of confirmed data.

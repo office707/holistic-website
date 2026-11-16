@@ -126,6 +126,8 @@ if (
 ) {
   const pageSize = 10;
   let currentPage = 1;
+  let matchingDirectoryCards = [];
+  let matchingProfiles = [];
   const buildEmbedUrl = (query) => `https://www.google.com/maps?q=${encodeURIComponent(query)}&z=12&output=embed`;
   const buildMapsUrl = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
   setSelectOptions(specialtyFilter, uniqueValues(practitionersForDirectory, 'specialty'), 'All specializations');
@@ -133,10 +135,9 @@ if (
   setSelectOptions(availabilityFilter, uniqueValues(practitionersForDirectory, 'availability'), 'Any listing status');
 
   const publishMapState = () => {
-    const visibleIds = new Set(cards.filter((card) => !card.hidden).map((card) => card.dataset.id));
     window.dispatchEvent(new CustomEvent('norbu:directory', {
       detail: {
-        profiles: practitionersForDirectory.filter((profile) => visibleIds.has(profile.id)),
+        profiles: matchingProfiles,
         selectedId: document.querySelector('.directory-card.is-selected')?.dataset.id || null,
       },
     }));
@@ -207,6 +208,9 @@ if (
       return matchesQuery && matchesSpecialty && matchesClinic && matchesAvailability;
     });
 
+    matchingDirectoryCards = matchingCards;
+    const matchingIds = new Set(matchingCards.map((card) => card.dataset.id));
+    matchingProfiles = practitionersForDirectory.filter((profile) => matchingIds.has(profile.id));
     const totalPages = Math.max(1, Math.ceil(matchingCards.length / pageSize));
     currentPage = Math.min(currentPage, totalPages);
     const pageStart = (currentPage - 1) * pageSize;
@@ -313,8 +317,14 @@ if (
   }
 
   window.addEventListener('norbu:select-practitioner', (event) => {
-    const card = cards.find((item) => item.dataset.id === event.detail.id && !item.hidden);
-    if (!card) return;
+    const index = matchingDirectoryCards.findIndex((item) => item.dataset.id === event.detail.id);
+    if (index < 0) return;
+    const targetPage = Math.floor(index / pageSize) + 1;
+    if (currentPage !== targetPage) {
+      currentPage = targetPage;
+      applyFilters();
+    }
+    const card = matchingDirectoryCards[index];
     setActiveCard(card);
     if (window.matchMedia('(min-width: 901px)').matches) {
       card.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'nearest' });

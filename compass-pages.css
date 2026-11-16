@@ -277,3 +277,8 @@
 @media(max-width:420px) { #norbu-interior main .finder-search-box { padding: 14px !important; } #norbu-interior main .finder-search-row { gap: 8px !important; } #norbu-interior main .finder-search-row > button { padding: 12px 14px !important; gap: 10px !important; } }
 #norbu-interior main .finder-search-row > button > span { color: inherit !important; font-size: 16px !important; }
 #norbu-interior main .finder-search-row > button { width: auto !important; max-width: 140px !important; }
+#norbu-interior main .finder-location-source { position: absolute; bottom: 32px; left: 8px; z-index: 1; padding: 3px 6px; border-radius: 4px; background: #fffffff0; color: #3d6049; font-size: 9px; text-decoration: none; }
+.finder-cluster-list { display: grid; gap: 8px; max-height: 260px; max-width: 300px; overflow-y: auto; padding: 8px; font-family: Arial,sans-serif; }
+.finder-cluster-list strong { font-size: 13px; margin-bottom: 6px; color: #194e46; }
+.finder-cluster-list button { padding: 10px; text-align: left; border: 1px solid #d7e3cf; border-radius: 8px; background: #f4f7ee; color: #194e46; font: inherit; font-size: 12px; cursor: pointer; }
+.finder-cluster-list button:focus-visible { outline: 3px solid #cc7544; outline-offset: 2px; }
