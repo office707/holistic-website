@@ -128,7 +128,7 @@
     lastY = scrollY;
     if (frame) return;
     frame = requestAnimationFrame(() => {
-      root.querySelector('.compass-hero-photo').style.transform = `scale(1.06) translateY(${Math.min(lastY * 0.045, 18)}px)`;
+      root.querySelector('.compass-hero-photo').style.transform = `scale(1.06) translateY(${Math.min(lastY * 0.025, 8)}px)`;
       frame = 0;
     });
   }, { passive: true });
