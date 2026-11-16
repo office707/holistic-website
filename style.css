@@ -18399,3 +18399,59 @@ body.norbu-finder-page .directory-card[hidden] {
   display: none !important;
 }
 
+
+
+/* Motion and a map-first finder. Keep this after the legacy layout overrides. */
+@media (prefers-reduced-motion: no-preference) {
+  .btn, .book-btn, .norbu-search-links a, .norbu-profile-preview, .directory-card {
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease !important;
+  }
+  .btn:hover, .book-btn:hover { transform: translateY(-2px); }
+  .norbu-profile-preview:hover { transform: translateY(-5px); box-shadow: 0 18px 40px #19576414; }
+  .norbu-home-panel { animation: norbu-arrive .9s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes norbu-arrive { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+}
+body.norbu-finder-page .directory-layout {
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr) !important;
+  gap: 28px !important;
+}
+body.norbu-finder-page .directory-map-panel { top: 24px !important; }
+body.norbu-finder-page .finder-map-surface { position: relative; background: #e8efeb; }
+body.norbu-finder-page .directory-map-frame,
+body.norbu-finder-page .directory-map-frame iframe,
+#finder-google-map { width: 100%; height: clamp(320px, 52vh, 620px); min-height: 320px !important; border: 0; }
+.finder-map-surface [hidden] { display: none !important; }
+.finder-map-status { margin: 0; padding: 12px 18px; font-size: 12px; line-height: 1.5; color: #405b55; background: #f2f6f3; }
+body.norbu-finder-page .directory-map-copy { padding: 20px !important; }
+body.norbu-finder-page .directory-map-copy #directory-bio { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+body.norbu-finder-page .directory-card { grid-template-columns: 120px minmax(0, 1fr) !important; min-height: 210px !important; cursor: pointer; }
+body.norbu-finder-page .directory-card img { width: 100%; height: 100%; max-height: 260px; object-fit: cover; }
+body.norbu-finder-page .directory-card.is-selected { border-color: #195764 !important; box-shadow: 0 0 0 2px #195764 !important; }
+body.norbu-finder-page .directory-card:focus-visible { outline: 3px solid #195764; outline-offset: 4px; }
+body.norbu-finder-page .directory-card-actions { flex-wrap: wrap; }
+.finder-view-switch { display: none; }
+.finder-empty { padding: 32px; border: 1px solid #d7ddd9; border-radius: 20px; color: #405b55; }
+@media (max-width: 900px) {
+  body.norbu-finder-page .directory-layout { grid-template-columns: minmax(0, 1fr) !important; }
+  body.norbu-finder-page .directory-map-panel { position: static !important; }
+  .finder-view-switch { display: flex; gap: 4px; justify-content: center; padding: 5px; margin: 0 auto 20px; width: fit-content; background: #edf2ee; border-radius: 40px; }
+  .finder-view-switch button { border: 0; padding: 12px 28px; border-radius: 32px; font: inherit; cursor: pointer; color: #195764; background: transparent; }
+  .finder-view-switch button[aria-pressed="true"] { background: #195764; color: white; }
+  .directory-layout[data-finder-view="list"] .directory-map-panel,
+  .directory-layout[data-finder-view="map"] .directory-results-column { display: none !important; }
+}
+@media (max-width: 520px) {
+  body.norbu-finder-page .directory-card { grid-template-columns: 85px minmax(0, 1fr) !important; }
+  body.norbu-finder-page .directory-card-body { padding: 14px !important; }
+  body.norbu-finder-page .directory-card-top { flex-wrap: wrap; gap: 8px; }
+  body.norbu-finder-page .directory-card-actions .btn { padding: 10px 12px; font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  .norbu-home-panel, .btn, .book-btn, .norbu-profile-preview, .directory-card { animation: none !important; transition: none !important; }
+}
+body.norbu-finder-page .directory-map-copy { gap: 8px !important; margin-bottom: 0 !important; }
+body.norbu-finder-page .directory-map-copy h3 { margin: 0 !important; font-size: 26px !important; }
+body.norbu-finder-page .directory-map-copy p { margin: 0 !important; }
+body.norbu-finder-page .directory-review-summary { padding: 12px !important; }
+body.norbu-finder-page .directory-map-actions { margin-top: 8px !important; }

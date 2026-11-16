@@ -30,8 +30,8 @@
       <section class="norbu-hero">
         <div class="norbu-hero-copy" style="background: transparent !important;">
           <span class="norbu-kicker">Acupuncture directory</span>
-          <h1>Search acupuncture profiles by city and focus area.</h1>
-          <p>Use the filters to compare listed profiles. Each profile links to Google Maps, where location details and any available reviews are managed by Google.</p>
+          <h1>Find your next step. Explore care near you.</h1>
+          <p>Explore acupuncture profiles by city and focus area. Compare the list and map side by side, then get to know the practice.</p>
           <form class="norbu-quick-search" action="#directory-list">
             <label><span>Search profiles</span><input id="filter-search" type="search" placeholder="Pain, fertility, sleep, Amsterdam..." autocomplete="off"></label>
             <button class="btn btn-primary" type="submit">Search</button>
@@ -41,12 +41,12 @@
           <strong>What you can compare</strong>
           <span>Profile information</span>
           <span>City and focus area</span>
-          <span>External Google Maps links</span>
+          <span>Practices on Google Maps</span>
         </aside>
       </section>
 
       <section class="directory-filters card" aria-label="Filter acupuncturists">
-        <div class="directory-filters-head"><div><span class="practitioner-map-kicker">Filters</span><h2>Acupuncture profile finder</h2></div><p id="directory-results-copy">Showing 6 profiles</p></div>
+        <div class="directory-filters-head"><div><span class="practitioner-map-kicker">Filters</span><h2>Acupuncture profile finder</h2></div><p id="directory-results-copy">Loading profiles…</p></div>
         <div class="directory-controls">
           <label class="filter-field"><span>Specialization</span><select id="filter-specialty"><option value="all">All specializations</option><option value="Fertility acupuncture">Fertility acupuncture</option><option value="Pain acupuncture">Pain acupuncture</option><option value="Stress and sleep acupuncture">Stress and sleep acupuncture</option><option value="Women's health acupuncture">Women's health acupuncture</option><option value="Traditional Chinese Medicine">Traditional Chinese Medicine</option><option value="Cosmetic acupuncture">Cosmetic acupuncture</option></select></label>
           <label class="filter-field"><span>City</span><select id="filter-location"><option value="all">All cities</option><option value="Amsterdam">Amsterdam</option><option value="Rotterdam">Rotterdam</option><option value="Utrecht">Utrecht</option><option value="The Hague">The Hague</option><option value="Eindhoven">Eindhoven</option></select></label>
@@ -55,7 +55,11 @@
         </div>
       </section>
 
-      <section class="directory-layout">
+      <div class="finder-view-switch" role="group" aria-label="Results view">
+        <button type="button" data-finder-view="list" aria-pressed="true" aria-controls="directory-list">List</button>
+        <button type="button" data-finder-view="map" aria-pressed="false" aria-controls="directory-map-panel">Map</button>
+      </div>
+      <section class="directory-layout" data-finder-view="list">
         <div class="directory-results-column">
           <div class="directory-list" id="directory-list" aria-live="polite"></div>
           <nav class="directory-pagination" id="directory-pagination" aria-label="Therapist result pages">
@@ -65,6 +69,11 @@
           </nav>
         </div>
         <aside class="directory-map-panel card" id="directory-map-panel">
+          <div class="finder-map-surface">
+            <div id="finder-google-map" aria-label="Practices on Google Maps" hidden></div>
+            <div class="practitioner-map-frame directory-map-frame"><iframe id="directory-map" title="Google Maps location for selected therapist" src="https://www.google.com/maps?q=acupuncture%20Netherlands&z=7&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            <p class="finder-map-status" id="finder-map-status" role="status">Select a profile to explore its location on Google Maps.</p>
+          </div>
           <div class="directory-map-copy">
             <span class="practitioner-map-kicker">Selected therapist</span>
             <h3 id="directory-name">Sanne de Vries</h3>
@@ -76,7 +85,6 @@
               <a id="directory-map-link" class="btn btn-primary practitioner-map-link" href="https://www.google.com/maps/search/?api=1&query=fertility%20acupuncture%20Amsterdam%20Netherlands" target="_blank" rel="noreferrer">Open Google Maps</a>
             </div>
           </div>
-          <div class="practitioner-map-frame directory-map-frame"><iframe id="directory-map" title="Google Maps location for selected therapist" src="https://www.google.com/maps?q=fertility%20acupuncture%20Amsterdam%20Netherlands&z=12&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         </aside>
       </section>
     </main>
@@ -84,9 +92,12 @@
     <footer class="site-footer site-footer--directory"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A searchable acupuncture directory for The Netherlands.</p></div><div><strong>Use</strong><p>Profiles<br>Google Maps<br>Reviews on Google</p></div><div><strong>Scope</strong><p>Browse profiles and continue to Google for map and review details.</p></div><div><strong>Explore</strong><p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a><br><a href="quiz.html">Quiz</a><br><a href="faq.html">FAQ</a></p></div></div></footer>
   </div>
   <script src="practitioners-data.js?v=20261006-3" defer></script>
-  <script src="script.js?v=20261006-3" defer></script>
+  <script src="maps-config.js" defer></script>
+  <script src="finder-map.js" defer></script>
+  <script src="script.js?v=20261116-1" defer></script>
 </body>
 </html>
+
 
 
 
