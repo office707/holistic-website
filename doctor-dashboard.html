@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="site-shell.css?v=20261116-4">
+  <link rel="stylesheet" href="compass-pages.css?v=20261116-8">
 </head>
-<body class="site-layout home-page platform-page portal-dashboard-page" data-portal-role="doctor">
+<body id="norbu-interior" class="compass-page site-layout home-page platform-page portal-dashboard-page" data-portal-role="doctor">
   <div class="page">
     <header class="topbar norbu-topbar">
       <a class="brand brand-link" href="index.html" aria-label="Norbu home"><div class="brand-mark" aria-hidden="true"></div><span>Norbu</span></a>
@@ -29,6 +30,7 @@
     </header>
 
     <main class="platform-main dashboard-main">
+      <div class="cp-topline"><div><a href="index.html">Norbu</a><span aria-hidden="true">/</span><span>Practitioner workspace</span></div><button type="button" id="page-motion-toggle" aria-pressed="false">Pause animation</button></div>
       <nav class="site-context-nav" aria-label="Dashboard navigation">
           <a class="active" href="#doctor-overview">Overview</a>
           <a href="#doctor-today">Today</a>
@@ -240,28 +242,12 @@
       </section>
     </main>
 
-    <footer class="site-footer site-footer--platform">
-      <div class="site-footer-grid">
-        <div>
-          <a class="brand brand-link site-footer-brand" href="index.html">
-            <div class="brand-mark"></div>
-            <span>Norbu</span>
-          </a>
-          <p>Doctor-facing workspace for care flow, appointment visibility, documentation, and follow-up in a calm operational structure.</p>
-        </div>
-        <div>
-          <strong>Inside the doctor dashboard</strong>
-          <p>Review the day plan<br>Check notes<br>Guide active cases<br>Manage follow-ups</p>
-        </div>
-        <div>
-          <strong>Quick access</strong>
-          <p><a href="platform.html">Admin</a><br><a href="user-dashboard.html">User</a><br><a href="doctor-dashboard.html" data-role-login-trigger>Switch role</a><br><a href="index.html">Homepage</a></p>
-        </div>
-      </div>
-    </footer>
+    <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>Your compass for exploring complementary care in the Netherlands.</p></div><div><strong>Explore</strong><p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a practice</a><br><a href="quiz.html">Take the quiz</a></p></div><div><strong>Get to know Norbu</strong><p><a href="about.html">About</a><br><a href="faq.html">FAQ</a><br><a href="blog.html">Journal</a></p></div><div><strong>A clear starting point</strong><p>Compare directory information and check details directly with the practice.</p></div></div></footer>
   </div>
-  <script src="script.js" defer></script>
+  <script src="script.js?v=20261116-8" defer></script>
   <script src="site-shell.js?v=20261116-4" defer></script>
+  <script src="compass-pages.js?v=20261116-8" defer></script>
 </body>
 </html>
+
 

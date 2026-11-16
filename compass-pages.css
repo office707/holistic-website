@@ -1,0 +1,247 @@
+/* Shared visual system for every interior page; home.css is the reference. */
+#norbu-interior {
+  --cp-ink: #173e3e; --cp-muted: #5c6d65; --cp-green: #194e46;
+  --cp-sage: #729782; --cp-paper: #f7f7f0; --cp-soft: #e9efe5;
+  --cp-line: #dce3d6; --cp-peach: #efe7dc;
+  background: var(--cp-paper) !important; color: var(--cp-ink) !important;
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif !important;
+}
+#norbu-interior main { display: grid !important; gap: 64px !important; }
+#norbu-interior main * { box-sizing: border-box; }
+#norbu-interior main :is(h1,h2,h3,h4) { font-family: 'Plus Jakarta Sans',Arial,sans-serif !important; color: var(--cp-ink) !important; }
+#norbu-interior main h1 { font-size: clamp(40px,4.7vw,68px) !important; line-height: 1.04 !important; letter-spacing: -.06em !important; max-width: 900px !important; }
+#norbu-interior main h2 { font-size: clamp(29px,3.4vw,48px) !important; line-height: 1.1 !important; letter-spacing: -.05em !important; }
+#norbu-interior main h3 { font-size: 23px !important; line-height: 1.2 !important; letter-spacing: -.035em !important; }
+#norbu-interior main p { color: var(--cp-muted) !important; font-size: 15px !important; line-height: 1.8 !important; }
+#norbu-interior main :is(h1,h2) em { font-style: normal !important; color: var(--cp-sage) !important; }
+#norbu-interior main :is(.norbu-kicker,.profile-kicker,.catalog-kicker,.cp-eyebrow,.dashboard-eyebrow,.platform-eyebrow,.pill) {
+  color: #4b725d !important; font-size: 10px !important; line-height: 1.6 !important;
+  font-weight: 800 !important; letter-spacing: .14em !important; text-transform: uppercase !important;
+}
+#norbu-interior main .pill { width: fit-content !important; background: #dce7d5 !important; border: 0 !important; border-radius: 24px !important; padding: 7px 12px !important; }
+.cp-topline { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: -36px; }
+.cp-topline > div { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 11px; color: #69806b; }
+.cp-topline a { color: #285b4b; text-decoration: none; font-weight: 700; }
+#page-motion-toggle { padding: 7px 12px; border: 1px solid #cfdbcb; border-radius: 24px; background: transparent; color: #496b55; font: inherit; font-size: 10px; cursor: pointer; flex-shrink: 0; }
+#norbu-interior main .btn { display: inline-flex !important; align-items: center !important; justify-content: center !important; min-height: 46px !important; gap: 18px !important; padding: 14px 22px !important; border-radius: 12px !important; font: 750 12px/1.3 'Plus Jakarta Sans',Arial,sans-serif !important; text-decoration: none !important; box-shadow: none !important; }
+#norbu-interior main .btn-primary { background: var(--cp-green) !important; color: white !important; border: 1px solid var(--cp-green) !important; }
+#norbu-interior main .btn-secondary { background: transparent !important; color: var(--cp-green) !important; border: 1px solid #c8d6c4 !important; }
+#norbu-interior main :is(.cp-actions,.profile-actions,.catalog-hero-actions,.faq-hero-actions,.quiz-result-actions) { display: flex !important; flex-wrap: wrap !important; gap: 12px !important; margin-top: 26px !important; }
+#norbu-interior main :is(input:not([type=radio]):not([type=checkbox]),select,textarea) { max-width: 100% !important; min-width: 0 !important; background-color: #fffefa !important; color: var(--cp-ink) !important; border: 1px solid #d4dfcf !important; border-radius: 12px !important; box-shadow: none !important; font-family: inherit !important; font-size: 13px !important; padding: 13px 15px !important; }
+#norbu-interior main input:is([type=radio],[type=checkbox]) { accent-color: var(--cp-green); }
+#norbu-interior main :is(a,button,input,select,textarea,summary):focus-visible { outline: 3px solid #cc7544 !important; outline-offset: 4px !important; }
+#norbu-interior main :is(.card,.profile-panel,.dashboard-card,.dashboard-panel,.platform-board-card,.platform-workspace-card,.platform-role-card,.platform-roadmap-card,.booking-form,.booking-summary,.quiz-card,.quiz-result,.style-one-why-card,.style-two-path-card,.style-two-faq-card) { background: #fffefa !important; border: 1px solid var(--cp-line) !important; border-radius: 22px !important; box-shadow: none !important; }
+#norbu-interior main :is(.dashboard-card,.dashboard-panel,.profile-panel,.platform-board-card,.platform-role-card,.platform-roadmap-card,.quiz-card,.quiz-result,.booking-form,.booking-summary) { padding: clamp(22px,2.5vw,36px) !important; }
+#norbu-interior main :is(.cp-hero,.catalog-hero,.blog-hero,.quiz-hero,.subpage-hero,.dashboard-hero,.style-one-hero,.style-two-hero) { border: 1px solid var(--cp-line) !important; border-radius: 28px !important; background: var(--cp-soft) !important; box-shadow: none !important; overflow: hidden !important; }
+#norbu-interior main :is(.cp-hero,.catalog-hero,.blog-hero) { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0 !important; padding: 0 !important; align-items: stretch !important; min-height: 440px !important; }
+#norbu-interior main :is(.cp-hero-copy,.catalog-hero-copy,.blog-hero-copy,.subpage-hero-copy,.dashboard-hero-copy) { padding: clamp(28px,4vw,56px) !important; display: flex !important; flex-direction: column !important; align-items: flex-start !important; justify-content: center !important; gap: 0 !important; }
+#norbu-interior main :is(.cp-hero-copy,.catalog-hero-copy,.blog-hero-copy) h1 { margin: 18px 0 24px !important; }
+#norbu-interior main :is(.cp-hero-copy,.catalog-hero-copy,.blog-hero-copy) > p { max-width: 570px !important; font-size: 15px !important; }
+.cp-hero-visual { min-height: 440px; position: relative; overflow: hidden; background: #d6e2d1; }
+#norbu-interior .cp-hero-visual img { position: absolute; inset: 0; width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center !important; }
+.cp-image-note { position: absolute; bottom: 20px; left: 20px; right: 20px; padding: 10px 14px; border-radius: 12px; background: #fffffff0; color: #42654f; font-size: 10px; }
+#norbu-interior main .catalog-hero-visual { min-height: 440px !important; border-radius: 0 !important; background: #d6e2d1 !important; }
+#norbu-interior main .catalog-hero-visual img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+#norbu-interior main .catalog-hero-note { background: #fffefaee !important; border: 0 !important; border-radius: 16px !important; box-shadow: none !important; }
+#norbu-interior main :is(.cp-section-heading,.section-heading) { margin-bottom: 30px; }
+#norbu-interior main .cp-section-heading > p { max-width: 640px; margin-top: 22px; }
+.cp-eyebrow { display: inline-block; margin-bottom: 14px; }
+.cp-editorial { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; align-items: start; }
+#norbu-interior main .cp-editorial > div > p + p { margin-top: 18px; }
+.cp-value-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+.cp-value-card { border: 1px solid var(--cp-line); border-radius: 22px; padding: 32px; background: #e9efe1; }
+.cp-value-card:nth-child(2) { background: #efe7dc; }
+.cp-value-card:nth-child(3) { background: #e2ede2; }
+.cp-card-number { color: #66866d; font-size: 11px; font-weight: 800; }
+#norbu-interior main .cp-value-card h3 { margin: 40px 0 16px; }
+#norbu-interior main .cp-value-card p { font-size: 13px !important; }
+.cp-real-profiles { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
+.cp-real-profile { border: 1px solid var(--cp-line); border-radius: 22px; overflow: hidden; background: #fffefa; }
+#norbu-interior .cp-real-profile > img { width: 100%; height: 300px; object-fit: contain !important; background: #e8eee5; }
+.cp-real-profile > div { padding: 26px; }
+#norbu-interior main .cp-real-profile h3 { margin: 0 0 10px; }
+.cp-text-link { display: inline-block; font-size: 12px; font-weight: 750; text-decoration: none; border-bottom: 1px solid #9bb59b; padding-bottom: 6px; color: var(--cp-green); margin-top: 20px; }
+.cp-numbered-list { display: grid; }
+.cp-numbered-list a { display: flex; align-items: center; gap: 20px; border-top: 1px solid var(--cp-line); padding: 24px 0; text-decoration: none; color: var(--cp-ink); }
+.cp-numbered-list a > span { color: #729782; font-size: 12px; }
+.cp-numbered-list a > span:last-child { margin-left: auto; font-size: 22px; }
+#norbu-interior main .cp-numbered-list h3 { font-size: 20px !important; }
+#norbu-interior main .cp-numbered-list p { font-size: 13px !important; margin-top: 8px; }
+#norbu-interior main :is(.cp-final,.profile-booking-card,.platform-contact,.style-one-contact,.style-two-contact) { position: relative; overflow: hidden; padding: clamp(32px,4.5vw,64px) !important; border: 0 !important; border-radius: 28px !important; background: var(--cp-green) !important; color: #fff !important; }
+#norbu-interior main :is(.cp-final,.profile-booking-card,.platform-contact,.style-one-contact,.style-two-contact) :is(h1,h2,h3) { color: white !important; }
+#norbu-interior main :is(.cp-final,.profile-booking-card,.platform-contact) :is(p,.cp-eyebrow,.profile-kicker) { color: #c5d7ca !important; }
+#norbu-interior main .cp-final { text-align: center; }
+#norbu-interior main .cp-final h2 em { color: #b9cfa9 !important; }
+#norbu-interior main .cp-final p { margin-top: 22px; }
+#norbu-interior main .cp-final .cp-actions { justify-content: center; }
+#norbu-interior main :is(.cp-final,.profile-booking-card,.platform-contact) .btn-primary { background: #d8e5cb !important; color: #194e46 !important; border-color: #d8e5cb !important; }
+#norbu-interior main :is(.cp-final,.profile-booking-card,.platform-contact) .btn-secondary { color: white !important; border-color: #9bb5a6 !important; }
+/* Catalogue: soft illustrated cards, practical search controls. */
+#norbu-interior main .catalog-toolbar { background: #edf1e7 !important; padding: 28px !important; border: 1px solid var(--cp-line) !important; border-radius: 22px !important; box-shadow: none !important; }
+#norbu-interior main .catalog-toolbar h2 { font-size: 27px !important; }
+#norbu-interior main :is(.catalog-filter,.catalog-reset) { background: #fffefa !important; border: 1px solid #d2ddcb !important; border-radius: 24px !important; color: #496b55 !important; box-shadow: none !important; font-size: 12px !important; }
+#norbu-interior main .catalog-filter.is-active { background: var(--cp-green) !important; border-color: var(--cp-green) !important; color: white !important; }
+#norbu-interior main :is(.therapy-grid,.blog-grid) { gap: 24px !important; }
+#norbu-interior main :is(.therapy-card,.blog-card,.blog-featured) { border: 1px solid var(--cp-line) !important; border-radius: 22px !important; box-shadow: none !important; background: #fffefa !important; overflow: hidden !important; }
+#norbu-interior main :is(.therapy-card-body,.blog-card-body,.blog-featured-body) { padding: 26px !important; background: #fffefa !important; }
+#norbu-interior main :is(.therapy-card,.blog-card) h3 { margin-bottom: 14px !important; }
+#norbu-interior main :is(.therapy-card,.blog-card) p { font-size: 13px !important; }
+#norbu-interior main .therapy-card ul { color: #64806b !important; font-size: 12px !important; }
+#norbu-interior main :is(.therapy-card-meta span,.blog-category,.profile-tag-list span,.practitioner-badge) { background: #e8efdf !important; color: #4c725a !important; border-radius: 24px !important; font-size: 10px !important; font-weight: 750 !important; padding: 7px 11px !important; }
+.cp-therapy-illustration { height: 210px; display: flex; align-items: center; justify-content: space-between; padding: 28px; background: #e9efe1; color: #63826a; }
+.cp-therapy-illustration > span { align-self: flex-start; font-size: 11px; font-weight: 750; }
+.cp-therapy-illustration svg { width: 140px; height: 120px; stroke: #527f63; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.cp-tint-1 { background: #efe7dc; }.cp-tint-2 { background: #e2ede2; }.cp-tint-3 { background: #e6ece7; }
+#norbu-interior main .blog-featured { margin: 20px !important; }
+#norbu-interior main .blog-featured h2 { font-size: 28px !important; }
+#norbu-interior main .blog-featured img { height: 250px !important; width: 100% !important; }
+#norbu-interior main .blog-card > img { height: 230px !important; width: 100% !important; }
+/* FAQs: a searchable editorial accordion rather than a flat wall of cards. */
+.cp-compass-art { display: grid; place-items: center; padding: 48px; overflow: hidden; }
+.cp-compass-art > div { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 22px; width: 290px; height: 290px; border: 1px solid #a9c0a8; border-radius: 50%; box-shadow: 0 0 0 30px #d5e2cc70,0 0 0 60px #dce7d160; color: #4f775f; }
+.cp-compass-art span:first-child { font-size: 12px; font-weight: 800; }.cp-compass-art strong { font-size: 85px; font-weight: 400; }.cp-compass-art span:last-child { font-size: 11px; text-transform: uppercase; letter-spacing: .15em; }
+.cp-faq-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 8%; align-items: start; }
+.cp-faq-search { display: grid; gap: 10px; margin-top: 28px; font-size: 12px; font-weight: 700; }
+.cp-faq-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.cp-faq-filters button { border: 1px solid #cedbc8; border-radius: 24px; padding: 10px 14px; color: #4c725a; background: transparent; font: inherit; font-size: 11px; cursor: pointer; }
+.cp-faq-filters button[aria-pressed=true] { background: var(--cp-green); color: white; border-color: var(--cp-green); }
+.cp-faq-item { border-top: 1px solid var(--cp-line); padding: 24px 0; }
+.cp-faq-item:last-child { border-bottom: 1px solid var(--cp-line); }
+.cp-faq-item summary { list-style: none; display: flex; align-items: baseline; gap: 18px; font-size: 14px; cursor: pointer; }
+.cp-faq-item summary::-webkit-details-marker { display: none; }
+.cp-faq-item summary > span { color: #729782; font-size: 10px; }.cp-faq-item summary::after { content: '+'; margin-left: auto; font-size: 22px; color: #729782; }.cp-faq-item[open] summary::after { content: '−'; }
+#norbu-interior main .cp-faq-item p { margin: 18px 0 0 32px; font-size: 13px !important; }
+#norbu-interior main .cp-small { color: #6b816d !important; font-size: 11px !important; margin-top: 18px; }
+/* Profile and finder keep their working data and map layout. */
+#norbu-interior main .profile-breadcrumbs { display: none !important; }
+#norbu-interior main .profile-hero { display: grid !important; grid-template-columns: minmax(250px,.8fr) minmax(0,1.2fr) !important; gap: 0 !important; padding: 0 !important; min-height: 0 !important; border: 1px solid var(--cp-line) !important; border-radius: 28px !important; overflow: hidden !important; background: var(--cp-soft) !important; box-shadow: none !important; }
+#norbu-interior main .profile-portrait { display: block !important; position: relative !important; min-height: 440px !important; width: auto !important; height: auto !important; border-radius: 0 !important; background: #e0e9da !important; }
+#norbu-interior main .profile-portrait img { width: 100% !important; height: 100% !important; position: absolute !important; inset: 0 !important; object-fit: contain !important; transform: none !important; }
+#norbu-interior main .profile-hero-copy { padding: 44px !important; background: transparent !important; }
+#norbu-interior main .profile-hero-copy :is(h1,p,.profile-kicker) { color: var(--cp-ink) !important; }
+#norbu-interior main .profile-hero-copy h1 { font-size: clamp(36px,4vw,56px) !important; margin: 16px 0 20px !important; }
+#norbu-interior main .profile-focus { font-size: 16px !important; font-weight: 650 !important; }
+#norbu-interior main .profile-facts { border-top: 1px solid #cedcc6 !important; margin-top: 26px !important; }
+#norbu-interior main .profile-facts strong { font-size: 15px !important; color: #285b4b !important; }
+#norbu-interior main .profile-availability { background: #fffefaee !important; color: #4c725a !important; border-radius: 24px !important; }
+#norbu-interior main .profile-panel h2 { font-size: 30px !important; }
+#norbu-interior main .practitioner-map-frame { border-radius: 18px !important; overflow: hidden !important; }
+#norbu-interior main.directory-main { gap: 24px !important; }
+#norbu-interior main .finder-search-bar h1 { font-size: clamp(30px,3.4vw,46px) !important; }
+#norbu-interior main .finder-search-bar { background: #e9efe1; border-radius: 24px; padding: 28px !important; }
+#norbu-interior main .directory-filters { background: transparent !important; }
+#norbu-interior main .directory-layout { gap: 0 !important; }
+#norbu-interior main .directory-map-panel { border-radius: 22px !important; border: 1px solid #d8e2d2 !important; }
+#norbu-interior main .directory-card.finder-grid-card { background: #fffefa !important; border: 1px solid #dce3d6 !important; border-radius: 18px !important; overflow: hidden !important; }
+#norbu-interior main .directory-card.finder-grid-card > img { border-radius: 0 !important; }
+#norbu-interior main .directory-card-body { padding: 16px !important; }
+#norbu-interior main .directory-card h3 { font-size: 18px !important; }
+#norbu-interior main .directory-card p { font-size: 12px !important; }
+#norbu-interior main .directory-card .practitioner-badge { background: transparent !important; padding: 0 !important; }
+#norbu-interior main .directory-card-actions .btn { padding: 0 !important; min-height: 24px !important; font-size: 10px !important; border: 0 !important; background: transparent !important; color: var(--cp-green) !important; }
+#norbu-interior main .directory-map-copy h3 { font-size: 20px !important; }
+#norbu-interior main .directory-map-copy p { font-size: 12px !important; }
+#norbu-interior main .directory-map-actions .btn { font-size: 10px !important; padding: 9px 11px !important; min-height: 34px !important; }
+/* Quiz and forms: calmer inputs, visible selection and progress. */
+#norbu-interior main .quiz-hero { display: flex !important; justify-content: space-between !important; align-items: center !important; gap: 32px !important; padding: 48px !important; }
+#norbu-interior main .quiz-hero h1 { margin: 18px 0 24px !important; }
+#norbu-interior main .quiz-hero p { max-width: 700px !important; }
+#norbu-interior main .quiz-hero > .btn { flex-shrink: 0; }
+#norbu-interior main .quiz-card { counter-reset: quiz-section; }
+#norbu-interior main .quiz-step { border: 0 !important; border-top: 1px solid var(--cp-line) !important; padding: 26px 0 0 !important; margin: 28px 0 0 !important; }
+#norbu-interior main .quiz-step legend { color: var(--cp-ink) !important; font-size: 19px !important; font-weight: 750 !important; padding: 0 14px 0 0 !important; }
+#norbu-interior main .quiz-step label span { background: #f3f5ec !important; border: 1px solid #dce4d4 !important; border-radius: 14px !important; color: #496752 !important; font-size: 12px !important; box-shadow: none !important; }
+#norbu-interior main .quiz-step label:has(input:checked) span { border-color: #527e60 !important; background: #dfe9d6 !important; color: #194e46 !important; }
+.cp-quiz-progress { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; color: #5d7b61; font-size: 11px; font-weight: 700; }
+.cp-quiz-progress > div { width: 100%; height: 5px; background: #e2e9da; border-radius: 5px; overflow: hidden; }.cp-quiz-progress > div > span { display: block; width: 0; height: 100%; background: #527e60; transition: width .4s ease; }
+#norbu-interior main .quiz-result { background: #e4eddb !important; }
+#norbu-interior main .quiz-result h2 { margin: 18px 0 !important; font-size: 30px !important; }
+#norbu-interior main .cp-notice { padding: 14px 18px; background: #e6eddf; border: 1px solid #cfdcc5; border-radius: 14px; font-size: 12px !important; margin-bottom: 24px; }
+#norbu-interior main .booking-intro h1 { margin: 14px 0 20px !important; }
+#norbu-interior main .booking-summary img { width: 100% !important; height: 240px !important; object-fit: contain !important; background: #e7eedf !important; border-radius: 16px !important; }
+/* Existing portal and concept routes share the same palette and card language. */
+#norbu-interior main .site-context-nav { margin: 0 !important; padding-bottom: 0 !important; }
+#norbu-interior main .site-context-nav a { background: #edf2e5 !important; border-color: #cfddc5 !important; }
+#norbu-interior main .site-context-nav a.active { background: var(--cp-green) !important; color: white !important; }
+#norbu-interior main .dashboard-hero { padding: 0 !important; }
+#norbu-interior main :is(.dashboard-hero,.subpage-hero) :is(h1,p) { color: var(--cp-ink) !important; }
+#norbu-interior main .dashboard-metric-card { background: #dfe9d5 !important; border: 1px solid #cadabf !important; border-radius: 18px !important; box-shadow: none !important; }
+#norbu-interior main .dashboard-metric-card:nth-child(2),#norbu-interior main .platform-board-card:nth-child(2) { background: var(--cp-peach) !important; }
+#norbu-interior main :is(.dashboard-status,.journal-entry,.appointment-item,.resource-item,.profile-value,.appointment-detail,.subpage-hero-ui-card) { background: #f1f4e9 !important; border: 1px solid var(--cp-line) !important; border-radius: 16px !important; box-shadow: none !important; color: #4b6b54 !important; }
+#norbu-interior main :is(.appointment-item.is-selected,.journal-entry--clinical) { background: #e3ecd9 !important; border-color: #a8c09f !important; }
+#norbu-interior main :is(.platform-workspace,.platform-workspace-card,.platform-roles,.platform-roadmap) { background: transparent !important; box-shadow: none !important; }
+#norbu-interior main .platform-workspace-card { background: #fffefa !important; }
+#norbu-interior main :is(.platform-board-card,.platform-role-card,.platform-roadmap-card) h3 { color: var(--cp-ink) !important; }
+#norbu-interior main :is(.style-one-copy-panel,.style-one-visual-panel,.style-two-hero-media) { background: #e9efe1 !important; color: var(--cp-ink) !important; }
+#norbu-interior main :is(.style-one-copy-panel,.style-one-hero,.style-two-hero-content) :is(h1,p) { color: var(--cp-ink) !important; }
+#norbu-interior main .style-two-hero-content { background: #f7f7f0e8 !important; border-radius: 22px !important; padding: 32px !important; }
+#norbu-interior main .style-two-path-card,#norbu-interior main .style-one-why-card { background: #e7eedf !important; }
+#norbu-interior main .style-two-evidence-card,#norbu-interior main .style-two-practitioner-card,#norbu-interior main .style-one-tile { border-radius: 22px !important; border: 1px solid var(--cp-line) !important; overflow: hidden !important; box-shadow: none !important; }
+#norbu-interior main :is(.style-two-evidence-card--dark,.style-one-tile--dark) { background: var(--cp-green) !important; }
+#norbu-interior main :is(.style-two-evidence-card--dark,.style-one-tile--dark) :is(h2,h3,p) { color: white !important; }
+#norbu-interior main [hidden] { display: none !important; }
+@media (prefers-reduced-motion: no-preference) {
+ #norbu-interior[data-page-motion=on] main :is(.btn,.therapy-card,.blog-card,.cp-value-card,.cp-real-profile,.platform-board-card,.platform-role-card,.directory-card,.cp-text-link) { transition: transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease,background .3s ease !important; }
+ #norbu-interior[data-page-motion=on] main :is(.therapy-card,.blog-card,.cp-value-card,.cp-real-profile,.platform-board-card,.platform-role-card):hover { transform: translateY(-8px) !important; box-shadow: 0 18px 38px #173e3e10 !important; }
+ #norbu-interior[data-page-motion=on] main .btn:hover { transform: translateY(-3px) !important; }
+ #norbu-interior[data-page-motion=on] .cp-compass-art > div { animation: cp-drift 7s ease-in-out infinite; }
+ @keyframes cp-drift { 0%,100% { transform: rotate(-5deg) translateY(0); } 50% { transform: rotate(5deg) translateY(-12px); } }
+}
+#norbu-interior[data-page-motion=off] main * { animation: none !important; transition: none !important; }
+@media (max-width:1100px) {
+ #norbu-interior main { gap: 48px !important; }
+ #norbu-interior main h1 { font-size: clamp(37px,4.8vw,56px) !important; }
+ #norbu-interior main :is(.cp-hero-copy,.catalog-hero-copy,.blog-hero-copy) { padding: 32px !important; }
+ .cp-topline { margin-bottom: -20px; }
+ #norbu-interior main .profile-hero-copy { padding: 32px !important; }
+ .cp-value-card { padding: 26px; }
+ #norbu-interior .cp-real-profile > img { height: 240px; }
+ #norbu-interior main .profile-content-grid { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width:760px) {
+ #norbu-interior main { gap: 36px !important; }
+ #norbu-interior main h1 { font-size: clamp(36px,9vw,52px) !important; }
+ #norbu-interior main h2 { font-size: 31px !important; }
+ #norbu-interior main h3 { font-size: 21px !important; }
+ .cp-topline { margin-bottom: -12px; }.cp-topline > div { font-size: 10px; gap: 8px; }
+ #page-motion-toggle { padding: 6px 9px; font-size: 9px; }
+ #norbu-interior main :is(.cp-hero,.catalog-hero,.blog-hero) { grid-template-columns: 1fr !important; min-height: 0 !important; border-radius: 22px !important; }
+ #norbu-interior main :is(.cp-hero-copy,.catalog-hero-copy,.blog-hero-copy) { padding: 28px 24px !important; }
+ #norbu-interior main :is(.cp-hero-copy,.catalog-hero-copy,.blog-hero-copy) h1 { margin-top: 14px !important; }
+ .cp-hero-visual { min-height: 300px; }
+ #norbu-interior main .catalog-hero-visual { min-height: 300px !important; }
+ .cp-editorial,.cp-faq-layout { grid-template-columns: 1fr; gap: 28px; }
+ .cp-value-grid,.cp-real-profiles { grid-template-columns: 1fr; gap: 16px; }
+ .cp-value-card { padding: 26px; }.cp-value-card h3 { margin-top: 30px !important; }
+ #norbu-interior .cp-real-profile > img { height: 300px; }
+ .cp-compass-art { padding: 48px 20px; min-height: 320px; }.cp-compass-art > div { width: 220px; height: 220px; }
+ #norbu-interior main :is(.cp-final,.profile-booking-card,.platform-contact) { padding: 36px 24px !important; border-radius: 22px !important; }
+ #norbu-interior main .catalog-toolbar { padding: 22px !important; }
+ #norbu-interior main :is(.therapy-card-body,.blog-card-body) { padding: 22px !important; }
+ .cp-therapy-illustration { height: 180px; padding: 24px; }
+ #norbu-interior main .profile-hero { grid-template-columns: 1fr !important; }
+ #norbu-interior main .profile-portrait { min-height: 320px !important; height: 320px !important; }
+ #norbu-interior main .profile-hero-copy { padding: 26px !important; }
+ #norbu-interior main .profile-hero-copy h1 { font-size: 37px !important; }
+ #norbu-interior main .profile-content-grid { grid-template-columns: 1fr !important; }
+ #norbu-interior main .quiz-hero { padding: 28px 24px !important; flex-direction: column !important; align-items: flex-start !important; }
+ #norbu-interior main .quiz-step legend { font-size: 17px !important; }
+ #norbu-interior main .quiz-step label span { min-width: 0 !important; font-size: 11px !important; }
+ #norbu-interior main .quiz-layout { grid-template-columns: 1fr !important; }
+ #norbu-interior main .finder-search-bar { padding: 24px !important; }
+ #norbu-interior main .finder-search-bar h1 { font-size: 32px !important; }
+ #norbu-interior main .directory-card-body { padding: 12px !important; }
+ #norbu-interior main .directory-card h3 { font-size: 16px !important; }
+ #norbu-interior main .directory-card .btn { font-size: 10px !important; }
+ #norbu-interior main .dashboard-hero-copy { padding: 28px 24px !important; }
+}
+@media (prefers-reduced-motion:reduce) { #norbu-interior main * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+#norbu-interior main .profile-facts > div { background: #f3f5ec !important; border: 1px solid #d8e2d1 !important; border-radius: 16px !important; }
+#norbu-interior main .profile-facts span { color: #607c65 !important; font-size: 11px !important; }
+#norbu-interior .topbar .brand-mark { display: grid !important; place-items: center !important; }
+#norbu-interior main .subpage-breadcrumbs, #norbu-interior main .subpage-breadcrumbs :is(a,span) { color: #648069 !important; }
+#norbu-interior main .blog-featured { display: flex !important; flex-direction: column !important; }
+#norbu-interior main .blog-featured > img { height: 230px !important; width: 100% !important; flex: 0 0 230px; }
+#norbu-interior main .blog-featured-body { flex: 1; }
+#norbu-interior main .profile-hero-copy > :is(.profile-focus,#profile-bio) { color: #52715b !important; }
+#norbu-interior main .profile-hero-copy > #profile-bio { margin-top: 16px !important; }

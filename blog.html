@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="site-shell.css?v=20261116-4">
+  <link rel="stylesheet" href="compass-pages.css?v=20261116-8">
 </head>
-<body class="site-layout catalog-page blog-page">
+<body id="norbu-interior" class="compass-page site-layout catalog-page blog-page">
   <div class="page">
     <header class="topbar norbu-topbar">
       <a class="brand brand-link" href="index.html" aria-label="Norbu home"><div class="brand-mark" aria-hidden="true"></div><span>Norbu</span></a>
@@ -30,8 +31,9 @@
     </header>
 
     <main class="catalog-main">
+      <div class="cp-topline"><div><a href="index.html">Norbu</a><span aria-hidden="true">/</span><span>The Norbu journal</span></div><button type="button" id="page-motion-toggle" aria-pressed="false">Pause animation</button></div>
       <section class="blog-hero">
-        <div class="blog-hero-copy"><div class="pill">&#10022; Norbu journal</div><h1>Useful knowledge for care between visits.</h1><p>Clear, considered articles from our clinic on therapies, nutrition, sleep, recovery, and the questions patients ask most often.</p></div>
+        <div class="blog-hero-copy"><div class="pill">&#10022; Norbu journal</div><h1>A little reading.<br><em>A fresh perspective.</em></h1><p>Explore notes on therapies, wellbeing and the questions worth asking as you get to know complementary care.</p></div>
         <article class="blog-featured">
           <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1600&q=80" alt="Colourful nourishing food on a table">
           <div class="blog-featured-body"><span class="blog-category">Nutrition</span><h2>What a steady-energy plate actually looks like</h2><p>A simple framework for building meals that support concentration, blood-sugar balance, and calmer afternoons without rigid rules.</p><div class="blog-card-meta"><span>8 min read</span><span>18 June 2026</span></div><a href="#blog-library">Read article <span>&rarr;</span></a></div>
@@ -39,7 +41,7 @@
       </section>
 
       <section class="catalog-toolbar blog-toolbar" id="blog-library" aria-label="Filter articles">
-        <div class="catalog-toolbar-head"><div><span class="catalog-kicker">From the clinic</span><h2>Latest articles</h2></div><span class="catalog-result-count" id="blog-result-count">8 articles</span></div>
+        <div class="catalog-toolbar-head"><div><span class="catalog-kicker">Explore the journal</span><h2>Latest articles</h2></div><span class="catalog-result-count" id="blog-result-count">8 articles</span></div>
         <label class="catalog-search"><span>Search</span><input id="blog-search" type="search" placeholder="Search articles, topics, or therapies..." autocomplete="off"></label>
         <div class="catalog-filter-group" data-filter-group="topic"><span>Topic</span><div class="catalog-filter-row"><button class="catalog-filter is-active" type="button" data-value="all">All topics</button><button class="catalog-filter" type="button" data-value="therapy">Therapies</button><button class="catalog-filter" type="button" data-value="nutrition">Nutrition</button><button class="catalog-filter" type="button" data-value="sleep">Sleep & stress</button><button class="catalog-filter" type="button" data-value="clinic">Clinic news</button></div></div>
         <button class="catalog-reset" id="blog-reset" type="button">Reset filters</button>
@@ -47,7 +49,7 @@
 
       <section class="blog-grid" id="blog-grid">
         <article class="blog-card" data-topic="therapy" data-search="acupuncture first appointment needles treatment pain">
-          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1000&q=80" alt="Acupuncture treatment room"><div class="blog-card-body"><span class="blog-category">Therapies</span><h3>Your first acupuncture appointment, step by step</h3><p>What the intake covers, how point selection works, and what you may notice after a first session.</p><div class="blog-card-meta"><span>6 min read</span><span>12 June 2026</span></div><a href="therapies.html">Read article <span>&rarr;</span></a></div>
+          <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1000&q=80" alt="An acupuncture treatment in progress"><div class="blog-card-body"><span class="blog-category">Therapies</span><h3>Your first acupuncture appointment, step by step</h3><p>What the intake covers, how point selection works, and what you may notice after a first session.</p><div class="blog-card-meta"><span>6 min read</span><span>12 June 2026</span></div><a href="therapies.html">Read article <span>&rarr;</span></a></div>
         </article>
         <article class="blog-card" data-topic="sleep" data-search="sleep nervous system evening routine stress rest">
           <img src="https://images.unsplash.com/photo-1455642305367-68834a5316cb?auto=format&fit=crop&w=1000&q=80" alt="Quiet bedroom prepared for sleep"><div class="blog-card-body"><span class="blog-category">Sleep & stress</span><h3>A gentler evening routine for a busy nervous system</h3><p>Four small changes that help the body recognize that the active part of the day is ending.</p><div class="blog-card-meta"><span>5 min read</span><span>8 June 2026</span></div><a href="#">Read article <span>&rarr;</span></a></div>
@@ -73,13 +75,15 @@
       </section>
       <div class="catalog-empty" id="blog-empty" hidden><strong>No articles match that search.</strong><span>Try another topic or reset the filters.</span></div>
 
-      <section class="blog-newsletter"><div><span class="catalog-kicker">A calmer inbox</span><h2>One useful note, twice a month.</h2><p>New articles, clinic updates, and practical guidance. No daily noise.</p></div><form class="blog-newsletter-form"><label><span>Email address</span><input type="email" placeholder="you@example.com" required></label><button class="btn btn-primary" type="submit">Subscribe</button></form></section>
+      <section class="cp-final"><span class="cp-eyebrow">Turn curiosity into a next step</span><h2>Find a practice.<br><em>Explore at your pace.</em></h2><p>Compare listed approaches and check the original practice information.</p><div class="cp-actions"><a class="btn btn-primary" href="practitioners.html">Explore practices →</a><a class="btn btn-secondary" href="faq.html">Questions & answers →</a></div></section>
     </main>
 
-    <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A calm alternative medicine clinic for recovery, diagnostics, and long-view care.</p></div><div><strong>Visit</strong><p>214 Cedar Grove, Suite 5<br>San Francisco, CA</p></div><div><strong>Contact</strong><p>+1 (415) 555-2184<br>hello@holistic-care.com</p></div><div><strong>Explore</strong><p><a href="about.html">About</a><br><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Practitioners</a><br><a href="blog.html">Blog</a></p></div></div></footer>
+    <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>Your compass for exploring complementary care in the Netherlands.</p></div><div><strong>Explore</strong><p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a practice</a><br><a href="quiz.html">Take the quiz</a></p></div><div><strong>Get to know Norbu</strong><p><a href="about.html">About</a><br><a href="faq.html">FAQ</a><br><a href="blog.html">Journal</a></p></div><div><strong>A clear starting point</strong><p>Compare directory information and check details directly with the practice.</p></div></div></footer>
   </div>
-  <script src="script.js" defer></script>
+  <script src="script.js?v=20261116-8" defer></script>
   <script src="site-shell.js?v=20261116-4" defer></script>
+  <script src="compass-pages.js?v=20261116-8" defer></script>
 </body>
 </html>
+
 

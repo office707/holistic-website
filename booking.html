@@ -1,8 +1,9 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Book an Appointment | Norbu</title><meta name="description" content="Choose a Norbu therapist, appointment type, date, and time."><link rel="stylesheet" href="style.css"><link rel="icon" type="image/svg+xml" href="favicon.svg">  <link rel="stylesheet" href="site-shell.css?v=20261116-4">
+  <link rel="stylesheet" href="compass-pages.css?v=20261116-8">
 </head>
-<body class="site-layout booking-page mvp-profile-page"><div class="page">
+<body id="norbu-interior" class="compass-page site-layout booking-page mvp-profile-page"><div class="page">
 <header class="topbar norbu-topbar">
       <a class="brand brand-link" href="index.html" aria-label="Norbu home"><div class="brand-mark" aria-hidden="true"></div><span>Norbu</span></a>
       <div class="shell" id="site-shell">
@@ -21,7 +22,8 @@
       <a class="book-btn" href="practitioners.html">Open finder</a>
     </header>
 <main class="booking-main">
-  <section class="booking-intro"><div><span class="profile-kicker">Appointment booking</span><h1>Request an acupuncture visit.</h1><p>Choose a therapist, visit type, preferred date, and time. This MVP prepares the request locally before a real scheduling backend is connected.</p></div><div class="booking-intro-steps"><span><strong>1</strong> Therapist</span><span><strong>2</strong> Visit</span><span><strong>3</strong> Your details</span></div></section>
+      <div class="cp-topline"><div><a href="index.html">Norbu</a><span aria-hidden="true">/</span><span>Appointment enquiry</span></div><button type="button" id="page-motion-toggle" aria-pressed="false">Pause animation</button></div>
+  <section class="booking-intro"><p class="cp-notice">Appointment form preview. For an actual appointment, contact the practice directly through its website or Google Maps.</p><div><span class="profile-kicker">Appointment booking</span><h1>Request an acupuncture visit.</h1><p>Choose a therapist, visit type, preferred date, and time. This MVP prepares the request locally before a real scheduling backend is connected.</p></div><div class="booking-intro-steps"><span><strong>1</strong> Therapist</span><span><strong>2</strong> Visit</span><span><strong>3</strong> Your details</span></div></section>
   <section class="booking-layout">
     <form class="booking-form" id="booking-form">
       <div class="booking-form-section"><span class="booking-step">01</span><div><h2>Choose your therapist</h2><p>The therapist selected from the finder or profile is already filled in.</p></div><label class="booking-field booking-field--wide"><span>Therapist</span><select id="booking-practitioner" name="therapist" required></select></label></div>
@@ -33,9 +35,11 @@
   </section>
   <section class="booking-confirmation" id="booking-confirmation" hidden><span class="profile-kicker">Ready to request</span><h2>Your appointment details are prepared.</h2><p id="booking-confirmation-copy"></p><div><a class="btn btn-primary" href="index.html">Return home</a><a class="btn btn-secondary" href="practitioners.html">Browse therapists</a></div></section>
 </main>
-<footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A first searchable acupuncture directory for The Netherlands.</p></div><div><strong>Visit</strong><p>Amsterdam<br>The Netherlands</p></div><div><strong>Contact</strong><p>hello@norbu.example<br>Provider onboarding next</p></div><div><strong>Explore</strong><p><a href="index.html">Home</a><br><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a><br><a href="faq.html">FAQ</a></p></div></div></footer>
-</div><script src="practitioners-data.js?v=20261006-3" defer></script><script src="script.js?v=20261006-3" defer></script>  <script src="site-shell.js?v=20261116-4" defer></script>
+<footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>Your compass for exploring complementary care in the Netherlands.</p></div><div><strong>Explore</strong><p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a practice</a><br><a href="quiz.html">Take the quiz</a></p></div><div><strong>Get to know Norbu</strong><p><a href="about.html">About</a><br><a href="faq.html">FAQ</a><br><a href="blog.html">Journal</a></p></div><div><strong>A clear starting point</strong><p>Compare directory information and check details directly with the practice.</p></div></div></footer>
+</div><script src="practitioners-data.js?v=20261006-3" defer></script><script src="script.js?v=20261116-8" defer></script>  <script src="site-shell.js?v=20261116-4" defer></script>
+  <script src="compass-pages.js?v=20261116-8" defer></script>
 </body></html>
+
 
 
 

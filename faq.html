@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="site-shell.css?v=20261116-4">
+  <link rel="stylesheet" href="compass-pages.css?v=20261116-8">
 </head>
-<body class="site-layout faq-page norbu-site-page norbu-faq-page">
+<body id="norbu-interior" class="compass-page site-layout faq-page norbu-site-page norbu-faq-page">
   <div class="page">
     <header class="topbar norbu-topbar">
       <a class="brand brand-link" href="index.html" aria-label="Norbu home"><div class="brand-mark" aria-hidden="true"></div><span>Norbu</span></a>
@@ -30,42 +31,20 @@
     </header>
 
     <main class="faq-main norbu-faq-main">
-      <section class="norbu-faq-hero">
-        <div>
-          <span class="norbu-kicker">Questions</span>
-          <h1>What Norbu does right now.</h1>
-          <p>Norbu helps visitors browse acupuncture profiles in The Netherlands and continue to Google Maps for location details and any reviews available on Google.</p>
-          <div class="faq-hero-actions"><a class="btn btn-primary" href="practitioners.html">Open finder</a><a class="btn btn-secondary" href="quiz.html">Take the quiz</a></div>
-        </div>
-        <aside>
-          <strong>Simple directory</strong>
-          <span>Profiles by city and focus area</span>
-          <span>External Google Maps links</span>
-          <span>No booking or on-site reviews</span>
-        </aside>
-      </section>
-
-      <section class="norbu-faq-grid" id="faq-questions">
-        <article class="norbu-faq-card"><span>01</span><h2>Can I book an appointment through Norbu?</h2><p>No. Norbu does not handle appointments, contact requests, payments, messages, or booking calendars yet. The current version helps visitors compare profiles and continue to Google Maps.</p></article>
-        <article class="norbu-faq-card"><span>02</span><h2>Where can visitors see reviews?</h2><p>Reviews are viewed on Google. Norbu does not collect, store, moderate, score, or publish its own reviews on the website.</p></article>
-        <article class="norbu-faq-card"><span>03</span><h2>Are exact clinic addresses included?</h2><p>Not yet. Current map buttons open Google Maps searches by city and focus area. Exact addresses can be added once provider data is confirmed.</p></article>
-        <article class="norbu-faq-card"><span>04</span><h2>Does the quiz recommend treatment?</h2><p>No. The quiz only helps visitors choose a search direction, such as fertility, pain, stress and sleep, or Traditional Chinese Medicine. It is not medical advice.</p></article>
-        <article class="norbu-faq-card"><span>05</span><h2>Are therapists ranked or verified?</h2><p>No. Norbu does not rank therapists, create review scores, or claim verification in this version. Visitors should compare profile information and check external Google details themselves.</p></article>
-        <article class="norbu-faq-card"><span>06</span><h2>What can be added later?</h2><p>Confirmed provider profiles, exact addresses, richer city pages, contact details, provider-managed updates, and booking can be added once the core directory is working.</p></article>
-      </section>
-
-      <section class="norbu-faq-bottom">
-        <div><span class="norbu-kicker">Good to know</span><h2>Norbu is an orientation tool.</h2><p>It is not medical advice and it does not replace a consultation with a qualified professional. The goal is to make the first search step easier to understand.</p></div>
-        <a class="btn btn-primary" href="practitioners.html">Find a therapist</a>
-      </section>
+      <div class="cp-topline"><div><a href="index.html">Norbu</a><span aria-hidden="true">/</span><span>Questions & answers</span></div><button type="button" id="page-motion-toggle" aria-pressed="false">Pause animation</button></div>
+      <section class="cp-hero cp-hero-text"><div class="cp-hero-copy"><span class="cp-eyebrow">A little clarity</span><h1>Good questions.<br><em>Clearer next steps.</em></h1><p>Get to know Norbu, the directory and the details worth checking before you choose a practice.</p><div class="cp-actions"><a class="btn btn-primary" href="practitioners.html">Explore practices →</a></div></div><div class="cp-compass-art" aria-hidden="true"><div><span>N</span><strong>→</strong><span>Find your direction</span></div></div></section>
+      <section class="cp-faq-layout" id="faq-questions"><aside><span class="cp-eyebrow">Find an answer</span><h2>A little context.<br><em>A lot less guessing.</em></h2><label class="cp-faq-search"><span>Search questions</span><input id="faq-search" type="search" placeholder="Try reviews, booking or qualifications"></label><div class="cp-faq-filters" role="group" aria-label="Question topics"><button type="button" data-faq-filter="all" aria-pressed="true">All questions</button><button type="button" data-faq-filter="Using Norbu" aria-pressed="false">Using Norbu</button><button type="button" data-faq-filter="Practices" aria-pressed="false">Practices</button><button type="button" data-faq-filter="Maps & reviews" aria-pressed="false">Maps & reviews</button></div></aside><div><div class="cp-faq-items"><details class="cp-faq-item" data-faq-category="Using Norbu"><summary><span>01</span><strong>What exactly is Norbu?</strong></summary><p>Norbu is a directory for exploring acupuncture and complementary practice listings in the Netherlands. Compare available profile information and follow the links to the practice, its source listing or Google Maps.</p></details><details class="cp-faq-item" data-faq-category="Using Norbu"><summary><span>02</span><strong>Can I book through Norbu?</strong></summary><p>Direct booking is not available. Open the practice’s website or Google Maps listing to check contact details and ask the practice about appointments.</p></details><details class="cp-faq-item" data-faq-category="Practices"><summary><span>03</span><strong>Are practitioners independently verified?</strong></summary><p>Inclusion in the directory does not mean Norbu has independently verified qualifications or suitability. Check registration, training and treatment options directly with the practice.</p></details><details class="cp-faq-item" data-faq-category="Maps & reviews"><summary><span>04</span><strong>Where can I see reviews?</strong></summary><p>Use the Google Maps link on a practice profile to check available Google reviews. Google manages those ratings and reviews; Norbu does not publish its own patient reviews.</p></details><details class="cp-faq-item" data-faq-category="Maps & reviews"><summary><span>05</span><strong>Does the map show an exact practice location?</strong></summary><p>The map uses the location details supplied in a profile. Some listings have incomplete addresses or open a Google search rather than a verified point. Confirm the address with the practice before visiting.</p></details><details class="cp-faq-item" data-faq-category="Using Norbu"><summary><span>06</span><strong>Does the quiz recommend a treatment?</strong></summary><p>The quiz suggests a direction for browsing the directory. It does not diagnose, assess suitability or replace advice from a qualified healthcare professional.</p></details><details class="cp-faq-item" data-faq-category="Practices"><summary><span>07</span><strong>Where do the profile details come from?</strong></summary><p>Profiles contain information from the external directory sources shown on each listing. Open the original source or practice website to check the latest details.</p></details><details class="cp-faq-item" data-faq-category="Practices"><summary><span>08</span><strong>What if information is missing or outdated?</strong></summary><p>Check the source listing and the provider’s own website. Confirm important details directly with the practice, including its location, qualifications and appointment availability.</p></details></div><p id="faq-empty" hidden>No matching questions. Try another search or choose “All questions”.</p><p id="faq-count" class="cp-small" role="status">8 questions</p></div></section>
+      <section class="cp-final"><span class="cp-eyebrow">Your own starting point</span><h2>Ready to <em>explore?</em></h2><p>Start with a place, an approach, or a question.</p><div class="cp-actions"><a class="btn btn-primary" href="practitioners.html">Find a practice →</a><a class="btn btn-secondary" href="quiz.html">Take the quiz →</a></div></section>
     </main>
 
-    <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A searchable acupuncture directory for The Netherlands.</p></div><div><strong>Use</strong><p>Profiles<br>Google Maps<br>Reviews on Google</p></div><div><strong>Not included yet</strong><p>Booking<br>Messaging<br>On-site reviews</p></div><div><strong>Explore</strong><p><a href="index.html">Home</a><br><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a><br><a href="quiz.html">Quiz</a></p></div></div></footer>
+    <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>Your compass for exploring complementary care in the Netherlands.</p></div><div><strong>Explore</strong><p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a practice</a><br><a href="quiz.html">Take the quiz</a></p></div><div><strong>Get to know Norbu</strong><p><a href="about.html">About</a><br><a href="faq.html">FAQ</a><br><a href="blog.html">Journal</a></p></div><div><strong>A clear starting point</strong><p>Compare directory information and check details directly with the practice.</p></div></div></footer>
   </div>
-  <script src="script.js" defer></script>
+  <script src="script.js?v=20261116-8" defer></script>
   <script src="site-shell.js?v=20261116-4" defer></script>
+  <script src="compass-pages.js?v=20261116-8" defer></script>
 </body>
 </html>
+
 
 
 

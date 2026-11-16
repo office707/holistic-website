@@ -1295,6 +1295,7 @@ if (doctorJournalList && doctorJournalCount && doctorJournalPatientName) {
 // Gentle entrance animations; content stays visible if animation support is unavailable.
 (() => {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (document.body.classList.contains('compass-page')) return;
   if (reducedMotion.matches || !('IntersectionObserver' in window)) return;
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(({ target, isIntersecting }) => {

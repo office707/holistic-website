@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="site-shell.css?v=20261116-4">
+  <link rel="stylesheet" href="compass-pages.css?v=20261116-8">
 </head>
-<body class="site-layout quiz-page norbu-site-page">
+<body id="norbu-interior" class="compass-page site-layout quiz-page norbu-site-page">
   <div class="page">
     <header class="topbar norbu-topbar">
       <a class="brand brand-link" href="index.html" aria-label="Norbu home"><div class="brand-mark" aria-hidden="true"></div><span>Norbu</span></a>
@@ -30,17 +31,18 @@
     </header>
 
     <main class="quiz-main">
+      <div class="cp-topline"><div><a href="index.html">Norbu</a><span aria-hidden="true">/</span><span>Find your starting point</span></div><button type="button" id="page-motion-toggle" aria-pressed="false">Pause animation</button></div>
       <section class="quiz-hero card">
         <div>
-          <span class="norbu-kicker">Starting point quiz</span>
-          <h1>Not sure where to start?</h1>
+          <span class="norbu-kicker">Find your direction</span>
+          <h1>A few questions.<br><em>A clearer starting point.</em></h1>
           <p>Answer a few simple questions to choose a search direction. The quiz does not diagnose, rank therapists, or recommend treatment.</p>
         </div>
         <a class="btn btn-secondary" href="practitioners.html">Skip to finder</a>
       </section>
 
       <section class="quiz-layout">
-        <form class="quiz-card card" id="quiz-form">
+        <form class="quiz-card card" id="quiz-form"><div class="cp-quiz-progress"><span>Your starting point</span><span id="quiz-progress-copy" role="status">0 of 3 sections completed</span><div><span id="quiz-progress-bar"></span></div></div>
           <fieldset class="quiz-step">
             <legend>What topic should your search start with?</legend>
             <label><input type="radio" name="goal" value="Fertility acupuncture" required><span>Fertility, IVF, or cycle-related focus</span></label>
@@ -57,7 +59,7 @@
             <label><input type="radio" name="city" value="Amsterdam"><span>Amsterdam</span></label>
             <label><input type="radio" name="city" value="Rotterdam"><span>Rotterdam</span></label>
             <label><input type="radio" name="city" value="Utrecht"><span>Utrecht</span></label>
-            <label><input type="radio" name="city" value="The Hague"><span>The Hague</span></label>
+            <label><input type="radio" name="city" value="Den Haag"><span>The Hague</span></label>
             <label><input type="radio" name="city" value="Eindhoven"><span>Eindhoven</span></label>
           </fieldset>
 
@@ -84,12 +86,14 @@
       </section>
     </main>
 
-    <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>A searchable acupuncture directory for The Netherlands.</p></div><div><strong>Use</strong><p>Profiles<br>Google Maps<br>Reviews on Google</p></div><div><strong>Quiz</strong><p>Search direction only<br>No medical advice</p></div><div><strong>Explore</strong><p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a therapist</a><br><a href="faq.html">FAQ</a></p></div></div></footer>
+    <footer class="site-footer"><div class="site-footer-grid"><div><a class="brand brand-link site-footer-brand" href="index.html"><div class="brand-mark"></div><span>Norbu</span></a><p>Your compass for exploring complementary care in the Netherlands.</p></div><div><strong>Explore</strong><p><a href="therapies.html">Therapies</a><br><a href="practitioners.html">Find a practice</a><br><a href="quiz.html">Take the quiz</a></p></div><div><strong>Get to know Norbu</strong><p><a href="about.html">About</a><br><a href="faq.html">FAQ</a><br><a href="blog.html">Journal</a></p></div><div><strong>A clear starting point</strong><p>Compare directory information and check details directly with the practice.</p></div></div></footer>
   </div>
-  <script src="script.js" defer></script>
+  <script src="script.js?v=20261116-8" defer></script>
   <script src="site-shell.js?v=20261116-4" defer></script>
+  <script src="compass-pages.js?v=20261116-8" defer></script>
 </body>
 </html>
+
 
 
 
