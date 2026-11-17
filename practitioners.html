@@ -10,6 +10,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="site-shell.css?v=20261116-9">
   <link rel="stylesheet" href="compass-pages.css?v=20261116-10">
+  <link rel="stylesheet" href="discovery.css?v=20261117-1">
 </head>
 <body id="norbu-interior" class="compass-page site-layout directory-page norbu-finder-page">
   <div class="page" id="top">
@@ -19,8 +20,8 @@
         <nav class="nav" id="site-nav" aria-label="Main navigation">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
-          <a href="therapies.html">Therapies</a>
-          <a class="active" aria-current="page" href="practitioners.html">Find a therapist</a>
+          <a href="therapies.html">Explore therapies</a>
+          <a class="active" aria-current="page" href="practitioners.html">Find a practice</a>
           <a href="quiz.html">Quiz</a>
           <a href="blog.html">Blog</a>
           <a href="faq.html">FAQ</a>
@@ -37,7 +38,7 @@
         <div><span class="norbu-kicker">Find your care</span><h1>Acupuncture, closer to you.</h1></div>
         <form class="norbu-quick-search finder-search-box" action="#directory-list">
           <label for="filter-search">Where or what are you looking for?</label>
-          <div class="finder-search-row"><input id="filter-search" type="search" placeholder="City, practice or focus area" autocomplete="off"><button class="btn btn-primary" type="submit">Search <span aria-hidden="true">→</span></button></div>
+          <div class="finder-search-row"><div class="finder-search-input" data-city-picker data-city-target="filter-location" data-city-free-text><input class="city-picker-input" id="filter-search" type="search" placeholder="City, practice or focus area" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="finder-city-suggestions"><ul class="city-picker-list" id="finder-city-suggestions" role="listbox" aria-label="Suggested cities" hidden></ul><span class="city-picker-status" role="status"></span></div><button class="btn btn-primary" type="submit">Search <span aria-hidden="true">→</span></button></div>
         </form>
       </section>
 
@@ -104,6 +105,7 @@
   <script src="script.js?v=20261116-8" defer></script>
   <script src="site-shell.js?v=20261116-9" defer></script>
   <script src="compass-pages.js?v=20261116-8" defer></script>
+  <script src="city-picker.js?v=20261117-1" defer></script>
 </body>
 </html>
 

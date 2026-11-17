@@ -108,6 +108,13 @@
     } else highlight();
   });
 
+  window.addEventListener('norbu:focus-practice', (event) => {
+    const position = locations[event.detail.id];
+    if (!map || !position) return;
+    map.panTo({ lat: position.lat, lng: position.lng });
+    if ((map.getZoom() ?? 7) < 13) map.setZoom(13);
+  });
+
   const key = window.norbuMapsConfig?.apiKey?.trim();
   if (!key) return;
   window.norbuInitMap = () => {

@@ -1,0 +1,64 @@
+/* City suggestions, homepage map and clearly marked calendar previews. */
+[data-city-picker] { display:block; position:relative; min-width:0; }
+.finder-search-input { flex:1 1 0; min-width:0; }
+.city-picker-list { position:absolute; top:calc(100% + 9px); left:0; right:0; z-index:60; margin:0; padding:6px; max-height:320px; overflow-y:auto; list-style:none; background:#fffefa; border:1px solid #d4dfcf; border-radius:14px; box-shadow:0 12px 32px #173e3e20; min-width:200px; }
+.city-picker-list[hidden] { display:none!important; }
+.city-picker-list li { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 12px; border-radius:9px; color:#194e46; cursor:pointer; text-align:left; }
+.city-picker-list li strong { font-size:13px; }.city-picker-list li span { font-size:10px; color:#647c68; white-space:nowrap; }
+.city-picker-list li:hover,.city-picker-list li[aria-selected=true] { background:#e8efdf; }
+.city-picker-status { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; }
+#norbu-interior main .finder-search-box { overflow:visible!important; }
+.home-map-controls { display:grid; grid-template-columns:1.2fr 1fr; gap:20px; margin-bottom:22px; padding:22px; background:#e9efe1; border:1px solid #dce3d6; border-radius:20px; }
+.home-map-controls label { display:grid; gap:10px; min-width:0; font-size:11px; font-weight:750; color:#41654d; }
+body.home-refresh .home-map-controls :is(input,select) { display:block; width:100%; min-width:0; padding:14px 15px; min-height:48px; border:1px solid #d0dcc8; border-radius:12px; background:#fffefa; font:inherit; font-size:13px; color:#194e46; }
+body.home-refresh .compass-home .home-map-layout { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:22px; align-items:stretch; }
+.home-map-results { min-width:0; padding:24px; border:1px solid #dce3d6; border-radius:22px; background:#fffefa; }
+.home-map-results-heading { display:flex; justify-content:space-between; gap:12px; margin-bottom:18px; }.home-map-results-heading strong { color:#194e46;font-size:14px; }.home-map-results-heading span { font-size:11px;color:#6b816d; }
+.home-map-card { padding:18px 0; border-top:1px solid #e0e6d8; }.home-map-card.is-selected { border-left:3px solid #729782; padding-left:14px; }
+.home-map-card > div > span { font-size:10px; color:#648268; text-transform:uppercase; letter-spacing:.08em; }
+body.home-refresh .compass-home .home-map-card h3 { margin:7px 0!important; font-size:19px!important; color:#194e46!important; }
+body.home-refresh .compass-home .home-map-card p { font-size:12px!important; }
+.home-map-card-actions { display:flex; flex-wrap:wrap; gap:16px; margin-top:14px; }
+.home-map-card-actions :is(a,button) { padding:0; border:0; background:none; color:#19574e; font:inherit; font-size:11px; font-weight:700; text-decoration:underline; text-underline-offset:4px; cursor:pointer; }
+body.home-refresh .home-map-panel { position:relative!important; min-height:560px; margin:0!important; padding:0!important; border:1px solid #dce3d6!important; border-radius:22px!important; overflow:hidden; box-shadow:none!important; }
+.home-map-panel .finder-map-surface { position:absolute;inset:0;background:#e3ebdf; }
+body.home-refresh .home-map-panel :is(.directory-map-frame,.directory-map-frame iframe,#finder-google-map) { width:100%;height:100%;min-height:0!important;border:0; }
+.home-map-panel [hidden] { display:none!important; }
+.home-map-panel .finder-map-status { position:absolute;top:14px;left:14px;right:14px;margin:0!important;padding:12px 14px;background:#fffefaee;border-radius:12px;font-size:10px!important;line-height:1.6!important;color:#4d6b54!important;pointer-events:none; }
+.home-map-panel .finder-location-source { position:absolute;bottom:32px;left:8px;padding:3px 6px;background:#fffffff0;font-size:9px;color:#194e46; }
+.home-map-preview { position:absolute;bottom:40px;left:24px;right:24px;padding:20px;background:#fffefa;border-radius:16px;box-shadow:0 8px 24px #173e3e20; }
+.home-map-preview > span { color:#729782;font-size:10px;text-transform:uppercase;letter-spacing:.08em; }
+body.home-refresh .compass-home .home-map-preview h3 { font-size:21px!important;margin:8px 0!important;color:#194e46!important; }
+body.home-refresh .compass-home .home-map-preview p { font-size:12px!important; }
+.home-map-preview > div { display:flex;flex-wrap:wrap;gap:16px;margin-top:14px; }.home-map-preview a { font-size:11px;font-weight:700;color:#194e46;text-underline-offset:4px; }
+.home-map-preview .finder-preview-close { top:10px;right:10px; }
+.availability-section { display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:8%;align-items:start; }
+.availability-section > div:first-child > p { margin-top:24px!important;max-width:500px; }
+body.home-refresh .availability-section > div:first-child > p { font-size:14px!important; }
+.appointment-preview { padding:28px;border:1px solid #d6e1cc;border-radius:22px;background:#fffefa;min-width:0; }
+.appointment-preview-badge { display:inline-block;font-size:10px;font-weight:800;letter-spacing:.04em;color:#746344;background:#f2eadc;border:1px solid #e2d8c4;border-radius:24px;padding:7px 11px; }
+body.home-refresh .compass-home .appointment-preview h3,#norbu-interior main .appointment-preview h3 { font-size:22px!important;color:#194e46!important;line-height:1.3!important;margin:18px 0 12px!important; }
+body.home-refresh .compass-home .appointment-preview-note,#norbu-interior main .appointment-preview-note { font-size:12px!important;line-height:1.7!important;color:#697763!important; }
+.appointment-month-nav { display:flex;justify-content:space-between;align-items:center;gap:12px;margin:26px 0 20px; }
+.appointment-month-nav strong { font-size:15px;color:#194e46; }.appointment-month-nav button { width:34px;height:34px;border:1px solid #d4dfcc;border-radius:10px;background:#f2f5eb;color:#194e46;font-size:18px;cursor:pointer; }.appointment-month-nav button:disabled { opacity:.4;cursor:default; }
+.appointment-weekdays,.appointment-days { display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px; }
+.appointment-weekdays { margin-bottom:8px; }.appointment-weekdays span { text-align:center;color:#7b8d76;font-size:10px;font-weight:700; }
+.appointment-days button { position:relative;display:grid;place-items:center;min-height:38px;aspect-ratio:1.2;border:1px solid transparent;border-radius:10px;background:transparent;color:#40634d;font:inherit;font-size:12px;cursor:pointer; }
+.appointment-days button:disabled { color:#c0c8b8;cursor:default; }.appointment-days button[aria-pressed=true] { background:#194e46;color:white; }.appointment-days button:not(:disabled):hover { border-color:#97b18b; }
+.appointment-days button.has-example::after { content:'';position:absolute;width:4px;height:4px;bottom:4px;left:calc(50% - 2px);border-radius:50%;background:#8da77d; }.appointment-days button[aria-pressed=true]::after { background:white; }
+.appointment-example-times { border-top:1px solid #e0e7d6;margin-top:18px;padding-top:18px;min-height:82px; }.appointment-example-times > strong { font-size:12px;color:#194e46; }
+body.home-refresh .compass-home .appointment-example-times p,#norbu-interior main .appointment-example-times p { font-size:11px!important;color:#75846c!important;line-height:1.7!important;margin:8px 0!important; }
+.appointment-slots { display:flex;flex-wrap:wrap;gap:8px;margin-top:12px; }.appointment-slots button { padding:10px 16px;border:1px dashed #d3dec9;border-radius:10px;background:#f6f7f0;color:#6d8065;font:inherit;font-size:12px;opacity:1; }
+body.home-refresh .compass-home .appointment-preview-legend,#norbu-interior main .appointment-preview-legend { font-size:10px!important;color:#89977d!important;line-height:1.7!important;margin-top:16px!important; }
+.appointment-calendar-contact { display:inline-block;margin-top:18px;padding-bottom:5px;border-bottom:1px solid #a3b995;color:#194e46;font-size:12px;font-weight:700;text-decoration:none; }
+:is(.home-map-section,.appointment-preview) :is(input,select,button,a):focus-visible { outline:3px solid #cc7544;outline-offset:4px; }
+@media(max-width:900px) { body.home-refresh .compass-home .home-map-layout { grid-template-columns:1fr; }.home-map-panel { min-height:460px!important; }.home-map-results { order:2; }.availability-section { gap:28px; } }
+@media(max-width:760px) { .home-map-controls,.availability-section { grid-template-columns:minmax(0,1fr);gap:20px; }.home-map-controls { padding:18px; }.appointment-preview { padding:22px; }.home-map-preview { left:16px;right:16px;padding:18px; }.city-picker-list { max-height:270px; }.city-picker-list li { padding:12px 8px; }.city-picker-list li span { font-size:9px; }.appointment-days { gap:3px; }.appointment-days button { min-height:33px; } }
+/* Override the legacy directory grid only inside the homepage map. */
+body.home-refresh .compass-home .home-map-layout { display:grid!important;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)!important;gap:22px!important;align-items:stretch!important; }
+body.home-refresh .home-map-panel { top:auto!important;inset:auto!important;width:100%!important;max-width:none!important;min-width:0!important;min-height:560px!important;align-self:stretch!important; }
+.home-map-preview .finder-preview-close { position:absolute;display:grid;place-items:center;top:10px;right:10px;width:28px;height:28px;border:1px solid #dce5d3;border-radius:50%;background:#f0f4e8;color:#194e46;font-size:19px;line-height:1;cursor:pointer; }
+body.home-refresh .compass-home .appointment-preview-legend,#norbu-interior main .appointment-preview-legend { color:#64745d!important; }
+.finder-cluster-list { display:grid;gap:8px;max-height:260px;max-width:300px;overflow-y:auto;padding:8px;font-family:Arial,sans-serif; }
+.finder-cluster-list strong { font-size:13px;margin-bottom:6px;color:#194e46; }.finder-cluster-list button { padding:10px;text-align:left;border:1px solid #d7e3cf;border-radius:8px;background:#f4f7ee;color:#194e46;font:inherit;font-size:12px;cursor:pointer; }
+@media(max-width:900px) { body.home-refresh .compass-home .home-map-layout { grid-template-columns:minmax(0,1fr)!important; } body.home-refresh .home-map-panel { min-height:460px!important; } }

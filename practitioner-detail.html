@@ -10,6 +10,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="site-shell.css?v=20261116-9">
   <link rel="stylesheet" href="compass-pages.css?v=20261116-9">
+  <link rel="stylesheet" href="discovery.css?v=20261117-1">
 </head>
 <body id="norbu-interior" class="compass-page site-layout practitioner-profile-page norbu-profile-page">
   <div class="page" id="top">
@@ -19,8 +20,8 @@
         <nav class="nav" id="site-nav" aria-label="Main navigation">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
-          <a href="therapies.html">Therapies</a>
-          <a class="active" aria-current="page" href="practitioners.html">Find a therapist</a>
+          <a href="therapies.html">Explore therapies</a>
+          <a class="active" aria-current="page" href="practitioners.html">Find a practice</a>
           <a href="quiz.html">Quiz</a>
           <a href="blog.html">Blog</a>
           <a href="faq.html">FAQ</a>
@@ -47,7 +48,7 @@
             <div><strong id="profile-clinic"></strong><span>City</span></div>
             <div><strong id="profile-source"></strong><span>Profile source</span></div>
           </div>
-          <div class="profile-actions"><a class="btn btn-primary" id="profile-map-link-hero" href="https://www.google.com/maps/search/?api=1&query=acupuncture%20Netherlands" target="_blank" rel="noreferrer">Open Google Maps</a><a class="btn btn-secondary" href="practitioners.html">Back to finder</a></div>
+          <div class="profile-actions"><a class="btn btn-primary" id="profile-map-link-hero" href="https://www.google.com/maps/search/?api=1&query=acupuncture%20Netherlands" target="_blank" rel="noreferrer">Open Google Maps</a><a class="btn btn-secondary" href="#practice-calendar">Calendar preview</a><a class="btn btn-secondary" href="practitioners.html">Back to finder</a></div>
         </div>
       </section>
 
@@ -84,6 +85,7 @@
         </article>
       </section>
 
+      <section class="availability-section" id="practice-calendar"><div><span class="cp-eyebrow">Appointment calendar</span><h2>A clearer view<br>of the next step.</h2><p>Calendar design preview. No confirmed appointment availability is connected for this practice yet. Contact the practice directly to check its real schedule.</p></div><div data-appointment-preview data-practice-calendar></div></section>
       <section class="profile-booking-card"><div><span class="profile-kicker">Current scope</span><h2>Profiles and Google Maps first.</h2><p>This version focuses on comparing listed profile details and continuing to Google for map context and external reviews. Direct contact, exact addresses, and scheduling can be added later.</p></div><a class="btn btn-primary" href="practitioners.html">Back to finder</a></section>
     </main>
 
@@ -100,6 +102,7 @@
   <script src="profile-reviews.js" defer></script>
   <script src="site-shell.js?v=20261116-9" defer></script>
   <script src="compass-pages.js?v=20261116-8" defer></script>
+  <script src="appointment-preview.js?v=20261117-1" defer></script>
 </body>
 </html>
 
