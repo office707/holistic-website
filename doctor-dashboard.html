@@ -8,6 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="site-shell.css?v=20261116-9">
   <link rel="stylesheet" href="compass-pages.css?v=20261116-9">
+  <link rel="stylesheet" href="portal.css?v=20261117-2">
 </head>
 <body id="norbu-interior" class="compass-page site-layout home-page platform-page portal-dashboard-page" data-portal-role="doctor">
   <div class="page" id="top">
@@ -29,218 +30,7 @@
       <a class="book-btn" href="practitioners.html">Open finder</a>
     </header>
 
-    <main class="platform-main dashboard-main">
-      <div class="cp-topline"><div><a href="index.html">Norbu</a><span aria-hidden="true">/</span><span>Practitioner workspace</span></div><button type="button" id="page-motion-toggle" aria-pressed="false">Pause animation</button></div>
-      <nav class="site-context-nav" aria-label="Dashboard navigation">
-          <a class="active" href="#doctor-overview">Overview</a>
-          <a href="#doctor-today">Today</a>
-          <a href="#doctor-patients">Patients</a>
-          <a href="#doctor-journal">Journal</a>
-          <a href="#doctor-notes">Notes</a>
-          <a href="#doctor-follow-up">Follow-up</a>
-        </nav>
-      <section class="dashboard-hero card dashboard-hero--doctor" id="doctor-overview">
-        <div class="dashboard-hero-grid">
-          <div class="dashboard-hero-copy">
-            <div class="subpage-breadcrumbs">
-              <a href="index.html">Home</a>
-              <span>/</span>
-              <span>Doctor Dashboard</span>
-            </div>
-
-            <span class="portal-kicker">Clinical area</span>
-            <h1>Your day board for care, notes, and appointments.</h1>
-            <p>The doctor area focuses on what matters most in the moment: who is coming in today, what needs documentation, and which follow-ups are still open.</p>
-
-            <div class="dashboard-hero-actions">
-              <a class="btn btn-primary" href="#doctor-today">View today</a>
-              <a class="btn btn-secondary" href="#doctor-notes">Review notes</a>
-            </div>
-
-            <div class="dashboard-quick-links">
-              <a href="#doctor-patients">Active cases</a>
-              <a href="#doctor-follow-up">Follow-ups</a>
-              <a href="#doctor-notes">Documentation</a>
-            </div>
-          </div>
-
-          <div class="dashboard-hero-panels">
-            <article class="dashboard-metric-card">
-              <span>Sessions today</span>
-              <strong>5</strong>
-              <p>Spread clearly across the day, from first intake to short follow-up check-ins.</p>
-            </article>
-
-            <article class="dashboard-metric-card">
-              <span>Open follow-ups</span>
-              <strong>3</strong>
-              <p>Messages, resources, or care questions are waiting for your reply.</p>
-            </article>
-
-            <article class="dashboard-metric-card">
-              <span>New updates</span>
-              <strong>2</strong>
-              <p>Two patients submitted fresh observations ahead of their next appointment.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="dashboard-overview-grid">
-        <article class="dashboard-panel">
-          <span class="dashboard-panel-kicker">Focus today</span>
-          <h2>Calm operations come from keeping appointments, notes, and next steps in one place.</h2>
-          <p>The dashboard prioritizes orientation: first the day, then the case history, then the supporting materials.</p>
-        </article>
-
-        <article class="dashboard-panel dashboard-panel--doctor">
-          <span class="dashboard-panel-kicker">Care flow</span>
-          <h2>Before every session, the most relevant context is already visible.</h2>
-          <p>That keeps conversations connected and makes the handoff between digital preparation and in-person care feel intentional.</p>
-        </article>
-      </section>
-
-      <section class="dashboard-layout">
-        <div class="dashboard-primary-column">
-          <article class="dashboard-card" id="doctor-today">
-            <div class="dashboard-section-head">
-              <div>
-                <span class="dashboard-panel-kicker">Today</span>
-                <h2>Your schedule with the next sessions in view.</h2>
-              </div>
-            </div>
-
-            <div class="appointment-list">
-              <article class="appointment-item is-selected">
-                <div class="appointment-item-head">
-                  <div>
-                    <span class="appointment-status">09:00</span>
-                    <h3>Lena Berger</h3>
-                  </div>
-                  <strong>Follow-up</strong>
-                </div>
-                <p>Regulation support · Practice room 2</p>
-              </article>
-              <article class="appointment-item">
-                <div class="appointment-item-head">
-                  <div>
-                    <span class="appointment-status">11:30</span>
-                    <h3>Jonas Reiter</h3>
-                  </div>
-                  <strong>First consultation</strong>
-                </div>
-                <p>Integrative intake · Video session</p>
-              </article>
-              <article class="appointment-item">
-                <div class="appointment-item-head">
-                  <div>
-                    <span class="appointment-status">14:15</span>
-                    <h3>Clara Hoffmann</h3>
-                  </div>
-                  <strong>Check-in</strong>
-                </div>
-                <p>Breathwork support · Practice room 1</p>
-              </article>
-            </div>
-          </article>
-
-          <article class="dashboard-card" id="doctor-notes">
-            <div class="dashboard-section-head">
-              <div>
-                <span class="dashboard-panel-kicker">Documentation</span>
-                <h2>Clinical notes and observations at a glance.</h2>
-              </div>
-            </div>
-
-            <div class="resource-list">
-              <article class="resource-item">
-                <span>Preparation</span>
-                <strong>Lena Berger reports more calm in the morning.</strong>
-                <p>Her journal shows fewer stress spikes, but sleep still breaks in the second half of the night.</p>
-              </article>
-              <article class="resource-item">
-                <span>Note</span>
-                <strong>Jonas Reiter needs a gentle entry point without overload.</strong>
-                <p>The first consultation should focus on pace, orientation, and physical safety before going deeper into symptoms.</p>
-              </article>
-              <article class="resource-item">
-                <span>Aftercare</span>
-                <strong>Clara Hoffmann needs a short grounding resource sheet.</strong>
-                <p>After the session, a short breath and grounding sequence should be shared automatically.</p>
-              </article>
-            </div>
-          </article>
-
-          <article class="dashboard-card" id="doctor-journal" data-doctor-journal>
-            <div class="dashboard-section-head">
-              <div>
-                <span class="dashboard-panel-kicker">Patient journal</span>
-                <h2>Patient observations for clinical review.</h2>
-              </div>
-              <div class="dashboard-head-meta" id="doctor-journal-count">0 entries</div>
-            </div>
-
-            <div class="doctor-journal-patient">
-              <span>Current patient</span>
-              <strong id="doctor-journal-patient-name">Lena Berger</strong>
-              <p>Entries are read-only here and remain editable only inside the patient's personal area.</p>
-            </div>
-            <div class="journal-list doctor-journal-list" id="doctor-journal-list"></div>
-          </article>
-        </div>
-
-        <aside class="dashboard-secondary-column">
-          <article class="dashboard-card" id="doctor-patients">
-            <div class="dashboard-section-head">
-              <div>
-                <span class="dashboard-panel-kicker">Patients</span>
-                <h2>Active cases today.</h2>
-              </div>
-            </div>
-
-            <div class="profile-summary">
-              <div><span>New</span><strong>1 first intake scheduled today</strong></div>
-              <div><span>Ongoing</span><strong>7 active care paths this week</strong></div>
-              <div><span>Urgent</span><strong>2 cases need a timely reply</strong></div>
-              <div><span>Resources</span><strong>4 tailored practices already prepared</strong></div>
-            </div>
-          </article>
-
-          <article class="dashboard-card" id="doctor-follow-up">
-            <div class="dashboard-section-head">
-              <div>
-                <span class="dashboard-panel-kicker">Follow-up</span>
-                <h2>Next steps after the sessions.</h2>
-              </div>
-            </div>
-
-            <div class="progress-timeline">
-              <article class="timeline-item">
-                <div class="timeline-item-head">
-                  <strong>Today</strong>
-                  <span>14:45</span>
-                </div>
-                <p>Send Clara Hoffmann the grounding resource sheet.</p>
-              </article>
-              <article class="timeline-item">
-                <div class="timeline-item-head">
-                  <strong>Tomorrow</strong>
-                  <span>09:00</span>
-                </div>
-                <p>Send Lena Berger a short check-in about sleep quality.</p>
-              </article>
-              <article class="timeline-item">
-                <div class="timeline-item-head">
-                  <strong>This week</strong>
-                  <span>Open</span>
-                </div>
-                <p>Approve the shared progress note for the care team.</p>
-              </article>
-            </div>
-          </article>
-        </aside>
-      </section>
-    </main>
+    <main class="portal-main" data-portal-app data-portal-mode="practitioner"><div class="cp-topline"><div><a href="index.html">Norbu</a><span aria-hidden="true">/</span><span>Practitioner preview</span></div><button type="button" id="page-motion-toggle" aria-pressed="false">Pause animation</button></div><section class="portal-gate" id="portal-gate"><div class="portal-gate-copy"><span class="portal-eyebrow">Your personal Norbu space</span><h1>A little reflection.<br><em>A clearer picture.</em></h1><p>Keep track of how you feel, make notes after therapy visits and prepare the things you want to talk about at your next appointment.</p><div class="portal-gate-features"><article><span>01</span><div><h3>Your daily check-in</h3><p>Small observations about pain, energy, sleep and everyday life.</p></div></article><article><span>02</span><div><h3>Your therapy journal</h3><p>A place for visit notes, what you noticed afterwards and your questions.</p></div></article><article><span>03</span><div><h3>Your choice to share</h3><p>Choose entries for a summary you can show or print for a practitioner.</p></div></article></div></div><div class="portal-signin-card"><div class="portal-demo-tag">Interactive design preview</div><h2>A shared view starts with consent.</h2><p>In the finished service, you would sign in before opening your journal. For now, explore with a sample account.</p><div class="portal-auth-tabs" role="group" aria-label="Account preview"><button type="button" data-auth-tab="signin" aria-pressed="true">Sign in</button><button type="button" data-auth-tab="signup" aria-pressed="false">Create account</button></div><div class="portal-demo-fields"><label><span>Email · example account</span><input type="email" value="demo@example.com" readonly aria-label="Read-only example email"></label><label><span>Password · example only</span><input type="password" value="preview-only" readonly aria-label="Read-only example password"></label></div><p id="portal-auth-explanation" class="portal-small">This preview does not check a password or create an account. Do not enter real sign-in details.</p><button type="button" class="portal-primary" id="portal-enter">Open the practitioner demo →</button><div class="portal-gate-note"><strong>Try it with example information.</strong><p>Demo notes are temporary. This is not a protected patient record, and nothing is automatically sent to a practice.</p></div></div></section><section class="portal-workspace" id="portal-workspace" hidden><div class="portal-workspace-header"><div><span class="portal-eyebrow">Your Norbu space · demo</span><h1>A shared view.<br><em>With permission.</em></h1><p id="portal-today"></p></div><div class="portal-session-actions"><a href="platform.html" id="portal-role-link">Personal journal preview →</a><button type="button" id="portal-signout">Leave demo</button></div></div><div class="portal-session-note" role="note"><strong>Example information only.</strong><span>This is a separate set of illustrative notes, not a real patient record. Personal journal entries are not automatically accessible here.</span></div><div class="portal-layout"><aside class="portal-sidebar"><span class="portal-sidebar-label">Your space</span><a href="#portal-overview">Overview</a><a href="#portal-journal">Your entries</a><a href="#portal-sharing">Prepare a summary</a><div><span class="portal-eyebrow">Make it your own</span><p>A short note is enough. You can leave optional questions blank.</p></div></aside><div class="portal-content"><section class="portal-quote-card" id="portal-overview"><span class="portal-eyebrow">A little encouragement</span><blockquote id="portal-quote"></blockquote><button type="button" id="portal-next-quote">Another thought ↻</button></section><div class="portal-metrics"><article><strong id="portal-entry-count">0</strong><span>Journal entries</span></article><article><strong id="portal-pain-average">—</strong><span>Average of logged pain scores</span></article><article><strong id="portal-visit-count">0</strong><span>Therapy visit notes</span></article></div><section class="portal-panel" id="portal-observations"><div class="portal-panel-heading"><div><span class="portal-eyebrow">Your observations</span><h2>A picture of what you logged.</h2></div><span class="portal-example-label">Sample entries are marked</span></div><div id="portal-pain-chart"></div><p class="portal-small">Pain scores describe your own observations. They do not explain a cause or provide a clinical assessment.</p></section><section class="portal-panel" id="portal-write-panel" hidden><div class="portal-panel-heading"><div><span class="portal-eyebrow">A moment to reflect</span><h2 id="portal-form-title">What would you like to note?</h2></div></div><form id="portal-entry-form"><div class="portal-field-grid"><label><span>Date</span><input id="entry-date" name="date" type="date" required></label><label><span>Entry type</span><select id="entry-type" name="type"><option value="check-in">Daily check-in</option><option value="therapy">Therapy visit</option><option value="symptom">Symptom note</option></select></label><label><span>How do you feel? <small>optional</small></span><select name="mood"><option value="">Choose if you like</option><option>Low</option><option>Unsettled</option><option>Okay</option><option>Steady</option><option>Hopeful</option></select></label><label><span>Sleep <small>optional</small></span><select name="sleep"><option value="">Not noted</option><option>Restful</option><option>Mixed</option><option>Interrupted</option><option>Difficult</option></select></label></div><fieldset class="portal-optional-group"><legend>Pain & everyday life <span>Optional</span></legend><div class="portal-field-grid"><label><span>Pain intensity · 0 to 10</span><select name="pain"><option value="">Not recording pain</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select><small>0 = no pain; 10 = the strongest pain you can imagine.</small></label><label><span>Where do you notice it?</span><input name="location" type="text" maxlength="150" placeholder="For example: lower back, right shoulder"></label><label><span>Energy <small>optional</small></span><select name="energy"><option value="">Not noted</option><option>Very low</option><option>Low</option><option>Moderate</option><option>Good</option></select></label><label><span>What affected everyday activities?</span><input name="impact" type="text" maxlength="250" placeholder="For example: sitting, walking, concentration"></label></div></fieldset><div id="portal-therapy-fields" class="portal-field-grid" hidden><label><span>Therapy / type of visit <small>optional</small></span><input name="therapy" type="text" maxlength="150" placeholder="What kind of appointment was it?"></label><label><span>Practitioner <small>optional</small></span><input name="practitioner" type="text" maxlength="150" placeholder="Name or practice"></label></div><label class="portal-full-field"><span>Your observation</span><textarea name="note" rows="4" maxlength="5000" required placeholder="What did you notice today or after your visit? What felt different?"></textarea></label><div class="portal-field-grid"><label><span>What helped or made things harder? <small>optional</small></span><textarea name="context" rows="3" maxlength="1500" placeholder="For example: a quiet break, a busy day, a particular activity"></textarea></label><label><span>Questions for your next visit <small>optional</small></span><textarea name="questions" rows="3" maxlength="1500" placeholder="What would you like to discuss or understand better?"></textarea></label></div><div class="portal-form-actions"><button class="portal-primary" type="submit" id="portal-save-entry">Save demo entry →</button><button type="button" id="portal-cancel-edit" hidden>Cancel editing</button><span id="portal-form-status" role="status"></span></div></form></section><section class="portal-panel" id="portal-journal"><div class="portal-panel-heading"><div><span class="portal-eyebrow">Your journal</span><h2>An example of a shared journal.</h2></div><button type="button" id="portal-reset-demo">Reset demo entries</button></div><div class="portal-list-controls"><label><span>Search entries</span><input id="portal-entry-search" type="search" placeholder="Search notes, therapy or questions"></label><label><span>Show</span><select id="portal-entry-filter"><option value="all">All entries</option><option value="check-in">Daily check-ins</option><option value="therapy">Therapy visits</option><option value="symptom">Symptom notes</option></select></label></div><p id="portal-list-status" class="portal-small" role="status"></p><div id="portal-entry-list"></div></section><section class="portal-sharing-card" id="portal-sharing"><div><span class="portal-eyebrow">Your choice to share</span><h2>Take the useful parts<br>to your next visit.</h2><p>In a future connected service, a person would explicitly choose which entries to share. This example view has no access to real users or their journals.</p></div><div><button type="button" class="portal-primary" id="portal-prepare-summary" disabled>Prepare summary (0)</button><button type="button" id="portal-clear-selection">Clear selection</button><p id="portal-selection-status" role="status">No entries selected.</p></div></section></div></div></section><dialog id="portal-report" class="portal-report"><div class="portal-report-controls"><button type="button" id="portal-print-report">Print / save PDF</button><button type="button" id="portal-close-report">Close summary</button></div><div id="portal-report-content"></div></dialog></main>
 
     <footer class="site-footer compass-footer">
       <div class="cf-lead"><div><span class="cf-eyebrow">Your compass for complementary care</span><h2>A little curiosity.<br><em>Your next direction.</em></h2></div><a class="cf-action" href="practitioners.html">Explore practices <span aria-hidden="true">→</span></a></div>
@@ -251,7 +41,9 @@
   <script src="script.js?v=20261116-8" defer></script>
   <script src="site-shell.js?v=20261116-9" defer></script>
   <script src="compass-pages.js?v=20261116-8" defer></script>
+  <script src="portal.js?v=20261117-2" defer></script>
 </body>
 </html>
+
 
 
